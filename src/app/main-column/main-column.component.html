@@ -1,0 +1,12 @@
+
+<div id="mainColumnContainer" class="card w-100 h-100  my-2">
+  <nav class="card-header">
+    <app-breadcrumb></app-breadcrumb>
+  </nav>
+  <div class="card-body">
+    <router-outlet></router-outlet>
+  </div>
+  <nav *ngIf="!isHome" class="card-footer text-muted">
+      <button (click)="getBack()"  class="btn btn-secondary btn-light text-left justify-content-left">Voltar</button>
+  </nav>
+</div>

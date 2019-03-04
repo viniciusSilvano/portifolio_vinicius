@@ -1,0 +1,41 @@
+<p *ngIf="alert">
+  <ngb-alert [type]="alert.type" (close)="close(alert)">{{ alert.message }}</ngb-alert>
+</p>
+<ngb-carousel class="carouselContainer my-4" *ngIf="projeto.imagens">
+    <ng-template ngbSlide *ngFor="let imagem of projeto.imagens">
+      <div  (click)="pegarURLDaImagemAtual(imagem,content)">
+        <img class="carouselImage text-white" [src]="imagem.imageURL" alt="{{imagem.altTexto}}">
+        <div class="carousel-caption ">
+        <h3 *ngIf="imagem.tituloCarousel" id="tituloCarousel" [innerHTML]="imagem.tituloCarousel"></h3>
+        <p *ngIf="imagem.descricaoCarousel" id="descricaoCarousel" [innerHTML]="imagem.descricaoCarousel"></p>
+        </div>
+      </div>
+    </ng-template>
+</ngb-carousel>
+
+
+  <ng-template #content id="imagensProjetoModal" let-modal>
+        <div class="modal-header">
+          <h4 *ngIf="imagemSelecionada.tituloCarousel" class="modal-title" id="modal-basic-title" [innerHTML]="imagemSelecionada.tituloCarousel"></h4>
+          <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <ngb-carousel class="carouselContainer my-4" *ngIf="projeto.imagens">
+            <ng-template ngbSlide *ngFor="let imagem of projeto.imagens">
+              <div  (click)="pegarURLDaImagemAtual(imagem,content)">
+                <img class="carouselImage text-white" [src]="imagem.imageURL" alt="{{imagem.altTexto}}">
+                <div class="carousel-caption ">
+                  <h3 *ngIf="imagem.tituloCarousel" id="tituloCarousel" [innerHTML]="imagem.tituloCarousel"></h3>
+                  <p *ngIf="imagem.descricaoCarousel" id="descricaoCarousel" [innerHTML]="imagem.descricaoCarousel"></p>
+                </div>
+              </div>
+            </ng-template>
+          </ngb-carousel>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" (click)="modal.close('fechar')">fechar</button>
+        </div>
+    </ng-template>
+  

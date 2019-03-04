@@ -1,0 +1,23 @@
+.carouselImage{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: 50%;
+    cursor:pointer;
+}
+.carouselContainer{
+    background-color: #CFD3D4;
+    
+}
+#tituloCarousel{
+    color: #000FFF;
+    background-color: #CFD3D4;
+}
+
+#descricaoCarousel{
+    color: #000FFF;
+    background-color: #CFD3D4;
+}
+
+

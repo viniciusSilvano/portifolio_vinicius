@@ -1,0 +1,15 @@
+<aside >
+  <div style="z-index: 1;" id="containerBtnsSocialMedia" 
+  class="col-sm-2 row justify-content-start align-items-center
+   position-relative my-2 h-75">
+   <div  class="btn-group" role="group" aria-label="Medias sociais">
+    <a  *ngFor="let button of buttons"  w-100 h-100 href="{{button.mediaUrl}}" target="_blank">
+      <button  title="{{button.titulo}}" class="btn btn-secondary mx-1 my-1 h-25 w-25 p-4 btnRedeSocial" type="button" 
+               
+                [ngStyle]="{ 'background-image': 'url(' + button.imagemUrl + ')'}">
+                
+      </button>
+    </a>
+   </div>
+  </div>
+</aside>
