@@ -102,13 +102,6 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                 </article>    
                 `,
                 collapse: Collapse.collapsed
-            },
-            {
-                id: 3,
-                tituloDescricao: "Legal mas onde está o código?",
-                descricao:`<h2>Acesse o código pelo meu github</h2>
-                <p>Código em: <a href="https://github.com/viniciusSilvano/codigo_sisAlugueis" target=_blank>Alugueis</a></p>`,
-                collapse: Collapse.collapsed
             }
         ]
     },
