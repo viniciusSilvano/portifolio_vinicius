@@ -4,7 +4,7 @@ export const TECNOLOGIAS: Tecnologia[] = [
     {
         idTecnologia:1,
         nome:"ANDROID",
-        imagemLocation:"../../portifolioVinicius/assets/images/android-logo.png",
+        imagemLocation:"../../assets/images/android-logo.png",
         idEspecificacao:1,
     },
     {
