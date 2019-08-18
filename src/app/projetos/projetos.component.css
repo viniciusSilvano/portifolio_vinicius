@@ -12,7 +12,7 @@
 
 }
 /* Animações dos botões do menu principal */
-.projetoCardButton{
+.enfeiteButtonBottomLeft, .enfeiteButtonTopRight{
     animation-name: ProjetoCardButtonAni;
     animation-duration: 0.7s;
     animation-iteration-count: infinite;
@@ -21,8 +21,8 @@
 }
 /* parte da animação dos botões */
 @keyframes ProjetoCardButtonAni {
-    from {background-color: #6c757d;}
-    to {background-color: #000000;}
+    from { border-top-color: #6c757d; border-bottom-color: #6c757d;}
+    to { border-top-color: green; border-bottom-color: green;}
 }
 
 
@@ -33,9 +33,9 @@
     margin: 0;
     padding: 0;
     /*metade do tamanho do height do pai (.projetoCardButton) */
-    border-top: 20px solid green;
+    border-top: 40px solid green;
     /*metade do tamanho do width do pai (.projetoCardButton)*/
-    border-left: 50px solid transparent;
+    border-left: 100px solid transparent;
     top: 0;
     right: 0;
     opacity: 0.9;
@@ -48,9 +48,9 @@
     width: 0;
     height: 0;
     /*metade do tamanho do height do pai (.projetoCardButton)*/
-    border-bottom: 20px solid green;
+    border-bottom: 40px solid green;
     /*metade do tamanho do width do pai (.projetoCardButton) */
-    border-right: 50px solid transparent;
+    border-right: 100px solid transparent;
     left: 0;
     opacity: 0.9
 }
@@ -60,8 +60,9 @@
     margin: 0px;
     padding: 0px;
     color: white;
-    right: 10%;
-    top: 0;
+    right: 0;
+    top: 50;
+    bottom: 0;
     z-index: 1;
 }
 
@@ -72,8 +73,7 @@
     padding: 0px;
     left: 0;
     bottom: 100%;
-    top: 30%;
-    /*background-image: url("../../assets/images/android-logo.png");*/
+    top: 20%;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: left;
