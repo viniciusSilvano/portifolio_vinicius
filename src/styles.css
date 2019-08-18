@@ -3,12 +3,11 @@
 /*bootstrap:*/
 @import "~bootstrap/dist/css/bootstrap.css"; 
 
+
 @font-face {
     font-family: 'Arciform';
     src: url('./assets/fonts/Arciform.otf'); 
 }
-
-
 
 
 body{
@@ -21,7 +20,3 @@ body{
 
 
 
-@keyframes ProjetoCardButtonAni {
-    from {background-color: #6c757d;}
-    to {background-color: #000000;}
-}
