@@ -12,7 +12,9 @@
     </div>
     
   <div class="row justify-content-center align-items-center" >
-      <button ng-cloak (click)="redirect(projetoCard.idTecnologia)" class="btn btn-secondary projetoCardButton col-sm-2 mx-1" *ngFor="let projetoCard of projetosCardsFiltered">
+      <button ng-cloak (click)="redirect(projetoCard.idTecnologia)" 
+      class="btn btn-secondary projetoCardButton col-sm-2 mx-1" 
+      *ngFor="let projetoCard of projetosCardsFiltered">
         <div *ngIf="projetosCardsFiltered.length">
           <div class="card projetoCard">  
               <div class="card-body p-0 pt-5 position-absolute fixed-top">
