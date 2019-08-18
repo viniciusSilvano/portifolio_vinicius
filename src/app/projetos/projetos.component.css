@@ -35,3 +35,13 @@
     left: 0;
     opacity: 0.9
 }
+
+.btnTexto{
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+    right: 10%;
+    top: 0;
+    z-index: 1;
+}
