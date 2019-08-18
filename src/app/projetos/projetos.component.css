@@ -45,3 +45,19 @@
     top: 0;
     z-index: 1;
 }
+
+.projetoCardImagem{
+    position: absolute;
+    width: calc(100% - 50%);
+    height: calc(100% - 50%);
+    padding: 0px;
+    left: 0;
+    bottom: 100%;
+    top: 30%;
+    /*background-image: url("../../assets/images/android-logo.png");*/
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    z-index: 1;
+    opacity: 0.9;
+}
