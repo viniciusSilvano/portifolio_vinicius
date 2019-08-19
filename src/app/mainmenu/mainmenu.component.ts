@@ -9,10 +9,10 @@ import { ProjetoEspecificacao } from '../projetos-especificacao-classes/projeto_
 })
 export class MainmenuComponent implements OnInit {
   public projetosDropDownList : ProjetoEspecificacao[];
-  constructor(private  ProjetosEspecificacaoService) { }
+  constructor(private  projetosEspecificacaoService : ProjetosEspecificacaoService) { }
 
   ngOnInit() {
-    this.ProjetosEspecificacaoService
+    this.projetosEspecificacaoService
     .getAllProjetosEspecificacoes()
     .subscribe(
       projetos => {
