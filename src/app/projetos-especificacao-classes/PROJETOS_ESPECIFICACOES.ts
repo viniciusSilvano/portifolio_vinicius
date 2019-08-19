@@ -97,7 +97,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                     </p>
                     <h2>Dao</h2>
                     <p>
-                        É, na minha opinião, o padrão mais utilizado para persistência de dados e é utilizado pela biblioteca <strong>ROOM</strong>.
+                        É, aparentemente, o padrão mais utilizado para persistência de dados e é utilizado pela biblioteca <strong>ROOM</strong>.
                     </p>
                 </article>    
                 `,

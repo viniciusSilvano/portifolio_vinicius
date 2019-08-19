@@ -11,7 +11,7 @@ export const TECNOLOGIAS: Tecnologia[] = [
         idTecnologia:2,
         nome:"SPRING BOOT",
        // imagemLocation:"../../portifolioVinicius/assets/images/spring-boot-logo.jpg",
-       imagemLocation:"../../assets/images/spring-boot-logo.jpg",
+        imagemLocation:"../../assets/images/spring-boot-logo.jpg",
         idEspecificacao:2
     }
 ]
