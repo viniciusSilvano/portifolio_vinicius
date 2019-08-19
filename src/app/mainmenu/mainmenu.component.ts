@@ -12,10 +12,10 @@ export class MainmenuComponent implements OnInit {
   constructor(private  projetosEspecificacaoService : ProjetosEspecificacaoService) { }
 
   ngOnInit() {
-    this.getProjetosEspecificacao();
+    this.getAllProjetosEspecificacao();
   }
 
-  private getProjetosEspecificacao() : void{
+  private getAllProjetosEspecificacao() : void{
     this.projetosEspecificacaoService
     .getAllProjetosEspecificacoes()
     .subscribe(
