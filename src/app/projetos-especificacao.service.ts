@@ -15,4 +15,8 @@ export class ProjetosEspecificacaoService {
     const result : ProjetoEspecificacao = PROJETOS_ESPECIFICACOES.find(x => x.id == id);
     return of(result);
   }
+
+  getAllProjetosEspecificacoes(): Observable<ProjetoEspecificacao[]>{
+    return of(PROJETOS_ESPECIFICACOES);
+  }
 }
