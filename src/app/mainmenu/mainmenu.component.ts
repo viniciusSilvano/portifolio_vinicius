@@ -12,6 +12,10 @@ export class MainmenuComponent implements OnInit {
   constructor(private  projetosEspecificacaoService : ProjetosEspecificacaoService) { }
 
   ngOnInit() {
+    this.getProjetosEspecificacao();
+  }
+
+  private getProjetosEspecificacao() : void{
     this.projetosEspecificacaoService
     .getAllProjetosEspecificacoes()
     .subscribe(
@@ -19,6 +23,6 @@ export class MainmenuComponent implements OnInit {
         this.projetosDropDownList = projetos;
       }
     )
-  }
+  } 
 
 }
