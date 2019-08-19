@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ProjetosEspecificacaoService } from '../projetos-especificacao.service';
 import { ProjetoEspecificacao } from '../projetos-especificacao-classes/projeto_especificacao';
 
@@ -9,10 +9,14 @@ import { ProjetoEspecificacao } from '../projetos-especificacao-classes/projeto_
 })
 export class MainmenuComponent implements OnInit {
   public projetosDropDownList : ProjetoEspecificacao[];
-  constructor(private  projetosEspecificacaoService : ProjetosEspecificacaoService) { }
+  constructor(
+    private  projetosEspecificacaoService : ProjetosEspecificacaoService,
+    private ref: ChangeDetectorRef
+    ) { }
 
   ngOnInit() {
     this.getAllProjetosEspecificacao();
+    
   }
 
   private getAllProjetosEspecificacao() : void{
