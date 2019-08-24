@@ -1,20 +1,21 @@
 import { ProjetoEspecificacao,Collapse } from "./projeto_especificacao";
+import { GlobalStrings } from '../globalStrings/globalString';
 export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
     {
         id:1,
         tituloProjeto:"Alugueis",
         idTecnologia:1, // android
-        imagemDaTecnologia: "../../portifolioVinicius/assets/images/android-logo.png",//logo android
+        imagemDaTecnologia: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/android-logo.png",//logo android
         imagens:[
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-aluguel/main_activity.png",altTexto:"Tela principal",tituloCarousel:"Tela principal",descricaoCarousel:"A tela inicial do sistema mobile."},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-aluguel/estoque_activity.png",altTexto:"Tela de listagem de itens cadastrados",tituloCarousel:"Tela de listagem de itens"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-aluguel/estoque_activity_com_popupMenu.png",altTexto:"PopUp menu da tela de listagem",tituloCarousel:"PopUp menu da tela de listagem"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-aluguel/item_activity.png",altTexto:"Tela de cadastro/modificação de itens",tituloCarousel:"Tela de cadastro/modificação de itens"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-aluguel/calendarioCustomizado.png",altTexto:"Calendário customizado",tituloCarousel:"Calendário customizado",descricaoCarousel: "Utilizado para o cadastro de aluguel e listagem"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-aluguel/calendarioCustomizado2.png",altTexto:"Calendário customizado",tituloCarousel:"Calendário customizado",descricaoCarousel: "Selecionando uma data para cadastrar um aluguel"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-aluguel/cadastroAluguel.png",altTexto:"Tela de cadastro/modificação de aluguel",tituloCarousel:"Tela de cadastro/modificação de aluguel"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-aluguel/ListagemAluguel.png",altTexto:"Tela de listagem de alugueis",tituloCarousel:"Tela de listagem de alugueis"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-aluguel/ListagemAluguel2.png",altTexto:"Tela de listagem de alugueis",tituloCarousel:"Tela de listagem de alugueis"},
+            {imageURL:"../.." +  GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/main_activity.png",altTexto:"Tela principal",tituloCarousel:"Tela principal",descricaoCarousel:"A tela inicial do sistema mobile."},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/estoque_activity.png",altTexto:"Tela de listagem de itens cadastrados",tituloCarousel:"Tela de listagem de itens"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/estoque_activity_com_popupMenu.png",altTexto:"PopUp menu da tela de listagem",tituloCarousel:"PopUp menu da tela de listagem"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/item_activity.png",altTexto:"Tela de cadastro/modificação de itens",tituloCarousel:"Tela de cadastro/modificação de itens"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/calendarioCustomizado.png",altTexto:"Calendário customizado",tituloCarousel:"Calendário customizado",descricaoCarousel: "Utilizado para o cadastro de aluguel e listagem"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/calendarioCustomizado2.png",altTexto:"Calendário customizado",tituloCarousel:"Calendário customizado",descricaoCarousel: "Selecionando uma data para cadastrar um aluguel"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/cadastroAluguel.png",altTexto:"Tela de cadastro/modificação de aluguel",tituloCarousel:"Tela de cadastro/modificação de aluguel"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/ListagemAluguel.png",altTexto:"Tela de listagem de alugueis",tituloCarousel:"Tela de listagem de alugueis"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/ListagemAluguel2.png",altTexto:"Tela de listagem de alugueis",tituloCarousel:"Tela de listagem de alugueis"},
             
         ],
         accordionCards: [
@@ -109,46 +110,46 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         id:2,
         tituloProjeto:"SGQ(Sistema de Gerenciamento de Questão) - TCC",
         idTecnologia:2, // Spring boot
-        imagemDaTecnologia: "../../portifolioVinicius/assets/images/spring-boot-logo.jpg",//logo android
+        imagemDaTecnologia: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/spring-boot-logo.jpg",//logo android
         imagens:[
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-sgq/TelaInicial.PNG",altTexto:"Tela principal"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-sgq/TelaInicial2.PNG",altTexto:"Tela principal"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-sgq/TelaInicial3.PNG",altTexto:"Tela principal"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-sgq/TelaInicial4.PNG",altTexto:"Tela principal"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-sgq/CadastrarQuestao.PNG",altTexto:"Tela de cadastrar questão"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-sgq/CadastrarQuestao2.PNG",altTexto:"Tela de cadastrar questão"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-sgq/CadastrarQuestao3.PNG",altTexto:"Tela de cadastrar questão"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-sgq/CadastrarQuestao4.PNG",altTexto:"Tela de cadastrar questão"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-sgq/consultarQuestao.PNG",altTexto:"Tela de consultar questão"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-sgq/consultarQuestao2.PNG",altTexto:"Tela de consultar questão"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-sgq/consultarQuestao3.PNG",altTexto:"Tela de consultar questão"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-sgq/consultarQuestao4.PNG",altTexto:"Tela de consultar questão"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-sgq/cadastrarProfessor.PNG",altTexto:"Tela de cadastrar professor"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-sgq/cadastrarDisciplina.PNG",altTexto:"Tela de cadastrar disciplina"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-sgq/cadastrarProva.PNG",altTexto:"Tela de cadastrar prova"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-sgq/cadastrarProva2.PNG",altTexto:"Tela de cadastrar prova"},
-            {imageURL:"../../portifolioVinicius/assets/images/projeto-sgq/consultarProva.PNG",altTexto:"Tela de consultar provas"}
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial.PNG",altTexto:"Tela principal"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial2.PNG",altTexto:"Tela principal"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial3.PNG",altTexto:"Tela principal"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial4.PNG",altTexto:"Tela principal"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao.PNG",altTexto:"Tela de cadastrar questão"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao2.PNG",altTexto:"Tela de cadastrar questão"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao3.PNG",altTexto:"Tela de cadastrar questão"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao4.PNG",altTexto:"Tela de cadastrar questão"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao.PNG",altTexto:"Tela de consultar questão"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao2.PNG",altTexto:"Tela de consultar questão"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao3.PNG",altTexto:"Tela de consultar questão"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao4.PNG",altTexto:"Tela de consultar questão"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarProfessor.PNG",altTexto:"Tela de cadastrar professor"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarDisciplina.PNG",altTexto:"Tela de cadastrar disciplina"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarProva.PNG",altTexto:"Tela de cadastrar prova"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarProva2.PNG",altTexto:"Tela de cadastrar prova"},
+            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarProva.PNG",altTexto:"Tela de consultar provas"}
         ],
         tecnologiasAuxiliares:[
             {
                 idTecnologiaAuxiliar:1,
-                imagemLocation: "../../portifolioVinicius/assets/images/tecnologias-auxiliares/bootstrap-logo.svg"
+                imagemLocation: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias-auxiliares/bootstrap-logo.svg"
             },
             {
                 idTecnologiaAuxiliar:2,
-                imagemLocation: "../../portifolioVinicius/assets/images/tecnologias-auxiliares/logoJquery.gif"
+                imagemLocation: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias-auxiliares/logoJquery.gif"
             },
             {
                 idTecnologiaAuxiliar:3,
-                imagemLocation: "../../portifolioVinicius/assets/images/tecnologias-auxiliares/postgresqlLogo.png"
+                imagemLocation: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias-auxiliares/postgresqlLogo.png"
             },
             {
                 idTecnologiaAuxiliar:4,
-                imagemLocation: "../../portifolioVinicius/assets/images/tecnologias-auxiliares/tinymceLogo.png"
+                imagemLocation: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias-auxiliares/tinymceLogo.png"
             },
             {
                 idTecnologiaAuxiliar:5,
-                imagemLocation: "../../portifolioVinicius/assets/images/tecnologias-auxiliares/thymeleafLogo.png"
+                imagemLocation: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias-auxiliares/thymeleafLogo.png"
             }
         ],
         accordionCards: [
