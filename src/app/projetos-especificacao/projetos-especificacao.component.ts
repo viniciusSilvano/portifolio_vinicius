@@ -24,6 +24,9 @@ export class ProjetosEspecificacaoComponent implements OnInit {
     }
  
   ngOnInit() {
+    //Com o codigo abaixo é detectado qualquer mudança na url em todas as "paginas"
+    // do app, portanto, eu criei o metodo ngondestroy para me livrar de algo 
+    // ainda desnecessário para as demais "paginas ou views"
     this.routerSubscription = this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
       // Navigation Ended Successfully.
