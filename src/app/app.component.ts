@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { GlobalStrings } from './globalStrings/globalString';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +7,7 @@ import { GlobalStrings } from './globalStrings/globalString';
 })
 
 export class AppComponent {
-  globalUrl: String = GlobalStrings.getGlobalUrlFragment();
+  
   title = 'portifolio-vinicius';
 }
 
