@@ -10,9 +10,10 @@
           <div class="col">
             <div ngbDropdown class="d-inline-block">
               <button class="btn btn-outline-primary" id="dropdownProjetos" ngbDropdownToggle>Projetos</button>
-              <div class="MenuDropdown" ngbDropdownMenu aria-labelledby="dropdownProjetos">
-                <button  *ngFor="let projeto of projetosDropDownList" class="MenuDropdownItem" ngbDropdownItem>
-                  <a  [routerLink]="['/projetoEspecificacao', projeto.id]" routerLinkActive="active">{{projeto.tituloProjeto}}</a>
+              <div   class="MenuDropdown" ngbDropdownMenu aria-labelledby="dropdownProjetos">
+                <button  *ngFor="let projeto of projetosDropDownList" (click)="navigateToEspecificacao(projeto.id)" class="MenuDropdownItem" ngbDropdownItem>
+                  <!--<a  [routerLink]="['/projetoEspecificacao', projeto.id]" routerLinkActive="active">{{projeto.tituloProjeto}}</a>-->
+                  <a> {{projeto.tituloProjeto}}</a>
                 </button>
               </div>
             </div>

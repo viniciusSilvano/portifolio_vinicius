@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ProjetosEspecificacaoService} from "../projetos-especificacao.service";
 import {ProjetoEspecificacao, AccordionCard, Collapse} from "../projetos-especificacao-classes/projeto_especificacao";
-import {ActivatedRoute, Router, ParamMap} from "@angular/router";
-import {switchMap} from "rxjs/operators"
-
+import {ActivatedRoute, Router, NavigationEnd,Event} from "@angular/router";
+import {Subscription } from 'rxjs';
 
 
 @Component({
@@ -14,32 +13,54 @@ import {switchMap} from "rxjs/operators"
 
 export class ProjetosEspecificacaoComponent implements OnInit {
   public projetoEspecificacao: ProjetoEspecificacao;
+  private routerSubscription : Subscription;
   constructor(
     private service: ProjetosEspecificacaoService,
-    private router: Router,
-    private route: ActivatedRoute
-    ) { }
+    private route: ActivatedRoute,
+    private router: Router
+    ) { 
+    
 
+    }
+ 
   ngOnInit() {
-    this.setProjetoEspecificacao();
-    console.log(this.projetoEspecificacao);
+    this.routerSubscription = this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd) {
+      // Navigation Ended Successfully.
+       console.log(event.url);
+       this.initializeView();
+      }
+    }
+    );
+    this.initializeView();
   }
 
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.routerSubscription.unsubscribe();
+  }
+  
+  initializeView(){
+    this.setProjetoEspecificacao();
+    this.projetoEspecificacao = this.getProjetoEspecificacao();
+  }
   getProjetoEspecificacao() : ProjetoEspecificacao{
     return this.projetoEspecificacao;
   }
 
-  setProjetoEspecificacao() : void{
-    /*const id = +this.route.snapshot.paramMap.get('idEspecificacao');
-    this.service.getProjetoEspecificaoById(id)
-      .subscribe(x => this.projetoEspecificacao = x
-        ,err => console.log("Error",err));*/
-       const id = this.route.paramMap.pipe(
-          switchMap((params: ParamMap) => 
-          this.service.getProjetoEspecificaoById(parseInt(params.get('id'))))
-        )
+  public alertar(){
+    console.log("o alerta");
+  }
 
-        id.subscribe(x => this.projetoEspecificacao = x, err => console.log("Error",err));
+  setProjetoEspecificacao() : void{
+    const id = +this.route.snapshot.paramMap.get('idEspecificacao');
+    this.service.getProjetoEspecificaoById(id)
+      .subscribe(x => {
+        this.projetoEspecificacao = x
+        ,err => console.log("Error",err)
+      });
+
   }
 
   changeCollapse(idCard : Number){
