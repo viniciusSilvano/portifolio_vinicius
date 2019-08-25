@@ -24,18 +24,9 @@ export class ProjetosEspecificacaoComponent implements OnInit {
     }
  
   ngOnInit() {
-    //Com o codigo abaixo é detectado qualquer mudança na url em todas as "paginas"
-    // do app, portanto, eu criei o metodo ngondestroy para me livrar de algo 
-    // ainda desnecessário para as demais "paginas ou views"
-    this.routerSubscription = this.router.events.subscribe((event: Event) => {
-      if (event instanceof NavigationEnd) {
-      // Navigation Ended Successfully.
-       console.log(event.url);
-       this.initializeView();
-      }
-    }
-    );
-    this.initializeView();
+
+    this.initiateRouterEventSubscription();
+    this.initializeData();
   }
 
   ngOnDestroy(): void {
@@ -43,8 +34,22 @@ export class ProjetosEspecificacaoComponent implements OnInit {
     //Add 'implements OnDestroy' to the class.
     this.routerSubscription.unsubscribe();
   }
+
+  initiateRouterEventSubscription(){
+    //Com o codigo abaixo é detectado qualquer mudança na url em todas as "paginas"
+    // do app, portanto, eu criei o metodo ngondestroy para me livrar de algo 
+    // ainda desnecessário para as demais "paginas ou views"
+    this.routerSubscription = this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd) {
+      // Navigation Ended Successfully.
+       console.log(event.url);
+       this.initializeData();
+      }
+    }
+    );
+  }
   
-  initializeView(){
+  initializeData(){
     this.setProjetoEspecificacao();
     this.projetoEspecificacao = this.getProjetoEspecificacao();
   }
