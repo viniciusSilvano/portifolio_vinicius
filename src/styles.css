@@ -1,21 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 
 /*bootstrap:*/
-@import "~bootstrap/dist/css/bootstrap.css"; 
-
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "../node_modules/primeicons/primeicons.css";
+@import "../node_modules/primeng/resources/themes/luna-blue/theme.css";
+@import "../node_modules/primeng/resources/primeng.min.css";
 
 @font-face {
     font-family: 'Arciform';
-    src: url('./assets/fonts/Arciform.otf'); 
+    src: url('./assets/fonts/Arciform.otf');
 }
 
 
 body{
-    background-image: url("assets/images/wallpaper.jpg");
     background-repeat: no-repeat;
-    background-position: center; 
+    background-position: center;
     background-size: cover;
-    background-color: #f8f9f9;
+    background-color: #3f3f3f;
 }
 
 
