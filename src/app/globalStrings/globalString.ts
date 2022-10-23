@@ -1,11 +1,10 @@
+import { environment } from "src/environments/environment";
 
 
 export abstract class GlobalStrings{
     //
-   private static prodUrl: String = '/portifolio_vinicius';
-   private static devUrl: String = '/';
 
    public static getGlobalUrlFragment(): String{
-        return GlobalStrings.devUrl;
+        return environment.url;
    }
 }
