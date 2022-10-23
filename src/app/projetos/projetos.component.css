@@ -1,0 +1,82 @@
+.projetoCardButton{
+    width:200px;
+    height:80px;
+    background-color: black;
+    border-style: solid;
+    border-width: medium;
+    border-color: green;
+}
+
+.projetoCardButton:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+
+}
+/* Animações dos botões do menu principal */
+.enfeiteButtonBottomLeft, .enfeiteButtonTopRight{
+    animation-name: ProjetoCardButtonAni;
+    animation-duration: 0.7s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: 0s;
+}
+/* parte da animação dos botões */
+@keyframes ProjetoCardButtonAni {
+    from { border-top-color: #6c757d; border-bottom-color: #6c757d;}
+    to { border-top-color: green; border-bottom-color: green;}
+}
+
+
+.enfeiteButtonTopRight{
+    position: absolute;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+    /*metade do tamanho do height do pai (.projetoCardButton) */
+    border-top: 40px solid green;
+    /*metade do tamanho do width do pai (.projetoCardButton)*/
+    border-left: 100px solid transparent;
+    top: 0;
+    right: 0;
+    opacity: 0.9;
+}
+
+.enfeiteButtonBottomLeft{
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    width: 0;
+    height: 0;
+    /*metade do tamanho do height do pai (.projetoCardButton)*/
+    border-bottom: 40px solid green;
+    /*metade do tamanho do width do pai (.projetoCardButton) */
+    border-right: 100px solid transparent;
+    left: 0;
+    opacity: 0.9
+}
+
+.btnTexto{
+    position: absolute;
+    margin: 0px;
+    padding: 0px;
+    color: white;
+    right: 0;
+    top: 50;
+    bottom: 0;
+    z-index: 1;
+}
+
+.projetoCardImagem{
+    position: absolute;
+    width: calc(100% - 50%);
+    height: calc(100% - 50%);
+    padding: 0px;
+    left: 0;
+    bottom: 100%;
+    top: 20%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left;
+    z-index: 1;
+    opacity: 0.9;
+}

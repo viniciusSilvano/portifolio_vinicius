@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ProjetosEspecificacaoService} from "../projetos-especificacao.service";
 import {ProjetoEspecificacao, AccordionCard, Collapse} from "../projetos-especificacao-classes/projeto_especificacao";
-import {ActivatedRoute} from "@angular/router";
-
+import {ActivatedRoute, Router, NavigationEnd,Event} from "@angular/router";
+import {Subscription } from 'rxjs';
 
 
 @Component({
@@ -13,24 +13,62 @@ import {ActivatedRoute} from "@angular/router";
 
 export class ProjetosEspecificacaoComponent implements OnInit {
   public projetoEspecificacao: ProjetoEspecificacao;
+  private routerSubscription : Subscription;
   constructor(
     private service: ProjetosEspecificacaoService,
-    private route: ActivatedRoute
-    ) { }
+    private route: ActivatedRoute,
+    private router: Router
+    ) { 
+    
 
+    }
+ 
   ngOnInit() {
-    this.setProjetoEspecificacao();
+
+    this.initiateRouterEventSubscription();
+    this.initializeData();
   }
 
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    this.routerSubscription.unsubscribe();
+  }
+
+  initiateRouterEventSubscription(){
+    //Com o codigo abaixo é detectado qualquer mudança na url em todas as "paginas"
+    // do app, portanto, eu criei o metodo ngondestroy para me livrar de algo 
+    // ainda desnecessário para as demais "paginas ou views"
+    this.routerSubscription = this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd) {
+      // Navigation Ended Successfully.
+       console.log(event.url);
+       this.initializeData();
+      }
+    }
+    );
+  }
+  
+  initializeData(){
+    this.setProjetoEspecificacao();
+    this.projetoEspecificacao = this.getProjetoEspecificacao();
+  }
   getProjetoEspecificacao() : ProjetoEspecificacao{
     return this.projetoEspecificacao;
+  }
+
+  public alertar(){
+    console.log("o alerta");
   }
 
   setProjetoEspecificacao() : void{
     const id = +this.route.snapshot.paramMap.get('idEspecificacao');
     this.service.getProjetoEspecificaoById(id)
-      .subscribe(x => this.projetoEspecificacao = x
-        ,err => console.log("Error",err));
+      .subscribe(x => {
+        this.projetoEspecificacao = x
+        ,err => console.log("Error",err)
+      });
+
   }
 
   changeCollapse(idCard : Number){

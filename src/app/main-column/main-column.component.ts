@@ -16,14 +16,14 @@ export class MainColumnComponent implements OnInit {
 
   ngOnInit() {
     this.router.events.subscribe((val) => {
-      // see also 
+      // see also
       if(val instanceof NavigationEnd){
         if(val.url == "/projetos" || val.url == "/"){
           this.isHome = true;
         }else{
           this.isHome = false;
         }
-      } 
+      }
      });
   }
 
