@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "portifolioVinicius": {
+    "portifolio_vinicius": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/portifolioVinicius",
+            "outputPath": "dist/portifolio_vinicius",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -60,18 +60,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "portifolioVinicius:build"
+            "browserTarget": "portifolio_vinicius:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "portifolioVinicius:build:production"
+              "browserTarget": "portifolio_vinicius:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "portifolioVinicius:build"
+            "browserTarget": "portifolio_vinicius:build"
           }
         },
         "test": {
@@ -108,7 +108,7 @@
         }
       }
     },
-    "portifolioVinicius-e2e": {
+    "portifolio_vinicius-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "prefix": "",
@@ -117,11 +117,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "portifolioVinicius:serve"
+            "devServerTarget": "portifolio_vinicius:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "portifolioVinicius:serve:production"
+              "devServerTarget": "portifolio_vinicius:serve:production"
             }
           }
         },
@@ -137,5 +137,5 @@
       }
     }
   },
-  "defaultProject": "portifolioVinicius"
+  "defaultProject": "portifolio_vinicius"
 }
