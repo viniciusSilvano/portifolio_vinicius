@@ -4,9 +4,9 @@
 <ngb-carousel class="carouselContainer my-4" *ngIf="projeto.imagens">
     <ng-template ngbSlide *ngFor="let imagem of projeto.imagens">
       <div  (click)="pegarURLDaImagemAtual(imagem,content)">
-        <img class="carouselImage text-white" [src]="imagem.imageURL" alt="{{imagem.altTexto}}">
+        <img class="carouselImage text-white" [src]="imagem.source" alt="{{imagem.alt}}">
         <div class="carousel-caption ">
-        <h3 *ngIf="imagem.tituloCarousel" id="tituloCarousel" [innerHTML]="imagem.tituloCarousel"></h3>
+        <h3 *ngIf="imagem.title" id="title" [innerHTML]="imagem.title"></h3>
         <p *ngIf="imagem.descricaoCarousel" id="descricaoCarousel" [innerHTML]="imagem.descricaoCarousel"></p>
         </div>
       </div>
@@ -16,7 +16,7 @@
 
   <ng-template #content id="imagensProjetoModal" let-modal>
         <div class="modal-header">
-          <h4 *ngIf="imagemSelecionada.tituloCarousel" class="modal-title" id="modal-basic-title" [innerHTML]="imagemSelecionada.tituloCarousel"></h4>
+          <h4 *ngIf="imagemSelecionada.title" class="modal-title" id="modal-basic-title" [innerHTML]="imagemSelecionada.title"></h4>
           <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -25,9 +25,9 @@
           <ngb-carousel class="carouselContainer my-4" *ngIf="projeto.imagens">
             <ng-template ngbSlide *ngFor="let imagem of projeto.imagens">
               <div  (click)="pegarURLDaImagemAtual(imagem,content)">
-                <img class="carouselImage text-white" [src]="imagem.imageURL" alt="{{imagem.altTexto}}">
+                <img class="carouselImage text-white" [src]="imagem.source" alt="{{imagem.alt}}">
                 <div class="carousel-caption ">
-                  <h3 *ngIf="imagem.tituloCarousel" id="tituloCarousel" [innerHTML]="imagem.tituloCarousel"></h3>
+                  <h3 *ngIf="imagem.title" id="title" [innerHTML]="imagem.title"></h3>
                   <p *ngIf="imagem.descricaoCarousel" id="descricaoCarousel" [innerHTML]="imagem.descricaoCarousel"></p>
                 </div>
               </div>

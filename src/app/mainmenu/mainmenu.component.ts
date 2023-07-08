@@ -1,8 +1,8 @@
 import { Component, OnInit} from '@angular/core';
-import { ProjetosEspecificacaoService } from '../projetos-especificacao.service';
 import { ProjetoEspecificacao } from '../projetos-especificacao-classes/projeto_especificacao';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
+import { ProjetosService } from '../projetos.service';
 
 @Component({
   selector: 'app-mainmenu',
@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
 export class MainmenuComponent implements OnInit {
   public projetosDropDownList : ProjetoEspecificacao[];
   constructor(
-    private  projetosEspecificacaoService : ProjetosEspecificacaoService,
+    private  projetoService : ProjetosService,
     private router: Router,
     private location: Location
     ) { }
@@ -27,7 +27,7 @@ export class MainmenuComponent implements OnInit {
     this.router.navigate(['/projetoEspecificacao',id],{skipLocationChange: false, replaceUrl: true});
   }
   private getAllProjetosEspecificacao() : void{
-    this.projetosEspecificacaoService
+    this.projetoService
     .getAllProjetosEspecificacoes()
     .subscribe(
       projetos => {

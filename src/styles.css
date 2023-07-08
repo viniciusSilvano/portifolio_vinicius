@@ -11,13 +11,34 @@
     src: url('./assets/fonts/Arciform.otf');
 }
 
+:root{
+    --cor-azul-marinho: rgb(40,62,74);
+    --cor-cinza-escuro: #3f3f3f;
+    --cor-preto-escuro: #323232;
+}
 
 body{
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    background-color: #3f3f3f;
+    background-color: var(--cor-cinza-escuro);
 }
+
+.projetoCardContainer .ui-card{
+    background-color: var(--cor-cinza-escuro);
+  }
+
+  .projetoCardContainer .ui-card-header{
+    text-align: center;
+  }
+
+  .projetoCardContainer .ui-card-footer .sub-tecnologias-container{
+    background-color: var(--cor-preto-escuro);
+  }
+
+  .projetoCardContainer .ui-card-footer .ui-button{
+    background-color: var(--cor-azul-marinho);
+  }
 
 
 

@@ -18,9 +18,9 @@ export class AccordionCard{
 }
 
 export interface imagensDoProjeto{
-    imageURL: String;
-    altTexto: String;
-    tituloCarousel?: String;
+    source: String;
+    alt: String;
+    title?: String;
     descricaoCarousel?:String;
 }
 

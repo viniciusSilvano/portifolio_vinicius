@@ -7,15 +7,15 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         idTecnologia:1, // android
         imagemDaTecnologia: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/android-logo.png",//logo android
         imagens:[
-            {imageURL:"../.." +  GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/main_activity.png",altTexto:"Tela principal",tituloCarousel:"Tela principal",descricaoCarousel:"A tela inicial do sistema mobile."},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/estoque_activity.png",altTexto:"Tela de listagem de itens cadastrados",tituloCarousel:"Tela de listagem de itens"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/estoque_activity_com_popupMenu.png",altTexto:"PopUp menu da tela de listagem",tituloCarousel:"PopUp menu da tela de listagem"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/item_activity.png",altTexto:"Tela de cadastro/modificação de itens",tituloCarousel:"Tela de cadastro/modificação de itens"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/calendarioCustomizado.png",altTexto:"Calendário customizado",tituloCarousel:"Calendário customizado",descricaoCarousel: "Utilizado para o cadastro de aluguel e listagem"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/calendarioCustomizado2.png",altTexto:"Calendário customizado",tituloCarousel:"Calendário customizado",descricaoCarousel: "Selecionando uma data para cadastrar um aluguel"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/cadastroAluguel.png",altTexto:"Tela de cadastro/modificação de aluguel",tituloCarousel:"Tela de cadastro/modificação de aluguel"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/ListagemAluguel.png",altTexto:"Tela de listagem de alugueis",tituloCarousel:"Tela de listagem de alugueis"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/ListagemAluguel2.png",altTexto:"Tela de listagem de alugueis",tituloCarousel:"Tela de listagem de alugueis"},
+            {source:"../.." +  GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/main_activity.png",alt:"Tela principal",title:"Tela principal",descricaoCarousel:"A tela inicial do sistema mobile."},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/estoque_activity.png",alt:"Tela de listagem de itens cadastrados",title:"Tela de listagem de itens"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/estoque_activity_com_popupMenu.png",alt:"PopUp menu da tela de listagem",title:"PopUp menu da tela de listagem"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/item_activity.png",alt:"Tela de cadastro/modificação de itens",title:"Tela de cadastro/modificação de itens"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/calendarioCustomizado.png",alt:"Calendário customizado",title:"Calendário customizado",descricaoCarousel: "Utilizado para o cadastro de aluguel e listagem"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/calendarioCustomizado2.png",alt:"Calendário customizado",title:"Calendário customizado",descricaoCarousel: "Selecionando uma data para cadastrar um aluguel"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/cadastroAluguel.png",alt:"Tela de cadastro/modificação de aluguel",title:"Tela de cadastro/modificação de aluguel"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/ListagemAluguel.png",alt:"Tela de listagem de alugueis",title:"Tela de listagem de alugueis"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/ListagemAluguel2.png",alt:"Tela de listagem de alugueis",title:"Tela de listagem de alugueis"},
             
         ],
         accordionCards: [
@@ -112,23 +112,23 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         idTecnologia:2, // Spring boot
         imagemDaTecnologia: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/spring-boot-logo.jpg",//logo android
         imagens:[
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial.PNG",altTexto:"Tela principal"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial2.PNG",altTexto:"Tela principal"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial3.PNG",altTexto:"Tela principal"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial4.PNG",altTexto:"Tela principal"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao.PNG",altTexto:"Tela de cadastrar questão"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao2.PNG",altTexto:"Tela de cadastrar questão"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao3.PNG",altTexto:"Tela de cadastrar questão"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao4.PNG",altTexto:"Tela de cadastrar questão"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao.PNG",altTexto:"Tela de consultar questão"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao2.PNG",altTexto:"Tela de consultar questão"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao3.PNG",altTexto:"Tela de consultar questão"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao4.PNG",altTexto:"Tela de consultar questão"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarProfessor.PNG",altTexto:"Tela de cadastrar professor"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarDisciplina.PNG",altTexto:"Tela de cadastrar disciplina"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarProva.PNG",altTexto:"Tela de cadastrar prova"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarProva2.PNG",altTexto:"Tela de cadastrar prova"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarProva.PNG",altTexto:"Tela de consultar provas"}
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial.PNG",alt:"Tela principal"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial2.PNG",alt:"Tela principal"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial3.PNG",alt:"Tela principal"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial4.PNG",alt:"Tela principal"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao.PNG",alt:"Tela de cadastrar questão"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao2.PNG",alt:"Tela de cadastrar questão"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao3.PNG",alt:"Tela de cadastrar questão"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao4.PNG",alt:"Tela de cadastrar questão"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao.PNG",alt:"Tela de consultar questão"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao2.PNG",alt:"Tela de consultar questão"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao3.PNG",alt:"Tela de consultar questão"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao4.PNG",alt:"Tela de consultar questão"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarProfessor.PNG",alt:"Tela de cadastrar professor"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarDisciplina.PNG",alt:"Tela de cadastrar disciplina"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarProva.PNG",alt:"Tela de cadastrar prova"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarProva2.PNG",alt:"Tela de cadastrar prova"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarProva.PNG",alt:"Tela de consultar provas"}
         ],
         tecnologiasAuxiliares:[
             {

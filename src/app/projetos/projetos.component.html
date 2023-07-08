@@ -1,4 +1,4 @@
-<div>
+<section>
     <h1 class="text-center">Projetos</h1>				
     <div class="form-group col-sm-4">
       <label for="searchInput">Buscar Projetos: </label>
@@ -17,20 +17,21 @@
   </div>
 
   <ng-template #projetoCardTemplate let-projeto>
-    <button ng-cloak (click)="redirect(projeto.id)" class="btn btn-secondary projetoCardButton col-sm-2  mx-1 mt-4">
-      <div *ngIf="projetosCardsExistente.length">
-        <div class="card projetoCard">  
-          <div class="card-body p-0 position-absolute fixed-top pt-3">
-            {{projeto.tituloProjeto | uppercase}}<!--ANDROID-->
+    <div class="col-sm-5 projetoCardContainer">
+      <p-card styleClass="col-sm-12  mx-1 mt-4">
+        <p-header class="text-center" >
+          {{projeto.tituloProjeto | uppercase}}
+        </p-header>
+        <p-galleria styleClass="col-sm-12" [images]="projeto.imagens" [showCaption]="false"></p-galleria>
+        <p-footer>
+          <div *ngIf="projeto.tecnologiasAuxiliares" class="d-flex flex-row justify-content-around flex-wrap sub-tecnologias-container">
+            <img  height=50px  width=50px *ngFor="let tecnologiaAuxiliar of projeto.tecnologiasAuxiliares" src="{{tecnologiaAuxiliar.imagemLocation}}" />
           </div>
-          <img class="card-img-top projetoCardImagem"  alt="Card image cap" [src]="projeto.imagemDaTecnologia"> <!-- src="imagens/android-logo.png" -->
-          <div class="card-body p-0">
-            <div *ngIf="projeto.tecnologiasAuxiliares">
-              <img  height=25px  width=25px *ngFor="let tecnologiaAuxiliar of projeto.tecnologiasAuxiliares" src="{{tecnologiaAuxiliar.imagemLocation}}" />
-            </div>
+          <div class="row mt-4 ml-2">
+            <button (onClick)="redirect(projeto.id)" pButton type="button" label="Visualizar"  styleClass="col-sm-2"></button>
           </div>
-        </div>	
-      </div>
-    </button>	
+        </p-footer>
+      </p-card>
+    </div>
   </ng-template>
-</div>
+</section>
