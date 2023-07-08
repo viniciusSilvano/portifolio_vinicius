@@ -1,9 +1,9 @@
-<p *ngIf="alert">
+<!--<p *ngIf="alert">
   <ngb-alert [type]="alert.type" (close)="close(alert)">{{ alert.message }}</ngb-alert>
-</p>
+</p>-->
 <ngb-carousel class="carouselContainer my-4" *ngIf="projeto.imagens">
     <ng-template ngbSlide *ngFor="let imagem of projeto.imagens">
-      <div  (click)="pegarURLDaImagemAtual(imagem,content)">
+      <div  (click)="ampliarImagemAtual(imagem,content)">
         <img class="carouselImage text-white" [src]="imagem.source" alt="{{imagem.alt}}">
         <div class="carousel-caption ">
         <h3 *ngIf="imagem.title" id="title" [innerHTML]="imagem.title"></h3>
@@ -14,7 +14,7 @@
 </ngb-carousel>
 
 
-  <ng-template #content id="imagensProjetoModal" let-modal>
+  <!--<ng-template #content id="imagensProjetoModal" let-modal>
         <div class="modal-header">
           <h4 *ngIf="imagemSelecionada.title" class="modal-title" id="modal-basic-title" [innerHTML]="imagemSelecionada.title"></h4>
           <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
@@ -24,7 +24,7 @@
         <div class="modal-body">
           <ngb-carousel class="carouselContainer my-4" *ngIf="projeto.imagens">
             <ng-template ngbSlide *ngFor="let imagem of projeto.imagens">
-              <div  (click)="pegarURLDaImagemAtual(imagem,content)">
+              <div>
                 <img class="carouselImage text-white" [src]="imagem.source" alt="{{imagem.alt}}">
                 <div class="carousel-caption ">
                   <h3 *ngIf="imagem.title" id="title" [innerHTML]="imagem.title"></h3>
@@ -37,5 +37,5 @@
         <div class="modal-footer">
           <button type="button" class="btn btn-light" (click)="modal.close('fechar')">fechar</button>
         </div>
-    </ng-template>
+    </ng-template>-->
   

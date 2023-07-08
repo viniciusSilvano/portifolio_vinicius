@@ -16,6 +16,8 @@
     --cor-cinza-escuro: #3f3f3f;
     --cor-preto-escuro: #323232;
     --cor-verde-claro: #2F5D61;
+    --cor-azul-claro: #000FFF;
+    --cor-cinza-claro: #CFD3D4;
 }
 
 body{
@@ -50,7 +52,7 @@ body{
 }
 
 .innerCardContainer .pi.pi-fw.pi-chevron-right, .pi.pi-fw.pi-chevron-left{
-color: red;
+    color: red;
 }
 
 

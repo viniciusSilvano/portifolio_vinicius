@@ -7,17 +7,17 @@
     cursor:pointer;
 }
 .carouselContainer{
-    background-color: #CFD3D4;
+    background-color: var(--cor-cinza-claro);
     
 }
 #title{
-    color: #000FFF;
-    background-color: #CFD3D4;
+    color: var(--cor-azul-claro);
+    background-color: var(--cor-cinza-claro);
 }
 
 #descricaoCarousel{
-    color: #000FFF;
-    background-color: #CFD3D4;
+    color: var(--cor-azul-claro);
+    background-color: var(--cor-cinza-claro);
 }
 
 

@@ -34,9 +34,9 @@ export class ProjetosCarouselImagensComponent implements OnInit {
     this.alert = undefined;
   }
 
-  pegarURLDaImagemAtual(imagemSelecionada, content){
-    this.imagemSelecionada = imagemSelecionada;
-    this.modalService.open(content,{ size: 'lg'});
+  ampliarImagemAtual(imagemSelecionada, content){
+    /*this.imagemSelecionada = imagemSelecionada;
+    this.modalService.open(content,{ size: 'lg'});*/
   }
 
 
