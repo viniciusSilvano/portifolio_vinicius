@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import {Tecnologia} from "./projetos-classes/tecnologia";
-import {TECNOLOGIAS} from "./projetos-classes/TECNOLOGIAS";
+import { PROJETOS_ESPECIFICACOES } from './projetos-especificacao-classes/PROJETOS_ESPECIFICACOES';
+import { ProjetoEspecificacao } from './projetos-especificacao-classes/projeto_especificacao';
+;
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,9 @@ export class ProjetosService{
 
   constructor() { }
 
-  getProjetoCards(): Observable<Tecnologia[]>{
-    return of(TECNOLOGIAS);
+  getProjetoCards(): Observable<ProjetoEspecificacao[]>{
+    //tentar fazer isso dessa vez com o filter
+    const result : ProjetoEspecificacao[] = Object.assign([], PROJETOS_ESPECIFICACOES);
+    return of(result);
   }
 }

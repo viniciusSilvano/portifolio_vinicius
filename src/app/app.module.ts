@@ -14,7 +14,6 @@ import {NgbCarouselModule,NgbModalModule,NgbAlertModule, NgbDropdownModule} from
 import { ProjetosCarouselImagensComponent } from './projetos-carousel-imagens/projetos-carousel-imagens.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { MainColumnComponent } from './main-column/main-column.component';
-import { ProjetosExistentesComponent } from './projetos-existentes/projetos-existentes.component';
 import {CardModule} from 'primeng/card';
 
 @NgModule({
@@ -29,8 +28,7 @@ import {CardModule} from 'primeng/card';
     ProjetosEspecificacaoComponent,
     ProjetosCarouselImagensComponent,
     BreadcrumbComponent,
-    MainColumnComponent,
-    ProjetosExistentesComponent
+    MainColumnComponent
   ],
   imports: [
     BrowserModule,

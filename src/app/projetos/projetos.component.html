@@ -1,29 +1,36 @@
 <div>
-    <h1 class="text-center">Tecnologias</h1>				
+    <h1 class="text-center">Projetos</h1>				
     <div class="form-group col-sm-4">
-      <label for="searchInput">Buscar Tecnologia: </label>
+      <label for="searchInput">Buscar Projetos: </label>
       <input 
         #mySearch
         class="form-control" 
-        placeholder="Nome da Tecnologia"
+        placeholder="Nome do Projeto"
         name="searchInput" 
         type="text"
         (input)="filterItem(mySearch.value)"> 
     </div>
-    
-  <div class="row justify-content-center align-items-center" >
-      <button ng-cloak (click)="redirect(projetoCard.idTecnologia)" 
-      class="btn btn-secondary projetoCardButton col-sm-2 mx-1" 
-      *ngFor="let projetoCard of projetosCardsFiltered">
-        <div class="enfeiteButtonTopRight"></div>
-        <div class="enfeiteButtonBottomLeft"></div>
-        <div *ngIf="projetosCardsFiltered.length">
-        <img class="card-img-top projetoCardImagem"  alt="Card image cap" [src]="projetoCard.imagemLocation"> <!-- src="imagens/android-logo.png" -->
-        <div class="btnTexto">
-          {{projetoCard.nome | uppercase}}<!--ANDROID-->
-        </div>
-         		
-        </div>
-      </button>			
+
+  <div class="d-flex flex-row justify-content-around flex-wrap" >
+    <ng-container *ngFor="let projeto of projetosCardsFiltered;let indexOfelement=index;" [ngTemplateOutlet]="projetoCardTemplate" [ngTemplateOutletContext]="{ $implicit: projeto }">
+    </ng-container>
   </div>
+
+  <ng-template #projetoCardTemplate let-projeto>
+    <button ng-cloak (click)="redirect(projeto.id)" class="btn btn-secondary projetoCardButton col-sm-2  mx-1 mt-4">
+      <div *ngIf="projetosCardsExistente.length">
+        <div class="card projetoCard">  
+          <div class="card-body p-0 position-absolute fixed-top pt-3">
+            {{projeto.tituloProjeto | uppercase}}<!--ANDROID-->
+          </div>
+          <img class="card-img-top projetoCardImagem"  alt="Card image cap" [src]="projeto.imagemDaTecnologia"> <!-- src="imagens/android-logo.png" -->
+          <div class="card-body p-0">
+            <div *ngIf="projeto.tecnologiasAuxiliares">
+              <img  height=25px  width=25px *ngFor="let tecnologiaAuxiliar of projeto.tecnologiasAuxiliares" src="{{tecnologiaAuxiliar.imagemLocation}}" />
+            </div>
+          </div>
+        </div>	
+      </div>
+    </button>	
+  </ng-template>
 </div>
