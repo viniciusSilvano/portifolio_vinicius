@@ -1,4 +1,4 @@
-import { TecnologiaAuxiliar } from "../projetos-classes/tecnologia";
+import { Tecnologia } from "../projetos-classes/tecnologia";
 
 export interface ProjetoEspecificacao{
     id: number;
@@ -6,7 +6,7 @@ export interface ProjetoEspecificacao{
     tituloProjeto: string;
     imagemDaTecnologia: string;
     imagens: imagensDoProjeto[];
-    tecnologiasAuxiliares?: TecnologiaAuxiliar[];
+    tecnologiasAuxiliares?: Tecnologia[];
     accordionCards: AccordionCard[];  
 }
 

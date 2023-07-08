@@ -19,7 +19,7 @@
   <ng-template #projetoCardTemplate let-projeto>
     <div class="col-sm-6 innerCardContainer">
       <p-card styleClass="col-sm-12  mx-1 mt-4">
-        <p-header class="text-center" >
+        <p-header styleClass="text-center m-2" >
           {{projeto.tituloProjeto | uppercase}}
         </p-header>
         <p-galleria styleClass="col-sm-12" [images]="projeto.imagens" [showCaption]="false"></p-galleria>

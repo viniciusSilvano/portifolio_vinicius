@@ -34,6 +34,7 @@ body{
 
 .innerCardContainer .ui-card-header{
     text-align: center;
+    margin: 2%;
 }
 
 .innerCardContainer .ui-card-footer .sub-tecnologias-container{

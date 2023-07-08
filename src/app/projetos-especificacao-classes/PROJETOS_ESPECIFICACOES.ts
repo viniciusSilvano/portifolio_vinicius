@@ -1,5 +1,6 @@
 import { ProjetoEspecificacao,Collapse } from "./projeto_especificacao";
 import { GlobalStrings } from '../globalStrings/globalString';
+import { TECNOLOGIAS } from "../projetos-classes/TECNOLOGIAS";
 export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
     {
         id:1,
@@ -131,26 +132,11 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarProva.PNG",alt:"Tela de consultar provas"}
         ],
         tecnologiasAuxiliares:[
-            {
-                idTecnologiaAuxiliar:1,
-                imagemLocation: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias-auxiliares/bootstrap-logo.svg"
-            },
-            {
-                idTecnologiaAuxiliar:2,
-                imagemLocation: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias-auxiliares/logoJquery.gif"
-            },
-            {
-                idTecnologiaAuxiliar:3,
-                imagemLocation: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias-auxiliares/postgresqlLogo.png"
-            },
-            {
-                idTecnologiaAuxiliar:4,
-                imagemLocation: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias-auxiliares/tinymceLogo.png"
-            },
-            {
-                idTecnologiaAuxiliar:5,
-                imagemLocation: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias-auxiliares/thymeleafLogo.png"
-            }
+            TECNOLOGIAS.filter(x => x.idTecnologia == 3)[0],
+            TECNOLOGIAS.filter(x => x.idTecnologia == 4)[0],
+            TECNOLOGIAS.filter(x => x.idTecnologia == 5)[0],
+            TECNOLOGIAS.filter(x => x.idTecnologia == 6)[0],
+            TECNOLOGIAS.filter(x => x.idTecnologia == 7)[0],
         ],
         accordionCards: [
             {
