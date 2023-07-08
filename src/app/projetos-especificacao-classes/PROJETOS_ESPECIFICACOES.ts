@@ -1,4 +1,4 @@
-import { ProjetoEspecificacao,Collapse } from "./projeto_especificacao";
+import { ProjetoEspecificacao,Collapse, TiposProjetos } from "./projeto_especificacao";
 import { GlobalStrings } from '../globalStrings/globalString';
 import { TECNOLOGIAS } from "../projetos-classes/TECNOLOGIAS";
 export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
@@ -6,6 +6,8 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         id:1,
         tituloProjeto:"Alugueis",
         tecnologia: TECNOLOGIAS.filter(x => x.idTecnologia == 1)[0],//logo android
+        descricao:"sistema mobile de alugueis e controle de estoque",
+        tipo: TiposProjetos.PESSOAIS,
         imagens:[
             {source:"../.." +  GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/main_activity.png",alt:"Tela principal",title:"Tela principal",descricaoCarousel:"A tela inicial do sistema mobile."},
             {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/estoque_activity.png",alt:"Tela de listagem de itens cadastrados",title:"Tela de listagem de itens"},
@@ -114,6 +116,11 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         id:2,
         tituloProjeto:"SGQ(Sistema de Gerenciamento de Questão) - TCC",
         tecnologia: TECNOLOGIAS.filter(x =>  x.idTecnologia == 2)[0], // Spring boot
+        tipo: TiposProjetos.PESSOAIS,
+        descricao: `meu projeto de conclusão de curso da faculdade.
+        Ele serve para o coordenador de um curso de ensino criar provas 
+        de forma aleatória com um banco de questões, as questões são organizadas
+        por meio da Taxonomia de Bloom.`,
         imagens:[
             {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial.PNG",alt:"Tela principal"},
             {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial2.PNG",alt:"Tela principal"},
@@ -135,6 +142,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         ],
         tecnologiasAuxiliares:[
             TECNOLOGIAS.filter(x => x.idTecnologia == 8)[0],
+            TECNOLOGIAS.filter(x => x.idTecnologia == 2)[0],
             TECNOLOGIAS.filter(x => x.idTecnologia == 3)[0],
             TECNOLOGIAS.filter(x => x.idTecnologia == 4)[0],
             TECNOLOGIAS.filter(x => x.idTecnologia == 5)[0],
@@ -189,5 +197,39 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                     collapse: Collapse.collapsed
              }
         ]
+    },
+    {
+        id: 3,
+        descricao: "Projeto de testes em java, parceiro do angular tests. Obs: tentei caprichar no código.",
+        tipo: TiposProjetos.TESTE_PUBLICOS,
+        imagens: [
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-java-teste-project/java_test_project_1.png",alt:"print código java 1"},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-java-teste-project/java_test_project_2.png",alt:"print código java 2"},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-java-teste-project/java_test_project_3.png",alt:"print código java 3"}
+        ],
+        accordionCards: [
+            {id: 1, descricao: "<p>Projeto utilizado para testes e brincadeiras em java. Apesar do seu objetivo tentei caprichar no código.<p/>", tituloDescricao: "Sobre o projeto",collapse: Collapse.collapsed},
+            {id: 2, descricao: "<a target=\"_blank\" href=\"https://github.com/viniciusSilvano/testesJava\">link para o github</a>", tituloDescricao: "Onde está o código?",collapse: Collapse.collapsed}
+        ],
+        tecnologia: TECNOLOGIAS.filter(x => x.idTecnologia == 8)[0],
+        tituloProjeto: "Java Test Project",
+        tecnologiasAuxiliares: [ TECNOLOGIAS.filter(x => x.idTecnologia == 8)[0]]
+    },
+    {
+        id: 4,
+        descricao: "Projeto de testes em angular, parceiro do java tests. Obs: tentei caprichar no código.",
+        tipo: TiposProjetos.TESTE_PUBLICOS,
+        imagens: [
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-angular-2-tests/angular_test_project_1.png",alt:"print código angular 1"},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-angular-2-tests/angular_test_project_2.png",alt:"print código angular 2"},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-angular-2-tests/angular_test_project_3.png",alt:"print código angular 3"}
+        ],
+        accordionCards: [
+            {id: 1, descricao: "<p>Projeto utilizado para testes e brincadeiras em angular. Apesar do seu objetivo tentei caprichar no código.<p/>", tituloDescricao: "Sobre o projeto",collapse: Collapse.collapsed},
+            {id: 2, descricao: "<a target=\"_blank\" href=\"https://github.com/viniciusSilvano/angularDoisMaisTestes\">link para o github</a>", tituloDescricao: "Onde está o código?",collapse: Collapse.collapsed}
+        ],
+        tecnologia: TECNOLOGIAS.filter(x => x.idTecnologia == 9)[0],
+        tituloProjeto: "Angular 2+ Tests Project",
+        tecnologiasAuxiliares: [ TECNOLOGIAS.filter(x => x.idTecnologia == 9)[0]]
     }
 ];

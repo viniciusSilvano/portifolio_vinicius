@@ -4,8 +4,10 @@ export interface ProjetoEspecificacao{
     id: number;
     tecnologia: Tecnologia;
     tituloProjeto: string;
+    descricao: string;
     imagens: imagensDoProjeto[];
     tecnologiasAuxiliares?: Tecnologia[];
+    tipo: TiposProjetos
     accordionCards: AccordionCard[];  
 }
 
@@ -26,4 +28,8 @@ export interface imagensDoProjeto{
 export enum Collapse{
     collapsed = "collapse",
     notCollapsed = "collpase show"
+}
+
+export enum TiposProjetos{
+    PESSOAIS,TESTE_PUBLICOS
 }

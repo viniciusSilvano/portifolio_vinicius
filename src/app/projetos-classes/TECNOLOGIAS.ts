@@ -42,6 +42,11 @@ export const TECNOLOGIAS: Tecnologia[] = [
         idTecnologia: 8,
         nome: "Java",
         imagemLocation: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/java_icon.png"
+    },
+    {
+        idTecnologia: 9,
+        nome: "Angular",
+        imagemLocation: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/angular-icon.png"
     }
 ]
 

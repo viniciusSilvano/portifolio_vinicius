@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { PROJETOS_ESPECIFICACOES } from './projetos-especificacao-classes/PROJETOS_ESPECIFICACOES';
-import { ProjetoEspecificacao } from './projetos-especificacao-classes/projeto_especificacao';
+import { ProjetoEspecificacao, TiposProjetos } from './projetos-especificacao-classes/projeto_especificacao';
 ;
 
 @Injectable({
@@ -11,9 +11,19 @@ export class ProjetosService{
 
   constructor() { }
 
-  getProjetoCards(): Observable<ProjetoEspecificacao[]>{
-    //tentar fazer isso dessa vez com o filter
+  getAllProjetoCards(): Observable<ProjetoEspecificacao[]>{
     const result : ProjetoEspecificacao[] = Object.assign([], PROJETOS_ESPECIFICACOES);
+    return of(result);
+  }
+
+  getProjetoPessoaisCards(): Observable<ProjetoEspecificacao[]>{
+    //tentar fazer isso dessa vez com o filter
+    const result : ProjetoEspecificacao[] = Object.assign([], PROJETOS_ESPECIFICACOES.filter(x => x.tipo == TiposProjetos.PESSOAIS));
+    return of(result);
+  }
+
+  getProjetoTestesPublicosCards(): Observable<ProjetoEspecificacao[]>{
+    const result : ProjetoEspecificacao[] = Object.assign([], PROJETOS_ESPECIFICACOES.filter(x => x.tipo == TiposProjetos.TESTE_PUBLICOS));
     return of(result);
   }
 

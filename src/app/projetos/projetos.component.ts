@@ -10,29 +10,33 @@ import { ProjetoEspecificacao } from '../projetos-especificacao-classes/projeto_
 })
 export class ProjetosComponent implements OnInit {
   projetosCardsExistente : ProjetoEspecificacao[];
-  projetosCardsFiltered: ProjetoEspecificacao[];
+  projetosTestesPublicosCards: ProjetoEspecificacao[];
+  projetosCardsFiltered: ProjetoEspecificacao[] = [];
   constructor(private projetoService: ProjetosService, private router: Router) { }
 
   ngOnInit() {
-    this.projetoService.getProjetoCards()
+    this.projetoService.getProjetoPessoaisCards()
     .subscribe(
         projetos => {
           this.projetosCardsExistente = projetos;
-          this.projetosCardsFiltered = projetos;
+        }
+      );
+      this.projetoService.getProjetoTestesPublicosCards()
+      .subscribe(
+        projetos => {
+          this.projetosTestesPublicosCards = projetos;
         }
       );
   }
 
   filterItem(value){
-    if(!value){
-        this.assignCopy();
-    } // when nothing has typed
-    this.projetosCardsFiltered = Object.assign([], this.projetosCardsExistente).filter(
+    this.projetosCardsFiltered = Object.assign([], {
+      ...this.projetosCardsExistente,...this.projetosTestesPublicosCards}).filter(
       item => item.tituloProjeto.toLowerCase().indexOf(value.toLowerCase())  > -1
     )
-  }
-  assignCopy(){
-    this.projetosCardsFiltered = Object.assign([], this.projetosCardsExistente);
+    if(!value){
+      this.projetosCardsFiltered = []
+    }
   }
 
   redirect(idEspecificacao: number) : void{
