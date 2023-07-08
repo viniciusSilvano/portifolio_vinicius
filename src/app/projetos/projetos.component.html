@@ -1,29 +1,58 @@
-<div>
-    <h1 class="text-center">Tecnologias</h1>				
+<section>
+    <h1 class="text-center">Projetos</h1>				
     <div class="form-group col-sm-4">
-      <label for="searchInput">Buscar Tecnologia: </label>
+      <label for="searchInput">Buscar Projetos: </label>
       <input 
         #mySearch
         class="form-control" 
-        placeholder="Nome da Tecnologia"
+        placeholder="Nome do Projeto"
         name="searchInput" 
         type="text"
         (input)="filterItem(mySearch.value)"> 
     </div>
-    
-  <div class="row justify-content-center align-items-center" >
-      <button ng-cloak (click)="redirect(projetoCard.idTecnologia)" 
-      class="btn btn-secondary projetoCardButton col-sm-2 mx-1" 
-      *ngFor="let projetoCard of projetosCardsFiltered">
-        <div class="enfeiteButtonTopRight"></div>
-        <div class="enfeiteButtonBottomLeft"></div>
-        <div *ngIf="projetosCardsFiltered.length">
-        <img class="card-img-top projetoCardImagem"  alt="Card image cap" [src]="projetoCard.imagemLocation"> <!-- src="imagens/android-logo.png" -->
-        <div class="btnTexto">
-          {{projetoCard.nome | uppercase}}<!--ANDROID-->
+  <section class="ml-3" *ngIf="projetosCardsFiltered.length">
+    <h2>Projetos Filtrados</h2>
+    <div class="d-flex flex-row justify-content-around flex-wrap" >
+      <ng-container *ngFor="let projeto of projetosCardsFiltered;let indexOfelement=index;" [ngTemplateOutlet]="projetoCardTemplate" [ngTemplateOutletContext]="{ $implicit: projeto }">
+      </ng-container>
+    </div>
+  </section>
+  <section class="ml-3" *ngIf="!projetosCardsFiltered.length">
+    <h2>Pessoais</h2>
+    <p>Projetos pessoais criados por um propósito ou razões pessoais.</p>
+    <div class="d-flex flex-row justify-content-around flex-wrap" >
+      <ng-container *ngFor="let projeto of projetosCardsExistente;let indexOfelement=index;" [ngTemplateOutlet]="projetoCardTemplate" [ngTemplateOutletContext]="{ $implicit: projeto }">
+      </ng-container>
+    </div>
+  </section>
+  <section class="ml-3 mt-4" *ngIf="!projetosCardsFiltered.length">
+    <h2>Testes/Públicos</h2>
+    <p>Projetos que são usados para brincar com o código ou experimentar novas abordagens.</p>
+    <div class="d-flex flex-row justify-content-around flex-wrap" >
+      <ng-container *ngFor="let projeto of projetosTestesPublicosCards;let indexOfelement=index;" [ngTemplateOutlet]="projetoCardTemplate" [ngTemplateOutletContext]="{ $implicit: projeto }">
+      </ng-container>
+    </div>
+  </section>
+
+  <ng-template #projetoCardTemplate let-projeto>
+    <div class="col-sm-6 innerCardContainer">
+      <p-card styleClass="col-sm-12  mx-1 mt-4">
+        <p-header styleClass="text-center m-2" >
+          {{projeto.tituloProjeto | uppercase}}
+        </p-header>
+        <div>
+          <p-galleria styleClass="col-sm-12" [images]="projeto.imagens" [showCaption]="false"></p-galleria>
+          <p>{{projeto.descricao}}</p>
         </div>
-         		
-        </div>
-      </button>			
-  </div>
-</div>
+        <p-footer>
+          <div *ngIf="projeto.tecnologiasAuxiliares" class="d-flex flex-row justify-content-around flex-wrap sub-tecnologias-container">
+            <img  height=50px alt="{{tecnologiaAuxiliar.nome.toUpperCase()}}" title="{{tecnologiaAuxiliar.nome.toUpperCase()}}"  width=50px *ngFor="let tecnologiaAuxiliar of projeto.tecnologiasAuxiliares" src="{{tecnologiaAuxiliar.imagemLocation}}" />
+          </div>
+          <div class="row mt-4 ml-2">
+            <button (click)="redirect(projeto.id)" pButton type="button" label="Visualizar"  styleClass="col-sm-2"></button>
+          </div>
+        </p-footer>
+      </p-card>
+    </div>
+  </ng-template>
+</section>

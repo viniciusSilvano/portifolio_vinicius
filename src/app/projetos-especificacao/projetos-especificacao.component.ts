@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ProjetosEspecificacaoService} from "../projetos-especificacao.service";
 import {ProjetoEspecificacao, AccordionCard, Collapse} from "../projetos-especificacao-classes/projeto_especificacao";
 import {ActivatedRoute, Router, NavigationEnd,Event} from "@angular/router";
 import {Subscription } from 'rxjs';
+import { ProjetosService } from '../projetos.service';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class ProjetosEspecificacaoComponent implements OnInit {
   public projetoEspecificacao: ProjetoEspecificacao;
   private routerSubscription : Subscription;
   constructor(
-    private service: ProjetosEspecificacaoService,
+    private projetoService: ProjetosService,
     private route: ActivatedRoute,
     private router: Router
     ) { 
@@ -63,7 +63,7 @@ export class ProjetosEspecificacaoComponent implements OnInit {
 
   setProjetoEspecificacao() : void{
     const id = +this.route.snapshot.paramMap.get('idEspecificacao');
-    this.service.getProjetoEspecificaoById(id)
+    this.projetoService.getProjetoEspecificaoById(id)
       .subscribe(x => {
         this.projetoEspecificacao = x
         ,err => console.log("Error",err)

@@ -1,21 +1,23 @@
-import { ProjetoEspecificacao,Collapse } from "./projeto_especificacao";
+import { ProjetoEspecificacao,Collapse, TiposProjetos } from "./projeto_especificacao";
 import { GlobalStrings } from '../globalStrings/globalString';
+import { TECNOLOGIAS } from "../projetos-classes/TECNOLOGIAS";
 export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
     {
         id:1,
         tituloProjeto:"Alugueis",
-        idTecnologia:1, // android
-        imagemDaTecnologia: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/android-logo.png",//logo android
+        tecnologia: TECNOLOGIAS.filter(x => x.idTecnologia == 1)[0],//logo android
+        descricao:"sistema mobile de alugueis e controle de estoque",
+        tipo: TiposProjetos.PESSOAIS,
         imagens:[
-            {imageURL:"../.." +  GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/main_activity.png",altTexto:"Tela principal",tituloCarousel:"Tela principal",descricaoCarousel:"A tela inicial do sistema mobile."},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/estoque_activity.png",altTexto:"Tela de listagem de itens cadastrados",tituloCarousel:"Tela de listagem de itens"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/estoque_activity_com_popupMenu.png",altTexto:"PopUp menu da tela de listagem",tituloCarousel:"PopUp menu da tela de listagem"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/item_activity.png",altTexto:"Tela de cadastro/modificação de itens",tituloCarousel:"Tela de cadastro/modificação de itens"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/calendarioCustomizado.png",altTexto:"Calendário customizado",tituloCarousel:"Calendário customizado",descricaoCarousel: "Utilizado para o cadastro de aluguel e listagem"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/calendarioCustomizado2.png",altTexto:"Calendário customizado",tituloCarousel:"Calendário customizado",descricaoCarousel: "Selecionando uma data para cadastrar um aluguel"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/cadastroAluguel.png",altTexto:"Tela de cadastro/modificação de aluguel",tituloCarousel:"Tela de cadastro/modificação de aluguel"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/ListagemAluguel.png",altTexto:"Tela de listagem de alugueis",tituloCarousel:"Tela de listagem de alugueis"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/ListagemAluguel2.png",altTexto:"Tela de listagem de alugueis",tituloCarousel:"Tela de listagem de alugueis"},
+            {source:"../.." +  GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/main_activity.png",alt:"Tela principal",title:"Tela principal",descricaoCarousel:"A tela inicial do sistema mobile."},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/estoque_activity.png",alt:"Tela de listagem de itens cadastrados",title:"Tela de listagem de itens"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/estoque_activity_com_popupMenu.png",alt:"PopUp menu da tela de listagem",title:"PopUp menu da tela de listagem"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/item_activity.png",alt:"Tela de cadastro/modificação de itens",title:"Tela de cadastro/modificação de itens"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/calendarioCustomizado.png",alt:"Calendário customizado",title:"Calendário customizado",descricaoCarousel: "Utilizado para o cadastro de aluguel e listagem"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/calendarioCustomizado2.png",alt:"Calendário customizado",title:"Calendário customizado",descricaoCarousel: "Selecionando uma data para cadastrar um aluguel"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/cadastroAluguel.png",alt:"Tela de cadastro/modificação de aluguel",title:"Tela de cadastro/modificação de aluguel"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/ListagemAluguel.png",alt:"Tela de listagem de alugueis",title:"Tela de listagem de alugueis"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/ListagemAluguel2.png",alt:"Tela de listagem de alugueis",title:"Tela de listagem de alugueis"},
             
         ],
         accordionCards: [
@@ -104,53 +106,48 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                 `,
                 collapse: Collapse.collapsed
             }
+        ],
+        tecnologiasAuxiliares:[
+            TECNOLOGIAS.filter(x => x.idTecnologia == 8)[0],
+            TECNOLOGIAS.filter(x => x.idTecnologia == 1)[0]
         ]
     },
     {
         id:2,
         tituloProjeto:"SGQ(Sistema de Gerenciamento de Questão) - TCC",
-        idTecnologia:2, // Spring boot
-        imagemDaTecnologia: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/spring-boot-logo.jpg",//logo android
+        tecnologia: TECNOLOGIAS.filter(x =>  x.idTecnologia == 2)[0], // Spring boot
+        tipo: TiposProjetos.PESSOAIS,
+        descricao: `meu projeto de conclusão de curso da faculdade.
+        Ele serve para o coordenador de um curso de ensino criar provas 
+        de forma aleatória com um banco de questões, as questões são organizadas
+        por meio da Taxonomia de Bloom.`,
         imagens:[
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial.PNG",altTexto:"Tela principal"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial2.PNG",altTexto:"Tela principal"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial3.PNG",altTexto:"Tela principal"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial4.PNG",altTexto:"Tela principal"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao.PNG",altTexto:"Tela de cadastrar questão"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao2.PNG",altTexto:"Tela de cadastrar questão"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao3.PNG",altTexto:"Tela de cadastrar questão"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao4.PNG",altTexto:"Tela de cadastrar questão"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao.PNG",altTexto:"Tela de consultar questão"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao2.PNG",altTexto:"Tela de consultar questão"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao3.PNG",altTexto:"Tela de consultar questão"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao4.PNG",altTexto:"Tela de consultar questão"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarProfessor.PNG",altTexto:"Tela de cadastrar professor"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarDisciplina.PNG",altTexto:"Tela de cadastrar disciplina"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarProva.PNG",altTexto:"Tela de cadastrar prova"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarProva2.PNG",altTexto:"Tela de cadastrar prova"},
-            {imageURL:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarProva.PNG",altTexto:"Tela de consultar provas"}
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial.PNG",alt:"Tela principal"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial2.PNG",alt:"Tela principal"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial3.PNG",alt:"Tela principal"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial4.PNG",alt:"Tela principal"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao.PNG",alt:"Tela de cadastrar questão"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao2.PNG",alt:"Tela de cadastrar questão"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao3.PNG",alt:"Tela de cadastrar questão"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao4.PNG",alt:"Tela de cadastrar questão"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao.PNG",alt:"Tela de consultar questão"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao2.PNG",alt:"Tela de consultar questão"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao3.PNG",alt:"Tela de consultar questão"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao4.PNG",alt:"Tela de consultar questão"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarProfessor.PNG",alt:"Tela de cadastrar professor"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarDisciplina.PNG",alt:"Tela de cadastrar disciplina"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarProva.PNG",alt:"Tela de cadastrar prova"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarProva2.PNG",alt:"Tela de cadastrar prova"},
+            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarProva.PNG",alt:"Tela de consultar provas"}
         ],
         tecnologiasAuxiliares:[
-            {
-                idTecnologiaAuxiliar:1,
-                imagemLocation: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias-auxiliares/bootstrap-logo.svg"
-            },
-            {
-                idTecnologiaAuxiliar:2,
-                imagemLocation: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias-auxiliares/logoJquery.gif"
-            },
-            {
-                idTecnologiaAuxiliar:3,
-                imagemLocation: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias-auxiliares/postgresqlLogo.png"
-            },
-            {
-                idTecnologiaAuxiliar:4,
-                imagemLocation: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias-auxiliares/tinymceLogo.png"
-            },
-            {
-                idTecnologiaAuxiliar:5,
-                imagemLocation: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias-auxiliares/thymeleafLogo.png"
-            }
+            TECNOLOGIAS.filter(x => x.idTecnologia == 8)[0],
+            TECNOLOGIAS.filter(x => x.idTecnologia == 2)[0],
+            TECNOLOGIAS.filter(x => x.idTecnologia == 3)[0],
+            TECNOLOGIAS.filter(x => x.idTecnologia == 4)[0],
+            TECNOLOGIAS.filter(x => x.idTecnologia == 5)[0],
+            TECNOLOGIAS.filter(x => x.idTecnologia == 6)[0],
+            TECNOLOGIAS.filter(x => x.idTecnologia == 7)[0],
         ],
         accordionCards: [
             {
@@ -200,5 +197,39 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                     collapse: Collapse.collapsed
              }
         ]
+    },
+    {
+        id: 3,
+        descricao: "Projeto de testes em java, parceiro do angular tests. Obs: tentei caprichar no código.",
+        tipo: TiposProjetos.TESTE_PUBLICOS,
+        imagens: [
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-java-teste-project/java_test_project_1.png",alt:"print código java 1"},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-java-teste-project/java_test_project_2.png",alt:"print código java 2"},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-java-teste-project/java_test_project_3.png",alt:"print código java 3"}
+        ],
+        accordionCards: [
+            {id: 1, descricao: "<p>Projeto utilizado para testes e brincadeiras em java. Apesar do seu objetivo tentei caprichar no código.<p/>", tituloDescricao: "Sobre o projeto",collapse: Collapse.collapsed},
+            {id: 2, descricao: "<a target=\"_blank\" href=\"https://github.com/viniciusSilvano/testesJava\">link para o github</a>", tituloDescricao: "Onde está o código?",collapse: Collapse.collapsed}
+        ],
+        tecnologia: TECNOLOGIAS.filter(x => x.idTecnologia == 8)[0],
+        tituloProjeto: "Java Test Project",
+        tecnologiasAuxiliares: [ TECNOLOGIAS.filter(x => x.idTecnologia == 8)[0]]
+    },
+    {
+        id: 4,
+        descricao: "Projeto de testes em angular, parceiro do java tests. Obs: tentei caprichar no código.",
+        tipo: TiposProjetos.TESTE_PUBLICOS,
+        imagens: [
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-angular-2-tests/angular_test_project_1.png",alt:"print código angular 1"},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-angular-2-tests/angular_test_project_2.png",alt:"print código angular 2"},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-angular-2-tests/angular_test_project_3.png",alt:"print código angular 3"}
+        ],
+        accordionCards: [
+            {id: 1, descricao: "<p>Projeto utilizado para testes e brincadeiras em angular. Apesar do seu objetivo tentei caprichar no código.<p/>", tituloDescricao: "Sobre o projeto",collapse: Collapse.collapsed},
+            {id: 2, descricao: "<a target=\"_blank\" href=\"https://github.com/viniciusSilvano/angularDoisMaisTestes\">link para o github</a>", tituloDescricao: "Onde está o código?",collapse: Collapse.collapsed}
+        ],
+        tecnologia: TECNOLOGIAS.filter(x => x.idTecnologia == 9)[0],
+        tituloProjeto: "Angular 2+ Tests Project",
+        tecnologiasAuxiliares: [ TECNOLOGIAS.filter(x => x.idTecnologia == 9)[0]]
     }
 ];

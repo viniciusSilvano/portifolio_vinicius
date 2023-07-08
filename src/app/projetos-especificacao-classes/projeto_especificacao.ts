@@ -1,12 +1,13 @@
-import { TecnologiaAuxiliar } from "../projetos-classes/tecnologia";
+import { Tecnologia } from "../projetos-classes/tecnologia";
 
 export interface ProjetoEspecificacao{
     id: number;
-    idTecnologia: number;
+    tecnologia: Tecnologia;
     tituloProjeto: string;
-    imagemDaTecnologia: string;
+    descricao: string;
     imagens: imagensDoProjeto[];
-    tecnologiasAuxiliares?: TecnologiaAuxiliar[];
+    tecnologiasAuxiliares?: Tecnologia[];
+    tipo: TiposProjetos
     accordionCards: AccordionCard[];  
 }
 
@@ -18,13 +19,17 @@ export class AccordionCard{
 }
 
 export interface imagensDoProjeto{
-    imageURL: String;
-    altTexto: String;
-    tituloCarousel?: String;
+    source: String;
+    alt: String;
+    title?: String;
     descricaoCarousel?:String;
 }
 
 export enum Collapse{
     collapsed = "collapse",
     notCollapsed = "collpase show"
+}
+
+export enum TiposProjetos{
+    PESSOAIS,TESTE_PUBLICOS
 }
