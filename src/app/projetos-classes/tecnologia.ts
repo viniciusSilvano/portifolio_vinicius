@@ -1,6 +1,6 @@
 export interface Tecnologia{
     idTecnologia: number;
-    nome?: string;
+    nome: string;
     imagemLocation: string;
     tecnologiasAuxiliares?: Tecnologia[];
 }

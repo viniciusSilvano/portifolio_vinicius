@@ -2,9 +2,8 @@ import { Tecnologia } from "../projetos-classes/tecnologia";
 
 export interface ProjetoEspecificacao{
     id: number;
-    idTecnologia: number;
+    tecnologia: Tecnologia;
     tituloProjeto: string;
-    imagemDaTecnologia: string;
     imagens: imagensDoProjeto[];
     tecnologiasAuxiliares?: Tecnologia[];
     accordionCards: AccordionCard[];  

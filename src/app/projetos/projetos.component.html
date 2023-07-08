@@ -25,7 +25,7 @@
         <p-galleria styleClass="col-sm-12" [images]="projeto.imagens" [showCaption]="false"></p-galleria>
         <p-footer>
           <div *ngIf="projeto.tecnologiasAuxiliares" class="d-flex flex-row justify-content-around flex-wrap sub-tecnologias-container">
-            <img  height=50px  width=50px *ngFor="let tecnologiaAuxiliar of projeto.tecnologiasAuxiliares" src="{{tecnologiaAuxiliar.imagemLocation}}" />
+            <img  height=50px alt="{{tecnologiaAuxiliar.nome.toUpperCase()}}" title="{{tecnologiaAuxiliar.nome.toUpperCase()}}"  width=50px *ngFor="let tecnologiaAuxiliar of projeto.tecnologiasAuxiliares" src="{{tecnologiaAuxiliar.imagemLocation}}" />
           </div>
           <div class="row mt-4 ml-2">
             <button (click)="redirect(projeto.id)" pButton type="button" label="Visualizar"  styleClass="col-sm-2"></button>

@@ -5,8 +5,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
     {
         id:1,
         tituloProjeto:"Alugueis",
-        idTecnologia:1, // android
-        imagemDaTecnologia: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/android-logo.png",//logo android
+        tecnologia: TECNOLOGIAS.filter(x => x.idTecnologia == 1)[0],//logo android
         imagens:[
             {source:"../.." +  GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/main_activity.png",alt:"Tela principal",title:"Tela principal",descricaoCarousel:"A tela inicial do sistema mobile."},
             {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/estoque_activity.png",alt:"Tela de listagem de itens cadastrados",title:"Tela de listagem de itens"},
@@ -105,13 +104,16 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                 `,
                 collapse: Collapse.collapsed
             }
+        ],
+        tecnologiasAuxiliares:[
+            TECNOLOGIAS.filter(x => x.idTecnologia == 8)[0],
+            TECNOLOGIAS.filter(x => x.idTecnologia == 1)[0]
         ]
     },
     {
         id:2,
         tituloProjeto:"SGQ(Sistema de Gerenciamento de Questão) - TCC",
-        idTecnologia:2, // Spring boot
-        imagemDaTecnologia: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/spring-boot-logo.jpg",//logo android
+        tecnologia: TECNOLOGIAS.filter(x =>  x.idTecnologia == 2)[0], // Spring boot
         imagens:[
             {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial.PNG",alt:"Tela principal"},
             {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial2.PNG",alt:"Tela principal"},
@@ -132,6 +134,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarProva.PNG",alt:"Tela de consultar provas"}
         ],
         tecnologiasAuxiliares:[
+            TECNOLOGIAS.filter(x => x.idTecnologia == 8)[0],
             TECNOLOGIAS.filter(x => x.idTecnologia == 3)[0],
             TECNOLOGIAS.filter(x => x.idTecnologia == 4)[0],
             TECNOLOGIAS.filter(x => x.idTecnologia == 5)[0],
