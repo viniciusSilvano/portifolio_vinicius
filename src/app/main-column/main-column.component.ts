@@ -27,6 +27,7 @@ export class MainColumnComponent implements OnInit {
      });
   }
 
+  //FIXME Gera estranhesa voltar baseado no browser, invés do mapa de navegação...
   getBack() : void{
     this.location.back();
   }
