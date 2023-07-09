@@ -28,7 +28,26 @@ export class MainColumnComponent implements OnInit {
   }
 
   getBack() : void{
-    this.location.back();
+    console.log();
+    this.router.navigateByUrl(this._recuperarUrlPai());
+  }
+
+  _recuperarUrlPai(){
+    let urlSegments = this.router.url.split('/');
+    urlSegments = urlSegments.filter(x => {if(x){return true;} return false;});
+    let returnUrl = '';
+    if(urlSegments.length > 1){
+      for(let i = 0; i < urlSegments.length; i++){
+          let urlSegment = urlSegments[i];
+          if((i + 1) == urlSegments.length){
+            break;
+          }
+          returnUrl += `/${urlSegment}`
+      }
+    }else{
+      returnUrl = `/${urlSegments[0]}`;
+    }
+    return returnUrl;
   }
 
 }
