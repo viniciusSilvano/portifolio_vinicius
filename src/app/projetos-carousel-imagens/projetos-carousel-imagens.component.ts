@@ -15,7 +15,6 @@ export class ProjetosCarouselImagensComponent implements OnInit {
   public imagemSelecionada : imagensDoProjeto;
   public alert : Alert;
   constructor(
-    private projetoEspecificacao: ProjetosEspecificacaoComponent,
     private modalService: NgbModal,
     private messageService: MessagesService
     ) { }

@@ -1,14 +1,14 @@
 
-<p-card>
-  <p-header>
+<div class="card" id="mainColumnCard">
+  <div class="card-header">
     <nav>
       <app-breadcrumb></app-breadcrumb>
     </nav>
-  </p-header>
-  <p-footer class="card-body">
+  </div>
+  <div class="card-body">
     <router-outlet></router-outlet>
-  </p-footer>
+  </div>
   <nav *ngIf="!isHome" class="card-footer text-muted">
       <button (click)="getBack()"  class="btn btn-secondary btn-light text-left justify-content-left">Voltar</button>
   </nav>
-</p-card>
+</div>

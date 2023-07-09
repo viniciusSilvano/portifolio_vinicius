@@ -14,9 +14,6 @@ import {NgbCarouselModule,NgbModalModule,NgbAlertModule, NgbDropdownModule} from
 import { ProjetosCarouselImagensComponent } from './projetos-carousel-imagens/projetos-carousel-imagens.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { MainColumnComponent } from './main-column/main-column.component';
-import {CardModule} from 'primeng/card';
-import { GalleriaModule } from 'primeng/galleria';
-import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -38,10 +35,7 @@ import {ButtonModule} from 'primeng/button';
     NgbModalModule,
     NgbAlertModule,
     NgbDropdownModule,
-    CardModule,
-    AppRoutingModule,
-    GalleriaModule,
-    ButtonModule
+    AppRoutingModule
   ],
   providers: [ {provide: LOCALE_ID, useValue: 'pt_BR' }],
   bootstrap: [AppComponent]
