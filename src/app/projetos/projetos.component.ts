@@ -40,7 +40,7 @@ export class ProjetosComponent implements OnInit {
   }
 
   redirect(idEspecificacao: number) : void{
-    this.router.navigateByUrl(`/projetoEspecificacao/${idEspecificacao}`);
+    this.router.navigateByUrl(`projeto/${idEspecificacao}`);
   }
 
 }

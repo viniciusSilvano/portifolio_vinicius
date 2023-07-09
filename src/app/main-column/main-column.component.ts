@@ -18,7 +18,7 @@ export class MainColumnComponent implements OnInit {
     this.router.events.subscribe((val) => {
       // see also
       if(val instanceof NavigationEnd){
-        if(val.url == "/projetos" || val.url == "/"){
+        if(val.url == "/projeto" || val.url == "/"){
           this.isHome = true;
         }else{
           this.isHome = false;
@@ -27,7 +27,6 @@ export class MainColumnComponent implements OnInit {
      });
   }
 
-  //FIXME Gera estranhesa voltar baseado no browser, invés do mapa de navegação...
   getBack() : void{
     this.location.back();
   }
