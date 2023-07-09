@@ -28,7 +28,6 @@ export class MainColumnComponent implements OnInit {
   }
 
   getBack() : void{
-    console.log();
     this.router.navigateByUrl(this._recuperarUrlPai());
   }
 
