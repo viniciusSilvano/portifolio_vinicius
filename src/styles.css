@@ -34,6 +34,11 @@ body{
     border-width: medium;
 }
 
+.innerCardContainer .ui-card .ui-galleria-panel img{
+    width: 70%;
+    height: 100%;
+}
+
 .innerCardContainer .ui-card-header{
     text-align: center;
     margin: 2%;
