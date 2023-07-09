@@ -1,6 +1,6 @@
 import { ProjetoEspecificacao,Collapse, TiposProjetos } from "./projeto_especificacao";
 import { GlobalStrings } from '../globalStrings/globalString';
-import { TECNOLOGIAS } from "../projetos-classes/TECNOLOGIAS";
+import { TECNOLOGIAS } from "../tecnologia-classes/TECNOLOGIAS";
 export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
     {
         id:1,

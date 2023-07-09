@@ -1,4 +1,4 @@
-import { Tecnologia } from "../projetos-classes/tecnologia";
+import { Tecnologia } from "../tecnologia-classes/tecnologia";
 
 export interface ProjetoEspecificacao{
     id: number;

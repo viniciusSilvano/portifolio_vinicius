@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { ProjetoEspecificacao } from '../projetos-especificacao-classes/projeto_especificacao';
+import { ProjetoEspecificacao } from '../projetos-classes/projeto_especificacao';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { ProjetosService } from '../projetos.service';
@@ -21,10 +21,9 @@ export class MainmenuComponent implements OnInit {
     this.getAllProjetosEspecificacao();
     
   }
+
   navigateToEspecificacao(id:number) : void{
-    console.log("navigate to" + id);
-    //console.log(this.router.navigate(['/projetoEspecificacao/',id],));
-    this.router.navigate(['/projetoEspecificacao',id],{skipLocationChange: false, replaceUrl: true});
+    this.router.navigate(['/projeto',id],{skipLocationChange: false, replaceUrl: true});
   }
   private getAllProjetosEspecificacao() : void{
     this.projetoService

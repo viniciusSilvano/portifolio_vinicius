@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProjetosService} from "../projetos.service";
 import { Router } from '@angular/router';
-import { ProjetoEspecificacao } from '../projetos-especificacao-classes/projeto_especificacao';
+import { ProjetoEspecificacao } from '../projetos-classes/projeto_especificacao';
 
 @Component({
   selector: 'app-projetos',
@@ -40,7 +40,7 @@ export class ProjetosComponent implements OnInit {
   }
 
   redirect(idEspecificacao: number) : void{
-    this.router.navigateByUrl(`/projetoEspecificacao/${idEspecificacao}`);
+    this.router.navigateByUrl(`projeto/${idEspecificacao}`);
   }
 
 }

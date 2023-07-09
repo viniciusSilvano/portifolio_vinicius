@@ -6,24 +6,24 @@ import { ProjetosEspecificacaoComponent } from "./projetos-especificacao/projeto
 const routes: Routes = [
   {
     path: '', 
-    redirectTo: '/projetos', 
-    pathMatch: 'full'
+    redirectTo: '/projeto', 
+    pathMatch: 'full',
   },
   {
-    path: 'projetos', 
+    path: 'projeto', 
     component: ProjetosComponent,
     data:{
       breadcrumb: "projetos"
     }
   },
   {
-    path: 'projetoEspecificacao/:idEspecificacao',
+    path: 'projeto/:idEspecificacao',
     component: ProjetosEspecificacaoComponent,
     data:{
       breadcrumb: "especificação de projeto"
     }
   },
-  {path: '**', redirectTo: '/projetos'}
+  {path: '**', redirectTo: '/projeto'}
 ];
 
 @NgModule({

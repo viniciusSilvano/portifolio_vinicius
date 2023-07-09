@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark col-sm-12 mb-0">
-  <a class="navbar-brand" [routerLink]="['/projetos']">
+  <a class="navbar-brand" [routerLink]="['/projeto']">
     <h3 class="mx-1 my-1">Vinícius Silvano</h3>
   </a>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
@@ -12,7 +12,6 @@
               <button class="btn btn-outline-primary" id="dropdownProjetos" ngbDropdownToggle>Projetos</button>
               <div   class="MenuDropdown" ngbDropdownMenu aria-labelledby="dropdownProjetos">
                 <button  *ngFor="let projeto of projetosDropDownList" (click)="navigateToEspecificacao(projeto.id)" class="MenuDropdownItem" ngbDropdownItem>
-                  <!--<a  [routerLink]="['/projetoEspecificacao', projeto.id]" routerLinkActive="active">{{projeto.tituloProjeto}}</a>-->
                   <a> {{projeto.tituloProjeto}}</a>
                 </button>
               </div>

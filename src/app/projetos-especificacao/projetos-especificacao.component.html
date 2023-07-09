@@ -5,7 +5,7 @@
     <div [innerHTML]="projetoEspecificacao.tituloProjeto"></div>
   </h1>
   
-  <app-projetos-carousel-imagens></app-projetos-carousel-imagens>
+  <app-projetos-carousel-imagens [projeto]="projetoEspecificacao"></app-projetos-carousel-imagens>
 
   <div id="accordion" class="w-100" >
     <div class="card accordionCard" *ngFor="let accordionCard of projetoEspecificacao.accordionCards">
