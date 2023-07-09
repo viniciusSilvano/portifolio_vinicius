@@ -25,42 +25,41 @@ body{
     background-position: center;
     background-size: cover;
     background-color: var(--cor-cinza-escuro);
+    color: var(--cor-cinza-claro)
 }
 
-.innerCardContainer .ui-card{
+#mainColumnCard{
+    background-color: var(--cor-preto-escuro);
+}
+
+
+.innerCardContainer .card{
     background-color: var(--cor-cinza-escuro);
     border-color: var(--cor-verde-claro);
     border-style: solid;
     border-width: medium;
-}
-
-.innerCardContainer .ui-card .ui-galleria-panel img{
-    width: 70%;
-    height: 100%;
-}
-
-.innerCardContainer .ui-card-header{
+  }
+  
+  .innerCardContainer .card-header{
     text-align: center;
     margin: 2%;
-}
-
-.innerCardContainer .ui-card-footer .sub-tecnologias-container{
+  }
+  
+  .innerCardContainer .card-footer .sub-tecnologias-container{
     background-color: var(--cor-preto-escuro);
-}
-
-.innerCardContainer .ui-card-footer .ui-button{
+  }
+  
+  .innerCardContainer .card-footer .btn-secondary{
     background-color: var(--cor-azul-marinho);
-}
-
-.innerCardContainer .ui-galleria-nav-prev, .ui-galleria-nav-next{
-    background-color: black;
-}
-
-.innerCardContainer .pi.pi-fw.pi-chevron-right, .pi.pi-fw.pi-chevron-left{
-    color: red;
-}
-
-
-
-
-
+  }
+  
+  .innerCardContainer .card ngb-carousel{
+    width: 100%;
+    height: 500px;
+  }
+  
+  .innerCardContainer .card ngb-carousel img{
+    width: 100%;
+    height: 500px;
+  }
+  
