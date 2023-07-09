@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {ProjetosEspecificacaoComponent} from "../projetos-especificacao/projetos-especificacao.component";
 import {ProjetoEspecificacao,imagensDoProjeto} from "../projetos-classes/projeto_especificacao";
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
@@ -11,7 +11,7 @@ import {Alert} from "../messages-classes/alert";
   styleUrls: ['./projetos-carousel-imagens.component.css']
 })
 export class ProjetosCarouselImagensComponent implements OnInit {
-  projeto : ProjetoEspecificacao;
+  @Input() projeto : ProjetoEspecificacao;
   public imagemSelecionada : imagensDoProjeto;
   public alert : Alert;
   constructor(
@@ -21,7 +21,6 @@ export class ProjetosCarouselImagensComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.projeto = this.projetoEspecificacao.getProjetoEspecificacao();
     this.alert = this.messageService.getMessageById(3);
     this.alert.message = "Clique na imagem para ampliá-la"
   }

@@ -21,9 +21,8 @@ export class MainmenuComponent implements OnInit {
     this.getAllProjetosEspecificacao();
     
   }
-  //FIXME ao navegar estando na tela de especificação do relatório a imagem do carrousel não muda a contento.
+
   navigateToEspecificacao(id:number) : void{
-    console.log("navigate to" + id);
     this.router.navigate(['/projeto',id],{skipLocationChange: false, replaceUrl: true});
   }
   private getAllProjetosEspecificacao() : void{

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import {ProjetoEspecificacao, AccordionCard, Collapse} from "../projetos-classes/projeto_especificacao";
 import {ActivatedRoute, Router, NavigationEnd,Event} from "@angular/router";
 import {Subscription } from 'rxjs';
@@ -11,7 +11,7 @@ import { ProjetosService } from '../projetos.service';
   styleUrls: ['./projetos-especificacao.component.css']
 })
 
-export class ProjetosEspecificacaoComponent implements OnInit {
+export class ProjetosEspecificacaoComponent implements OnInit, OnChanges {
   public projetoEspecificacao: ProjetoEspecificacao;
   private routerSubscription : Subscription;
   constructor(
@@ -24,15 +24,22 @@ export class ProjetosEspecificacaoComponent implements OnInit {
     }
  
   ngOnInit() {
+    this._initComponent();
+  }
 
-    this.initiateRouterEventSubscription();
-    this.initializeData();
+  ngOnChanges(){
+    this._initComponent();
   }
 
   ngOnDestroy(): void {
     //Called once, before the instance is destroyed.
     //Add 'implements OnDestroy' to the class.
     this.routerSubscription.unsubscribe();
+  }
+
+  _initComponent(){
+    this.initiateRouterEventSubscription();
+    this.initializeData();
   }
 
   initiateRouterEventSubscription(){
@@ -42,7 +49,6 @@ export class ProjetosEspecificacaoComponent implements OnInit {
     this.routerSubscription = this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
       // Navigation Ended Successfully.
-       console.log(event.url);
        this.initializeData();
       }
     }
