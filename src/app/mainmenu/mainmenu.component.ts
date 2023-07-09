@@ -1,5 +1,5 @@
 import { Component, OnInit} from '@angular/core';
-import { ProjetoEspecificacao } from '../projetos-especificacao-classes/projeto_especificacao';
+import { ProjetoEspecificacao } from '../projetos-classes/projeto_especificacao';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { ProjetosService } from '../projetos.service';

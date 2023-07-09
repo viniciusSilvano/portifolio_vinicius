@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ProjetosEspecificacaoComponent} from "../projetos-especificacao/projetos-especificacao.component";
-import {ProjetoEspecificacao,imagensDoProjeto} from "../projetos-especificacao-classes/projeto_especificacao";
+import {ProjetoEspecificacao,imagensDoProjeto} from "../projetos-classes/projeto_especificacao";
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {MessagesService} from "../messages.service";
 import {Alert} from "../messages-classes/alert";

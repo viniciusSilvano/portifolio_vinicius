@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { PROJETOS_ESPECIFICACOES } from './projetos-especificacao-classes/PROJETOS_ESPECIFICACOES';
-import { ProjetoEspecificacao, TiposProjetos } from './projetos-especificacao-classes/projeto_especificacao';
+import { PROJETOS_ESPECIFICACOES } from './projetos-classes/PROJETOS_ESPECIFICACOES';
+import { ProjetoEspecificacao, TiposProjetos } from './projetos-classes/projeto_especificacao';
 ;
 
 @Injectable({
