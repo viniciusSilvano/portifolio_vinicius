@@ -11,17 +11,11 @@ const routes: Routes = [
   },
   {
     path: 'projeto', 
-    component: ProjetosComponent,
-    data:{
-      breadcrumb: "projetos"
-    }
+    component: ProjetosComponent
   },
   {
     path: 'projeto/:idEspecificacao',
-    component: ProjetosEspecificacaoComponent,
-    data:{
-      breadcrumb: "especificação de projeto"
-    }
+    component: ProjetosEspecificacaoComponent
   },
   {path: '**', redirectTo: '/projeto'}
 ];

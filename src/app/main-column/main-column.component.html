@@ -1,14 +1,10 @@
 
 <div class="card" id="mainColumnCard">
   <div class="card-header">
-    <nav>
-      <app-breadcrumb></app-breadcrumb>
-    </nav>
   </div>
   <div class="card-body">
     <router-outlet></router-outlet>
   </div>
-  <nav *ngIf="!isHome" class="card-footer text-muted">
-      <button (click)="getBack()"  class="btn btn-secondary btn-light text-left justify-content-left">Voltar</button>
-  </nav>
+  <div class="card-footer text-muted">
+  </div>
 </div>

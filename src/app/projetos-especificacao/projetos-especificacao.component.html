@@ -1,4 +1,6 @@
-
+<nav class="breadcrumbContainer">
+  <a routerLink="/projeto">Projeto</a> <span>/</span>
+</nav>
 <section *ngIf="projetoEspecificacao">
  
   <h1 class="d-flex justify-content-center my-3">
@@ -24,5 +26,7 @@
       </div>
     </div>
   </div>
-</section>
-    
+  <nav class="card-footer text-muted">
+    <button (click)="getBack()"  class="btn btn-secondary btn-light text-left justify-content-left">Voltar</button>
+  </nav>
+</section>   
