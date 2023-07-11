@@ -12,7 +12,6 @@ import { FooterComponent } from './footer/footer.component';
 import { ProjetosEspecificacaoComponent } from './projetos-especificacao/projetos-especificacao.component';
 import {NgbCarouselModule,NgbModalModule,NgbAlertModule, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 import { ProjetosCarouselImagensComponent } from './projetos-carousel-imagens/projetos-carousel-imagens.component';
-import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { MainColumnComponent } from './main-column/main-column.component';
 
 @NgModule({
@@ -26,7 +25,6 @@ import { MainColumnComponent } from './main-column/main-column.component';
     FooterComponent,
     ProjetosEspecificacaoComponent,
     ProjetosCarouselImagensComponent,
-    BreadcrumbComponent,
     MainColumnComponent
   ],
   imports: [

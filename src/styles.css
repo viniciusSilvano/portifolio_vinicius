@@ -31,32 +31,42 @@ body{
 
 
 .innerCardContainer .card{
-    background-color: var(--cor-cinza-escuro);
-    border-color: var(--cor-verde-claro);
-    border-style: solid;
-    border-width: medium;
-  }
+  background-color: var(--cor-cinza-escuro);
+  border-color: var(--cor-verde-claro);
+  border-style: solid;
+  border-width: medium;
+}
   
-  .innerCardContainer .card-header{
-    text-align: center;
-    margin: 2%;
-  }
-  
-  .innerCardContainer .card-footer .sub-tecnologias-container{
-    background-color: var(--cor-preto-escuro);
-  }
-  
-  .innerCardContainer .card-footer .btn-secondary{
-    background-color: var(--cor-azul-marinho);
-  }
-  
-  .innerCardContainer .card ngb-carousel{
-    width: 100%;
-    height: 500px;
-  }
-  
-  .innerCardContainer .card ngb-carousel img{
-    width: 100%;
-    height: 500px;
-  }
+.innerCardContainer .card-header{
+  text-align: center;
+  margin: 2%;
+}
+
+.innerCardContainer .card-footer .sub-tecnologias-container{
+  background-color: var(--cor-preto-escuro);
+}
+
+.innerCardContainer .card-footer .btn-secondary{
+  background-color: var(--cor-azul-marinho);
+}
+
+.innerCardContainer .card ngb-carousel{
+  width: 100%;
+  height: 500px;
+}
+
+.innerCardContainer .card ngb-carousel img{
+  width: 100%;
+  height: 500px;
+}
+
+.breadcrumbContainer{
+  padding-left: 3%;
+  margin-bottom: 3%;
+  color: var(--cor-cinza-claro);
+}
+
+.breadcrumbContainer span{
+  margin-left: 1%;
+}
   

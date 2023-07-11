@@ -14,6 +14,7 @@ import { ProjetosService } from '../projetos.service';
 export class ProjetosEspecificacaoComponent implements OnInit, OnChanges {
   public projetoEspecificacao: ProjetoEspecificacao;
   private routerSubscription : Subscription;
+  private idProjeto = this.route.snapshot.paramMap.get('idEspecificacao');
   constructor(
     private projetoService: ProjetosService,
     private route: ActivatedRoute,
@@ -68,7 +69,7 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges {
   }
 
   setProjetoEspecificacao() : void{
-    const id = +this.route.snapshot.paramMap.get('idEspecificacao');
+    const id = +this.idProjeto;
     this.projetoService.getProjetoEspecificaoById(id)
       .subscribe(x => {
         this.projetoEspecificacao = x
@@ -85,6 +86,10 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges {
 
   testClick(numImagem : Number) : void{
     alert(numImagem);
+  }
+
+  getBack() : void{
+    this.router.navigateByUrl('/projeto')
   }
 
 }
