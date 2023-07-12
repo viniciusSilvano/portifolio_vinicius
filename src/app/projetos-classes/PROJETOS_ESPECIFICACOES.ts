@@ -155,7 +155,6 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                 tituloDescricao: "Descrição",
                 descricao:
                 `
-                    <p>Esse sistema foi descontinuado</p>
                     <h2>O que é?</h2>
                     <p>Esse foi o meu projeto de conclusão de curso da faculdade.
                     Ele serve para o coordenador de um curso de ensino criar provas 
@@ -188,14 +187,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                     <p>Vinícius Silvano (na parte de criação do sistema, pois o TCC foi feito em dupla)</p>
                 `,
                 collapse: Collapse.collapsed
-            },
-            {
-                id: 2,
-                    tituloDescricao: "Legal mas onde está o código?",
-                    descricao:`<h2>Acesse o código pelo meu github</h2>
-                    <p>Código em: <a href="https://github.com/viniciusSilvano/codigo_TCC" target=_blank>TCC</a></p>`,
-                    collapse: Collapse.collapsed
-             }
+            }
         ]
     },
     {
