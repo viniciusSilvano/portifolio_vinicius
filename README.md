@@ -34,4 +34,4 @@ git tag -a v1.4 -m "my version 1.4"
 ## deploy git hub pages
 npx ng build --prod --base-href "https://viniciussilvano.github.io/portifolio_vinicius/"
 |
-npx angular-cli-ghpages --dir=dist/portifolio_vinicius
+npx angular-cli-ghpages --dir=dist/portifolio_vinicius (tem que rodar no diretório raiz)
