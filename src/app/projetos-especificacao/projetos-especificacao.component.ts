@@ -81,7 +81,7 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges {
   changeCollapse(idCard : Number){
      let accordionCard : AccordionCard;
      accordionCard = this.projetoEspecificacao.accordionCards.find(x => x.id == idCard);
-     accordionCard.collapse = accordionCard.collapse == Collapse.notCollapsed ? Collapse.collapsed : Collapse.notCollapsed;
+     accordionCard.collapse = accordionCard.collapse == Collapse.NOT_COLLAPSED ? Collapse.COLLAPSED : Collapse.NOT_COLLAPSED;
   }
 
   testClick(numImagem : Number) : void{

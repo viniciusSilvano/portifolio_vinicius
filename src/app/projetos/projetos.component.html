@@ -48,7 +48,7 @@
         </div>
         <div class="card-footer">
           <div *ngIf="projeto.tecnologiasAuxiliares" class="d-flex flex-row justify-content-around flex-wrap sub-tecnologias-container">
-            <img  height=50px alt="{{tecnologiaAuxiliar.nome.toUpperCase()}}" title="{{tecnologiaAuxiliar.nome.toUpperCase()}}"  width=50px *ngFor="let tecnologiaAuxiliar of projeto.tecnologiasAuxiliares" src="{{tecnologiaAuxiliar.imagemLocation}}" />
+            <img  height=50px alt="{{tecnologiaAuxiliar.nome.toUpperCase()}}" title="{{tecnologiaAuxiliar.nome.toUpperCase()}}"  width=50px *ngFor="let tecnologiaAuxiliar of projeto.tecnologiasAuxiliares" src="{{tecnologiaAuxiliar.imagem.source}}" />
           </div>
           <div class="row mt-4 ml-2">
             <button (click)="redirect(projeto.id)" class="btn-secondary" type="button"  styleClass="col-sm-2">Visualizar</button>

@@ -1,6 +1,7 @@
+import { Imagem } from "../comum-classes/classesComuns";
+
 export interface Tecnologia{
     idTecnologia: number;
     nome: string;
-    imagemLocation: string;
-    tecnologiasAuxiliares?: Tecnologia[];
+    imagem: Imagem;
 }
