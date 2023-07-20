@@ -29,11 +29,14 @@ export class ProjetosComponent implements OnInit {
       );
   }
 
-  //FIXME Não está filtrando os projetos cards existentes a contento. Exemplo: ALUGUEIS
   filterItem(value){
-    this.projetosCardsFiltered = Object.assign([], {
-      ...this.projetosCardsExistente,...this.projetosTestesPublicosCards}).filter(
-      item => item.tituloProjeto.toLowerCase().indexOf(value.toLowerCase())  > -1
+    this.projetosCardsFiltered = [...this.projetosCardsExistente,...this.projetosTestesPublicosCards].filter(
+      item => {
+        if(value){
+          let tituloProjetoAsLower = item.tituloProjeto.toLowerCase();
+          return tituloProjetoAsLower.includes(value.toLowerCase());
+        }
+      }
     )
     if(!value){
       this.projetosCardsFiltered = []
