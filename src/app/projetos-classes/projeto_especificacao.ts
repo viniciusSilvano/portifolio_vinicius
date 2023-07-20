@@ -1,3 +1,4 @@
+import { Imagem } from "../comum-classes/classesComuns";
 import { Tecnologia } from "../tecnologia-classes/tecnologia";
 
 export interface ProjetoEspecificacao{
@@ -5,9 +6,9 @@ export interface ProjetoEspecificacao{
     tecnologia: Tecnologia;
     tituloProjeto: string;
     descricao: string;
-    imagens: imagensDoProjeto[];
+    imagens: Imagem[];
     tecnologiasAuxiliares?: Tecnologia[];
-    tipo: TiposProjetos
+    tipo: TipoProjeto
     accordionCards: AccordionCard[];  
 }
 
@@ -18,18 +19,11 @@ export class AccordionCard{
     collapse: Collapse;
 }
 
-export interface imagensDoProjeto{
-    source: String;
-    alt: String;
-    title?: String;
-    descricaoCarousel?:String;
-}
-
 export enum Collapse{
-    collapsed = "collapse",
-    notCollapsed = "collpase show"
+    COLLAPSED = "collapse",
+    NOT_COLLAPSED = "collpase show"
 }
 
-export enum TiposProjetos{
+export enum TipoProjeto{
     PESSOAIS,TESTE_PUBLICOS
 }

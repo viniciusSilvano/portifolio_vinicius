@@ -1,9 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {ProjetosEspecificacaoComponent} from "../projetos-especificacao/projetos-especificacao.component";
-import {ProjetoEspecificacao,imagensDoProjeto} from "../projetos-classes/projeto_especificacao";
+import {ProjetoEspecificacao} from "../projetos-classes/projeto_especificacao";
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {MessagesService} from "../messages.service";
 import {Alert} from "../messages-classes/alert";
+import { Imagem } from '../comum-classes/classesComuns';
 
 @Component({
   selector: 'app-projetos-carousel-imagens',
@@ -12,7 +13,7 @@ import {Alert} from "../messages-classes/alert";
 })
 export class ProjetosCarouselImagensComponent implements OnInit {
   @Input() projeto : ProjetoEspecificacao;
-  public imagemSelecionada : imagensDoProjeto;
+  public imagemSelecionada : Imagem;
   public alert : Alert;
   constructor(
     private modalService: NgbModal,
