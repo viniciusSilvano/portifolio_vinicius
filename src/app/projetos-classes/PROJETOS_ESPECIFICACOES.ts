@@ -200,8 +200,18 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-java-teste-project/java_test_project_3.png",alt:"print código java 3"}
         ],
         accordionCards: [
-            {id: 1, descricao: "<p>Projeto utilizado para testes e brincadeiras em java. Apesar do seu objetivo tentei caprichar no código.<p/>", tituloDescricao: "Sobre o projeto",collapse: Collapse.COLLAPSED},
-            {id: 2, descricao: "<a target=\"_blank\" href=\"https://github.com/viniciusSilvano/testesJava\">link para o github</a>", tituloDescricao: "Onde está o código?",collapse: Collapse.COLLAPSED}
+            {
+                id: 1, 
+                tituloDescricao: "Sobre o projeto",
+                descricao: "<p>Projeto utilizado para testes e brincadeiras em java. Apesar do seu objetivo tentei caprichar no código.<p/>", 
+                collapse: Collapse.COLLAPSED
+            },
+            {
+                id: 2, 
+                tituloDescricao: "Onde está o código?",
+                descricao: "<a target=\"_blank\" href=\"https://github.com/viniciusSilvano/testesJava\">link para o github</a>", 
+                collapse: Collapse.COLLAPSED
+            }
         ],
         tecnologia: TECNOLOGIAS.filter(x => x.idTecnologia == 8)[0],
         tituloProjeto: "Java Test Project",
@@ -217,8 +227,18 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-angular-2-tests/angular_test_project_3.png",alt:"print código angular 3"}
         ],
         accordionCards: [
-            {id: 1, descricao: "<p>Projeto utilizado para testes e brincadeiras em angular. Apesar do seu objetivo tentei caprichar no código.<p/>", tituloDescricao: "Sobre o projeto",collapse: Collapse.COLLAPSED},
-            {id: 2, descricao: "<a target=\"_blank\" href=\"https://github.com/viniciusSilvano/angularDoisMaisTestes\">link para o github</a>", tituloDescricao: "Onde está o código?",collapse: Collapse.COLLAPSED}
+            {
+                id: 1, 
+                tituloDescricao: "Sobre o projeto",
+                descricao: "<p>Projeto utilizado para testes e brincadeiras em angular. Apesar do seu objetivo tentei caprichar no código.<p/>", 
+                collapse: Collapse.COLLAPSED
+            },
+            {
+                id: 2, 
+                tituloDescricao: "Onde está o código?",
+                descricao: "<a target=\"_blank\" href=\"https://github.com/viniciusSilvano/angularDoisMaisTestes\">link para o github</a>", 
+                collapse: Collapse.COLLAPSED
+            }
         ],
         tecnologia: TECNOLOGIAS.filter(x => x.idTecnologia == 9)[0],
         tituloProjeto: "Angular 2+ Tests Project",
