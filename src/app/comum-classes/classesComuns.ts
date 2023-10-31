@@ -4,3 +4,7 @@ export interface Imagem{
   title?: String;
   descricao?:String;
 }
+
+export interface Entidade{
+  id: Number;
+}

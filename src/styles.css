@@ -46,10 +46,6 @@ body{
   background-color: var(--cor-preto-escuro);
 }
 
-.innerCardContainer .card-footer .btn-secondary{
-
-}
-
 .innerCardContainer .card ngb-carousel{
   width: 100%;
   height: 500px;
