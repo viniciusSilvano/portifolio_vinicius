@@ -1,4 +1,4 @@
-import {Tecnologia} from "./tecnologia";
+import {Tecnologia} from "../tecnologia-classes/tecnologia";
 import { GlobalStrings } from '../globalStrings/globalString';
 
 export const TECNOLOGIAS: Tecnologia[] = [
@@ -46,6 +46,16 @@ export const TECNOLOGIAS: Tecnologia[] = [
         idTecnologia: 9,
         nome: "Angular",
         imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/angular-icon.png", alt : 'ANGULAR'}
+    },
+    {
+        idTecnologia: 10,
+        nome: "Unity",
+        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/unity.png", alt : 'Unity'}
+    },
+    {
+        idTecnologia: 11,
+        nome: "C#",
+        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/c-sharp.png", alt : 'C#'}
     }
 ]
 
