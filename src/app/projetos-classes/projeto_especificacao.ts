@@ -1,7 +1,7 @@
-import { Imagem } from "../comum-classes/classesComuns";
+import { Imagem, Entidade } from "../comum-classes/classesComuns";
 import { Tecnologia } from "../tecnologia-classes/tecnologia";
 
-export interface ProjetoEspecificacao{
+export interface ProjetoEspecificacao extends Entidade{
     id: number;
     tecnologia: Tecnologia;
     tituloProjeto: string;
@@ -12,7 +12,7 @@ export interface ProjetoEspecificacao{
     accordionCards: AccordionCard[];  
 }
 
-export class AccordionCard{
+export class AccordionCard implements Entidade{
     id: Number;
     tituloDescricao: string;
     descricao: string;

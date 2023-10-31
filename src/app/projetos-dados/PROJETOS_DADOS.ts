@@ -1,11 +1,16 @@
 import { ProjetoEspecificacao,Collapse, TipoProjeto } from "../projetos-classes/projeto_especificacao";
 import { GlobalStrings } from '../globalStrings/globalString';
 import { TECNOLOGIAS } from "../tecnologia-dados/TECNOLOGIAS_DADOS";
+import { SearchUtil } from "../util/search_util";
+import { Tecnologia } from "../tecnologia-classes/tecnologia";
+
+const _SEARCH_UTIL = new SearchUtil();
+
 export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
     {
         id:1,
         tituloProjeto:"Alugueis",
-        tecnologia: TECNOLOGIAS.filter(x => x.idTecnologia == 1)[0],//logo android
+        tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 1}) as Tecnologia,//logo android
         descricao:"sistema mobile de alugueis e controle de estoque",
         tipo: TipoProjeto.PESSOAIS,
         imagens:[
@@ -108,14 +113,14 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             }
         ],
         tecnologiasAuxiliares:[
-            TECNOLOGIAS.filter(x => x.idTecnologia == 8)[0],
-            TECNOLOGIAS.filter(x => x.idTecnologia == 1)[0]
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 1}) as Tecnologia
         ]
     },
     {
         id:2,
         tituloProjeto:"SGQ(Sistema de Gerenciamento de Questão) - TCC",
-        tecnologia: TECNOLOGIAS.filter(x =>  x.idTecnologia == 2)[0], // Spring boot
+        tecnologia:   _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 2}) as Tecnologia, // Spring boot
         tipo: TipoProjeto.PESSOAIS,
         descricao: `meu projeto de conclusão de curso da faculdade.
         Ele serve para o coordenador de um curso de ensino criar provas 
@@ -141,13 +146,13 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarProva.PNG",alt:"Tela de consultar provas"}
         ],
         tecnologiasAuxiliares:[
-            TECNOLOGIAS.filter(x => x.idTecnologia == 8)[0],
-            TECNOLOGIAS.filter(x => x.idTecnologia == 2)[0],
-            TECNOLOGIAS.filter(x => x.idTecnologia == 3)[0],
-            TECNOLOGIAS.filter(x => x.idTecnologia == 4)[0],
-            TECNOLOGIAS.filter(x => x.idTecnologia == 5)[0],
-            TECNOLOGIAS.filter(x => x.idTecnologia == 6)[0],
-            TECNOLOGIAS.filter(x => x.idTecnologia == 7)[0],
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 2}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 3}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 4}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 5}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 6}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 7}) as Tecnologia
         ],
         accordionCards: [
             {
@@ -213,9 +218,9 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                 collapse: Collapse.COLLAPSED
             }
         ],
-        tecnologia: TECNOLOGIAS.filter(x => x.idTecnologia == 8)[0],
+        tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
         tituloProjeto: "Java Test Project",
-        tecnologiasAuxiliares: [ TECNOLOGIAS.filter(x => x.idTecnologia == 8)[0]]
+        tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia]
     },
     {
         id: 4,
@@ -240,9 +245,9 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                 collapse: Collapse.COLLAPSED
             }
         ],
-        tecnologia: TECNOLOGIAS.filter(x => x.idTecnologia == 9)[0],
+        tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 9}) as Tecnologia,
         tituloProjeto: "Angular 2+ Tests Project",
-        tecnologiasAuxiliares: [ TECNOLOGIAS.filter(x => x.idTecnologia == 9)[0]]
+        tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 9}) as Tecnologia]
     },
     {
         id: 5,
@@ -305,11 +310,11 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                 collapse: Collapse.COLLAPSED
             }
         ],
-        tecnologia: TECNOLOGIAS.filter(x => x.idTecnologia == 10)[0],
+        tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 10}) as Tecnologia,
         tituloProjeto: "Projeto final Redzero",
         tecnologiasAuxiliares: [ 
-            TECNOLOGIAS.filter(x => x.idTecnologia == 10)[0],
-            TECNOLOGIAS.filter(x => x.idTecnologia == 11)[0]
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 10}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 11}) as Tecnologia
         ]
     }
 ];
