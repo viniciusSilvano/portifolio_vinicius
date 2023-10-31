@@ -10,7 +10,7 @@
   <app-projetos-carousel-imagens [projeto]="projetoEspecificacao"></app-projetos-carousel-imagens>
 
   <div id="accordion" class="w-100" >
-    <div class="card accordionCard" *ngFor="let accordionCard of projetoEspecificacao.accordionCards">
+    <div class="card text-white bg-dark accordionCard" *ngFor="let accordionCard of projetoEspecificacao.accordionCards">
       <div class="card-header text-center" id="headingOne">
         <h5 class="mb-0">
           <button (click)="changeCollapse(accordionCard.id)"  class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -27,6 +27,6 @@
     </div>
   </div>
   <nav class="card-footer text-muted">
-    <button (click)="getBack()"  class="btn btn-secondary btn-light text-left justify-content-left">Voltar</button>
+    <button (click)="getBack()"  class="btn btn-secondary text-left justify-content-left">Voltar</button>
   </nav>
 </section>   

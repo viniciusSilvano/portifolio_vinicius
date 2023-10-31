@@ -47,7 +47,7 @@ body{
 }
 
 .innerCardContainer .card-footer .btn-secondary{
-  background-color: var(--cor-azul-marinho);
+
 }
 
 .innerCardContainer .card ngb-carousel{
