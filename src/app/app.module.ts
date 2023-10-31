@@ -4,7 +4,6 @@ import { NgModule, LOCALE_ID } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainmenuComponent } from './mainmenu/mainmenu.component';
-import { GitComponent } from './git/git.component';
 import { LeftAsideColumnComponent } from './left-aside-column/left-aside-column.component';
 import { RightAsideColumnComponent } from './right-aside-column/right-aside-column.component';
 import { ProjetosComponent } from './projetos/projetos.component';
@@ -18,7 +17,6 @@ import { MainColumnComponent } from './main-column/main-column.component';
   declarations: [
     AppComponent,
     MainmenuComponent,
-    GitComponent,
     LeftAsideColumnComponent,
     RightAsideColumnComponent,
     ProjetosComponent,
