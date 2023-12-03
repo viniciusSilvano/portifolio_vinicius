@@ -10,7 +10,6 @@ import { ProjetosComponent } from './projetos/projetos.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProjetosEspecificacaoComponent } from './projetos-especificacao/projetos-especificacao.component';
 import {NgbCarouselModule,NgbModalModule,NgbAlertModule, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
-import { ProjetosCarouselImagensComponent } from './projetos-carousel-imagens/projetos-carousel-imagens.component';
 import { MainColumnComponent } from './main-column/main-column.component';
 import { ImageSliderModule } from './image-slider/image-slider.module';
 import { CustomCardModule } from './custom-card/custom-card.module';
@@ -24,7 +23,6 @@ import { CustomCardModule } from './custom-card/custom-card.module';
     ProjetosComponent,
     FooterComponent,
     ProjetosEspecificacaoComponent,
-    ProjetosCarouselImagensComponent,
     MainColumnComponent
   ],
   imports: [

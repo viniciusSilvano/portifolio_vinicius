@@ -1,7 +1,7 @@
 <div class="slider">
   <div>
-    <div class="leftArrow" (click)="goToPrevious()">❰</div>
-    <div class="rightArrow" (click)="goToNext()">❱</div>
+    <div class="leftArrow" (click)="onClickLeftArrow()">❰</div>
+    <div class="rightArrow" (click)="onClickRightArrow()">❱</div>
   </div>
   <div class="slide" [ngStyle]="{'background-image': getCurrentSliderUrl()}">
   </div>

@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { Subscription, interval } from 'rxjs';
+import { Subscription, interval, timer } from 'rxjs';
 import { Imagem } from 'src/app/comuns/class/classesComuns';
 
 @Component({
@@ -14,8 +14,14 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
 
   currentIndex: number = 0;
   timeoutSubscription: Subscription;
+  waitForSubscritionTimer: Subscription;
 
   ngOnInit(): void {
+    this.initImageCycle();
+  }
+
+  initImageCycle(): void{
+    console.log('reiniciando ciclo imagem');
     this.timeoutSubscription = interval(3000)
       .subscribe((val) => {this.goToNext()});
   }
@@ -26,10 +32,29 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
 
   constructor() { }
 
+  onAnyArrowClick(): void{
+    if(this.waitForSubscritionTimer){
+      console.log('resentando timeout');
+      this.waitForSubscritionTimer.unsubscribe();
+    }
+    this.waitForSubscritionTimer = timer(4000).subscribe(() => this.initImageCycle());
+    this.timeoutSubscription.unsubscribe();
+  }
+
+  onClickRightArrow(): void{
+    this.onAnyArrowClick();
+    this.goToNext();
+  }
+
   goToNext(): void{
     const isLastSlide = this.currentIndex === this.slides.length - 1;
     const newIndex = isLastSlide ? 0 : this.currentIndex + 1; 
     this.currentIndex = newIndex;
+  }
+
+  onClickLeftArrow(): void{
+    this.onAnyArrowClick();
+    this.goToPrevious();
   }
 
   goToPrevious(): void{
@@ -37,6 +62,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
     const newIndex = isFirstSlide ? this.slides.length - 1 : this.currentIndex - 1;
     this.currentIndex = newIndex 
   }
+
 
   goToSlide(slideIndex : number) : void{
     this.currentIndex = slideIndex;
