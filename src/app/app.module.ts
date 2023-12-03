@@ -13,6 +13,7 @@ import {NgbCarouselModule,NgbModalModule,NgbAlertModule, NgbDropdownModule} from
 import { ProjetosCarouselImagensComponent } from './projetos-carousel-imagens/projetos-carousel-imagens.component';
 import { MainColumnComponent } from './main-column/main-column.component';
 import { ImageSliderModule } from './image-slider/image-slider.module';
+import { CustomCardModule } from './custom-card/custom-card.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ImageSliderModule } from './image-slider/image-slider.module';
     NgbAlertModule,
     NgbDropdownModule,
     AppRoutingModule,
-    ImageSliderModule
+    ImageSliderModule,
+    CustomCardModule
   ],
   providers: [ {provide: LOCALE_ID, useValue: 'pt_BR' }],
   bootstrap: [AppComponent]
