@@ -1,0 +1,16 @@
+
+.custom-card{
+  background-color: var(--cor-cinza-escuro);
+  border-color: var(--cor-verde-claro);
+  border-style: solid;
+  border-width: medium;
+}
+  
+.custom-card-header{
+  text-align: center;
+  margin: 2%;
+}
+
+.custom-card-footer .sub-tecnologias-container{
+  background-color: var(--cor-preto-escuro);
+}
