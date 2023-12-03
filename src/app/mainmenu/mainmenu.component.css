@@ -15,3 +15,19 @@ nav{
     border-color: rgb(79,123,255);
     background-color:  #283e4a;
 }
+
+#top_main_menu{
+  background-color: var(--cor-preto-escuro);
+  border-bottom-color: var(--cor-cinza-escuro);
+  border-bottom-style: solid;
+  border-bottom-width: small;
+}
+
+#top_main_menu h3:first-of-type{
+    color: var(--cor-verde-claro-n2);
+}
+
+#top_main_menu .btn-outline-primary{
+    color: var(--cor-verde-claro-n2);
+    border-color: var(--cor-verde-claro-n2);
+}

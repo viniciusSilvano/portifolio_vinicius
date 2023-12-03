@@ -10,6 +10,11 @@
         type="text"
         (input)="filterItem(mySearch.value)"> 
     </div>
+
+  <section style="height: 500px; width: 100%; margin: 0 auto;">
+    <h1>Teste novo slider</h1>
+    <app-image-slider [slides]="projetosCardsExistente[0].imagens" [hideDots]="true"></app-image-slider>
+  </section>
   <section class="ml-3" *ngIf="projetosCardsFiltered.length">
     <h2>Projetos Filtrados</h2>
     <div class="d-flex flex-row justify-content-around flex-wrap" >
@@ -37,11 +42,11 @@
   <ng-template #projetoCardTemplate let-projeto>
     <div class="col-sm-6 innerCardContainer">
       <div class="card col-sm-12  mx-1 mt-4">
-        <div class="card-header text-center m-2" >
+        <div class="card-header text-center m-2 p-0" >
           {{projeto.tituloProjeto | uppercase}}
         </div>
-        <div class="col-sm-12">
-          <app-projetos-carousel-imagens [projeto]="projeto"></app-projetos-carousel-imagens>
+        <div id="projeto-carousel-container" class="col-sm-12 h-10">
+         <app-projetos-carousel-imagens [esconderTitle]="true" [esconderDescricao]="true" [projeto]="projeto"></app-projetos-carousel-imagens>
         </div>
         <div>
           <p>{{projeto.descricao}}</p>

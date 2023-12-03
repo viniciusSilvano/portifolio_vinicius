@@ -15,13 +15,3 @@
   background-color: var(--cor-preto-escuro);
 }
 
-
-.innerCardContainer .card ngb-carousel{
-  width: 100%;
-  height: 500px;
-}
-
-.innerCardContainer .card ngb-carousel img{
-  width: 100%;
-  height: 500px;
-}

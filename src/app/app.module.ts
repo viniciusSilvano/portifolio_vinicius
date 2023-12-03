@@ -12,6 +12,7 @@ import { ProjetosEspecificacaoComponent } from './projetos-especificacao/projeto
 import {NgbCarouselModule,NgbModalModule,NgbAlertModule, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
 import { ProjetosCarouselImagensComponent } from './projetos-carousel-imagens/projetos-carousel-imagens.component';
 import { MainColumnComponent } from './main-column/main-column.component';
+import { ImageSliderModule } from './image-slider/image-slider.module';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { MainColumnComponent } from './main-column/main-column.component';
     NgbModalModule,
     NgbAlertModule,
     NgbDropdownModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ImageSliderModule
   ],
   providers: [ {provide: LOCALE_ID, useValue: 'pt_BR' }],
   bootstrap: [AppComponent]

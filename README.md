@@ -4,7 +4,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## npm version
 
-the recomended version installed via nvm is 10.16.3 
+the recomended version installed via nvm is 10.24.1 
+
+## node version
+node recomended version is 10.24.1
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
@@ -29,12 +33,13 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## criar tags
+## create new tags
 git tag -a v1.4 -m "my version 1.4"
 
-## subir tags
+## pushing the new tags
 git push origin --tags
-## deploy git hub pages
+
+## deploy to git hub pages
 npx ng build --prod --base-href "https://viniciussilvano.github.io/portifolio_vinicius/"
 |
 npx angular-cli-ghpages --dir=dist/portifolio_vinicius (tem que rodar no diretório raiz)

@@ -1,4 +1,4 @@
-import { Imagem, Entidade } from "../comum-classes/classesComuns";
+import { Imagem, Entidade } from "../../comuns/class/classesComuns";
 
 export interface Tecnologia extends Entidade{
     id: number;

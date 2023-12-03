@@ -1,9 +1,3 @@
 #crachaDeApresentacao{
-    /*background-color: #F9FEFF;*/
     background-color: var(--cor-preto-escuro);
-    color: var(--cor-cinza-claro) !important;
-}
-
-#crachaDeApresentacao .card-body{
-    height: 600px;
 }

@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import {ProjetosEspecificacaoComponent} from "../projetos-especificacao/projetos-especificacao.component";
-import {ProjetoEspecificacao} from "../projetos-classes/projeto_especificacao";
+import {ProjetoEspecificacao} from "../projetos-especificacao/class/projeto_especificacao";
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import {MessagesService} from "../messages.service";
-import {Alert} from "../messages-classes/alert";
-import { Imagem } from '../comum-classes/classesComuns';
+import {Alert} from "../messages/alert";
+import { Imagem } from '../comuns/class/classesComuns';
 
 @Component({
   selector: 'app-projetos-carousel-imagens',
@@ -13,6 +13,9 @@ import { Imagem } from '../comum-classes/classesComuns';
 })
 export class ProjetosCarouselImagensComponent implements OnInit {
   @Input() projeto : ProjetoEspecificacao;
+  @Input() esconderDescricao : Boolean = true;
+  @Input() esconderTitle : Boolean = true;
+
   public imagemSelecionada : Imagem;
   public alert : Alert;
   constructor(
