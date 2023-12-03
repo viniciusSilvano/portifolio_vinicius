@@ -10,51 +10,31 @@
         type="text"
         (input)="filterItem(mySearch.value)"> 
     </div>
+
   <section class="ml-3" *ngIf="projetosCardsFiltered.length">
     <h2>Projetos Filtrados</h2>
     <div class="d-flex flex-row justify-content-around flex-wrap" >
-      <ng-container *ngFor="let projeto of projetosCardsFiltered;let indexOfelement=index;" [ngTemplateOutlet]="projetoCardTemplate" [ngTemplateOutletContext]="{ $implicit: projeto }">
-      </ng-container>
+      <div class="col-6 mt-3" *ngFor="let projeto of projetosCardsFiltered;let indexOfelement=index;">
+        <app-custom-card [projeto]="projeto" [heightImageSliderInPx]="300" (onVisualizarBtnClick)="redirect($event)"></app-custom-card>
+      </div>
     </div>
   </section>
   <section class="ml-3" *ngIf="!projetosCardsFiltered.length">
     <h2>Pessoais</h2>
     <p>Projetos pessoais criados por um propósito ou razões pessoais.</p>
     <div class="d-flex flex-row justify-content-around flex-wrap" >
-      <ng-container *ngFor="let projeto of projetosCardsExistente;let indexOfelement=index;" [ngTemplateOutlet]="projetoCardTemplate" [ngTemplateOutletContext]="{ $implicit: projeto }">
-      </ng-container>
+      <div class="col-6 mt-3" *ngFor="let projeto of projetosCardsExistente;let indexOfelement=index;">
+        <app-custom-card [projeto]="projeto" [heightImageSliderInPx]="300" (onVisualizarBtnClick)="redirect($event)"></app-custom-card>
+      </div>
     </div>
   </section>
   <section class="ml-3 mt-4" *ngIf="!projetosCardsFiltered.length">
     <h2>Testes/Públicos</h2>
     <p>Projetos que são usados para brincar com o código ou experimentar novas abordagens.</p>
     <div class="d-flex flex-row justify-content-around flex-wrap" >
-      <ng-container *ngFor="let projeto of projetosTestesPublicosCards;let indexOfelement=index;" [ngTemplateOutlet]="projetoCardTemplate" [ngTemplateOutletContext]="{ $implicit: projeto }">
-      </ng-container>
-    </div>
-  </section>
-
-  <ng-template #projetoCardTemplate let-projeto>
-    <div class="col-sm-6 innerCardContainer">
-      <div class="card col-sm-12  mx-1 mt-4">
-        <div class="card-header text-center m-2" >
-          {{projeto.tituloProjeto | uppercase}}
-        </div>
-        <div class="col-sm-12">
-          <app-projetos-carousel-imagens [projeto]="projeto"></app-projetos-carousel-imagens>
-        </div>
-        <div>
-          <p>{{projeto.descricao}}</p>
-        </div>
-        <div class="card-footer">
-          <div *ngIf="projeto.tecnologiasAuxiliares" class="d-flex flex-row justify-content-around flex-wrap sub-tecnologias-container">
-            <img  height=50px alt="{{tecnologiaAuxiliar.nome.toUpperCase()}}" title="{{tecnologiaAuxiliar.nome.toUpperCase()}}"  width=50px *ngFor="let tecnologiaAuxiliar of projeto.tecnologiasAuxiliares" src="{{tecnologiaAuxiliar.imagem.source}}" />
-          </div>
-          <div class="row mt-4 ml-2">
-            <button (click)="redirect(projeto.id)" class="btn-secondary" type="button"  styleClass="col-sm-2">Visualizar</button>
-          </div>
-        </div>
+      <div class="col-6 mt-3" *ngFor="let projeto of projetosTestesPublicosCards;let indexOfelement=index;">
+        <app-custom-card [projeto]="projeto" [heightImageSliderInPx]="300" (onVisualizarBtnClick)="redirect($event)" ></app-custom-card>
       </div>
     </div>
-  </ng-template>
+  </section>
 </section>

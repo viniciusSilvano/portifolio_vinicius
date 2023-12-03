@@ -1,5 +1,5 @@
 import { Component, OnChanges, OnInit } from '@angular/core';
-import {ProjetoEspecificacao, AccordionCard, Collapse} from "../projetos-classes/projeto_especificacao";
+import {ProjetoEspecificacao, AccordionCard, Collapse} from "./class/projeto_especificacao";
 import {ActivatedRoute, Router, NavigationEnd,Event} from "@angular/router";
 import {Subscription } from 'rxjs';
 import { ProjetosService } from '../projetos.service';

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProjetosService} from "../projetos.service";
 import { Router } from '@angular/router';
-import { ProjetoEspecificacao } from '../projetos-classes/projeto_especificacao';
-
+import { ProjetoEspecificacao } from '../projetos-especificacao/class/projeto_especificacao';
 @Component({
   selector: 'app-projetos',
   templateUrl: './projetos.component.html',

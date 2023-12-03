@@ -1,8 +1,8 @@
-import { ProjetoEspecificacao,Collapse, TipoProjeto } from "../projetos-classes/projeto_especificacao";
-import { GlobalStrings } from '../globalStrings/globalString';
-import { TECNOLOGIAS } from "../tecnologia-dados/TECNOLOGIAS_DADOS";
-import { SearchUtil } from "../util/search_util";
-import { Tecnologia } from "../tecnologia-classes/tecnologia";
+import { ProjetoEspecificacao,Collapse, TipoProjeto } from "../class/projeto_especificacao";
+import { GlobalStrings } from '../../globalStrings/globalString';
+import { TECNOLOGIAS } from "../../tecnologias/data/TECNOLOGIAS_DADOS";
+import { SearchUtil } from "../../util/search_util";
+import { Tecnologia } from "../../tecnologias/class/tecnologia";
 
 const _SEARCH_UTIL = new SearchUtil();
 

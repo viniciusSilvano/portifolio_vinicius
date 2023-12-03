@@ -10,8 +10,9 @@ import { ProjetosComponent } from './projetos/projetos.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProjetosEspecificacaoComponent } from './projetos-especificacao/projetos-especificacao.component';
 import {NgbCarouselModule,NgbModalModule,NgbAlertModule, NgbDropdownModule} from '@ng-bootstrap/ng-bootstrap';
-import { ProjetosCarouselImagensComponent } from './projetos-carousel-imagens/projetos-carousel-imagens.component';
 import { MainColumnComponent } from './main-column/main-column.component';
+import { ImageSliderModule } from './image-slider/image-slider.module';
+import { CustomCardModule } from './custom-card/custom-card.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,6 @@ import { MainColumnComponent } from './main-column/main-column.component';
     ProjetosComponent,
     FooterComponent,
     ProjetosEspecificacaoComponent,
-    ProjetosCarouselImagensComponent,
     MainColumnComponent
   ],
   imports: [
@@ -31,7 +31,9 @@ import { MainColumnComponent } from './main-column/main-column.component';
     NgbModalModule,
     NgbAlertModule,
     NgbDropdownModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ImageSliderModule,
+    CustomCardModule
   ],
   providers: [ {provide: LOCALE_ID, useValue: 'pt_BR' }],
   bootstrap: [AppComponent]

@@ -1,3 +1,7 @@
 footer{
-    background-color: var(--cor-azul-marinho); 
+    background-color: var(--cor-azul-marinho);
+    color: var(--cor-verde-claro-n2);
+    border-top-color: var(--cor-cinza-escuro);
+    border-top-style: solid;
+    border-top-width: small; 
 }

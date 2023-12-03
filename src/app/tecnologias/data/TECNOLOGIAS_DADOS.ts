@@ -1,5 +1,5 @@
-import {Tecnologia} from "../tecnologia-classes/tecnologia";
-import { GlobalStrings } from '../globalStrings/globalString';
+import {Tecnologia} from "../class/tecnologia";
+import { GlobalStrings } from '../../globalStrings/globalString';
 
 export const TECNOLOGIAS: Tecnologia[] = [
     {

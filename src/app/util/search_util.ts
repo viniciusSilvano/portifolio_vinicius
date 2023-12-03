@@ -1,4 +1,4 @@
-import { Entidade } from "../comum-classes/classesComuns";
+import { Entidade } from "../comuns/class/classesComuns";
 
 export class SearchUtil{
   public binarySearch(array: Array<Entidade>,eleBusca : Entidade) : Entidade{

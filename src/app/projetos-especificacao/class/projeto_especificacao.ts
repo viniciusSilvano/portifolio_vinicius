@@ -1,5 +1,5 @@
-import { Imagem, Entidade } from "../comum-classes/classesComuns";
-import { Tecnologia } from "../tecnologia-classes/tecnologia";
+import { Imagem, Entidade } from "../../comuns/class/classesComuns";
+import { Tecnologia } from "../../tecnologias/class/tecnologia";
 
 export interface ProjetoEspecificacao extends Entidade{
     id: number;

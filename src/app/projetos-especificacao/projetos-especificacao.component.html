@@ -6,8 +6,11 @@
   <h1 class="d-flex justify-content-center my-3">
     <div [innerHTML]="projetoEspecificacao.tituloProjeto"></div>
   </h1>
-  
-  <app-projetos-carousel-imagens [projeto]="projetoEspecificacao"></app-projetos-carousel-imagens>
+
+  <div class="w-100" style="height: 800px;">
+    <app-image-slider [slides]="projetoEspecificacao.imagens"></app-image-slider>
+  </div>
+  <!--<app-projetos-carousel-imagens [projeto]="projetoEspecificacao"></app-projetos-carousel-imagens>-->
 
   <div id="accordion" class="w-100" >
     <div class="card text-white bg-dark accordionCard" *ngFor="let accordionCard of projetoEspecificacao.accordionCards">
