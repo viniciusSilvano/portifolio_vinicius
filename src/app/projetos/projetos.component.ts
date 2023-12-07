@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {ProjetosService} from "../projetos.service";
+import {ProjetosService} from "./service/projetos.service";
 import { Router } from '@angular/router';
 import { ProjetoEspecificacao } from '../projetos-especificacao/class/projeto_especificacao';
+import { Tecnologia } from '../tecnologias/class/tecnologia';
+import { TecnologiaService } from '../tecnologias/service/tecnologia.service';
 @Component({
   selector: 'app-projetos',
   templateUrl: './projetos.component.html',
@@ -11,7 +13,11 @@ export class ProjetosComponent implements OnInit {
   projetosCardsExistente : ProjetoEspecificacao[];
   projetosTestesPublicosCards: ProjetoEspecificacao[];
   projetosCardsFiltered: ProjetoEspecificacao[] = [];
-  constructor(private projetoService: ProjetosService, private router: Router) { }
+  tecnologiasParaBusca: Tecnologia[] = [];
+  constructor(
+    private projetoService: ProjetosService,
+    private tecnologiaService: TecnologiaService, 
+    private router: Router) { }
 
   ngOnInit() {
     this.projetoService.getProjetoPessoaisCards()
@@ -26,6 +32,8 @@ export class ProjetosComponent implements OnInit {
           this.projetosTestesPublicosCards = projetos;
         }
       );
+
+      this.tecnologiasParaBusca = this.tecnologiaService.findAll();
   }
 
   filterItem(value){

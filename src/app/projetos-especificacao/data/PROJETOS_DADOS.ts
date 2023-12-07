@@ -113,8 +113,8 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             }
         ],
         tecnologiasAuxiliares:[
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 1}) as Tecnologia
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 1}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia
         ]
     },
     {
@@ -146,13 +146,13 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarProva.PNG",alt:"Tela de consultar provas"}
         ],
         tecnologiasAuxiliares:[
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 2}) as Tecnologia,
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 3}) as Tecnologia,
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 4}) as Tecnologia,
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 5}) as Tecnologia,
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 6}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 7}) as Tecnologia
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 7}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia
         ],
         accordionCards: [
             {
