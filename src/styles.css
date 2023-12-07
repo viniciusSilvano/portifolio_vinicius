@@ -10,6 +10,8 @@
 
 :root{
     --cor-azul-marinho: rgb(40,62,74);
+    --cor-azul-marinho-n2: 0, 123, 255;
+    --cor-azul-marinho-n2-opacity: 0.5;
     --cor-cinza-escuro: #3f3f3f;
     --cor-preto-escuro: #121212;
     --cor-preto-escuro-n2: #323232;
@@ -17,7 +19,8 @@
     --cor-verde-claro: #2F5D61;
     --cor-azul-claro: #000FFF;
     --cor-cinza-claro: #CFD3D4;
-    --cor-verde-claro-n2: #15BE14;
+    --cor-verde-claro-n2: 21, 190, 20  ;
+    --cor-verde-claro-n2-opacity: 75;
 }
 
 body{
@@ -25,7 +28,7 @@ body{
     background-position: center;
     background-size: cover;
     background-color: var(--cor-preto-escuro);
-    color: var(--cor-verde-claro-n2)
+    color: rgba(var(--cor-verde-claro-n2),var(--cor-verde-claro-n2-opacity))
 }
 
 .innerCardContainer .card{

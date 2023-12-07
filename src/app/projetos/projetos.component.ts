@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { ProjetoEspecificacao } from '../projetos-especificacao/class/projeto_especificacao';
 import { Tecnologia } from '../tecnologias/class/tecnologia';
 import { TecnologiaService } from '../tecnologias/service/tecnologia.service';
+import { ProjetoFilter } from './class/projetoFilter';
 @Component({
   selector: 'app-projetos',
   templateUrl: './projetos.component.html',
@@ -14,7 +15,7 @@ export class ProjetosComponent implements OnInit {
   projetosTestesPublicosCards: ProjetoEspecificacao[];
   projetosCardsFiltered: ProjetoEspecificacao[] = [];
   tecnologiasParaBusca: Tecnologia[] = [];
-  tecnologiasSelecionadasParaBusca: number[];
+  projetoFilter = new ProjetoFilter();
 
   constructor(
     private projetoService: ProjetosService,
@@ -36,20 +37,26 @@ export class ProjetosComponent implements OnInit {
       );
 
       this.tecnologiasParaBusca = this.tecnologiaService.findAll();
-      this.tecnologiasSelecionadasParaBusca = new Array<number>(this.tecnologiasParaBusca.length);
+      this.projetoFilter.tecnologiasSelecionadasParaBusca = new Array<number>(this.tecnologiasParaBusca.length);
   }
 
-  filterItem(value){
+  filterByItem(value){
+    this.projetoFilter.tituloProjeto = value;
+    this.filter();
+  }
+
+  private filter(){
     this.projetosCardsFiltered = [...this.projetosCardsExistente,...this.projetosTestesPublicosCards].filter(
       item => {
-        if(value){
-          let tituloProjetoAsLower = item.tituloProjeto.toLowerCase();
-          return tituloProjetoAsLower.includes(value.toLowerCase());
-        }
+        return this.projetoFilter.filter(item);
       }
     )
-    if(!value){
-      this.projetosCardsFiltered = []
+    this.resetFilteredProjectsList();
+  }
+
+  private resetFilteredProjectsList() {
+    if (this.projetoFilter.isResetNeeded()) {
+      this.projetosCardsFiltered = [];
     }
   }
 
@@ -57,13 +64,15 @@ export class ProjetosComponent implements OnInit {
     this.router.navigateByUrl(`projeto/${idEspecificacao}`);
   }
 
-  aoClicarImagemBuscaTecnologia(id: number){
+  OnClickSearchByTecnologyImage(id: number){
     console.log(id);
-    if(this.tecnologiasSelecionadasParaBusca.includes(id)){
-      this.tecnologiasSelecionadasParaBusca.splice(this.tecnologiasSelecionadasParaBusca.indexOf(id),1);
+    if(this.projetoFilter.tecnologiasSelecionadasParaBusca.includes(id)){
+      this.projetoFilter.tecnologiasSelecionadasParaBusca.splice(this.projetoFilter.tecnologiasSelecionadasParaBusca.indexOf(id),1);
     }else{
-      this.tecnologiasSelecionadasParaBusca.push(id);
+      this.projetoFilter.tecnologiasSelecionadasParaBusca.push(id);
     }
+
+    //this.filterItemByTecnologias();
   }
 
 }
