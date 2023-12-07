@@ -49,4 +49,3 @@ package-lock.json
 
 #angular
 ./angular
-environment.prod.ts
