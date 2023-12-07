@@ -1,5 +1,5 @@
 nav{
-    background-color: var(--cor-azul-marinho);
+    background-color: rgba(50,50,50,0.5);
 }
 .MenuDropdown{
     border-style: solid;
@@ -17,7 +17,7 @@ nav{
 }
 
 #top_main_menu{
-    background-color: var(--cor-azul-marinho); 
+    background-color: rgba(50,50,50,0.5);
     border-bottom-color: var(--cor-cinza-escuro);
     border-bottom-style: solid;
     border-bottom-width: small;
