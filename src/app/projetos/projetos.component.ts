@@ -14,6 +14,8 @@ export class ProjetosComponent implements OnInit {
   projetosTestesPublicosCards: ProjetoEspecificacao[];
   projetosCardsFiltered: ProjetoEspecificacao[] = [];
   tecnologiasParaBusca: Tecnologia[] = [];
+  tecnologiasSelecionadasParaBusca: number[];
+
   constructor(
     private projetoService: ProjetosService,
     private tecnologiaService: TecnologiaService, 
@@ -34,6 +36,7 @@ export class ProjetosComponent implements OnInit {
       );
 
       this.tecnologiasParaBusca = this.tecnologiaService.findAll();
+      this.tecnologiasSelecionadasParaBusca = new Array<number>(this.tecnologiasParaBusca.length);
   }
 
   filterItem(value){
@@ -52,6 +55,15 @@ export class ProjetosComponent implements OnInit {
 
   redirect(idEspecificacao: number) : void{
     this.router.navigateByUrl(`projeto/${idEspecificacao}`);
+  }
+
+  aoClicarImagemBuscaTecnologia(id: number){
+    console.log(id);
+    if(this.tecnologiasSelecionadasParaBusca.includes(id)){
+      this.tecnologiasSelecionadasParaBusca.splice(this.tecnologiasSelecionadasParaBusca.indexOf(id),1);
+    }else{
+      this.tecnologiasSelecionadasParaBusca.push(id);
+    }
   }
 
 }

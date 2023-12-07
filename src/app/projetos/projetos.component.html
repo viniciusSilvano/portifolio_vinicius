@@ -23,7 +23,13 @@
       <small>selecione uma imagem para filtrar </small>
       <div class="mt-3 d-flex flex-row justify-content-around flex-wrap" >
         <div class="col-1" *ngFor="let tecnologia of tecnologiasParaBusca">
-          <img class="imagem-clicavel" height="50px" alt="{{tecnologia.alt}}" title="{{tecnologia.alt}}"  src="{{tecnologia.imagem.source}}"/>
+          <img class="imagem-clicavel" 
+            (click)="aoClicarImagemBuscaTecnologia(tecnologia.id)"
+            height="50px" 
+            alt="{{tecnologia.alt}}" 
+            title="{{tecnologia.alt}}"  
+            [ngClass]="{'box-shadow' : tecnologiasSelecionadasParaBusca.includes(tecnologia.id)}"
+            src="{{tecnologia.imagem.source}}"/>
         </div>
       </div>
     </fieldset>

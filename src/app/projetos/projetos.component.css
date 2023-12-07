@@ -1,0 +1,7 @@
+.imagem-clicavel:hover{
+	box-shadow: 0 0 0 0.5rem rgba(0, 123, 255, 0.5);
+}
+
+.imagem-clicavel.box-shadow{
+  box-shadow: 0 0 0 0.5rem rgba(0, 123, 255, 0.5);
+}
