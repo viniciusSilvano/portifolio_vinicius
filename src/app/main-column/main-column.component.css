@@ -1,5 +1,6 @@
 #mainColumnCard{
 	background-image: url(../../assets/images/fundo-azul-do-gradiente-de-luxo-abstrato-liso-azul-escuro-com-vinheta-preta-studio-banner.jpg);
+  background-color: var(--cor-preto-escuro);
 	border-right-color: var(--cor-cinza-escuro);
 	border-right-style: solid;
 	border-right-width: small;
