@@ -20,7 +20,6 @@ export class CustomCardComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
-    console.log('height informado: ' + this.heightImageSliderInPx);
     this.imagesSliderContainerElement.nativeElement.style.height = `${this.heightImageSliderInPx}px`;
     this.imagesSliderContainerElement.nativeElement.style.width = '100%';
   }

@@ -1,6 +1,6 @@
 footer{
     background-color: rgba(50,50,50,0.5);
-    color: var(--cor-verde-claro-n2);
+    color: rgba(var(--cor-verde-claro-n2),var(--cor-verde-claro-n2-opacity));
     border-top-color: var(--cor-cinza-escuro);
     border-top-style: solid;
     border-top-width: small; 

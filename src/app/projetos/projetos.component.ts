@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {ProjetosService} from "../projetos.service";
+import {ProjetosService} from "./service/projetos.service";
 import { Router } from '@angular/router';
 import { ProjetoEspecificacao } from '../projetos-especificacao/class/projeto_especificacao';
+import { Tecnologia } from '../tecnologias/class/tecnologia';
+import { TecnologiaService } from '../tecnologias/service/tecnologia.service';
+import { ProjetoFilter } from './class/projetoFilter';
 @Component({
   selector: 'app-projetos',
   templateUrl: './projetos.component.html',
@@ -11,7 +14,13 @@ export class ProjetosComponent implements OnInit {
   projetosCardsExistente : ProjetoEspecificacao[];
   projetosTestesPublicosCards: ProjetoEspecificacao[];
   projetosCardsFiltered: ProjetoEspecificacao[] = [];
-  constructor(private projetoService: ProjetosService, private router: Router) { }
+  tecnologiasParaBusca: Tecnologia[] = [];
+  projetoFilter = new ProjetoFilter();
+
+  constructor(
+    private projetoService: ProjetosService,
+    private tecnologiaService: TecnologiaService, 
+    private router: Router) { }
 
   ngOnInit() {
     this.projetoService.getProjetoPessoaisCards()
@@ -26,24 +35,43 @@ export class ProjetosComponent implements OnInit {
           this.projetosTestesPublicosCards = projetos;
         }
       );
+
+      this.tecnologiasParaBusca = this.tecnologiaService.findAll();
+      this.projetoFilter.tecnologiasSelecionadasParaBusca = new Array<number>(this.tecnologiasParaBusca.length);
   }
 
-  filterItem(value){
+  filterByItem(value){
+    this.projetoFilter.tituloProjeto = value;
+    this.filter();
+  }
+
+  private filter(){
     this.projetosCardsFiltered = [...this.projetosCardsExistente,...this.projetosTestesPublicosCards].filter(
       item => {
-        if(value){
-          let tituloProjetoAsLower = item.tituloProjeto.toLowerCase();
-          return tituloProjetoAsLower.includes(value.toLowerCase());
-        }
+        return this.projetoFilter.filter(item);
       }
     )
-    if(!value){
-      this.projetosCardsFiltered = []
+    this.resetFilteredProjectsList();
+  }
+
+  private resetFilteredProjectsList() {
+    if (this.projetoFilter.isResetNeeded()) {
+      this.projetosCardsFiltered = [];
     }
   }
 
   redirect(idEspecificacao: number) : void{
     this.router.navigateByUrl(`projeto/${idEspecificacao}`);
+  }
+
+  OnClickSearchByTecnologyImage(id: number){
+    if(this.projetoFilter.tecnologiasSelecionadasParaBusca.includes(id)){
+      this.projetoFilter.tecnologiasSelecionadasParaBusca.splice(this.projetoFilter.tecnologiasSelecionadasParaBusca.indexOf(id),1);
+    }else{
+      this.projetoFilter.tecnologiasSelecionadasParaBusca.push(id);
+    }
+
+    this.filter();
   }
 
 }

@@ -2,7 +2,7 @@ import { Component, OnChanges, OnInit } from '@angular/core';
 import {ProjetoEspecificacao, AccordionCard, Collapse} from "./class/projeto_especificacao";
 import {ActivatedRoute, Router, NavigationEnd,Event} from "@angular/router";
 import {Subscription } from 'rxjs';
-import { ProjetosService } from '../projetos.service';
+import { ProjetosService } from '../projetos/service/projetos.service';
 
 
 @Component({
@@ -65,7 +65,7 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges {
   }
 
   public alertar(){
-    console.log("o alerta");
+    
   }
 
   setProjetoEspecificacao() : void{
