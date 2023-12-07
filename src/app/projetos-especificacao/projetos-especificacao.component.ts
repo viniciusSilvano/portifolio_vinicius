@@ -65,7 +65,7 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges {
   }
 
   public alertar(){
-    console.log("o alerta");
+    
   }
 
   setProjetoEspecificacao() : void{

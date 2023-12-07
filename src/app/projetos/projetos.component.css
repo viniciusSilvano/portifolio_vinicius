@@ -1,7 +1,7 @@
 .clickable-image:hover{
-	box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+	box-shadow: 0 0 0 0.2rem rgba(var(--cor-verde-claro-n2),var(--cor-verde-claro-n2-opacity));
 }
 
 .clickable-image.box-shadow{
-  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+  box-shadow: 0 0 0 0.2rem rgba(var(--cor-verde-claro-n2),var(--cor-verde-claro-n2-opacity));
 }

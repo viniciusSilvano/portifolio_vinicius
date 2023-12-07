@@ -65,14 +65,13 @@ export class ProjetosComponent implements OnInit {
   }
 
   OnClickSearchByTecnologyImage(id: number){
-    console.log(id);
     if(this.projetoFilter.tecnologiasSelecionadasParaBusca.includes(id)){
       this.projetoFilter.tecnologiasSelecionadasParaBusca.splice(this.projetoFilter.tecnologiasSelecionadasParaBusca.indexOf(id),1);
     }else{
       this.projetoFilter.tecnologiasSelecionadasParaBusca.push(id);
     }
 
-    //this.filterItemByTecnologias();
+    this.filter();
   }
 
 }

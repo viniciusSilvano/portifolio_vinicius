@@ -34,7 +34,6 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
 
   onAnyArrowClick(): void{
     if(this.waitForSubscritionTimer){
-      console.log('resentando timeout');
       this.waitForSubscritionTimer.unsubscribe();
     }
     this.waitForSubscritionTimer = timer(4000).subscribe(() => this.initImageCycle());
