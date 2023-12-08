@@ -43,3 +43,10 @@ git push origin --tags
 npx ng build --prod --base-href "https://viniciussilvano.github.io/portifolio_vinicius/"
 |
 npx angular-cli-ghpages --dir=dist/portifolio_vinicius (tem que rodar no diretório raiz)
+
+## Update local tags from repository
+git fetch --all --tags
+
+## Change to tag
+git checkout tags/v1.0 -b v1.0-branch
+
