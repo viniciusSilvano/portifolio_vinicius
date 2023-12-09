@@ -160,36 +160,38 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                 tituloDescricao: "Descrição",
                 descricao:
                 `
-                    <h2>O que é?</h2>
-                    <p>Esse foi o meu projeto de conclusão de curso da faculdade.
-                    Ele serve para o coordenador de um curso de ensino criar provas 
-                    de forma aleatória com um banco de questões, as questões são organizadas
-                    por meio da Taxonomia de Bloom.</p>
-                    <p>Os professores eram responsáveis pelo cadastro das questões 
-                    e o coordenador homologava(dava o aceite) dessas questões para a criação das provas.</p>
-                    <h2>Ferramentas utilizadas:</h2>
-                    <ul>
-                        <li>Microsoft Word 2007.</li>
-                        <li>Eclipse</li>
-                        <li>Spring boot</li>
-                        <li>JQuery</li>
-                        <li>Bootstrap 3</li>
-                        <li>TinyMCE (Versão gratuita)</li>
-                        <li>PostgresSQL</li>
-                        <li>Thymeleaf</li>
-                    </ul>
-                    <h2>Documentações utilizadas:</h2>
-                    <ul>
-                        <li>Diagrama de caso de uso (UC, interação do usuário com o sistema).</li>
-                        <li>Especificação de caso de uso (ECU, detalhamentos dos UCs(Casos de uso)).</li>
-                        <li>Diagrama de classe(classes/entidades principais do sistema).</li>
-                        <li>Documento de requisitos(regras de negócio).</li>
-                        <li>Documento de visão(visão geral do sistema).</li>
-                        <li>Documento de regra de negócio.</li>
-                        <li>Especificação suplementar.</li>
-                    </ul>
-                    <h2>Autores</h2>
-                    <p>Vinícius Silvano (na parte de criação do sistema, pois o TCC foi feito em dupla)</p>
+                    <article>
+                        <h2>O que é?</h2>
+                        <p>Esse foi o meu projeto de conclusão de curso da faculdade.
+                        Ele serve para o coordenador de um curso de ensino criar provas 
+                        de forma aleatória com um banco de questões, as questões são organizadas
+                        por meio da Taxonomia de Bloom.</p>
+                        <p>Os professores eram responsáveis pelo cadastro das questões 
+                        e o coordenador homologava(dava o aceite) dessas questões para a criação das provas.</p>
+                        <h2>Ferramentas utilizadas:</h2>
+                        <ul>
+                            <li>Microsoft Word 2007.</li>
+                            <li>Eclipse</li>
+                            <li>Spring boot</li>
+                            <li>JQuery</li>
+                            <li>Bootstrap 3</li>
+                            <li>TinyMCE (Versão gratuita)</li>
+                            <li>PostgresSQL</li>
+                            <li>Thymeleaf</li>
+                        </ul>
+                        <h2>Documentações utilizadas:</h2>
+                        <ul>
+                            <li>Diagrama de caso de uso (UC, interação do usuário com o sistema).</li>
+                            <li>Especificação de caso de uso (ECU, detalhamentos dos UCs(Casos de uso)).</li>
+                            <li>Diagrama de classe(classes/entidades principais do sistema).</li>
+                            <li>Documento de requisitos(regras de negócio).</li>
+                            <li>Documento de visão(visão geral do sistema).</li>
+                            <li>Documento de regra de negócio.</li>
+                            <li>Especificação suplementar.</li>
+                        </ul>
+                        <h2>Autores</h2>
+                        <p>Vinícius Silvano (na parte de criação do sistema, pois o TCC foi feito em dupla)</p>
+                    </article>
                 `,
                 collapse: Collapse.COLLAPSED
             }
@@ -208,7 +210,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             {
                 id: 1, 
                 tituloDescricao: "Sobre o projeto",
-                descricao: "<p>Projeto utilizado para testes e brincadeiras em java. Apesar do seu objetivo tentei caprichar no código.<p/>", 
+                descricao: "<article><p>Projeto utilizado para testes e brincadeiras em java. Apesar do seu objetivo tentei caprichar no código.<p/></article>", 
                 collapse: Collapse.COLLAPSED
             },
             {
@@ -235,7 +237,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             {
                 id: 1, 
                 tituloDescricao: "Sobre o projeto",
-                descricao: "<p>Projeto utilizado para testes e brincadeiras em angular. Apesar do seu objetivo tentei caprichar no código.<p/>", 
+                descricao: "<article><p>Projeto utilizado para testes e brincadeiras em angular. Apesar do seu objetivo tentei caprichar no código.<p/></article>", 
                 collapse: Collapse.COLLAPSED
             },
             {
@@ -266,46 +268,47 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                 tituloDescricao: "Sobre o projeto",
                 descricao: 
                     `
-                    <p>Projeto final realizado em grupo na Unity pelo qual fiquei responsável pela codificação do menu<p/>
-                    <p>Esse foi um dos primeiros projetos envolvendo programação, em que podia escolher entre arte, design, música e etc. Mas, meu maior interesse era programar, após vê o outro desenvolvedor do projeto fazer o mesmo.</p>
-                    <h2>Tecnologias</h2>
-                    <ul>
-                        <li>Unity 5.2.3f1</li>
-                        <li>Linguagem C#</li>
-                    </ul>
+                    <article>
+                        <p>Projeto final realizado em grupo na Unity pelo qual fiquei responsável pela codificação do menu<p/>
+                        <p>Esse foi um dos primeiros projetos envolvendo programação, em que podia escolher entre arte, design, música e etc. Mas, meu maior interesse era programar, após vê o outro desenvolvedor do projeto fazer o mesmo.</p>
+                        <h2>Tecnologias</h2>
+                        <ul>
+                            <li>Unity 5.2.3f1</li>
+                            <li>Linguagem C#</li>
+                        </ul>
 
-                    <h2>Equipe</h2>
-                    <p>A equipe era composta pelos estudantes do curso na época</p>
+                        <h2>Equipe</h2>
+                        <p>A equipe era composta pelos estudantes do curso na época</p>
 
-                    <p>Segue os integrantes conforme o crédito do projeto (como era um projeto final no tempo da adolecência foi um crédito feito na "brincadeira")</p>
+                        <p>Segue os integrantes conforme o crédito do projeto (como era um projeto final no tempo da adolecência foi um crédito feito na "brincadeira")</p>
 
-                    <h3>Game Designer</h3> 
-                    <ul><li>Camila</li></ul>
+                        <h3>Game Designer</h3> 
+                        <ul><li>Camila</li></ul>
 
-                    <h3>3D art</h3>
-                    <ul>
-                        <li>Guilherme do Boné</li>
-                        <li>Guilherme da Toquinha</li>
-                        <li>Laura</li>
-                    </ul>
+                        <h3>3D art</h3>
+                        <ul>
+                            <li>Guilherme do Boné</li>
+                            <li>Guilherme da Toquinha</li>
+                            <li>Laura</li>
+                        </ul>
 
-                    <h3>2D art</h3>
-                    <ul>
-                        <li>Amanda</li>
-                        <li>Julio</li>
-                        <li>Matheus</li>
-                    </ul>
+                        <h3>2D art</h3>
+                        <ul>
+                            <li>Amanda</li>
+                            <li>Julio</li>
+                            <li>Matheus</li>
+                        </ul>
 
-                    <h3>Programmers</h3>
-                    <ul>
-                        <li>
-                            Vinícius Silvano
-                        </li>
-                        <li>
-                            Rafael
-                        </li>
-                    </ul>
-
+                        <h3>Programmers</h3>
+                        <ul>
+                            <li>
+                                Vinícius Silvano
+                            </li>
+                            <li>
+                                Rafael
+                            </li>
+                        </ul>
+                    </article>
                     `, 
                 collapse: Collapse.COLLAPSED
             }
@@ -316,5 +319,57 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 10}) as Tecnologia,
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 11}) as Tecnologia
         ]
+    },
+    {
+        id: 6,
+        descricao: 'Meu primeiro portifólio da área de T.I. ',
+        tipo: TipoProjeto.TESTE_PUBLICOS,
+        imagens:[
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/home-v1.0.1-min.png",alt:"print tela inicial da versão 1.0.1 do portifólio",title: 'Antiga Home do portifólio, versão 1.0.1'},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/projetos-v1.0.1-min.png",alt:"print tela de projetos da versão 1.0.1 do portifólio",title: 'Tela de projetos do portifólio, versão 1.0.1'},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/especificacao-projeto-v1.0.1-min.png",alt:"print tela de especificação do projeto da versão 1.0.1 do portifólio",title: 'Tela de especificação do projeto do portifólio, versão 1.0.1'},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/home-v2.0.0-min.png",alt:"print tela inicial da versão 2.0.0 do portifólio",title: 'Antiga Home do portifólio, versão 2.0.0'},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/projetos-v2.0.0-min.png",alt:"print tela de projetos da versão 2.0.0 do portifólio",title: 'Tela de projetos do portifólio, versão 2.0.0'},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/especificacao-projeto-v2.0.0-min.png",alt:"print tela de especificação do projeto da versão 2.0.0 do portifólio",title: 'Tela de especificação do projeto do portifólio, versão 2.0.0'},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/projetos-v2.1.6-min.png",alt:"print tela de projetos da versão 2.1.6 do portifólio",title: 'Tela de projetos do portifólio, versão 2.1.6'},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/especificacao-projeto-v2.1.6-min.png",alt:"print tela de especificação do projeto da versão 2.1.6 do portifólio",title: 'Tela de especificação do projeto do portifólio, versão 2.1.6'},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/projetos-2.6.0-min.png",alt:"print tela de projetos da versão 2.6.0 do portifólio",title: 'Tela de projetos do portifólio, versão 2.6.0'},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/projetos-2.6.0_2-min.png",alt:"print tela de projetos da versão 2.6.0 do portifólio segunda parte",title: 'Segunda parte da tela de projetos do portifólio, versão 2.6.0'},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/especificacao-projeto-2.6.0-min.png",alt:"print tela de especificação do projeto da versão 2.6.0 do portifólio",title: 'Tela de especificação do projeto do portifólio, versão 2.6.0'}
+        ],
+        accordionCards: [
+            {
+                id: 1, 
+                tituloDescricao: "Sobre o projeto",
+                descricao: 
+                    `
+                    <article>
+                        <h1>Sobre o projeto</h1>
+                        <p>Meu primeiro portifólio da área de T.I<p/>
+                        <p>O portifólio está em constante evolução do detalhe mais simples ao mais complexo</p>
+
+                        <h2>Tecnologia inicial do projeto</h2>
+                        <p>O portifólio utiliza angular 2+ e está com um backend planejado para o futuro utilizando java.</p>
+                    </article>
+
+                    `, 
+                collapse: Collapse.COLLAPSED
+            },
+            {
+                id: 2, 
+                tituloDescricao: "Repositório de código",
+                descricao: 
+                    `
+                    <article>
+                        <h1>Repositório de código deste projeto</h1>
+                        <a target=\"_blank\" href=\"https://github.com/viniciusSilvano/portifolio_vinicius\">link para o github</a>
+                    </article>
+                    `, 
+                collapse: Collapse.COLLAPSED
+            }
+        ],
+        tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
+        tituloProjeto: "Primeiro Portifólio Vinícius",
+        tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia]
     }
 ];
