@@ -1,8 +1,8 @@
 <div class="custom-card">
-  <div class="custom-card-header text-center m-2 p-0" >
+  <div class="custom-card-header text-center m-2 p-0 short-project-card-header" >
     {{projeto.tituloProjeto | uppercase}}
   </div>
-  <div #imagesSliderContainer>
+  <div #imagesSliderContainer *ngIf="projeto.imagens">
     <app-image-slider [slides]="projeto.imagens" [hideDots]="true"></app-image-slider>
   </div>
   <div class="text-justify m-2 p-0">

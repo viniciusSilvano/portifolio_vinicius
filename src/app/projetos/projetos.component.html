@@ -28,8 +28,8 @@
           <img class="clickable-image" 
             (click)="OnClickSearchByTecnologyImage(tecnologia.id)"
             height="50px" 
-            alt="{{tecnologia.alt}}" 
-            title="{{tecnologia.alt}}"  
+            alt="{{tecnologia.imagem.alt}}" 
+            title="{{tecnologia.imagem.alt}}"  
             [ngClass]="{'box-shadow' : projetoFilter.tecnologiasSelecionadasParaBusca.includes(tecnologia.id)}"
             src="{{tecnologia.imagem.source}}"/>
         </div>

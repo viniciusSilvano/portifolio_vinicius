@@ -17,10 +17,13 @@ nav{
 }
 
 #top_main_menu{
-    background-color: rgba(50,50,50,0.5);
+    background-image: url(../../assets/images/fundo-azul-do-gradiente-de-luxo-abstrato-liso-azul-escuro-com-vinheta-preta-studio-banner-min.jpg);
+    background-color: var(--cor-preto-escuro);
     border-bottom-color: var(--cor-cinza-escuro);
     border-bottom-style: solid;
     border-bottom-width: small;
+    position: fixed;
+    z-index: 2;
 }
 
 #top_main_menu h3:first-of-type{

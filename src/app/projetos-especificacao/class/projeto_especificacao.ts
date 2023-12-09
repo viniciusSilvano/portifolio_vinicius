@@ -6,7 +6,7 @@ export interface ProjetoEspecificacao extends Entidade{
     tecnologia: Tecnologia;
     tituloProjeto: string;
     descricao: string;
-    imagens: Imagem[];
+    imagens?: Imagem[];
     tecnologiasAuxiliares?: Tecnologia[];
     tipo: TipoProjeto
     accordionCards: AccordionCard[];  
