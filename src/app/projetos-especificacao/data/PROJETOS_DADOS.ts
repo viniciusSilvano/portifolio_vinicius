@@ -1,4 +1,4 @@
-import { ProjetoEspecificacao,Collapse, TipoProjeto } from "../class/projeto_especificacao";
+import { ProjetoEspecificacao,Collapse, TipoProjeto, StatusProjeto } from "../class/projeto_especificacao";
 import { GlobalStrings } from '../../globalStrings/globalString';
 import { TECNOLOGIAS } from "../../tecnologias/data/TECNOLOGIAS_DADOS";
 import { SearchUtil } from "../../util/search_util";
@@ -370,6 +370,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         ],
         tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
         tituloProjeto: "Primeiro Portifólio Vinícius",
-        tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia]
+        tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia],
+        status: [StatusProjeto.EM_DESENVOLVIMENTO]
     }
 ];
