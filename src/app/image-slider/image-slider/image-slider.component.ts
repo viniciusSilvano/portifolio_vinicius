@@ -21,7 +21,6 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
   }
 
   initImageCycle(): void{
-    console.log('reiniciando ciclo imagem');
     this.timeoutSubscription = interval(3000)
       .subscribe((val) => {this.goToNext()});
   }

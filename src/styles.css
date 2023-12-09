@@ -69,10 +69,30 @@ div.border-top-light-gray{
   height: 10px;
 }
 
+.clickable{
+  cursor: pointer;
+}
+
+.clickable-image{
+  cursor: pointer;
+}
+
+.clickable-image:hover{
+	box-shadow: 0 0 0 0.2rem rgba(var(--cor-verde-claro-n2),var(--cor-verde-claro-n2-opacity));
+}
+
+.clickable-image.box-shadow{
+  box-shadow: 0 0 0 0.2rem rgba(var(--cor-verde-claro-n2),var(--cor-verde-claro-n2-opacity));
+}
+
 .tag_projeto.oval_tag{
   width: 50%;
   height: 100%;
   background: var(--cor-preto-escuro);;
   border-radius: 75px / 45px;
+}
+
+.accordion-body{
+  background-image: url(assets/images/fundo-azul-do-gradiente-de-luxo-abstrato-liso-azul-escuro-com-vinheta-preta-studio-banner-min.jpg);
 }
   

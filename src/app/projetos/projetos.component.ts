@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProjetosService} from "./service/projetos.service";
 import { Router } from '@angular/router';
-import { ProjetoEspecificacao } from '../projetos-especificacao/class/projeto_especificacao';
+import { AccordionCard, Collapse, ProjetoEspecificacao } from '../projetos-especificacao/class/projeto_especificacao';
 import { Tecnologia } from '../tecnologias/class/tecnologia';
 import { TecnologiaService } from '../tecnologias/service/tecnologia.service';
 import { ProjetoFilter } from './class/projetoFilter';
@@ -21,6 +21,13 @@ export class ProjetosComponent implements OnInit {
     private projetoService: ProjetosService,
     private tecnologiaService: TecnologiaService, 
     private router: Router) { }
+
+  accordionProjetoFilters: AccordionCard = {
+    id: 1,
+    descricao:"Accordion dos filtros",
+    tituloDescricao:"Filtros dos projetos",
+    collapse: Collapse.COLLAPSED
+  };
 
   ngOnInit() {
     this.projetoService.getProjetoPessoaisCards()
@@ -72,6 +79,14 @@ export class ProjetosComponent implements OnInit {
     }
 
     this.filter();
+  }
+
+  changeCollapseProjetoFilters(){
+    if(this.accordionProjetoFilters.collapse == Collapse.COLLAPSED){
+      this.accordionProjetoFilters.collapse = Collapse.NOT_COLLAPSED;
+    }else{
+      this.accordionProjetoFilters.collapse = Collapse.COLLAPSED;
+    }
   }
 
 }

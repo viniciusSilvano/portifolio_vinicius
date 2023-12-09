@@ -13,17 +13,17 @@
   <!--<app-projetos-carousel-imagens [projeto]="projetoEspecificacao"></app-projetos-carousel-imagens>-->
 
   <div id="accordion" class="w-100" >
-    <div class="card text-white bg-dark accordionCard" *ngFor="let accordionCard of projetoEspecificacao.accordionCards">
-      <div class="card-header text-center" id="headingOne">
+    <div class="card bg-dark accordionCard" *ngFor="let accordionCard of projetoEspecificacao.accordionCards">
+      <div class="card-header accordion-header text-center clickable" id="headingOne" (click)="changeCollapse(accordionCard.id)"> 
         <h5 class="mb-0">
-          <button (click)="changeCollapse(accordionCard.id)"  class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          <button  class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
             <div [innerHTML]="accordionCard.tituloDescricao"></div>
           </button>
         </h5>
       </div>
 
       <div id="collapseOne" class="{{accordionCard.collapse}}" aria-labelledby="headingOne" data-parent="#accordion">
-        <div class="card-body text-justify accordionBody">
+        <div class="card-body accordion-body text-justify">
           <div [innerHTML]="accordionCard.descricao"></div>
         </div>
       </div>
