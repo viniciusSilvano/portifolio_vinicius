@@ -5,68 +5,68 @@ export const TECNOLOGIAS: Tecnologia[] = [
     {
         id:1,
         nome:"ANDROID",
-        imagem:{ source: "../.." + GlobalStrings.getGlobalUrlFragment()+ "/assets/images/tecnologias/android-logo.png", alt: 'ANDROID'},
-        alt: 'Imagem da sigla do Android'
+        imagem:{ source: "../.." + GlobalStrings.getGlobalUrlFragment()+ "/assets/images/tecnologias/android-logo.png", 
+            alt: 'ANDROID'}
     },
     {
         id:2,
         nome:"SPRING BOOT",
-        imagem:{source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/spring-boot-logo.jpg", alt: 'SPRING BOOT'},
-        alt: 'Imagem da sigla do Spring Boot'
+        imagem:{source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/spring-boot-logo.jpg", 
+            alt: 'SPRING BOOT'}
     },
     {
         id:3,
         nome:"Bootstrap",
-        imagem: {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/bootstrap-logo.svg", alt: 'BOOTSTRAP'},
-        alt: 'Imagem da sigla do Bootstrap'
+        imagem: {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/bootstrap-logo.svg", 
+            alt: 'BOOTSTRAP'}
     },
     {
         id:4,
         nome:"Jquery",
-        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/logoJquery.gif", alt: 'JQUERY'},
-        alt: 'Imagem da sigla do JQuery'
+        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/logoJquery.gif", 
+            alt: 'JQUERY'}
     },
     {
         id: 5,
         nome: "PostgreSQL",
-        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/postgresqlLogo.png", alt: 'POSTGRESQL'},
-        alt: 'Imagem da sigla do PostgreSQL'
+        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/postgresqlLogo.png", 
+            alt: 'POSTGRESQL'}
     },
     {
         id:6,
         nome:"Tinymce",
-        imagem:{source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/tinymceLogo.png", alt: 'TINYMCE'},
-        alt: 'Imagem da sigla do TinyMCE'
+        imagem:{source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/tinymceLogo.png", 
+            alt: 'TINYMCE'}
     },
     {
         id: 7,
-        nome:"thymeleaf",
-        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/thymeleafLogo.png", alt: 'THYMELEAF'},
-        alt: 'Imagem da sigla do Thymeleaf'
+        nome:"Thymeleaf",
+        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/thymeleafLogo.png", 
+            alt: 'THYMELEAF'}
     },
     {
         id: 8,
         nome: "Java",
-        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/java_icon.png", alt: 'JAVA'},
-        alt: 'Imagem da sigla do Java'
+        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/java_icon.png", 
+            alt: 'JAVA'}
     },
     {
         id: 9,
         nome: "Angular",
-        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/angular-icon.png", alt : 'ANGULAR'},
-        alt: 'Imagem da sigla do Angular'
+        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/angular-icon.png", 
+            alt : 'ANGULAR'}
     },
     {
         id: 10,
         nome: "Unity",
-        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/unity.png", alt : 'Unity'},
-        alt: 'Imagem da sigla do Unity'
+        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/unity.png", 
+            alt : 'Unity'}
     },
     {
         id: 11,
         nome: "C#",
-        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/c-sharp.png", alt : 'C#'},
-        alt: 'Imagem da sigla do C#'
+        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/c-sharp.png", 
+            alt : 'C#'}
     }
 ]
 

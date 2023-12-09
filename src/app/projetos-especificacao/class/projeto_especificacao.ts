@@ -6,10 +6,11 @@ export interface ProjetoEspecificacao extends Entidade{
     tecnologia: Tecnologia;
     tituloProjeto: string;
     descricao: string;
-    imagens: Imagem[];
+    imagens?: Imagem[];
     tecnologiasAuxiliares?: Tecnologia[];
     tipo: TipoProjeto
-    accordionCards: AccordionCard[];  
+    accordionCards: AccordionCard[],
+    status?: StatusProjeto[];  
 }
 
 export class AccordionCard implements Entidade{
@@ -26,4 +27,8 @@ export enum Collapse{
 
 export enum TipoProjeto{
     PESSOAIS,TESTE_PUBLICOS
+}
+
+export enum StatusProjeto{
+    EM_DESENVOLVIMENTO = 'EM DESENVOLVIMENTO'
 }

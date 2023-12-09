@@ -4,10 +4,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## npm version
 
-the recomended version installed via nvm is 10.24.1 
+the recomended version installed via nvm is 10.16.3|10.24.1 
 
 ## node version
-node recomended version is 10.24.1
+node recomended version is 10.16.3|10.24.1
 
 ## Development server
 

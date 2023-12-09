@@ -4,5 +4,4 @@ export interface Tecnologia extends Entidade{
     id: number;
     nome: string;
     imagem: Imagem;
-    alt: String;
 }
