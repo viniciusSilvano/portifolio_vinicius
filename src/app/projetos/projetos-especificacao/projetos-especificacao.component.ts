@@ -51,7 +51,13 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges {
     this.routerSubscription = this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
       // Navigation Ended Successfully.
-       this.initializeData();
+        if(event && event.url){
+          let regex = new RegExp("\/projeto\/[0-9]+", "gm");
+          if(regex.test(event.url)){
+            this.idProjeto = event.url.replace(/\D/g, "");;
+            this.initializeData();
+          }
+        }
       }
     }
     );
@@ -59,7 +65,6 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges {
   
   initializeData(){
     this.setProjetoEspecificacao();
-    this.projetoEspecificacao = this.getProjetoEspecificacao();
   }
   getProjetoEspecificacao() : ProjetoEspecificacao{
     return this.projetoEspecificacao;
