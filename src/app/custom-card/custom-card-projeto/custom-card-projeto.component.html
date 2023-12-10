@@ -1,8 +1,12 @@
 <div class="custom-card">
   <div class="custom-card-header text-center m-2 p-0 short-project-card-header" >
     {{projeto.tituloProjeto | uppercase}}
-    <div class="d-flex flex-row mt-3" *ngIf="projeto.status">
-      <div *ngFor="let statusProjeto of projeto.status; let statusIndex = index" class="tag_projeto oval_tag">
+    <div class="d-flex flex-row mt-3">
+      <div class="tag_projeto oval_tag ml-3">
+        {{projeto.tipo == 0 ? 'Projeto Pessoal' : 'Projeto Público/Teste'}}
+      </div>
+
+      <div *ngFor="let statusProjeto of projeto.status; let statusIndex = index" class="tag_projeto oval_tag ml-3">
         {{statusProjeto}}
       </div>
     </div>
