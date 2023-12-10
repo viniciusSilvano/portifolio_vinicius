@@ -45,7 +45,6 @@ export class ProjetoFiltersComponent implements OnInit {
       projetosCardsFiltered: this.projetosCardsFiltered, 
       qualquerfiltroAcionado: this.projetoFilter.temQualquerFiltroAcionado()
     };
-    console.log('resultado filter: ', resultado, ' \n\n objeto filter: ', this.projetoFilter)
     this.resultadoFiltro.emit(
       resultado
      );
@@ -53,7 +52,6 @@ export class ProjetoFiltersComponent implements OnInit {
 
   private resetFilteredProjectsList() {
     if (this.projetoFilter.isResetNeeded()) {
-      console.log('resetar filtros');
       this.projetosCardsFiltered = [];
     }
   }

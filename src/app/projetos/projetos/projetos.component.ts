@@ -55,7 +55,6 @@ export class ProjetosComponent implements OnInit {
   }
 
   onFilter(resultadoProjetoFilter: ResultadoProjetoFilter){
-    console.log('Output projeto filtered: ', resultadoProjetoFilter)
     this.resultadoProjetoFilter = resultadoProjetoFilter;
     this.customCardData.descricao = `Quantidade de registros: ${resultadoProjetoFilter.projetosCardsFiltered.length}`
   }
