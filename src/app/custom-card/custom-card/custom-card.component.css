@@ -1,20 +1,7 @@
-
 .custom-card{
-  background-color: var(--cor-cinza-escuro);
+  background-image: url(../../../assets/images/fundo-azul-do-gradiente-de-luxo-abstrato-liso-azul-escuro-com-vinheta-preta-studio-banner-min.jpg);
+  background-color: var(--cor-preto-escuro);
   border-color: var(--cor-verde-claro);
   border-style: solid;
   border-width: medium;
-}
-  
-.custom-card-header{
-  text-align: center;
-  margin: 2%;
-}
-
-.custom-card-footer .sub-tecnologias-container{
-  background-color: var(--cor-preto-escuro);
-}
-
-div.short-project-card-header{
-  font-size: 20px;
 }
