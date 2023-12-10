@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { ProjetoEspecificacao } from 'src/app/projetos-especificacao/class/projeto_especificacao';
+import { ProjetoEspecificacao } from 'src/app/projetos/projetos-especificacao/class/projeto_especificacao';
 
 @Component({
   selector: 'app-custom-card',

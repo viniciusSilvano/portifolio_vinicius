@@ -1,0 +1,23 @@
+<nav class="breadcrumbContainer">
+  <a routerLink="/projeto">Projeto</a> <span>/</span>
+</nav>
+<section *ngIf="projetoEspecificacao">
+ 
+  <h1 class="d-flex justify-content-center my-3">
+    <div [innerHTML]="projetoEspecificacao.tituloProjeto"></div>
+  </h1>
+
+  <div class="w-100" style="height: 800px;">
+    <app-image-slider [slides]="projetoEspecificacao.imagens"></app-image-slider>
+  </div>
+
+
+  <div id="accordion" class="w-100" >
+    <div class="card bg-dark accordionCard" *ngFor="let accordionCard of projetoEspecificacao.accordionCards">
+      <app-accordion-card [accordionCard]="accordionCard"></app-accordion-card>
+    </div>
+  </div>
+  <nav class="card-footer text-muted">
+    <button (click)="getBack()"  class="btn btn-secondary text-left justify-content-left">Voltar</button>
+  </nav>
+</section>   

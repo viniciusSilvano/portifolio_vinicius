@@ -88,11 +88,7 @@ div.border-top-light-gray{
 .tag_projeto.oval_tag{
   width: 50%;
   height: 100%;
-  background: var(--cor-preto-escuro);;
+  background-color: var(--cor-preto-escuro);
   border-radius: 75px / 45px;
-}
-
-.accordion-body{
-  background-image: url(assets/images/fundo-azul-do-gradiente-de-luxo-abstrato-liso-azul-escuro-com-vinheta-preta-studio-banner-min.jpg);
 }
   

@@ -1,4 +1,4 @@
-import { ProjetoEspecificacao } from "src/app/projetos-especificacao/class/projeto_especificacao";
+import { ProjetoEspecificacao } from "src/app/projetos/projetos-especificacao/class/projeto_especificacao";
 import { SearchUtil } from "src/app/util/search_util";
 
 export class ProjetoFilter{
@@ -16,16 +16,16 @@ export class ProjetoFilter{
 
     if(this.tituloProjeto){
       encontrado = this.filterByTituloProjeto(projeto);
-      if(!encontrado){
-        return false;
+      if(encontrado){
+        return true;
       }
     }
 
     if(this.tecnologiasSelecionadasParaBusca.length > 0){
       encontrado = this.filterByTecnologiasProjeto(this.tecnologiasSelecionadasParaBusca,projeto);
       
-      if(!encontrado){
-        return false;
+      if(encontrado){
+        return true;
       }
     }
     return encontrado;

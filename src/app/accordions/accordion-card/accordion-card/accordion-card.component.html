@@ -1,0 +1,22 @@
+<div id="accordion" class="w-100" >
+  <div class="card bg-dark accordionCard">
+    <div class="card-header accordion-header text-center clickable" id="headingOne" (click)="changeCollapseProjetoFilters()">
+      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <div [innerHTML]="getAccordion().tituloDescricao"></div>
+      </button>
+    </div>
+
+    <div id="collapseOne" class="{{getAccordion().collapse}}" aria-labelledby="headingOne" data-parent="#accordion">
+      <div *ngIf="!ehAccordionProjetoCard" class="card-body accordion-body text-justify">
+        <div [innerHTML]="getAccordion().descricao"></div>
+      </div>
+      <div *ngIf="ehAccordionProjetoCard" class="card-body accordion-body text-justify">
+        <app-projeto-filters 
+        [projetoList]="getAccordion().projetoList" 
+        [tecnologiasParaBusca]="getAccordion().tecnologiasParaBusca" 
+        (resultadoFiltro)="onFilter($event)">
+        </app-projeto-filters>
+      </div>
+    </div>
+  </div>
+</div>
