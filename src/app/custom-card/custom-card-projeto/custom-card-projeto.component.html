@@ -1,0 +1,24 @@
+<div class="custom-card">
+  <div class="custom-card-header text-center m-2 p-0 short-project-card-header" >
+    {{projeto.tituloProjeto | uppercase}}
+    <div class="d-flex flex-row mt-3" *ngIf="projeto.status">
+      <div *ngFor="let statusProjeto of projeto.status; let statusIndex = index" class="tag_projeto oval_tag">
+        {{statusProjeto}}
+      </div>
+    </div>
+  </div>
+  <div #imagesSliderContainer *ngIf="projeto.imagens">
+    <app-image-slider [slides]="projeto.imagens" [hideDots]="true"></app-image-slider>
+  </div>
+  <div class="text-justify m-2 p-0">
+    <p>{{projeto.descricao}}</p>
+  </div>
+  <div class="custom-card-footer">
+    <div *ngIf="projeto.tecnologiasAuxiliares" class="d-flex flex-row justify-content-around flex-wrap sub-tecnologias-container">
+      <img  height=50px alt="{{tecnologiaAuxiliar.nome.toUpperCase()}}" title="{{tecnologiaAuxiliar.nome.toUpperCase()}}"  width=50px *ngFor="let tecnologiaAuxiliar of projeto.tecnologiasAuxiliares" src="{{tecnologiaAuxiliar.imagem.source}}" />
+    </div>
+    <div class="row mt-4 ml-2 pl-2 pb-2">
+      <button (click)="notifyParent(projeto.id)" class="btn-secondary" type="button"  styleClass="col-sm-2">Visualizar</button>
+    </div>
+  </div>
+</div>

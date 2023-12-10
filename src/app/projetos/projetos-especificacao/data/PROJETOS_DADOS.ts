@@ -1,8 +1,9 @@
-import { ProjetoEspecificacao,Collapse, TipoProjeto, StatusProjeto } from "../class/projeto_especificacao";
-import { GlobalStrings } from '../../globalStrings/globalString';
-import { TECNOLOGIAS } from "../../tecnologias/data/TECNOLOGIAS_DADOS";
-import { SearchUtil } from "../../util/search_util";
-import { Tecnologia } from "../../tecnologias/class/tecnologia";
+import { ProjetoEspecificacao, TipoProjeto, StatusProjeto } from "../class/projeto_especificacao";
+import { GlobalStrings } from '../../../globalStrings/globalString';
+import { TECNOLOGIAS } from "../../../tecnologias/data/TECNOLOGIAS_DADOS";
+import { SearchUtil } from "../../../util/search_util";
+import { Tecnologia } from "../../../tecnologias/class/tecnologia";
+import { Collapse } from "src/app/comuns/class/accordion-card";
 
 const _SEARCH_UTIL = new SearchUtil();
 

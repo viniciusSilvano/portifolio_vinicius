@@ -1,0 +1,38 @@
+<section>
+  <h1 class="text-center">Projetos</h1>
+
+  <app-accordion-card [accordionCard]="accordionProjetoFilters" [ehAccordionProjetoCard]="true" (resultadoFiltro)="onFilter($event)"></app-accordion-card>
+
+  <div class="border-top-light-gray"> </div>
+
+  <section class="ml-3 border-top-light-gray" *ngIf="filtroPossuiResultado()">
+    <h2>Projetos Filtrados</h2>
+    <div class="d-flex flex-row justify-content-around flex-wrap" >
+      <div class="col-6 mt-3" *ngFor="let projeto of resultadoProjetoFilter.projetosCardsFiltered;let indexOfelement=index;">
+        <app-custom-card-projeto [projeto]="projeto" [heightImageSliderInPx]="300" (onVisualizarBtnClick)="redirect($event)"></app-custom-card-projeto>
+      </div>
+    </div>
+  </section>
+  <section class="ml-3" *ngIf="!filtroPossuiResultado()">
+    <h2>Pessoais</h2>
+    <p>Projetos pessoais criados por um propósito ou razões pessoais.</p>
+    <div class="d-flex flex-row justify-content-around flex-wrap" >
+      <div class="col-6 mt-3" *ngFor="let projeto of projetosCardsExistente;let indexOfelement=index;">
+        <app-custom-card-projeto [projeto]="projeto" [heightImageSliderInPx]="300" (onVisualizarBtnClick)="redirect($event)"></app-custom-card-projeto>
+      </div>
+    </div>
+  </section>
+  <section class="ml-3 mt-4" *ngIf="!filtroPossuiResultado()">
+    <h2>Testes/Públicos</h2>
+    <p>Projetos que são usados para brincar com o código ou experimentar novas abordagens.</p>
+    <div class="d-flex flex-row justify-content-around flex-wrap" >
+      <div class="col-6 mt-3" *ngFor="let projeto of projetosTestesPublicosCards;let indexOfelement=index;">
+        <app-custom-card-projeto [projeto]="projeto" [heightImageSliderInPx]="300" (onVisualizarBtnClick)="redirect($event)" ></app-custom-card-projeto>
+      </div>
+    </div>
+  </section>
+</section>
+
+<div class="filterModalContainer position-fixed fixed-top float-right col-sm-3" *ngIf="filtroPossuiResultado()">
+  <app-custom-card [customCardData]="customCardData" (onButtonClick)="solicitarLimpezaFiltros()"></app-custom-card>
+</div>

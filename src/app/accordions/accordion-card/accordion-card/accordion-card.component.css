@@ -1,0 +1,16 @@
+.accordion-body{
+  background-color: var(--cor-preto-escuro);
+  background-image: url(../../../../assets/images/fundo-azul-do-gradiente-de-luxo-abstrato-liso-azul-escuro-com-vinheta-preta-studio-banner-min.jpg);
+}
+
+.accordion-header{
+  border-color: var(--cor-cinza-escuro);
+  border-style: solid;
+  border-width: small;
+  background-color: var(--cor-preto-escuro);
+  background-image: url(../../../../assets/images/fundo-azul-do-gradiente-de-luxo-abstrato-liso-azul-escuro-com-vinheta-preta-studio-banner-min.jpg);
+}
+
+.accordion-title-container{
+  color: rgba(var(--cor-verde-claro-n2),var(--cor-verde-claro-n2-opacity));
+}

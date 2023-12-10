@@ -1,5 +1,6 @@
-import { Imagem, Entidade } from "../../comuns/class/classesComuns";
-import { Tecnologia } from "../../tecnologias/class/tecnologia";
+import { AccordionCard } from "src/app/comuns/class/accordion-card";
+import { Imagem, Entidade } from "../../../comuns/class/classesComuns";
+import { Tecnologia } from "../../../tecnologias/class/tecnologia";
 
 export interface ProjetoEspecificacao extends Entidade{
     id: number;
@@ -11,18 +12,6 @@ export interface ProjetoEspecificacao extends Entidade{
     tipo: TipoProjeto
     accordionCards: AccordionCard[],
     status?: StatusProjeto[];  
-}
-
-export class AccordionCard implements Entidade{
-    id: Number;
-    tituloDescricao: string;
-    descricao: string;
-    collapse: Collapse;
-}
-
-export enum Collapse{
-    COLLAPSED = "collapse",
-    NOT_COLLAPSED = "collpase show"
 }
 
 export enum TipoProjeto{

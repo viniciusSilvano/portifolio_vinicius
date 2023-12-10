@@ -1,0 +1,13 @@
+  
+.custom-card-header{
+  text-align: center;
+  margin: 2%;
+}
+
+.custom-card-footer .sub-tecnologias-container{
+  background-color: var(--cor-preto-escuro);
+}
+
+div.short-project-card-header{
+  font-size: 20px;
+}

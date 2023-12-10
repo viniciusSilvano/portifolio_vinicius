@@ -1,30 +1,24 @@
-import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { ProjetoEspecificacao } from 'src/app/projetos-especificacao/class/projeto_especificacao';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CustomCardData } from '../class/custom-card-data';
 
 @Component({
   selector: 'app-custom-card',
   templateUrl: './custom-card.component.html',
-  styleUrls: ['./custom-card.component.css']
+  styleUrls: ['./custom-card.component.css','../css/custom-card.css']
 })
-export class CustomCardComponent implements OnInit, AfterViewInit {
-  @Input() projeto : ProjetoEspecificacao;
-  @Input() heightImageSliderInPx : Number;
+export class CustomCardComponent implements OnInit {
 
-  @Output() onVisualizarBtnClick: EventEmitter<Number> = new EventEmitter();
+  @Input() customCardData: CustomCardData;
 
-  @ViewChild('imagesSliderContainer', {static: false}) imagesSliderContainerElement : ElementRef;
+  @Output() onButtonClick: EventEmitter<any> = new EventEmitter<any>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  ngAfterViewInit() {
-    this.imagesSliderContainerElement.nativeElement.style.height = `${this.heightImageSliderInPx}px`;
-    this.imagesSliderContainerElement.nativeElement.style.width = '100%';
+  buttonClicked(){
+    this.onButtonClick.emit();
   }
 
-  notifyParent(idProjeto: Number){
-    this.onVisualizarBtnClick.emit(idProjeto);
-  }
 }
