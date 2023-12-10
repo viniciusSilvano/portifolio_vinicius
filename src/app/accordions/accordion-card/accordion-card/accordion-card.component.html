@@ -3,6 +3,11 @@
     <div class="card-header accordion-header text-center clickable" id="headingOne" (click)="changeCollapseProjetoFilters()">
       <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
         <div [innerHTML]="getAccordion().tituloDescricao"></div>
+        <i 
+          [ngClass]="{
+            'bi-plus-lg' : getAccordion().collapse == 'collapse',
+            'bi-dash-lg' : getAccordion().collapse == 'collpase show'
+          }" class="bi"></i>
       </button>
     </div>
 
