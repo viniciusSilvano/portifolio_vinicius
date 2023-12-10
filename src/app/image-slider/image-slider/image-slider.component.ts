@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
 import { Subscription, interval, timer } from 'rxjs';
 import { Imagem } from 'src/app/comuns/class/classesComuns';
 
@@ -7,7 +7,7 @@ import { Imagem } from 'src/app/comuns/class/classesComuns';
   templateUrl: './image-slider.component.html',
   styleUrls: ['./image-slider.component.css']
 })
-export class ImageSliderComponent implements OnInit, OnDestroy {
+export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
 
   @Input() slides: Imagem[];
   @Input() hideDots: Boolean;
@@ -18,6 +18,13 @@ export class ImageSliderComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.initImageCycle();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if(changes.slides.previousValue != changes.slides.currentValue &&  this.timeoutSubscription){
+      this.timeoutSubscription.unsubscribe();
+      this.initImageCycle();
+    }
   }
 
   initImageCycle(): void{
