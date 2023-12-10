@@ -1,12 +1,20 @@
+.card{
+  background-color: var(--cor-preto-escuro);
+}
+
 .accordion-body{
   background-color: var(--cor-preto-escuro);
   background-image: url(../../../../assets/images/fundo-azul-do-gradiente-de-luxo-abstrato-liso-azul-escuro-com-vinheta-preta-studio-banner-min.jpg);
+  border-color: var(--cor-verde-claro);
+  border-style: solid;
+  border-radius: 75px / 45px;
 }
 
 .accordion-header{
-  border-color: var(--cor-cinza-escuro);
+  border-color: var(--cor-verde-claro);
   border-style: solid;
   border-width: small;
+  border-radius: 75px / 45px;
   background-color: var(--cor-preto-escuro);
   background-image: url(../../../../assets/images/fundo-azul-do-gradiente-de-luxo-abstrato-liso-azul-escuro-com-vinheta-preta-studio-banner-min.jpg);
 }

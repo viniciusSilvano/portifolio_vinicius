@@ -3,9 +3,9 @@
 
   <app-accordion-card [accordionCard]="accordionProjetoFilters" [ehAccordionProjetoCard]="true" (resultadoFiltro)="onFilter($event)"></app-accordion-card>
 
-  <div class="border-top-light-gray"> </div>
+  <div class="border-top-light-gray mt-5"> </div>
 
-  <section class="ml-3 border-top-light-gray" *ngIf="filtroPossuiResultado()">
+  <section class="ml-3 border-top-light-green" *ngIf="filtroPossuiResultado()">
     <h2>Projetos Filtrados</h2>
     <div class="d-flex flex-row justify-content-around flex-wrap" >
       <div class="col-6 mt-3" *ngFor="let projeto of resultadoProjetoFilter.projetosCardsFiltered;let indexOfelement=index;">

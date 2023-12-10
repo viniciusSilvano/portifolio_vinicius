@@ -70,6 +70,15 @@ div.border-top-light-gray{
   height: 10px;
 }
 
+
+div.border-top-light-green{
+  border-top-color: var(--cor-verde-claro);
+  border-top-style: solid;
+  border-top-width: small;
+  width: 100%;
+  height: 10px;
+}
+
 .clickable{
   cursor: pointer;
 }
@@ -91,5 +100,6 @@ div.border-top-light-gray{
   height: 100%;
   background-color: var(--cor-preto-escuro);
   border-radius: 75px / 45px;
+  box-shadow: -5px 3px rgba(var(--cor-verde-claro-n2),var(--cor-verde-claro-n2-opacity));
 }
   
