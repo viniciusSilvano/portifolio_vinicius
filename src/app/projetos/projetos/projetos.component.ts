@@ -6,6 +6,8 @@ import { Tecnologia } from '../../tecnologias/class/tecnologia';
 import { TecnologiaService } from '../../tecnologias/service/tecnologia.service';
 import { AccordionCard, AccordionProjetoCard, Collapse } from 'src/app/comuns/class/accordion-card';
 import { forkJoin } from 'rxjs';
+import { ResultadoProjetoFilter } from 'src/app/filters/projeto-filters/projeto-filters/class/resultado-projeto-filter';
+import { CustomCardData } from 'src/app/custom-card/class/custom-card-data';
 
 @Component({
   selector: 'app-projetos',
@@ -15,7 +17,8 @@ import { forkJoin } from 'rxjs';
 export class ProjetosComponent implements OnInit {
   projetosCardsExistente : ProjetoEspecificacao[];
   projetosTestesPublicosCards: ProjetoEspecificacao[];
-  projetosCardsFiltered: ProjetoEspecificacao[] = [];
+  resultadoProjetoFilter: ResultadoProjetoFilter = new ResultadoProjetoFilter();
+  realizarLimpezaFiltros: Boolean = false;
 
   accordionProjetoFilters: AccordionProjetoCard = {
     id: 1,
@@ -24,6 +27,11 @@ export class ProjetosComponent implements OnInit {
     collapse: Collapse.COLLAPSED,
     tecnologiasParaBusca: [],
     projetoList: []
+  };
+
+  customCardData: CustomCardData = {
+    titulo: 'Resultado Filtro por projeto',
+    descricao: ''
   };
 
   constructor(
@@ -46,17 +54,19 @@ export class ProjetosComponent implements OnInit {
     this.router.navigateByUrl(`projeto/${idEspecificacao}`);
   }
 
-  onFilter(projetosCardsFiltered: ProjetoEspecificacao[]){
-    console.log('Output projeto filtered: ', projetosCardsFiltered)
-    this.projetosCardsFiltered = projetosCardsFiltered;
+  onFilter(resultadoProjetoFilter: ResultadoProjetoFilter){
+    console.log('Output projeto filtered: ', resultadoProjetoFilter)
+    this.resultadoProjetoFilter = resultadoProjetoFilter;
+    this.customCardData.descricao = `Quantidade de registros: ${resultadoProjetoFilter.projetosCardsFiltered.length}`
+  }
+  
+  filtroPossuiResultado(): Boolean{
+    return this.resultadoProjetoFilter.projetosCardsFiltered.length && this.resultadoProjetoFilter.qualquerfiltroAcionado;
   }
 
-  changeCollapseProjetoFilters(){
-    if(this.accordionProjetoFilters.collapse == Collapse.COLLAPSED){
-      this.accordionProjetoFilters.collapse = Collapse.NOT_COLLAPSED;
-    }else{
-      this.accordionProjetoFilters.collapse = Collapse.COLLAPSED;
-    }
+  solicitarLimpezaFiltros(){
+    this.resultadoProjetoFilter.projetosCardsFiltered = [];
+    this.resultadoProjetoFilter.qualquerfiltroAcionado = false;
+    this.realizarLimpezaFiltros = !this.realizarLimpezaFiltros;
   }
-
 }

@@ -1,14 +1,14 @@
 <div id="accordion" class="w-100" >
   <div class="card bg-dark accordionCard">
     <div class="card-header accordion-header text-center clickable" id="headingOne" (click)="changeCollapseProjetoFilters()">
-      <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        <div [innerHTML]="getAccordion().tituloDescricao"></div>
-        <i 
-          [ngClass]="{
-            'bi-plus-lg' : getAccordion().collapse == 'collapse',
-            'bi-dash-lg' : getAccordion().collapse == 'collpase show'
-          }" class="bi"></i>
+      <button class="btn" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <div class="accordion-title-container" [innerHTML]="getAccordion().tituloDescricao"></div>
       </button>
+      <i 
+      [ngClass]="{
+        'bi-plus-circle' : getAccordion().collapse == 'collapse',
+        'bi-dash-circle' : getAccordion().collapse == 'collpase show'
+      }" class="bi float-right align-middle mt-2"></i>
     </div>
 
     <div id="collapseOne" class="{{getAccordion().collapse}}" aria-labelledby="headingOne" data-parent="#accordion">

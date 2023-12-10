@@ -1,18 +1,18 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AccordionCard, AccordionProjetoCard, Collapse } from '../../../comuns/class/accordion-card';
-import { ProjetoEspecificacao } from 'src/app/projetos/projetos-especificacao/class/projeto_especificacao';
+import { ResultadoProjetoFilter } from 'src/app/filters/projeto-filters/projeto-filters/class/resultado-projeto-filter';
 
 @Component({
   selector: 'app-accordion-card',
   templateUrl: './accordion-card.component.html',
   styleUrls: ['./accordion-card.component.css']
 })
-export class AccordionCardComponent implements OnInit {
+export class AccordionCardComponent implements OnInit{
 
   @Input() accordionCard: AccordionCard;
   @Input() ehAccordionProjetoCard: Boolean = false;
 
-  @Output() resultadoFiltro: EventEmitter<ProjetoEspecificacao[]> = new EventEmitter()
+  @Output() resultadoFiltro: EventEmitter<ResultadoProjetoFilter> = new EventEmitter()
 
   getAccordion(): any{
     if(this.ehAccordionProjetoCard){
@@ -21,7 +21,7 @@ export class AccordionCardComponent implements OnInit {
     return this.accordionCard;
   }
 
-  onFilter(projetosFiltrados: ProjetoEspecificacao[]){
+  onFilter(projetosFiltrados: ResultadoProjetoFilter){
     this.resultadoFiltro.emit(projetosFiltrados);
   }
   constructor() { }
