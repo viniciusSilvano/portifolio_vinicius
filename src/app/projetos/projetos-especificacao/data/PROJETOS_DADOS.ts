@@ -345,11 +345,11 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                 descricao: 
                     `
                     <article>
-                        <h1>Sobre o projeto</h1>
+                        <h2>Sobre o projeto</h2>
                         <p>Meu primeiro portifólio da área de T.I<p/>
                         <p>O portifólio está em constante evolução do detalhe mais simples ao mais complexo</p>
 
-                        <h2>Tecnologia inicial do projeto</h2>
+                        <h3>Tecnologia inicial do projeto</h3>
                         <p>O portifólio utiliza angular 2+ e está com um backend planejado para o futuro utilizando java.</p>
                     </article>
 
@@ -372,6 +372,61 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 9}) as Tecnologia,
         tituloProjeto: "Primeiro Portifólio Vinícius",
         tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 9}) as Tecnologia],
+        status: [StatusProjeto.EM_DESENVOLVIMENTO]
+    },
+    {
+        id: 7,
+        descricao: 'Meu projeto para controle de despesas pessoais ',
+        tipo: TipoProjeto.PESSOAIS,
+        imagens:[
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/controlador-despesa/tela_cadastro_categoria_despesa-min.png",alt:"print da tela de cadastro de categoria da despesa.",title: 'tela de cadastro da categoria da despesa'},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/controlador-despesa/tela_cadastro_despesa-min.png",alt:"print da tela para selecionar o tipo de despesa para cadastro",title: 'tela de cadastro da categoria da despesa'},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/controlador-despesa/tela_cadastro_categoria_despesa-min.png",alt:"print da tela de cadastro de despesa do tipo \"Única\"",title: 'tela de cadastro da categoria da despesa'}
+        ],
+        accordionCards: [
+            {
+                id: 1, 
+                tituloDescricao: "Sobre o projeto",
+                descricao: 
+                    `
+                    <article>
+                        <h2>Sobre o projeto</h2>
+                        <p>Um projeto pensado para controle de despesas e rendimento, queria ter algo simples para o controle e ao mesmo tempo agregar a minha profissão, por esse motivo decidi criar esse aplicativo web<p/>
+                        <p>Sua estrutura é baseada em um curso de educação financeira da Udemy.</p>
+                        <p>O Projeto utiliza as seguintes tecnologias:</p>
+
+                        <ul>
+                            <li>Spring boot</li>
+                            <li>Java</li>
+                            <li>Thymeleaf</li>
+                            <li>Bootstrap</li>
+                            <li>Lombok</li>
+                            <li>PostgresSQL</li>
+                            <li>Junit/Mockito</li>
+                            <li>Maven</li>
+                        </ul>
+
+                        <h3>Tecnologia inicial do projeto</h3>
+                        <p>O portifólio utiliza angular 2+ e está com um backend planejado para o futuro utilizando java.</p>
+                    </article>
+
+                    `, 
+                collapse: Collapse.COLLAPSED
+            }
+        ],
+        tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
+        tituloProjeto: "Controlador de Despesas Silvano",
+        tecnologiasAuxiliares: [ 
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 2}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 3}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 5}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 7}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 12}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 13}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 14}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 15}) as Tecnologia
+        ],
         status: [StatusProjeto.EM_DESENVOLVIMENTO]
     }
 ];

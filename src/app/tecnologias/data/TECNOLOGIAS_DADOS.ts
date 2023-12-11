@@ -67,7 +67,32 @@ export const TECNOLOGIAS: Tecnologia[] = [
         nome: "C#",
         imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/c-sharp.png", 
             alt : 'C#'}
+    },
+    {
+        id: 12,
+        nome: "Lombok",
+        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/logo_lombok.png", 
+            alt : 'Logo Lombok'}
+    },
+    {
+        id: 13,
+        nome: "Junit",
+        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/junit_logo-min.png", 
+            alt : 'Logo Junit'}
+    },
+    {
+        id: 14,
+        nome: "Mockito",
+        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/mockito_logo-min.jpg", 
+            alt : 'Logo Mockito'}
+    },
+    {
+        id: 15,
+        nome: "Apache Maven",
+        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/apache_maven_logo-min.png", 
+            alt : 'Logo Apache Maven'}
     }
+
 ]
 
 
