@@ -444,6 +444,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                         <h2>Sobre o projeto</h2>
                         <p>Um projeto pensado auxiliar o meu primeiro portifólio feito apenas em angular<p/>
                         <p>esse projeto foi pensado para remover um pouco a carga que pode aumentar com o tempo.</p>
+                        <p>Ele também serve como um exercício pessoal. </p>
 
                         <h3>Como foi planejado</h3>
                         <p>Toda a estrutura do portifólio angular segue modelos estruturados representados em JSON. </p>
