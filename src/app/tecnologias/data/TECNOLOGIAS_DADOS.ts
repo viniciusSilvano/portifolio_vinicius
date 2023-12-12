@@ -91,6 +91,12 @@ export const TECNOLOGIAS: Tecnologia[] = [
         nome: "Apache Maven",
         imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/apache_maven_logo-min.png", 
             alt : 'Logo Apache Maven'}
+    },
+    {
+        id: 16,
+        nome: "FlyWayDb",
+        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/flyway-logo-min.png", 
+            alt : 'Logo FlyWayDb'}
     }
 
 ]

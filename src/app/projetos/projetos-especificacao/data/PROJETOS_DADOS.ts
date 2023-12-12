@@ -405,9 +405,6 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                             <li>Junit/Mockito</li>
                             <li>Maven</li>
                         </ul>
-
-                        <h3>Tecnologia inicial do projeto</h3>
-                        <p>O portifólio utiliza angular 2+ e está com um backend planejado para o futuro utilizando java.</p>
                     </article>
 
                     `, 
@@ -426,6 +423,61 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 13}) as Tecnologia,
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 14}) as Tecnologia,
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 15}) as Tecnologia
+        ],
+        status: [StatusProjeto.EM_DESENVOLVIMENTO]
+    },
+    {
+        id: 8,
+        descricao: 'Projeto de backend para o portifólio',
+        tipo: TipoProjeto.PESSOAIS,
+        imagens:[
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/backend-portifolio-vinicius/MER_portifolio_backend_vinicius-min.png",alt:"Imagem do Modelo de Entidade E Relacionamento do projeto",title: 'Modelo de Entidade E Relacionamento do projeto'},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/backend-portifolio-vinicius/migrations_portifolio_backend-min.png",alt:"Imagem apresentando as migrations e estrutura do projeto",title: 'Migrations e estrutura do projeto'}
+        ],
+        accordionCards: [
+            {
+                id: 1, 
+                tituloDescricao: "Sobre o projeto",
+                descricao: 
+                    `
+                    <article>
+                        <h2>Sobre o projeto</h2>
+                        <p>Um projeto pensado auxiliar o meu primeiro portifólio feito apenas em angular<p/>
+                        <p>esse projeto foi pensado para remover um pouco a carga que pode aumentar com o tempo.</p>
+
+                        <h3>Como foi planejado</h3>
+                        <p>Toda a estrutura do portifólio angular segue modelos estruturados representados em JSON. </p>
+                        <p>Utilizei migrations (flyway) para repassar os dados dos JSONs para o banco de dados e utiliza-los no novo backend</p>
+
+                        <h3>Tecnologias utilizadas</h3>
+                        <ul>
+                            <li>Spring boot</li>
+                            <li>Java</li>
+                            <li>Lombok</li>
+                            <li>PostgresSQL</li>
+                            <li>Junit/Mockito</li>
+                            <li>Maven</li>
+                        </ul>
+
+                        <h3>Tecnologia inicial do projeto</h3>
+                        <p>O portifólio utiliza angular 2+ e está com um backend planejado para o futuro utilizando java.</p>
+                    </article>
+
+                    `, 
+                collapse: Collapse.COLLAPSED
+            }
+        ],
+        tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
+        tituloProjeto: "Backend Portifólio Vinícius",
+        tecnologiasAuxiliares: [ 
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 2}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 5}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 12}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 13}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 14}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 15}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 16}) as Tecnologia
         ],
         status: [StatusProjeto.EM_DESENVOLVIMENTO]
     }
