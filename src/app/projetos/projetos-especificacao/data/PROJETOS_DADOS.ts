@@ -458,9 +458,6 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                             <li>Junit/Mockito</li>
                             <li>Maven</li>
                         </ul>
-
-                        <h3>Tecnologia inicial do projeto</h3>
-                        <p>O portifólio utiliza angular 2+ e está com um backend planejado para o futuro utilizando java.</p>
                     </article>
 
                     `, 
