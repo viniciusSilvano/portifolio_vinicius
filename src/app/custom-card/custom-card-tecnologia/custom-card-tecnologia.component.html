@@ -1,7 +1,7 @@
 <div class="custom-card clickable-image"
   [ngClass]="{'box-shadow' : projetoFilter?.tecnologiasSelecionadasParaBusca?.includes(tecnologia?.id), 
     '' : !projetoFilter?.tecnologiasSelecionadasParaBusca?.length}"
-  (click)="OnClickSearchByTecnologyImage(tecnologia?.id)"
+  (click)="OnClickSearchByTecnologyImage()"
 >
   <div class="text-center m-2 p-0">
     <img 
