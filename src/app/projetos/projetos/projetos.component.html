@@ -7,6 +7,7 @@
 
   <section class="ml-3 border-top-light-green" *ngIf="filtroPossuiResultado()">
     <h2>Projetos Filtrados</h2>
+    <span class="pl-2">{{this.customCardData.descricao}}</span>
     <div class="d-flex flex-row justify-content-around flex-wrap" >
       <div class="col-6 mt-3" *ngFor="let projeto of resultadoProjetoFilter.projetosCardsFiltered;let indexOfelement=index;">
         <app-custom-card-projeto [projeto]="projeto" [heightImageSliderInPx]="300" (onVisualizarBtnClick)="redirect($event)"></app-custom-card-projeto>
@@ -32,7 +33,3 @@
     </div>
   </section>
 </section>
-
-<div class="filterModalContainer position-fixed fixed-top float-right col-sm-3" *ngIf="filtroPossuiResultado()">
-  <app-custom-card [customCardData]="customCardData" (onButtonClick)="solicitarLimpezaFiltros()"></app-custom-card>
-</div>

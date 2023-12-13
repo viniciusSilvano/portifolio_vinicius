@@ -21,15 +21,19 @@
   <fieldset>
     <legend>Por Tecnologia:</legend>
     <small>selecione uma imagem para filtrar </small>
-    <div class="mt-3 d-flex flex-row justify-content-around align-content-center flex-wrap" >
-      <div class="col-2" *ngFor="let tecnologia of tecnologiasParaBusca" style="height: 80px">
-        <img class="clickable-image" 
-          (click)="OnClickSearchByTecnologyImage(tecnologia.id)"
-          height="50px" 
-          alt="{{tecnologia.imagem.alt}}" 
-          title="{{tecnologia.imagem.alt}}"  
-          [ngClass]="{'box-shadow' : projetoFilter.tecnologiasSelecionadasParaBusca.includes(tecnologia.id), '' : !projetoFilter.tecnologiasSelecionadasParaBusca.length}"
-          src="{{tecnologia.imagem.source}}"/>
+    <div class="col-sm-12">
+      <div class="mt-3 d-flex flex-row justify-content-around align-content-center flex-wrap w-100" >
+        <div class="col-3" *ngFor="let tecnologia of tecnologiasParaBusca" style="height: 80px">
+          <img class="clickable-image" 
+            (click)="OnClickSearchByTecnologyImage(tecnologia.id)"
+            height="50%" 
+            width="100%"
+            alt="{{tecnologia.imagem.alt}}" 
+            title="{{tecnologia.imagem.alt}}"  
+            [ngClass]="{'box-shadow' : projetoFilter.tecnologiasSelecionadasParaBusca.includes(tecnologia.id), 
+            '' : !projetoFilter.tecnologiasSelecionadasParaBusca.length}"
+            src="{{tecnologia.imagem.source}}"/>
+        </div>
       </div>
     </div>
   </fieldset>
