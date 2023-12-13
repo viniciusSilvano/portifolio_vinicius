@@ -28,7 +28,7 @@
           height="50px" 
           alt="{{tecnologia.imagem.alt}}" 
           title="{{tecnologia.imagem.alt}}"  
-          [ngClass]="{'box-shadow' : projetoFilter.tecnologiasSelecionadasParaBusca.includes(tecnologia.id)}"
+          [ngClass]="{'box-shadow' : projetoFilter.tecnologiasSelecionadasParaBusca.includes(tecnologia.id), '' : !projetoFilter.tecnologiasSelecionadasParaBusca.length}"
           src="{{tecnologia.imagem.source}}"/>
       </div>
     </div>
