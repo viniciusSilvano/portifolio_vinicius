@@ -12,7 +12,7 @@
     </div>
   </div>
   <div #imagesSliderContainer *ngIf="projeto.imagens">
-    <app-image-slider [slides]="projeto.imagens" [hideDots]="true"></app-image-slider>
+    <app-image-slider [slides]="projeto.imagens" [hideDots]="false"></app-image-slider>
   </div>
   <div class="text-justify m-2 p-0">
     <p>{{projeto.descricao}}</p>

@@ -1,4 +1,4 @@
-<div class="slider">
+<!--<div class="slider">
   <div>
     <div class="leftArrow" (click)="onClickLeftArrow()">❰</div>
     <div class="rightArrow" (click)="onClickRightArrow()">❱</div>
@@ -8,6 +8,38 @@
   <div class="dotsContainer" [hidden]="hideDots">
     <div *ngFor="let slide of slides; let slideIndex = index" class="dot" (click)="goToSlide(slideIndex)">
       ●
+    </div>
+  </div>
+</div>-->
+
+
+<div class="image-slider-sm col-sm-12" style="width: 100%; height: 100%; background-color: var(--cor-preto-escuro);">
+  <div class="d-inline-block align-middle" style="height: 100%; width: 15%;">
+    <div class="leftArrowSm" (click)="onClickLeftArrow()">❰</div>
+  </div>
+  <div class="slide-sm" [ngStyle]="{'background-image': getCurrentSliderUrl()}">
+  </div>
+  <div class="d-inline-block align-middle" style="height: 100%; width: 15%;">
+    <div class="rightArrowSm" (click)="onClickRightArrow()">❱</div>
+  </div>
+</div>
+
+<div class="image-slider-md col-sm-12" style="width: 100%; height: 100%; background-color: var(--cor-preto-escuro);">
+  <div class="slide-md col-sm-12" [ngStyle]="{'background-image': getCurrentSliderUrl()}">
+  </div>
+  <div class="footer-slider col-sm-12" style="height: 20%; width: 100%;" style="background-color: var(--cor-preto-escuro);">
+    <div class="col-sm-12 mb-1 d-flex flex-row justify-content-around flex-wrap">
+      <div class="col-sm-2" style="height: 100%; width: 15%;">
+        <div class="leftArrow" (click)="onClickLeftArrow()">❰</div>
+      </div>
+      <div class="col-sm-8 pt-3 d-flex flex-row justify-content-around align-middle flex-wrap" style="height: 100%; width: 60%;">
+        <div *ngFor="let slide of slides; let slideIndex = index" (click)="goToSlide(slideIndex)">
+          ●
+        </div>
+      </div>
+      <div class="col-sm-2" style="height: 100%; width: 15%;">
+        <div class="rightArrow" (click)="onClickRightArrow()">❱</div>
+      </div>
     </div>
   </div>
 </div>
