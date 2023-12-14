@@ -57,13 +57,21 @@ export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
     this.currentIndex = newIndex;
   }
 
+  isLastSlide(){
+    return this.currentIndex === this.slides.length - 1;
+  }
+
+  isFirstSlide(){
+    return this.currentIndex === 0;
+  }
+
   onClickLeftArrow(): void{
     this.onAnyArrowOrDotClick();
     this.goToPrevious();
   }
 
   goToPrevious(): void{
-    const isFirstSlide = this.currentIndex === 0;
+    const isFirstSlide = this.isFirstSlide();
     const newIndex = isFirstSlide ? this.slides.length - 1 : this.currentIndex - 1;
     this.currentIndex = newIndex 
   }

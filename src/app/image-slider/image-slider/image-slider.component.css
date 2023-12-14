@@ -21,6 +21,12 @@
   cursor: pointer;
 }
 
+.ArrowDisabled{
+  font-size: 45px;
+  color: var(--cor-cinza-claro);
+  z-index: 2;
+}
+
 .slide-md {
   width: 100%;
   height: 80%;

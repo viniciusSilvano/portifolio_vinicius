@@ -1,11 +1,13 @@
 <div class="image-slider-sm col-sm-12" style="width: 100%; height: 100%; background-color: var(--cor-preto-escuro);">
   <div class="d-inline-block align-middle ArrowContainer leftArrowContainer " style="">
-    <div class="Arrow leftArrow leftArrowSm" (click)="onClickLeftArrow()">❰</div>
+    <div class="leftArrow leftArrowSm" (click)="onClickLeftArrow()"
+      [ngClass]="[isFirstSlide() ? 'ArrowDisabled' : 'Arrow' ]">❰</div>
   </div>
   <div class="slide-sm" [ngStyle]="{'background-image': getCurrentSliderUrl()}">
   </div>
   <div class="d-inline-block align-middle ArrowContainer rightArrowContainer " style="height: 100%; width: 15%;">
-    <div class="Arrow rightArrow rightArrowSm" (click)="onClickRightArrow()">❱</div>
+    <div class="rightArrow rightArrowSm" (click)="onClickRightArrow()"
+      [ngClass]="[isLastSlide() ? 'ArrowDisabled' : 'Arrow' ]">❱</div>
   </div>
 </div>
 
@@ -15,7 +17,8 @@
   <div class="footer-slider col-sm-12" style="height: 20%; width: 100%;" style="background-color: var(--cor-preto-escuro);">
     <div class="col-sm-12 mb-1 d-flex flex-row justify-content-around flex-wrap">
       <div class="col-sm-2 align-middle ArrowContainer leftArrowContainer" style="height: 100%; width: 15%;">
-        <div class="Arrow leftArrow leftArrowMd" (click)="onClickLeftArrow()">❰</div>
+        <div class="leftArrow leftArrowMd" (click)="onClickLeftArrow()"
+          [ngClass]="[isFirstSlide() ? 'ArrowDisabled' : 'Arrow' ]">❰</div>
       </div>
       <div class="col-sm-8 pt-3 d-flex flex-row justify-content-around align-middle flex-wrap" style="height: 100%; width: 60%;">
         <div *ngFor="let slide of slides; let slideIndex = index" (click)="goToSlide(slideIndex)" 
@@ -24,7 +27,8 @@
         </div>
       </div>
       <div class="col-sm-2 align-middle ArrowContainer rightArrowContainer" style="height: 100%; width: 15%;">
-        <div class="Arrow rightArrow rightArrowMd" (click)="onClickRightArrow()">❱</div>
+        <div class="rightArrow rightArrowMd" (click)="onClickRightArrow()"
+          [ngClass]="[isLastSlide() ? 'ArrowDisabled' : 'Arrow' ]">❱</div>
       </div>
     </div>
   </div>
