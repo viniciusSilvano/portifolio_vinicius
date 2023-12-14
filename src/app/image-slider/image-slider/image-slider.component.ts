@@ -78,4 +78,8 @@ export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
     return `url(${this.slides[this.currentIndex].source})`;
   }
 
+  checkCurrentDot(indexDot): Boolean{
+    return this.currentIndex == indexDot
+  }
+
 }

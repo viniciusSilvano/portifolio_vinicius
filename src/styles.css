@@ -88,7 +88,7 @@ div.border-top-light-green{
 }
 
 .clickable-image:hover{
-	box-shadow: 0 0 0 0.2rem rgba(var(--cor-verde-claro-n2),var(--cor-verde-claro-n2-opacity));
+	box-shadow: 0 0 0 0.2rem var(--cor-azul-claro);
 }
 
 .clickable-image.box-shadow{
