@@ -38,7 +38,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
 
   constructor() { }
 
-  onAnyArrowClick(): void{
+  private onAnyArrowOrDotClick(): void{
     if(this.waitForSubscritionTimer){
       this.waitForSubscritionTimer.unsubscribe();
     }
@@ -47,7 +47,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   onClickRightArrow(): void{
-    this.onAnyArrowClick();
+    this.onAnyArrowOrDotClick();
     this.goToNext();
   }
 
@@ -58,7 +58,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   onClickLeftArrow(): void{
-    this.onAnyArrowClick();
+    this.onAnyArrowOrDotClick();
     this.goToPrevious();
   }
 
@@ -70,11 +70,16 @@ export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
 
 
   goToSlide(slideIndex : number) : void{
+    this.onAnyArrowOrDotClick();
     this.currentIndex = slideIndex;
   }
 
   getCurrentSliderUrl() : String{
     return `url(${this.slides[this.currentIndex].source})`;
+  }
+
+  checkCurrentDot(indexDot): Boolean{
+    return this.currentIndex == indexDot
   }
 
 }
