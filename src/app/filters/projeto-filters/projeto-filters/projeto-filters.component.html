@@ -17,6 +17,25 @@
 
 <div class="border-top-light-green"></div>
 
+<div class="row mt-3">
+  <div class="form-group col-sm-12">
+    <fieldset>
+      <legend>Por Tag Projeto:</legend>
+      <small>Selecione uma tag para filtrar</small>
+      <div class="d-flex flex-row mt-3">
+        <div class="tag_projeto clickable background-preto-escuro-disabled oval_tag ml-3 text-center" 
+          [ngClass]="{'background-preto-escuro': tagSelecionadaParaFiltro(tag)
+            ,'background-preto-escuro-disabled': !tagSelecionadaParaFiltro(tag)}"
+          *ngFor="let tag of todasTags" (click)="OnClickSearchByTag(tag)">
+          {{tag.nome}}
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>
+
+<div class="border-top-light-green"></div>
+
 <div class="row mt-3 mb-5" style="padding-left: 15px;" *ngIf="tecnologiasParaBusca.length > 0">
   <fieldset>
     <legend>Por Tecnologia:</legend>

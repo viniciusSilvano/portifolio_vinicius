@@ -19,5 +19,5 @@ export enum TipoProjeto{
 }
 
 export enum StatusProjeto{
-    EM_DESENVOLVIMENTO = 'EM DESENVOLVIMENTO'
+    EM_DESENVOLVIMENTO
 }

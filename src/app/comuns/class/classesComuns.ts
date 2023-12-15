@@ -8,3 +8,7 @@ export interface Imagem{
 export interface Entidade{
   id: Number;
 }
+
+export abstract class Obj<T>{
+  abstract equals(obj: T): Boolean; 
+}
