@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { ProjetoEspecificacao } from 'src/app/projetos/projetos-especificacao/class/projeto_especificacao';
-
+import { ProjetoEspecificacao, StatusProjeto, TipoProjeto } from 'src/app/projetos/projetos-especificacao/class/projeto_especificacao';
+import { TagUtil } from 'src/app/projetos/projetos-especificacao/util/tag_utl';
 @Component({
   selector: 'app-custom-card-projeto',
   templateUrl: './custom-card-projeto.component.html',
@@ -26,5 +26,13 @@ export class CustomCardProjetoComponent implements OnInit, AfterViewInit {
 
   notifyParent(idProjeto: Number){
     this.onVisualizarBtnClick.emit(idProjeto);
+  }
+
+  getNomeTagPorStatus(status: StatusProjeto) : String{
+    return TagUtil.retornarNomeTagPorStatus(status);
+  }
+
+  getNomeTagPorTipo(tipo: TipoProjeto) : String{
+    return TagUtil.retornaNomeTagPorTipoProjeto(tipo);
   }
 }

@@ -15,12 +15,13 @@
     --cor-azul-marinho-n2-opacity: 0.5;
     --cor-cinza-escuro: #3f3f3f;
     --cor-preto-escuro: #121212;
+    --cor-preto-escuro-disabled: #404040;
     --cor-preto-escuro-n2: #323232;
     --cor-preto-default: black;
     --cor-verde-claro: #2F5D61;
-    --cor-azul-claro: #000FFF;
+    --cor-azul-claro: #000FDB;
     --cor-cinza-claro: #CFD3D4;
-    --cor-verde-claro-n2: 21, 190, 20  ;
+    --cor-verde-claro-n2: 21, 190, 20;
     --cor-verde-claro-n2-opacity: 75;
 }
 
@@ -98,7 +99,6 @@ div.border-top-light-green{
 .tag_projeto.oval_tag{
   width: 50%;
   height: 100%;
-  background-color: var(--cor-preto-escuro);
   border-radius: 75px / 45px;
   box-shadow: -5px 3px rgba(var(--cor-verde-claro-n2),var(--cor-verde-claro-n2-opacity));
 }
@@ -106,4 +106,25 @@ div.border-top-light-green{
 .background-verde-claro{
   background-color: var(--cor-verde-claro);
 }
+
+.background-preto-escuro{
+  background-color: var(--cor-preto-escuro);
+}
+
+.tag_projeto.background-preto-escuro:hover{
+  background-color: var(--cor-preto-escuro);
+  box-shadow: 0 0 0 0.2rem var(--cor-azul-claro);
+}
+
+.background-preto-escuro-disabled{
+  background-color: var(--cor-preto-escuro-disabled);
+  color: var(--cor-cinza-claro);
+}
+
+.tag_projeto.background-preto-escuro-disabled:hover{
+  background-color: var(--cor-preto-escuro);
+  color: var(--cor-verde-claro-n2);
+  box-shadow: 0 0 0 0.2rem var(--cor-azul-claro);
+}
+
   

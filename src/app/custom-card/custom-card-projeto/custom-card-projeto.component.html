@@ -2,12 +2,12 @@
   <div class="custom-card-header text-center m-2 p-0 short-project-card-header" >
     {{projeto.tituloProjeto | uppercase}}
     <div class="d-flex flex-row mt-3">
-      <div class="tag_projeto oval_tag ml-3">
-        {{projeto.tipo == 0 ? 'Projeto Pessoal' : 'Projeto Público/Teste'}}
+      <div class="tag_projeto background-preto-escuro oval_tag ml-3">
+        {{getNomeTagPorTipo(projeto.tipo)}}
       </div>
 
-      <div *ngFor="let statusProjeto of projeto.status; let statusIndex = index" class="tag_projeto oval_tag ml-3">
-        {{statusProjeto}}
+      <div *ngFor="let statusProjeto of projeto.status; let statusIndex = index" class="tag_projeto background-preto-escuro oval_tag ml-3">
+        {{getNomeTagPorStatus(statusProjeto)}}
       </div>
     </div>
   </div>

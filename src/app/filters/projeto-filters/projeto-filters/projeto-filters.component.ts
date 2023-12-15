@@ -7,6 +7,8 @@ import { ResultadoProjetoFilter} from './class/resultado-projeto-filter';
 import { SearchUtil } from 'src/app/util/search_util';
 import { ArraysUtil } from 'src/app/util/arrays_util';
 import { StringUtil } from 'src/app/util/string-util';
+import { Tag } from 'src/app/projetos/projetos-especificacao/class/tag';
+import { TagUtil } from 'src/app/projetos/projetos-especificacao/util/tag_utl';
 
 @Component({
   selector: 'app-projeto-filters',
@@ -20,6 +22,7 @@ export class ProjetoFiltersComponent implements OnInit {
 
   projetosCardsFiltered: ProjetoEspecificacao[] = [];
   projetoFilter = new ProjetoFilter(new SearchUtil(),new ArraysUtil(),new StringUtil());
+  todasTags : Tag[] = TagUtil.retornarTodasAsTags();
 
   @Output() resultadoFiltro: EventEmitter<ResultadoProjetoFilter> = new EventEmitter(); 
   
@@ -37,7 +40,9 @@ export class ProjetoFiltersComponent implements OnInit {
   private filter(){
     this.projetosCardsFiltered = this.projetoList.filter(
       item => {
-        return this.projetoFilter.filter(item);
+        let resultado : Boolean = this.projetoFilter.filter(item);
+        console.log("filtro valido: ", resultado, " projeto: " + item.tituloProjeto);
+        return resultado;
       }
     )
     this.resetFilteredProjectsList();
@@ -64,6 +69,20 @@ export class ProjetoFiltersComponent implements OnInit {
     }
 
     this.filter();
+  }
+
+  OnClickSearchByTag(tag: Tag){
+    if(this.projetoFilter.tagsParaFiltrar.includes(tag)){
+      this.projetoFilter.tagsParaFiltrar.splice(this.projetoFilter.tagsParaFiltrar.indexOf(tag),1);
+    }else{
+      this.projetoFilter.tagsParaFiltrar.push(tag);
+    }
+
+    this.filter();
+  }
+
+  tagSelecionadaParaFiltro(tag: Tag): Boolean{
+    return this.projetoFilter.tagsParaFiltrar.includes(tag);
   }
 
 }
