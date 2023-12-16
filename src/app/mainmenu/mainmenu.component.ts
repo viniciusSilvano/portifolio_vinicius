@@ -3,6 +3,8 @@ import { ProjetoEspecificacao } from '../projetos/projetos-especificacao/class/p
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { ProjetosService } from '../projetos/service/projetos.service';
+import { SocialMediaService } from '../social-media.service';
+import { SocialMediaButton } from '../left-aside-column-classes/socialMediaButton';
 
 @Component({
   selector: 'app-mainmenu',
@@ -10,15 +12,19 @@ import { ProjetosService } from '../projetos/service/projetos.service';
   styleUrls: ['./mainmenu.component.css']
 })
 export class MainmenuComponent implements OnInit {
-  public projetosDropDownList : ProjetoEspecificacao[];
+  projetosDropDownList : ProjetoEspecificacao[];
+  socialMediaButtons : SocialMediaButton[];
+
   constructor(
     private  projetoService : ProjetosService,
+    private socialMediaService : SocialMediaService,
     private router: Router,
     private location: Location
     ) { }
 
   ngOnInit() {
     this.getAllProjetosEspecificacao();
+    this.getAllSocialButtons();
     
   }
 
@@ -34,5 +40,11 @@ export class MainmenuComponent implements OnInit {
       }
     )
   } 
+
+  private getAllSocialButtons(){
+    this.socialMediaService.getSocialMediaButtons().subscribe(
+      result => this.socialMediaButtons = result
+    );
+  }
 
 }

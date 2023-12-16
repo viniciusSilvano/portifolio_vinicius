@@ -127,4 +127,13 @@ div.border-top-light-green{
   box-shadow: 0 0 0 0.2rem var(--cor-azul-claro);
 }
 
+.btnRedeSocial{
+	background-repeat: no-repeat !important; 
+	background-size: cover !important;						
+	background-position: center !important;
+}
+
+.btnRedeSocial:hover{
+	opacity: 0.5;
+}
   
