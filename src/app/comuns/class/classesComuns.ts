@@ -5,6 +5,10 @@ export interface Imagem{
   descricao?:String;
 }
 
+export interface imageButton extends Imagem{
+
+}
+
 export interface Entidade{
   id: Number;
 }
