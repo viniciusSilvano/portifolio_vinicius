@@ -1,12 +1,21 @@
 <section class="mt-5">
-  <h1 class="text-center">Projetos</h1>
+  <h1 class="text-center">Apresentação dos Projetos</h1>
+  <aside>
+    <h2>Tipos de projeto: </h2>
+    <ul>
+      <li><strong>PÚBLICO/TESTE:</strong> projeto <strong>com disponibilidade de código</strong>, feito para experimentar novas abordagens ou projetos simples. </li>
+      <li><strong>PESSOAL:</strong> projeto <strong>sem disponibilidade de código</strong>, feito para um propósito específico.</li>
+    </ul>
+    <p>Se tiver interesse em um tipo específico utilize o filtro de tags presente no accordion entitulado "{{accordionProjetoFilters?.tituloDescricao}}" </p>
+  </aside>
 
+  <h2 class="mt-1">Filtros dos projetos</h2>
   <app-accordion-card [accordionCard]="accordionProjetoFilters" [ehAccordionProjetoCard]="true" (resultadoFiltro)="onFilter($event)"></app-accordion-card>
 
   <div class="border-top-light-gray mt-5"> </div>
-
+  <h2 class="text-center">Projetos</h2>
   <section class="ml-3 border-top-light-green" *ngIf="filtroPossuiResultado()">
-    <h2>Projetos Filtrados</h2>
+    <h3>Projetos Filtrados</h3>
     <span class="pl-2">{{this.customCardData.descricao}}</span>
     <div class="d-flex flex-row justify-content-around flex-wrap" >
       <div class="col-sm-12 col-md-6 col-lg-6 mt-3" *ngFor="let projeto of resultadoProjetoFilter.projetosCardsFiltered;let indexOfelement=index;">
@@ -15,8 +24,8 @@
     </div>
   </section>
   <section class="ml-3" *ngIf="!filtroPossuiResultado()">
-    <h2>Pessoais</h2>
-    <p>Projetos pessoais criados por um propósito ou razões pessoais.</p>
+    <h3>Pessoais</h3>
+    <small>Projetos pessoais criados por um propósito ou razões pessoais.</small>
     <div class="d-flex flex-row justify-content-around flex-wrap" >
       <div class="col-sm-12 col-md-6 col-lg-6 mt-3" *ngFor="let projeto of projetosCardsExistente;let indexOfelement=index;">
         <app-custom-card-projeto [projeto]="projeto" [heightImageSliderInPx]="300" (onVisualizarBtnClick)="redirect($event)"></app-custom-card-projeto>
@@ -24,8 +33,8 @@
     </div>
   </section>
   <section class="ml-3 mt-4" *ngIf="!filtroPossuiResultado()">
-    <h2>Testes/Públicos</h2>
-    <p>Projetos que são usados para brincar com o código ou experimentar novas abordagens.</p>
+    <h3>Testes/Públicos</h3>
+    <small>Projetos que são usados para brincar com o código, experimentar novas abordagens ou projetos pequenos.</small>
     <div class="d-flex flex-row justify-content-around flex-wrap" >
       <div class="col-sm-12 col-md-6 col-lg-6 mt-3" *ngFor="let projeto of projetosTestesPublicosCards;let indexOfelement=index;">
         <app-custom-card-projeto [projeto]="projeto" [heightImageSliderInPx]="300" (onVisualizarBtnClick)="redirect($event)" ></app-custom-card-projeto>
