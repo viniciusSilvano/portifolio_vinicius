@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {ProjetosService} from "../service/projetos.service";
 import { Router } from '@angular/router';
 import { ProjetoEspecificacao } from '../projetos-especificacao/class/projeto_especificacao';
-import { Tecnologia } from '../../tecnologias/class/tecnologia';
 import { TecnologiaService } from '../../tecnologias/service/tecnologia.service';
-import { AccordionCard, AccordionProjetoCard, Collapse } from 'src/app/comuns/class/accordion-card';
+import { AccordionProjetoCard, Collapse } from 'src/app/comuns/class/accordion-card';
 import { forkJoin } from 'rxjs';
 import { ResultadoProjetoFilter } from 'src/app/filters/projeto-filters/projeto-filters/class/resultado-projeto-filter';
 import { CustomCardData } from 'src/app/custom-card/class/custom-card-data';
@@ -47,7 +46,18 @@ export class ProjetosComponent implements OnInit {
         this.accordionProjetoFilters.projetoList = [...this.projetosCardsExistente,...this.projetosTestesPublicosCards];
       });
 
-    this.accordionProjetoFilters.tecnologiasParaBusca = this.tecnologiaService.findAll();
+    this.accordionProjetoFilters.tecnologiasParaBusca = this.tecnologiaService.findAll()
+      .sort((tec1,tec2) => {
+        if (tec1.nome > tec2.nome) {
+            return 1;
+        }
+    
+        if (tec1.nome < tec2.nome) {
+            return -1;
+        }
+    
+        return 0;
+      });
   }
 
   redirect(idEspecificacao: number) : void{
