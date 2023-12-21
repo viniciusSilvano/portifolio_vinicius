@@ -6,7 +6,7 @@ import { Tag, TipoTag } from "../class/tag";
 export class TagUtil{
 
   private static tagsPorStatus = new Map<Number, String>([
-    [0, "Desenvolvimento"]
+    [0, "Em desenvolvimento"]
   ]);
 
   private static tagsPorTipo = new Map<Number, String>([
