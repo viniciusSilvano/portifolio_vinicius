@@ -11,19 +11,19 @@ export const TECNOLOGIAS: Tecnologia[] = [
     {
         id:2,
         nome:"SPRING BOOT",
-        imagem:{source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/spring-boot-logo.jpg", 
+        imagem:{source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/spring-boot-logo-min.png", 
             alt: 'SPRING BOOT'}
     },
     {
         id:3,
         nome:"Bootstrap",
-        imagem: {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/bootstrap-logo.svg", 
+        imagem: {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/bootstrap-logo-min.png", 
             alt: 'BOOTSTRAP'}
     },
     {
         id:4,
         nome:"Jquery",
-        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/logoJquery.gif", 
+        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/logoJquery-min.png", 
             alt: 'JQUERY'}
     },
     {
