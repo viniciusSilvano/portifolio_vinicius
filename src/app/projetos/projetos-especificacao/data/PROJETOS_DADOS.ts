@@ -116,7 +116,8 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         tecnologiasAuxiliares:[
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 1}) as Tecnologia,
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia
-        ]
+        ],
+        status: [StatusProjeto.FINALIZADO]
     },
     {
         id:2,
@@ -196,7 +197,8 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                 `,
                 collapse: Collapse.COLLAPSED
             }
-        ]
+        ],
+        status: [StatusProjeto.FINALIZADO]
     },
     {
         id: 3,
@@ -223,7 +225,8 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         ],
         tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
         tituloProjeto: "Java Test Project",
-        tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia]
+        tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia],
+        status: [StatusProjeto.FINALIZADO]
     },
     {
         id: 4,
@@ -250,7 +253,8 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         ],
         tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 9}) as Tecnologia,
         tituloProjeto: "Angular 2+ Tests Project",
-        tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 9}) as Tecnologia]
+        tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 9}) as Tecnologia],
+        status: [StatusProjeto.FINALIZADO]
     },
     {
         id: 5,
@@ -319,7 +323,8 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         tecnologiasAuxiliares: [ 
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 10}) as Tecnologia,
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 11}) as Tecnologia
-        ]
+        ],
+        status: [StatusProjeto.FINALIZADO]
     },
     {
         id: 6,
@@ -376,12 +381,12 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
     },
     {
         id: 7,
-        descricao: 'Meu projeto para controle de despesas pessoais ',
+        descricao: 'Meu projeto para controle de despesas pessoais',
         tipo: TipoProjeto.PESSOAIS,
         imagens:[
             {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/controlador-despesa/tela_cadastro_categoria_despesa-min.png",alt:"print da tela de cadastro de categoria da despesa.",title: 'tela de cadastro da categoria da despesa'},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/controlador-despesa/tela_cadastro_despesa-min.png",alt:"print da tela para selecionar o tipo de despesa para cadastro",title: 'tela de cadastro da categoria da despesa'},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/controlador-despesa/tela_cadastro_categoria_despesa-min.png",alt:"print da tela de cadastro de despesa do tipo \"Única\"",title: 'tela de cadastro da categoria da despesa'}
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/controlador-despesa/tela_cadastro_despesa-min.png",alt:"print da tela para selecionar o tipo de despesa para cadastro",title: 'tela de seleção de tipo de despesa a cadastrar'},
+            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/controlador-despesa/tela_cadastro_despesa_unica-min.png",alt:"print da tela de cadastro de despesa do tipo \"Única\"",title: 'tela de cadastro de despesa Única'}
         ],
         accordionCards: [
             {

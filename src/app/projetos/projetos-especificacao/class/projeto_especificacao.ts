@@ -11,7 +11,7 @@ export interface ProjetoEspecificacao extends Entidade{
     tecnologiasAuxiliares?: Tecnologia[];
     tipo: TipoProjeto
     accordionCards: AccordionCard[],
-    status?: StatusProjeto[];  
+    status: StatusProjeto[];  
 }
 
 export enum TipoProjeto{
@@ -19,5 +19,5 @@ export enum TipoProjeto{
 }
 
 export enum StatusProjeto{
-    EM_DESENVOLVIMENTO
+    EM_DESENVOLVIMENTO, FINALIZADO
 }
