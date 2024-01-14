@@ -4,99 +4,67 @@ import { GlobalStrings } from '../../globalStrings/globalString';
 export const TECNOLOGIAS: Tecnologia[] = [
     {
         id:1,
-        nome:"ANDROID",
-        imagem:{ source: "../.." + GlobalStrings.getGlobalUrlFragment()+ "/assets/images/tecnologias/android-logo.png", 
-            alt: 'ANDROID'}
+        nome:"ANDROID"
     },
     {
         id:2,
-        nome:"SPRING BOOT",
-        imagem:{source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/spring-boot-logo-min.png", 
-            alt: 'SPRING BOOT'}
+        nome:"SPRING BOOT"
     },
     {
         id:3,
-        nome:"Bootstrap",
-        imagem: {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/bootstrap-logo-min.png", 
-            alt: 'BOOTSTRAP'}
+        nome:"Bootstrap"
     },
     {
         id:4,
-        nome:"Jquery",
-        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/logoJquery-min.png", 
-            alt: 'JQUERY'}
+        nome:"Jquery"
     },
     {
         id: 5,
-        nome: "PostgreSQL",
-        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/postgresqlLogo.png", 
-            alt: 'POSTGRESQL'}
+        nome: "PostgreSQL"
     },
     {
         id:6,
-        nome:"Tinymce",
-        imagem:{source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/tinymceLogo.png", 
-            alt: 'TINYMCE'}
+        nome:"Tinymce"
     },
     {
         id: 7,
-        nome:"Thymeleaf",
-        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/thymeleafLogo.png", 
-            alt: 'THYMELEAF'}
+        nome:"Thymeleaf"
     },
     {
         id: 8,
-        nome: "Java",
-        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/java_icon.png", 
-            alt: 'JAVA'}
+        nome: "Java"
     },
     {
         id: 9,
-        nome: "Angular",
-        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/angular-icon.png", 
-            alt : 'ANGULAR'}
+        nome: "Angular"
     },
     {
         id: 10,
-        nome: "Unity",
-        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/unity.png", 
-            alt : 'Unity'}
+        nome: "Unity"
     },
     {
         id: 11,
-        nome: "C#",
-        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/c-sharp.png", 
-            alt : 'C#'}
+        nome: "C#"
     },
     {
         id: 12,
-        nome: "Lombok",
-        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/logo_lombok.png", 
-            alt : 'Logo Lombok'}
+        nome: "Lombok"
     },
     {
         id: 13,
-        nome: "Junit",
-        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/junit_logo-min.png", 
-            alt : 'Logo Junit'}
+        nome: "Junit"
     },
     {
         id: 14,
-        nome: "Mockito",
-        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/mockito_logo-min.jpg", 
-            alt : 'Logo Mockito'}
+        nome: "Mockito"
     },
     {
         id: 15,
-        nome: "Apache Maven",
-        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/apache_maven_logo-min.png", 
-            alt : 'Logo Apache Maven'}
+        nome: "Apache Maven"
     },
     {
         id: 16,
-        nome: "FlyWayDb",
-        imagem: {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/tecnologias/flyway-logo-min.png", 
-            alt : 'Logo FlyWayDb'}
+        nome: "FlyWayDb"
     }
 
 ]
