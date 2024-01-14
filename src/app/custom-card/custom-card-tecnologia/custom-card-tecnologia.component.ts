@@ -11,6 +11,7 @@ export class CustomCardTecnologiaComponent implements OnInit {
   @Input() tecnologia : Tecnologia;
   @Input() projetoFilter : ProjetoFilter;
   @Output() onClick : EventEmitter<any> = new EventEmitter<any>();
+  @Input() clickable : Boolean = true;
   
   constructor() { }
 

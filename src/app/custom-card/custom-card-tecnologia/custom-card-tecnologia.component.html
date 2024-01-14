@@ -1,6 +1,7 @@
-<div class="custom-card clickable-image"
+<div class="custom-card  p-2"
   [ngClass]="{'box-shadow' : projetoFilter?.tecnologiasSelecionadasParaBusca?.includes(tecnologia?.id), 
-    '' : !projetoFilter?.tecnologiasSelecionadasParaBusca?.length}"
+    '' : !projetoFilter?.tecnologiasSelecionadasParaBusca?.length,
+    'clickable-image' : clickable}"
   (click)="OnClickSearchByTecnologyImage()"
 >
   <div class="custom-card-footer">
