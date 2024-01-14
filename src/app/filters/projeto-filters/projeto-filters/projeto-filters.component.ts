@@ -41,7 +41,6 @@ export class ProjetoFiltersComponent implements OnInit {
     this.projetosCardsFiltered = this.projetoList.filter(
       item => {
         let resultado : Boolean = this.projetoFilter.filter(item);
-        console.log("filtro valido: ", resultado, " projeto: " + item.tituloProjeto);
         return resultado;
       }
     )
