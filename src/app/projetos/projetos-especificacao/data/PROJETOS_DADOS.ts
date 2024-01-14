@@ -12,7 +12,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         id:1,
         tituloProjeto:"Alugueis",
         tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 1}) as Tecnologia,//logo android
-        descricao:"sistema mobile de alugueis e controle de estoque",
+        descricao:"sistema mobile de alugueis e controle de estoque feito em JAVA",
         tipo: TipoProjeto.PESSOAIS,
         imagens:[
             {source:"../.." +  GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/main_activity.png",alt:"Tela principal",title:"Tela principal",descricao:"A tela inicial do sistema mobile."},
@@ -124,7 +124,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         tituloProjeto:"SGQ(Sistema de Gerenciamento de Questão) - TCC",
         tecnologia:   _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 2}) as Tecnologia, // Spring boot
         tipo: TipoProjeto.PESSOAIS,
-        descricao: `meu projeto de conclusão de curso da faculdade.
+        descricao: `meu projeto de conclusão de curso da faculdade feito com o framework SPRING BOOT.
         Ele serve para o coordenador de um curso de ensino criar provas 
         de forma aleatória com um banco de questões, as questões são organizadas
         por meio da Taxonomia de Bloom.`,
@@ -202,7 +202,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
     },
     {
         id: 3,
-        descricao: "Projeto de testes em java, parceiro do angular tests. Obs: tentei caprichar no código.",
+        descricao: "Projeto de testes em JAVA, parceiro do angular tests. Obs: tentei caprichar no código.",
         tipo: TipoProjeto.TESTE_PUBLICOS,
         imagens: [
             {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-java-teste-project/java_test_project_1.png",alt:"print código java 1"},
@@ -230,7 +230,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
     },
     {
         id: 4,
-        descricao: "Projeto de testes em angular, parceiro do java tests. Obs: tentei caprichar no código.",
+        descricao: "Projeto de testes em ANGULAR, parceiro do java tests. Obs: tentei caprichar no código.",
         tipo: TipoProjeto.TESTE_PUBLICOS,
         imagens: [
             {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-angular-2-tests/angular_test_project_1.png",alt:"print código angular 1"},
@@ -258,7 +258,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
     },
     {
         id: 5,
-        descricao: "Projeto final do curso de game designer da Seven/Redzero",
+        descricao: "Projeto final do curso de game designer da Seven/Redzero feito no framework UNITY",
         tipo: TipoProjeto.PESSOAIS,
         imagens: [
             {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-final-redzero/Redzero_tcc_MainMenu.png",alt:"print projeto redzero 1",title: 'Menu principal do jogo'},
@@ -328,7 +328,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
     },
     {
         id: 6,
-        descricao: 'Meu primeiro portifólio da área de T.I. ',
+        descricao: 'Meu primeiro portifólio da área de T.I. Feito no ANGULAR ',
         tipo: TipoProjeto.TESTE_PUBLICOS,
         imagens:[
             {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/home-v1.0.1-min.png",alt:"print tela inicial da versão 1.0.1 do portifólio",title: 'Antiga Home do portifólio, versão 1.0.1'},
@@ -381,7 +381,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
     },
     {
         id: 7,
-        descricao: 'Meu projeto para controle de despesas pessoais',
+        descricao: 'Meu projeto para controle de despesas pessoais, feito no SPRING BOOT',
         tipo: TipoProjeto.PESSOAIS,
         imagens:[
             {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/controlador-despesa/tela_cadastro_categoria_despesa-min.png",alt:"print da tela de cadastro de categoria da despesa.",title: 'tela de cadastro da categoria da despesa'},
@@ -433,7 +433,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
     },
     {
         id: 8,
-        descricao: 'Projeto de backend para o portifólio',
+        descricao: 'Projeto de backend para o portifólio, feito no SPRING BOOT',
         tipo: TipoProjeto.PESSOAIS,
         imagens:[
             {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/backend-portifolio-vinicius/MER_portifolio_backend_vinicius-min.png",alt:"Imagem do Modelo de Entidade E Relacionamento do projeto",title: 'Modelo de Entidade E Relacionamento do projeto'},
