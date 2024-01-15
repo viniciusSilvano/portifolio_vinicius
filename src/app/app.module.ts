@@ -23,7 +23,6 @@ import { ProjetoModule as ProjetoModule } from './projetos/projeto.module';
   imports: [
     BrowserModule,
     NgbCarouselModule,
-    NgbModalModule,
     NgbAlertModule,
     NgbDropdownModule,
     AppRoutingModule,

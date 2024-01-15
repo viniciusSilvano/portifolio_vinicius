@@ -4,9 +4,9 @@ import { ProjetosComponent } from './projetos/projetos.component';
 import { ProjetosEspecificacaoComponent } from './projetos-especificacao/projetos-especificacao.component';
 import { CustomCardProjetoModule } from '../custom-card/custom-card-projeto.module';
 import { ImageSliderModule } from '../image-slider/image-slider.module';
-import { AppRoutingModule } from '../app-routing.module';
 import { AccordionCardModule } from '../accordions/accordion-card/accordion-card.module';
 import { ProjetoFiltersModule } from '../filters/projeto-filters/projeto-filters.module';
+import { ModalModule } from '../comuns/modal/modal.module';
 
 
 @NgModule({
@@ -15,9 +15,9 @@ import { ProjetoFiltersModule } from '../filters/projeto-filters/projeto-filters
     CommonModule,
     CustomCardProjetoModule,
     ImageSliderModule,
-    AppRoutingModule,
     ProjetoFiltersModule,
-    AccordionCardModule
+    AccordionCardModule,
+    ModalModule
   ],
   exports:[ProjetosComponent,ProjetosEspecificacaoComponent]
 })

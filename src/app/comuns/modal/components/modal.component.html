@@ -1,0 +1,23 @@
+<ng-template #content let-modal>
+  <div class="modal-header bg-dark">
+    <h4 class="modal-title" id="modal-basic-title">Este site utiliza Cookies</h4>
+    <button type="button" class="close clickable" aria-label="Close" 
+      (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body bg-dark">
+    <form>
+      <div class="form-group">
+        <p>O site utiliza cookies para:</p>
+        <ul>
+          <li class="mb-2">Monitorar e criar relatórios relacionados a carga de usuários por periodo de tempo, utilizando serviços de terceiros.</li>
+          <li class="mb-2">Armazenar dados funcionais do próprio sistema.</li>
+        </ul>
+      </div>
+    </form>
+  </div>
+  <div class="modal-footer bg-dark justify-content-center">
+    <button type="button" class="btn btn-secondary clickable" (click)="onConfirmButtonClick()">Ciente</button>
+  </div>
+</ng-template>

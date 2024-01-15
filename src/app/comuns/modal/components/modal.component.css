@@ -1,0 +1,7 @@
+.modal-header, .modal-body, .modal-footer{
+  color: rgba(var(--cor-verde-claro-n2),var(--cor-verde-claro-n2-opacity));
+}
+
+.modal-header > .close{
+  color: rgba(var(--cor-verde-claro-n2),var(--cor-verde-claro-n2-opacity));
+}
