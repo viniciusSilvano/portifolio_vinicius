@@ -22,8 +22,8 @@
     <fieldset>
       <legend>Por Tag Projeto:</legend>
       <small>Selecione uma tag para filtrar</small>
-      <div class="d-flex flex-row mt-3">
-        <div class="tag_projeto clickable background-preto-escuro-disabled oval_tag ml-3 text-center" 
+      <div class="d-flex flex-row flex-wrap mt-3">
+        <div class="tag_projeto clickable background-preto-escuro-disabled oval_tag ml-3 mt-3 text-center col-sm-3" 
           [ngClass]="{'background-preto-escuro': tagSelecionadaParaFiltro(tag)
             ,'background-preto-escuro-disabled': !tagSelecionadaParaFiltro(tag)}"
           *ngFor="let tag of todasTags" (click)="OnClickSearchByTag(tag)">
