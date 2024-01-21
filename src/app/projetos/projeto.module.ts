@@ -7,6 +7,7 @@ import { ImageSliderModule } from '../image-slider/image-slider.module';
 import { AccordionCardModule } from '../accordions/accordion-card/accordion-card.module';
 import { ProjetoFiltersModule } from '../filters/projeto-filters/projeto-filters.module';
 import { ModalModule } from '../comuns/modal/modal.module';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { ModalModule } from '../comuns/modal/modal.module';
     ImageSliderModule,
     ProjetoFiltersModule,
     AccordionCardModule,
+    AppRoutingModule,
     ModalModule
   ],
   exports:[ProjetosComponent,ProjetosEspecificacaoComponent]
