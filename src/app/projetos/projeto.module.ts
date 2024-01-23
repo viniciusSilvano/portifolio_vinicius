@@ -7,7 +7,7 @@ import { ImageSliderModule } from '../image-slider/image-slider.module';
 import { AccordionCardModule } from '../accordions/accordion-card/accordion-card.module';
 import { ProjetoFiltersModule } from '../filters/projeto-filters/projeto-filters.module';
 import { ModalModule } from '../comuns/modal/modal.module';
-import { AppRoutingModule } from '../app-routing.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -18,7 +18,7 @@ import { AppRoutingModule } from '../app-routing.module';
     ImageSliderModule,
     ProjetoFiltersModule,
     AccordionCardModule,
-    AppRoutingModule,
+    RouterModule,
     ModalModule
   ],
   exports:[ProjetosComponent,ProjetosEspecificacaoComponent]
