@@ -1,7 +1,11 @@
 .modal-header, .modal-body, .modal-footer{
-  color: rgba(var(--cor-verde-claro-n2),var(--cor-verde-claro-n2-opacity));
+  color: var(--system-font-color);
 }
 
 .modal-header > .close{
-  color: rgba(var(--cor-verde-claro-n2),var(--cor-verde-claro-n2-opacity));
+  color: rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
+}
+
+.modal-header .modal-title{
+  color: rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
 }
