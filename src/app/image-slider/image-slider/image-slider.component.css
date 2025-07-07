@@ -12,6 +12,7 @@
 .ArrowContainer{
   height: 100%; 
   width: 15%;
+  text-align: center;
 }
 
 .Arrow{
