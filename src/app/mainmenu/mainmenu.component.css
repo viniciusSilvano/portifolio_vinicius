@@ -33,11 +33,6 @@ nav{
     z-index: 2;
 }
 
-
-#top_main_menu h3:first-of-type{
-    color: rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
-}
-
 #top_main_menu .btn-outline-primary{
     color: rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
     border-color: rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
@@ -47,6 +42,14 @@ nav{
 #top_main_menu .btn-outline-primary:hover{
    background-color: var(--cor-preto-escuro);
    border-color: var(--cor-azul-claro);
+}
+
+#system_brand{
+    color: rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
+}
+
+#system_brand:hover{
+    color: var(--cor-azul-claro);
 }
 
 .btn-outline-primary:not(:disabled):not(.disabled):active:focus, 
