@@ -188,6 +188,23 @@ h1,h2,h3,h4,h5,h6{
 
 }
 
+.profile-photo-holder img{
+  height: 50%;
+  width: 100%;
+}
+
+@media (min-width: 1000px) {
+  .profile-photo-holder img{
+    height: 25%;
+  }
+}
+
+@media (min-width: 1800px) {
+  .profile-photo-holder img{
+    height: 50%;
+  }
+}
+
 @media (min-width: 2500px) {
   .col-c-xxl-4{
     flex: 0 0 33.333333% !important;
@@ -195,9 +212,6 @@ h1,h2,h3,h4,h5,h6{
   }
   html {
     font-size: 20px;
-  }
-  .profile-photo-holder img{
-    height: 50%;
   }
 }
 
