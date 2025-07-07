@@ -44,11 +44,11 @@ nav{
    border-color: var(--cor-azul-claro);
 }
 
-#system_brand{
+#system_brand h3{
     color: rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
 }
 
-#system_brand:hover{
+#system_brand h3:hover{
     color: var(--cor-azul-claro);
 }
 

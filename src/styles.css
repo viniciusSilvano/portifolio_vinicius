@@ -170,3 +170,16 @@ div.border-top-light-green{
   border-width: 3px;
 }
   
+.btn-primary:hover, .btn-secondary:hover{
+  border-color: var(--cor-azul-claro);
+  border-style: solid;
+  border-width: 3px;
+}
+
+h1,h2,h3,h4,h5,h6{
+  color: rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
+}
+
+h1,h2,h3,h4,h5,h6{
+  color: rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
+}
