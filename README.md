@@ -42,7 +42,7 @@ git push origin --tags
 ## deploy to git hub pages
 npx ng build --prod --base-href "https://viniciussilvano.github.io/portifolio_vinicius/"
 |
-npx angular-cli-ghpages --dir=dist/portifolio_vinicius (it must be execute in project's root directory)
+npx angular-cli-ghpages --dir=dist/portifolio_vinicius (it must be executed in project's root directory)
 
 ## Update local tags from repository
 git fetch --all --tags
