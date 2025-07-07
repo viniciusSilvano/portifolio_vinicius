@@ -3,12 +3,34 @@
     <div class="card-body m-2">
       <article>
         <h1 class="card-title">Apresentação</h1>
-        <img height="50%" width="100%" src="../..{{globalUrl}}/assets/images/minhaFoto.jpg" alt="Foto de Vinícius Silvano"/>
-        <p class="card-text apresentacaoCardText">Olá meu nome é Vinícius Silvano e bem vindo ao meu portifólio, neste site você poderá encontrar informações e, possivelmente, artefatos de alguns projetos que eu desenvolvi.</p>
-        <p>Atualmente sou um Desenvolvedor Java FullStack</p>
-        <p>O portifólio foi feito só não pensando em vaga de emprego, mas, como uma forma de expressar tudo que pude vê e experimentar na área de tecnologia.</p>
-        <p class="card-text apresentacaoCardText">Atenciosamente Vinícius</p>
+        <div class="row">
+          <div class="profile-photo-holder col-4 p-0">
+            <img height="25%" width="100%" src="../..{{globalUrl}}/assets/images/minhaFoto.jpg" alt="Foto de Vinícius Silvano"/>
+          </div>
+          <div class="col-8">
+            <p class="card-text apresentacaoCardText">Olá meu nome é Vinícius Silvano e bem vindo ao meu portifólio, neste site você poderá encontrar informações e, possivelmente, artefatos de alguns projetos que eu desenvolvi.</p>
+            <p>Atualmente sou um Desenvolvedor Java FullStack</p>
+            <p>O portifólio foi feito só não pensando em vaga de emprego, mas, como uma forma de expressar tudo que pude vê e experimentar na área de tecnologia.</p>
+            <p class="card-text apresentacaoCardText">Atenciosamente Vinícius</p>
+          </div>
+        </div>
       </article>
     </div>
+  </div>
+</aside>
+
+<aside class="row">
+  <div id="SobreOsProjetos" class="card">
+    <article>
+      <div class="card-body m-2">
+        <h1 class="card-title">Sobre os Projetos</h1>
+        <h2>Tipos de projeto: </h2>
+        <ul>
+          <li><strong>PÚBLICO/TESTE:</strong> projeto <strong>com disponibilidade de código</strong>, feito para experimentar novas abordagens ou projetos simples. </li>
+          <li><strong>PESSOAL:</strong> projeto <strong>sem disponibilidade de código</strong>, feito para um propósito específico.</li>
+        </ul>
+        <p>Se tiver interesse em um tipo específico utilize o filtro de tags presente no accordion entitulado "{{accordionProjetoFilters?.tituloDescricao}}" </p>
+      </div>
+    </article>
   </div>
 </aside>

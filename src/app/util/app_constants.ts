@@ -1,0 +1,1 @@
+export const PROJECT_FILTER_ACCORDION_TITLE = "Filtros dos projetos";

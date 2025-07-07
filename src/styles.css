@@ -193,4 +193,8 @@ h1,h2,h3,h4,h5,h6{
     flex: 0 0 33.333333% !important;
     max-width: 33.333333% !important;
   }
+
+  .profile-photo-holder img{
+    height: 50%;
+  }
 }

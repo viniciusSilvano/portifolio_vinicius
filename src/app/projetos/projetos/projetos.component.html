@@ -1,14 +1,5 @@
 <section class="mt-5">
-  <h1 class="text-center">Apresentação dos Projetos</h1>
-  <aside>
-    <h2>Tipos de projeto: </h2>
-    <ul>
-      <li><strong>PÚBLICO/TESTE:</strong> projeto <strong>com disponibilidade de código</strong>, feito para experimentar novas abordagens ou projetos simples. </li>
-      <li><strong>PESSOAL:</strong> projeto <strong>sem disponibilidade de código</strong>, feito para um propósito específico.</li>
-    </ul>
-    <p>Se tiver interesse em um tipo específico utilize o filtro de tags presente no accordion entitulado "{{accordionProjetoFilters?.tituloDescricao}}" </p>
-  </aside>
-
+  
   <h2 class="mt-1">Filtros dos projetos</h2>
   <app-accordion-card [accordionCard]="accordionProjetoFilters" [ehAccordionProjetoCard]="true" (resultadoFiltro)="onFilter($event)"></app-accordion-card>
 

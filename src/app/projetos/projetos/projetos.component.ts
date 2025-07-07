@@ -7,6 +7,7 @@ import { AccordionProjetoCard, Collapse } from 'src/app/comuns/class/accordion-c
 import { forkJoin } from 'rxjs';
 import { ResultadoProjetoFilter } from 'src/app/filters/projeto-filters/projeto-filters/class/resultado-projeto-filter';
 import { CustomCardData } from 'src/app/custom-card/class/custom-card-data';
+import { PROJECT_FILTER_ACCORDION_TITLE } from 'src/app/util/app_constants';
 
 @Component({
   selector: 'app-projetos',
@@ -22,7 +23,7 @@ export class ProjetosComponent implements OnInit {
   accordionProjetoFilters: AccordionProjetoCard = {
     id: 1,
     descricao:"Accordion dos filtros",
-    tituloDescricao:"Filtros dos projetos",
+    tituloDescricao: PROJECT_FILTER_ACCORDION_TITLE,
     collapse: Collapse.COLLAPSED,
     tecnologiasParaBusca: [],
     projetoList: []
