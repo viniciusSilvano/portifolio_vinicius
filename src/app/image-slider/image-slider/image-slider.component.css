@@ -16,7 +16,7 @@
 
 .Arrow{
   font-size: 45px;
-  color: rgba(var(--cor-verde-claro-n2),var(--cor-verde-claro-n2-opacity));
+  color: rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
   z-index: 2;
   cursor: pointer;
 }
@@ -37,7 +37,7 @@
 }
 
 .dot{
-  color: rgba(var(--cor-verde-claro-n2),var(--cor-verde-claro-n2-opacity));
+  color: rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
 }
 
 .dot_atual{

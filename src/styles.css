@@ -21,8 +21,18 @@
     --cor-verde-claro: #2F5D61;
     --cor-azul-claro: #000FDB;
     --cor-cinza-claro: #CFD3D4;
+    --cor-cinza-claro-n2: rgb(186, 186, 186);
     --cor-verde-claro-n2: 21, 190, 20;
     --cor-verde-claro-n2-opacity: 75;
+    --cor-pure-white: 255,255,255;
+    --cor-pure-white-opacity: 100;
+    --cor-purple: #6F42C1;
+    --system-font-color: var(--cor-cinza-claro-n2);
+    --system-font-color-opacity: var(--cor-pure-white-opacity);
+    --system-hover-focus-color: var(--cor-azul-claro);
+    --system-disabled-color: var(--cor-preto-escuro-disabled);
+    --system-disabled-font-color: var(--cor-cinza-claro);
+    --system-backgroud-color: var(--cor-preto-escuro);
 }
 
 body{
@@ -30,7 +40,8 @@ body{
     background-position: center;
     background-size: cover;
     background-color: var(--cor-preto-escuro);
-    color: rgba(var(--cor-verde-claro-n2),var(--cor-verde-claro-n2-opacity))
+    color: var(--system-font-color);
+    scroll-behavior: smooth;
 }
 
 .innerCardContainer .card{
@@ -93,14 +104,22 @@ div.border-top-light-green{
 }
 
 .clickable-image.box-shadow{
-  box-shadow: 0 0 0 0.2rem rgba(var(--cor-verde-claro-n2),var(--cor-verde-claro-n2-opacity));
+  box-shadow: 0 0 0 0.2rem rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
 }
 
 .tag_projeto.oval_tag{
   width: 50%;
   height: 100%;
   border-radius: 75px / 45px;
-  box-shadow: -5px 3px rgba(var(--cor-verde-claro-n2),var(--cor-verde-claro-n2-opacity));
+  box-shadow: -5px 3px rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
+}
+
+.tag_projeto.oval_tag_clicked{
+  width: 50%;
+  height: 100%;
+  border-radius: 75px / 45px;
+  box-shadow: -5px 3px rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
+  color: var(--system-font-color);
 }
 
 .background-verde-claro{
@@ -111,9 +130,21 @@ div.border-top-light-green{
   background-color: var(--cor-preto-escuro);
 }
 
-.tag_projeto.background-preto-escuro:hover{
+.background-preto-default{
+  background-color: var(--cor-preto-default);
+}
+
+.color-black{
+  color: var(--cor-preto-default)
+}
+
+.tag_projeto.background-preto-escuro:hover, .tag_projeto.background-pure-white:hover{
   background-color: var(--cor-preto-escuro);
   box-shadow: 0 0 0 0.2rem var(--cor-azul-claro);
+}
+
+.tag_projeto.background-pure-white:hover{
+  color: rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
 }
 
 .background-preto-escuro-disabled{
@@ -133,7 +164,9 @@ div.border-top-light-green{
 	background-position: center !important;
 }
 
-.btnRedeSocial:hover{
+.btnRedeSocial:hover, .btnRedeSocial.btn-secondary:hover{
 	opacity: 0.5;
+  border-color: var(--cor-azul-claro);
+  border-width: 3px;
 }
   
