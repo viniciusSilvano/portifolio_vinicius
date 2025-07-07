@@ -1,4 +1,5 @@
-<!--<div class="image-slider-sm col-sm-12" style="width: 100%; height: 100%; background-color: var(--cor-preto-escuro); padding: 0;">
+<!--smatphones or low resolution code-->
+<div class="image-slider-sm col-sm-12" style="width: 100%; height: 100%; background-color: var(--cor-preto-escuro); padding: 0;">
   <div class="d-inline-block align-middle ArrowContainer leftArrowContainer " style="">
     <div class="leftArrow leftArrowSm" (click)="onClickLeftArrow()"
       [ngClass]="[isFirstSlide() ? 'ArrowDisabled' : 'Arrow' ]">❰</div>
@@ -9,8 +10,9 @@
     <div class="rightArrow rightArrowSm" (click)="onClickRightArrow()"
       [ngClass]="[isLastSlide() ? 'ArrowDisabled' : 'Arrow' ]">❱</div>
   </div>
-</div>-->
+</div>
 
+<!--desktop or medium to large resolution code-->
 <div class="image-slider-md col-sm-12" style="width: 100%; height: 100%; background-color: var(--cor-preto-escuro); padding: 0;">
   <div class="slide-md col-sm-12" [ngStyle]="{'background-image': getCurrentSliderUrl()}">
   </div>
