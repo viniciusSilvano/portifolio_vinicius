@@ -183,3 +183,14 @@ h1,h2,h3,h4,h5,h6{
 h1,h2,h3,h4,h5,h6{
   color: rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
 }
+
+.col-c-xxl-4{
+
+}
+
+@media (min-width: 2500px) {
+  .col-c-xxl-4{
+    flex: 0 0 33.333333% !important;
+    max-width: 33.333333% !important;
+  }
+}
