@@ -4,6 +4,10 @@ export enum TipoTag{
   TIPO_PROJETO,STATUS_PROJETO
 }
 
+export function getAllTipoTags() : TipoTag[]{
+  return [TipoTag.TIPO_PROJETO,TipoTag.STATUS_PROJETO];
+}
+
 export class Tag extends Obj<Tag>{
   id: Number;
   nome: String;

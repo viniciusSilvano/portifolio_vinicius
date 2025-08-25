@@ -7,7 +7,7 @@ import { ResultadoProjetoFilter} from './class/resultado-projeto-filter';
 import { SearchUtil } from 'src/app/util/search_util';
 import { ArraysUtil } from 'src/app/util/arrays_util';
 import { StringUtil } from 'src/app/util/string-util';
-import { Tag } from 'src/app/projetos/projetos-especificacao/class/tag';
+import { Tag, TipoTag } from 'src/app/projetos/projetos-especificacao/class/tag';
 import { TagUtil } from 'src/app/projetos/projetos-especificacao/util/tag_utl';
 
 @Component({
@@ -71,17 +71,19 @@ export class ProjetoFiltersComponent implements OnInit {
   }
 
   OnClickSearchByTag(tag: Tag){
-    if(this.projetoFilter.tagsParaFiltrar.includes(tag)){
-      this.projetoFilter.tagsParaFiltrar.splice(this.projetoFilter.tagsParaFiltrar.indexOf(tag),1);
+    let key : TipoTag = tag.tipoTag;
+    if(this.projetoFilter.tagsParaFiltrarPorTipoTag.get(key).includes(tag)){
+      this.projetoFilter.tagsParaFiltrarPorTipoTag.get(key).splice(this.projetoFilter.tagsParaFiltrarPorTipoTag.get(key).indexOf(tag),1);
     }else{
-      this.projetoFilter.tagsParaFiltrar.push(tag);
+      this.projetoFilter.tagsParaFiltrarPorTipoTag.get(key).push(tag);
     }
 
     this.filter();
   }
 
   tagSelecionadaParaFiltro(tag: Tag): Boolean{
-    return this.projetoFilter.tagsParaFiltrar.includes(tag);
+    return this.projetoFilter.tagsParaFiltrarPorTipoTag.get(TipoTag.STATUS_PROJETO).includes(tag)
+      || this.projetoFilter.tagsParaFiltrarPorTipoTag.get(TipoTag.TIPO_PROJETO).includes(tag);
   }
 
 }

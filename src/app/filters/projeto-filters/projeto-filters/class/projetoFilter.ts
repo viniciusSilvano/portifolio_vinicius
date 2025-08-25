@@ -1,5 +1,5 @@
 import { ProjetoEspecificacao } from "src/app/projetos/projetos-especificacao/class/projeto_especificacao";
-import { Tag, TipoTag } from "src/app/projetos/projetos-especificacao/class/tag";
+import { getAllTipoTags, Tag, TipoTag } from "src/app/projetos/projetos-especificacao/class/tag";
 import { ArraysUtil } from "src/app/util/arrays_util";
 import { SearchUtil } from "src/app/util/search_util";
 import { StringUtil } from "src/app/util/string-util";
@@ -7,7 +7,7 @@ import { StringUtil } from "src/app/util/string-util";
 export class ProjetoFilter{
   tituloProjeto: String;
   tecnologiasSelecionadasParaBusca: number[];
-  tagsParaFiltrar : Tag[] = [];
+  tagsParaFiltrarPorTipoTag : Map<TipoTag,Tag[]> = new Map<TipoTag,Tag[]>();
 
   private _SEARCH_UTIL: SearchUtil;
   private _ARRAYS_UTIL: ArraysUtil;
@@ -17,6 +17,8 @@ export class ProjetoFilter{
     this._SEARCH_UTIL = searchUtil;
     this._ARRAYS_UTIL = arraysUtil;
     this._STRING_UTIL = stringUtil;
+
+    getAllTipoTags().forEach( tipoTag => this.tagsParaFiltrarPorTipoTag.set(tipoTag,[]));
   }
 
   public isResetNeeded(): Boolean{
@@ -29,9 +31,10 @@ export class ProjetoFilter{
   }
 
   public filter(projeto: ProjetoEspecificacao): Boolean{
-    let encontrado : Boolean;
+    let encontrado : Boolean = false;
 
     if(this.tituloProjeto){
+      console.log('filtrando por tipo projeto!!')
       encontrado = this.filterByTituloProjeto(projeto);
 
       if(!encontrado){
@@ -40,6 +43,7 @@ export class ProjetoFilter{
     }
 
     if(!this.tecnologiaEstaVazia()){
+      console.log('filtrando por tecnologia!!')
       encontrado = this.filterByTecnologiasProjeto(this.tecnologiasSelecionadasParaBusca,projeto);
       
       if(!encontrado){
@@ -47,8 +51,10 @@ export class ProjetoFilter{
       }
     }
 
-    if(this.tagsParaFiltrar.length){
-      encontrado = this.filterByTags(projeto,this.tagsParaFiltrar);
+    if(this.tagsParaFiltrarPorTipoTag.get(TipoTag.STATUS_PROJETO).length > 0
+        || this.tagsParaFiltrarPorTipoTag.get(TipoTag.TIPO_PROJETO).length > 0){
+      console.log('filtrando por tag!!')
+      encontrado = this.filterByTags(projeto);
 
       if(!encontrado){
         return false;
@@ -58,21 +64,44 @@ export class ProjetoFilter{
     return encontrado;
   }
 
-  private filterByTags(projeto: ProjetoEspecificacao, tagsParaFiltrar : Tag[]): Boolean{
-    for(let tag of tagsParaFiltrar){
-      if(tag.tipoTag == TipoTag.TIPO_PROJETO && tag.id == projeto.tipo){
-        return true;
-      }
+  private filterByTags(projeto: ProjetoEspecificacao): Boolean{
+    let resultadoTipoProjetoFilter = this.filterByTagsTiposProjeto(projeto);
+    let resultadoTipoStatusFilter = this.filterByTagsTipoStatus(projeto);
 
-      if(tag.tipoTag == TipoTag.STATUS_PROJETO && projeto.status){
+    return resultadoTipoProjetoFilter && resultadoTipoStatusFilter;
+  }
+
+  private filterByTagsTiposProjeto(projeto: ProjetoEspecificacao): Boolean{
+    let resultadoTipoProjetoFilter = false;
+    if(this.tagsParaFiltrarPorTipoTag.get(TipoTag.TIPO_PROJETO).length > 0){
+      let predicateTipoProjeto = (tag: Tag,projeto : ProjetoEspecificacao) => tag.tipoTag == TipoTag.TIPO_PROJETO && tag.id == projeto.tipo;
+      for(let tag of this.tagsParaFiltrarPorTipoTag.get(TipoTag.TIPO_PROJETO)){
+        resultadoTipoProjetoFilter = predicateTipoProjeto(tag,projeto);
+      }
+    }else{
+      resultadoTipoProjetoFilter = true;
+    }
+    return resultadoTipoProjetoFilter;
+  }
+
+  filterByTagsTipoStatus(projeto: ProjetoEspecificacao): Boolean{
+    let resultadoTipoStatusFilter = false;
+    if(this.tagsParaFiltrarPorTipoTag.get(TipoTag.STATUS_PROJETO).length > 0){
+       let predicateStatus = (tag: Tag,projeto : ProjetoEspecificacao) => {
         for(let status of projeto.status){
           if(tag.id == status){
             return true;
           }
         }
+        return false;
       }
+      for(let tag of this.tagsParaFiltrarPorTipoTag.get(TipoTag.STATUS_PROJETO)){
+        resultadoTipoStatusFilter =  predicateStatus(tag,projeto);
+      }
+    }else{
+      resultadoTipoStatusFilter = true;
     }
-    return false;
+    return resultadoTipoStatusFilter;
   }
 
   private filterByTituloProjeto(projeto: ProjetoEspecificacao) : Boolean {
@@ -106,7 +135,8 @@ export class ProjetoFilter{
   }
 
   tagsEstaVazia() : Boolean{
-    return this._ARRAYS_UTIL.isEmptyValueArray(this.tagsParaFiltrar);
+    return this._ARRAYS_UTIL.isEmptyValueArray(this.tagsParaFiltrarPorTipoTag.get(TipoTag.STATUS_PROJETO))
+      && this._ARRAYS_UTIL.isEmptyValueArray(this.tagsParaFiltrarPorTipoTag.get(TipoTag.TIPO_PROJETO));
   }
   
 }
