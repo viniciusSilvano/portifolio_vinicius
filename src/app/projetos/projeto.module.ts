@@ -6,7 +6,6 @@ import { CustomCardProjetoModule } from '../custom-card/custom-card-projeto.modu
 import { ImageSliderModule } from '../image-slider/image-slider.module';
 import { AccordionCardModule } from '../accordions/accordion-card/accordion-card.module';
 import { ProjetoFiltersModule } from '../filters/projeto-filters/projeto-filters.module';
-import { ModalModule } from '../comuns/modal/modal.module';
 import { RouterModule } from '@angular/router';
 
 
@@ -18,8 +17,7 @@ import { RouterModule } from '@angular/router';
     ImageSliderModule,
     ProjetoFiltersModule,
     AccordionCardModule,
-    RouterModule,
-    ModalModule
+    RouterModule
   ],
   exports:[ProjetosComponent,ProjetosEspecificacaoComponent]
 })
