@@ -15,15 +15,15 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         descricao:"sistema mobile de alugueis e controle de estoque feito em JAVA",
         tipo: TipoProjeto.PESSOAIS,
         imagens:[
-            {source:"../.." +  GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/main_activity.png",alt:"Tela principal",title:"Tela principal",descricao:"A tela inicial do sistema mobile."},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/estoque_activity.png",alt:"Tela de listagem de itens cadastrados",title:"Tela de listagem de itens"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/estoque_activity_com_popupMenu.png",alt:"PopUp menu da tela de listagem",title:"PopUp menu da tela de listagem"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/item_activity.png",alt:"Tela de cadastro/modificação de itens",title:"Tela de cadastro/modificação de itens"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/calendarioCustomizado.png",alt:"Calendário customizado",title:"Calendário customizado",descricao: "Utilizado para o cadastro de aluguel e listagem"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/calendarioCustomizado2.png",alt:"Calendário customizado",title:"Calendário customizado",descricao: "Selecionando uma data para cadastrar um aluguel"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/cadastroAluguel.png",alt:"Tela de cadastro/modificação de aluguel",title:"Tela de cadastro/modificação de aluguel"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/ListagemAluguel.png",alt:"Tela de listagem de alugueis",title:"Tela de listagem de alugueis"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-aluguel/ListagemAluguel2.png",alt:"Tela de listagem de alugueis",title:"Tela de listagem de alugueis"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-aluguel/main_activity.png"),alt:"Tela principal",title:"Tela principal",descricao:"A tela inicial do sistema mobile."},
+            {source:GlobalStrings.getAssetUrl("images/projeto-aluguel/estoque_activity.png"),alt:"Tela de listagem de itens cadastrados",title:"Tela de listagem de itens"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-aluguel/estoque_activity_com_popupMenu.png"),alt:"PopUp menu da tela de listagem",title:"PopUp menu da tela de listagem"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-aluguel/item_activity.png"),alt:"Tela de cadastro/modificação de itens",title:"Tela de cadastro/modificação de itens"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-aluguel/calendarioCustomizado.png"),alt:"Calendário customizado",title:"Calendário customizado",descricao: "Utilizado para o cadastro de aluguel e listagem"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-aluguel/calendarioCustomizado2.png"),alt:"Calendário customizado",title:"Calendário customizado",descricao: "Selecionando uma data para cadastrar um aluguel"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-aluguel/cadastroAluguel.png"),alt:"Tela de cadastro/modificação de aluguel",title:"Tela de cadastro/modificação de aluguel"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-aluguel/ListagemAluguel.png"),alt:"Tela de listagem de alugueis",title:"Tela de listagem de alugueis"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-aluguel/ListagemAluguel2.png"),alt:"Tela de listagem de alugueis",title:"Tela de listagem de alugueis"},
             
         ],
         accordionCards: [
@@ -129,23 +129,23 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         de forma aleatória com um banco de questões, as questões são organizadas
         por meio da Taxonomia de Bloom.`,
         imagens:[
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial.PNG",alt:"Tela principal"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial2.PNG",alt:"Tela principal"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial3.PNG",alt:"Tela principal"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/TelaInicial4.PNG",alt:"Tela principal"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao.PNG",alt:"Tela de cadastrar questão"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao2.PNG",alt:"Tela de cadastrar questão"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao3.PNG",alt:"Tela de cadastrar questão"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/CadastrarQuestao4.PNG",alt:"Tela de cadastrar questão"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao.PNG",alt:"Tela de consultar questão"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao2.PNG",alt:"Tela de consultar questão"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao3.PNG",alt:"Tela de consultar questão"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarQuestao4.PNG",alt:"Tela de consultar questão"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarProfessor.PNG",alt:"Tela de cadastrar professor"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarDisciplina.PNG",alt:"Tela de cadastrar disciplina"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarProva.PNG",alt:"Tela de cadastrar prova"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/cadastrarProva2.PNG",alt:"Tela de cadastrar prova"},
-            {source:"../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-sgq/consultarProva.PNG",alt:"Tela de consultar provas"}
+            {source:GlobalStrings.getAssetUrl("images/projeto-sgq/TelaInicial.PNG"),alt:"Tela principal"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-sgq/TelaInicial2.PNG"),alt:"Tela principal"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-sgq/TelaInicial3.PNG"),alt:"Tela principal"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-sgq/TelaInicial4.PNG"),alt:"Tela principal"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-sgq/CadastrarQuestao.PNG"),alt:"Tela de cadastrar questão"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-sgq/CadastrarQuestao2.PNG"),alt:"Tela de cadastrar questão"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-sgq/CadastrarQuestao3.PNG"),alt:"Tela de cadastrar questão"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-sgq/CadastrarQuestao4.PNG"),alt:"Tela de cadastrar questão"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-sgq/consultarQuestao.PNG"),alt:"Tela de consultar questão"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-sgq/consultarQuestao2.PNG"),alt:"Tela de consultar questão"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-sgq/consultarQuestao3.PNG"),alt:"Tela de consultar questão"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-sgq/consultarQuestao4.PNG"),alt:"Tela de consultar questão"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-sgq/cadastrarProfessor.PNG"),alt:"Tela de cadastrar professor"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-sgq/cadastrarDisciplina.PNG"),alt:"Tela de cadastrar disciplina"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-sgq/cadastrarProva.PNG"),alt:"Tela de cadastrar prova"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-sgq/cadastrarProva2.PNG"),alt:"Tela de cadastrar prova"},
+            {source:GlobalStrings.getAssetUrl("images/projeto-sgq/consultarProva.PNG"),alt:"Tela de consultar provas"}
         ],
         tecnologiasAuxiliares:[
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 2}) as Tecnologia,
@@ -205,9 +205,9 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         descricao: "Projeto de testes em JAVA, parceiro do angular tests. Obs: tentei caprichar no código.",
         tipo: TipoProjeto.TESTE_PUBLICOS,
         imagens: [
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-java-teste-project/java_test_project_1.png",alt:"print código java 1"},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-java-teste-project/java_test_project_2.png",alt:"print código java 2"},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-java-teste-project/java_test_project_3.png",alt:"print código java 3"}
+            {source: GlobalStrings.getAssetUrl("images/projeto-java-teste-project/java_test_project_1.png"),alt:"print código java 1"},
+            {source: GlobalStrings.getAssetUrl("images/projeto-java-teste-project/java_test_project_2.png"),alt:"print código java 2"},
+            {source: GlobalStrings.getAssetUrl("images/projeto-java-teste-project/java_test_project_3.png"),alt:"print código java 3"}
         ],
         accordionCards: [
             {
@@ -233,9 +233,9 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         descricao: "Projeto de testes em ANGULAR, parceiro do java tests. Obs: tentei caprichar no código.",
         tipo: TipoProjeto.TESTE_PUBLICOS,
         imagens: [
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-angular-2-tests/angular_test_project_1.png",alt:"print código angular 1"},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-angular-2-tests/angular_test_project_2.png",alt:"print código angular 2"},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-angular-2-tests/angular_test_project_3.png",alt:"print código angular 3"}
+            {source: GlobalStrings.getAssetUrl("images/projeto-angular-2-tests/angular_test_project_1.png"),alt:"print código angular 1"},
+            {source: GlobalStrings.getAssetUrl("images/projeto-angular-2-tests/angular_test_project_2.png"),alt:"print código angular 2"},
+            {source: GlobalStrings.getAssetUrl("images/projeto-angular-2-tests/angular_test_project_3.png"),alt:"print código angular 3"}
         ],
         accordionCards: [
             {
@@ -261,11 +261,11 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         descricao: "Projeto final do curso de game designer da Seven/Redzero feito no framework UNITY",
         tipo: TipoProjeto.PESSOAIS,
         imagens: [
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-final-redzero/Redzero_tcc_MainMenu.png",alt:"print projeto redzero 1",title: 'Menu principal do jogo'},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-final-redzero/Redzero_tcc_MainMenu_audio.png",alt:"print projeto redzero 2",title: 'Menu de áudio no menu principal'},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-final-redzero/Redzero_tcc_menu_in_game.png",alt:"print projeto redzero 3",title: 'Menu durante o jogo'},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-final-redzero/Redzero_tcc_menu_in_game_pause.png",alt:"print projeto redzero 4",title: 'Menu de áudio durante o jogo'},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/projeto-final-redzero/Redzero_tcc_creditos.png",alt:"print projeto redzero 5",title: 'Créditos do projeto'}
+            {source: GlobalStrings.getAssetUrl("images/projeto-final-redzero/Redzero_tcc_MainMenu.png"),alt:"print projeto redzero 1",title: 'Menu principal do jogo'},
+            {source: GlobalStrings.getAssetUrl("images/projeto-final-redzero/Redzero_tcc_MainMenu_audio.png"),alt:"print projeto redzero 2",title: 'Menu de áudio no menu principal'},
+            {source: GlobalStrings.getAssetUrl("images/projeto-final-redzero/Redzero_tcc_menu_in_game.png"),alt:"print projeto redzero 3",title: 'Menu durante o jogo'},
+            {source: GlobalStrings.getAssetUrl("images/projeto-final-redzero/Redzero_tcc_menu_in_game_pause.png"),alt:"print projeto redzero 4",title: 'Menu de áudio durante o jogo'},
+            {source: GlobalStrings.getAssetUrl("images/projeto-final-redzero/Redzero_tcc_creditos.png"),alt:"print projeto redzero 5",title: 'Créditos do projeto'}
         ],
         accordionCards: [
             {
@@ -331,17 +331,17 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         descricao: 'Meu primeiro portifólio da área de T.I. Feito no ANGULAR ',
         tipo: TipoProjeto.TESTE_PUBLICOS,
         imagens:[
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/home-v1.0.1-min.png",alt:"print tela inicial da versão 1.0.1 do portifólio",title: 'Antiga Home do portifólio, versão 1.0.1'},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/projetos-v1.0.1-min.png",alt:"print tela de projetos da versão 1.0.1 do portifólio",title: 'Tela de projetos do portifólio, versão 1.0.1'},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/especificacao-projeto-v1.0.1-min.png",alt:"print tela de especificação do projeto da versão 1.0.1 do portifólio",title: 'Tela de especificação do projeto do portifólio, versão 1.0.1'},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/home-v2.0.0-min.png",alt:"print tela inicial da versão 2.0.0 do portifólio",title: 'Antiga Home do portifólio, versão 2.0.0'},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/projetos-v2.0.0-min.png",alt:"print tela de projetos da versão 2.0.0 do portifólio",title: 'Tela de projetos do portifólio, versão 2.0.0'},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/especificacao-projeto-v2.0.0-min.png",alt:"print tela de especificação do projeto da versão 2.0.0 do portifólio",title: 'Tela de especificação do projeto do portifólio, versão 2.0.0'},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/projetos-v2.1.6-min.png",alt:"print tela de projetos da versão 2.1.6 do portifólio",title: 'Tela de projetos do portifólio, versão 2.1.6'},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/especificacao-projeto-v2.1.6-min.png",alt:"print tela de especificação do projeto da versão 2.1.6 do portifólio",title: 'Tela de especificação do projeto do portifólio, versão 2.1.6'},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/projetos-2.6.0-min.png",alt:"print tela de projetos da versão 2.6.0 do portifólio",title: 'Tela de projetos do portifólio, versão 2.6.0'},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/projetos-2.6.0_2-min.png",alt:"print tela de projetos da versão 2.6.0 do portifólio segunda parte",title: 'Segunda parte da tela de projetos do portifólio, versão 2.6.0'},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/portifolio-vinicius/especificacao-projeto-2.6.0-min.png",alt:"print tela de especificação do projeto da versão 2.6.0 do portifólio",title: 'Tela de especificação do projeto do portifólio, versão 2.6.0'}
+            {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/home-v1.0.1-min.png"),alt:"print tela inicial da versão 1.0.1 do portifólio",title: 'Antiga Home do portifólio, versão 1.0.1'},
+            {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/projetos-v1.0.1-min.png"),alt:"print tela de projetos da versão 1.0.1 do portifólio",title: 'Tela de projetos do portifólio, versão 1.0.1'},
+            {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/especificacao-projeto-v1.0.1-min.png"),alt:"print tela de especificação do projeto da versão 1.0.1 do portifólio",title: 'Tela de especificação do projeto do portifólio, versão 1.0.1'},
+            {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/home-v2.0.0-min.png"),alt:"print tela inicial da versão 2.0.0 do portifólio",title: 'Antiga Home do portifólio, versão 2.0.0'},
+            {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/projetos-v2.0.0-min.png"),alt:"print tela de projetos da versão 2.0.0 do portifólio",title: 'Tela de projetos do portifólio, versão 2.0.0'},
+            {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/especificacao-projeto-v2.0.0-min.png"),alt:"print tela de especificação do projeto da versão 2.0.0 do portifólio",title: 'Tela de especificação do projeto do portifólio, versão 2.0.0'},
+            {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/projetos-v2.1.6-min.png"),alt:"print tela de projetos da versão 2.1.6 do portifólio",title: 'Tela de projetos do portifólio, versão 2.1.6'},
+            {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/especificacao-projeto-v2.1.6-min.png"),alt:"print tela de especificação do projeto da versão 2.1.6 do portifólio",title: 'Tela de especificação do projeto do portifólio, versão 2.1.6'},
+            {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/projetos-2.6.0-min.png"),alt:"print tela de projetos da versão 2.6.0 do portifólio",title: 'Tela de projetos do portifólio, versão 2.6.0'},
+            {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/projetos-2.6.0_2-min.png"),alt:"print tela de projetos da versão 2.6.0 do portifólio segunda parte",title: 'Segunda parte da tela de projetos do portifólio, versão 2.6.0'},
+            {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/especificacao-projeto-2.6.0-min.png"),alt:"print tela de especificação do projeto da versão 2.6.0 do portifólio",title: 'Tela de especificação do projeto do portifólio, versão 2.6.0'}
         ],
         accordionCards: [
             {
@@ -384,9 +384,9 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         descricao: 'Meu projeto para controle de despesas pessoais, feito no SPRING BOOT',
         tipo: TipoProjeto.PESSOAIS,
         imagens:[
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/controlador-despesa/tela_cadastro_categoria_despesa-min.png",alt:"print da tela de cadastro de categoria da despesa.",title: 'tela de cadastro da categoria da despesa'},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/controlador-despesa/tela_cadastro_despesa-min.png",alt:"print da tela para selecionar o tipo de despesa para cadastro",title: 'tela de seleção de tipo de despesa a cadastrar'},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/controlador-despesa/tela_cadastro_despesa_unica-min.png",alt:"print da tela de cadastro de despesa do tipo \"Única\"",title: 'tela de cadastro de despesa Única'}
+            {source: GlobalStrings.getAssetUrl("images/controlador-despesa/tela_cadastro_categoria_despesa-min.png"),alt:"print da tela de cadastro de categoria da despesa.",title: 'tela de cadastro da categoria da despesa'},
+            {source: GlobalStrings.getAssetUrl("images/controlador-despesa/tela_cadastro_despesa-min.png"),alt:"print da tela para selecionar o tipo de despesa para cadastro",title: 'tela de seleção de tipo de despesa a cadastrar'},
+            {source: GlobalStrings.getAssetUrl("images/controlador-despesa/tela_cadastro_despesa_unica-min.png"),alt:"print da tela de cadastro de despesa do tipo \"Única\"",title: 'tela de cadastro de despesa Única'}
         ],
         accordionCards: [
             {
@@ -436,8 +436,8 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         descricao: 'Projeto de backend para o portifólio, feito no SPRING BOOT',
         tipo: TipoProjeto.PESSOAIS,
         imagens:[
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/backend-portifolio-vinicius/MER_portifolio_backend_vinicius-min.png",alt:"Imagem do Modelo de Entidade E Relacionamento do projeto",title: 'Modelo de Entidade E Relacionamento do projeto'},
-            {source: "../.." + GlobalStrings.getGlobalUrlFragment() + "/assets/images/backend-portifolio-vinicius/migrations_portifolio_backend-min.png",alt:"Imagem apresentando as migrations e estrutura do projeto",title: 'Migrations e estrutura do projeto'}
+            {source: GlobalStrings.getAssetUrl("images/backend-portifolio-vinicius/MER_portifolio_backend_vinicius-min.png"),alt:"Imagem do Modelo de Entidade E Relacionamento do projeto",title: 'Modelo de Entidade E Relacionamento do projeto'},
+            {source: GlobalStrings.getAssetUrl("images/backend-portifolio-vinicius/migrations_portifolio_backend-min.png"),alt:"Imagem apresentando as migrations e estrutura do projeto",title: 'Migrations e estrutura do projeto'}
         ],
         accordionCards: [
             {
