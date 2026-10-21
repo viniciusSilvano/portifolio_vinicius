@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://viniciussilvano.github.io/portifolio_vinicius/sitemap.xml
+
