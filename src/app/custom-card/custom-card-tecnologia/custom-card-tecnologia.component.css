@@ -1,7 +1,6 @@
 .custom-card{
-  background-image: url(../../../assets/images/fundo-azul-do-gradiente-de-luxo-abstrato-liso-azul-escuro-com-vinheta-preta-studio-banner-min.jpg);
-  background-color: var(--cor-preto-escuro);
-  border-color: var(--cor-verde-claro);
+  background-color: var(--cor-preto-default);
+  border-color: var(--cor-bordas-elementos);
   border-style: solid;
   border-width: medium;
 }

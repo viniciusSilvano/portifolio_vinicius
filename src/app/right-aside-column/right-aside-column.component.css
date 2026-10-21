@@ -1,13 +1,4 @@
-#crachaDeApresentacao, #SobreOsProjetos{
-    padding-top: 1.25rem;
-    width: 100%;
-}
-
-#crachaDeApresentacao{
-    border-bottom-color: var(--cor-cinza-escuro);
-    border-bottom-style: solid;
-}
-
-#crachaDeApresentacao img{
-    border-radius: 100%;
-}
+:host { display:block; margin-top:0; }
+#crachaDeApresentacao,#SobreOsProjetos { overflow:hidden; }
+#crachaDeApresentacao .card-title,#SobreOsProjetos .card-title { margin-bottom:1rem; }
+#crachaDeApresentacao .card-title:after,#SobreOsProjetos .card-title:after { content:""; display:block; width:38px; height:3px; margin-top:.55rem; border-radius:5px; background:var(--accent); }
