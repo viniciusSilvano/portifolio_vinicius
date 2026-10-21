@@ -1,0 +1,15 @@
+.projects-page { padding:0 .25rem; }
+.page-intro { position:relative; margin:0 1rem 2rem; padding:1.6rem 1.75rem; overflow:hidden; border:1px solid rgba(114,213,189,.2); border-radius:18px; background:linear-gradient(115deg,rgba(22,42,52,.94),rgba(17,26,38,.9)); }
+.page-intro:after { content:"</>"; position:absolute; right:2rem; top:50%; transform:translateY(-50%); color:rgba(114,213,189,.08); font-family:monospace; font-size:clamp(4rem,10vw,8rem); font-weight:700; }
+.page-intro .eyebrow { color:var(--accent); font-size:.72rem; font-weight:700; letter-spacing:.14em; }
+.page-intro h1 { max-width:700px; margin:.6rem 0 .5rem; font-size:clamp(1.65rem,3.2vw,2.55rem); line-height:1.15; }
+.page-intro p { max-width:590px; margin:0; color:var(--text-muted); }
+.filter-panel { margin:0 1rem 2.4rem; padding:1.15rem 1.35rem; border:1px solid var(--cor-bordas-elementos); border-radius:14px; background:rgba(17,26,38,.72); }
+.filter-title { margin:0 0 .8rem; font-size:1rem; } .filter-title i { color:var(--accent); }
+.projects-title { margin:0 1rem 1.5rem; color:#f5f8fc; }
+.project-group { margin-right:1rem; padding-top:1.25rem; border-top:1px solid rgba(158,172,189,.16); }
+.project-group h3 { margin:0; font-size:1.25rem; }
+.group-heading { display:flex; align-items:center; justify-content:space-between; padding:0 .5rem; }
+.group-heading small { display:block; margin-top:.2rem; }
+.group-dot { width:9px; height:9px; margin-right:.5rem; border-radius:50%; background:var(--accent); box-shadow:0 0 16px rgba(114,213,189,.55); }
+@media (max-width:767.98px) { .page-intro { margin:0 0 1.25rem; padding:1.2rem; } .page-intro:after { right:.8rem; opacity:.6; } .filter-panel { margin:0 0 1.75rem; padding:1rem; } .project-group { margin-left:0 !important; margin-right:0; } }

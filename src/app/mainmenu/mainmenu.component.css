@@ -1,58 +1,13 @@
-nav{
-    background-color: rgba(50,50,50,0.5);
-}
-.MenuDropdown{
-    border-style: solid;
-    padding: 5px;
-}
-.MenuDropdownItem{
-    width:100%;
-    height:100%;
-    padding: 0px;
-    color: rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
-}
-
-.MenuDropdownItem:hover{
-    border-color: var(--cor-azul-claro);
-    border-style: solid;
-    border-width: 3px;
-}
-
-.MenuDropdown, .MenuDropdownItem{
-    border-color: var(--cor-azul-marinho);
-    background-color: var(--cor-preto-escuro);
-}
-
-#top_main_menu{
-    background-color: var(--cor-preto-default);
-    border-bottom-color: var(--cor-bordas-elementos);
-    border-bottom-style: solid;
-    border-bottom-width: small;
-    position: fixed;
-    z-index: 2;
-}
-
-#top_main_menu .btn-outline-primary{
-    color: rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
-    border-color: rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
-    background-color: var(--cor-preto-escuro);
-}
-
-#top_main_menu .btn-outline-primary:hover{
-   background-color: var(--cor-preto-escuro);
-   border-color: var(--cor-azul-claro);
-}
-
-#system_brand h3{
-    color: rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
-}
-
-#system_brand h3:hover{
-    color: var(--cor-azul-claro);
-}
-
-.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
-.btn-outline-primary:not(:disabled):not(.disabled).active:focus,
-.show > .btn-outline-primary.dropdown-toggle:focus{
-    background-color: var(--cor-preto-escuro) !important;
-}
+#top_main_menu { position:fixed; inset:0 0 auto; z-index:1000; display:flex; align-items:center; gap:2rem; min-height:76px; padding:.75rem max(1.25rem,calc((100vw - 1500px)/2)); background:rgba(11,17,27,.9); border-bottom:1px solid rgba(114,213,189,.18); box-shadow:0 10px 35px rgba(0,0,0,.22); backdrop-filter:blur(16px); }
+#system_brand { display:flex; align-items:center; gap:.8rem; margin:0; white-space:nowrap; }
+.brand-mark { display:flex; width:42px; height:42px; align-items:center; justify-content:center; border-radius:12px; color:#091510; background:linear-gradient(135deg,#8ae5cf,#51bda6); font-size:.85rem; font-weight:800; letter-spacing:.04em; }
+.brand-copy { display:flex; flex-direction:column; line-height:1.25; } .brand-copy strong { color:#f3f7fb; font-size:1rem; letter-spacing:-.02em; } #system_brand:hover .brand-copy strong { color:var(--accent); } #system_brand .cargo { padding:0; margin-top:.22rem; color:#9eacbd; font-size:.75rem; }
+.navbar-projects { margin-left:auto; }
+#top_main_menu .btn-outline-primary { padding:.55rem .95rem; color:#e4ecf4; border:1px solid #344457; border-radius:9px; background:#131e2b; }
+#top_main_menu .btn-outline-primary:hover,#top_main_menu .btn-outline-primary:focus { color:var(--accent); border-color:var(--accent); background:#172831; }
+.MenuDropdown { min-width:220px; padding:.45rem; border:1px solid var(--cor-bordas-elementos); border-radius:12px; background:#111a26; box-shadow:0 16px 40px rgba(0,0,0,.35); }
+.MenuDropdownItem { width:100%; padding:.6rem .75rem; border:0; border-radius:7px; color:#d7e1eb; text-align:left; background:transparent; } .MenuDropdownItem:hover { color:var(--accent); background:rgba(114,213,189,.1); }
+.social-links .btn-group { gap:.5rem; } .social-links a { display:inline-flex; } #top_main_menu .btnRedeSocial { width:38px; height:38px; padding:0; border-radius:9px; background-color:#172231; }
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,.btn-outline-primary:not(:disabled):not(.disabled).active:focus,.show > .btn-outline-primary.dropdown-toggle:focus { background:#172831 !important; box-shadow:0 0 0 .15rem rgba(114,213,189,.2); }
+@media (max-width:767.98px) { #top_main_menu { min-height:68px; gap:.75rem; padding:.65rem .8rem; } .brand-mark { width:38px; height:38px; } .brand-copy strong { font-size:.88rem; } #system_brand .cargo { font-size:.66rem; } .navbar-projects { margin-left:auto; } #top_main_menu .btn-outline-primary { padding:.5rem .65rem; font-size:.85rem; } .social-links .btn-group { gap:.25rem; } #top_main_menu .btnRedeSocial { width:32px; height:32px; } }
+@media (max-width:420px) { .social-links { display:none; } }

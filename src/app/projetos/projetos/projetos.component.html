@@ -1,33 +1,35 @@
-<section class="mt-5">
-
-  <h2 class="mt-1">Filtros dos projetos</h2>
-  <app-accordion-card [accordionCard]="accordionProjetoFilters" [ehAccordionProjetoCard]="true" (resultadoFiltro)="onFilter($event)"></app-accordion-card>
-
-  <h2 class="text-center mt-5">Projetos</h2>
-  <section class="ml-3 border-top-light-green" *ngIf="filtroPossuiResultado()">
-    <h3>Projetos Filtrados</h3>
-    <span class="pl-2">{{this.customCardData.descricao}}</span>
-    <div class="d-flex flex-row justify-content-around flex-wrap" >
+<section class="mt-3 projects-page">
+  <header class="page-intro">
+    <span class="eyebrow"><i class="bi bi-code-slash mr-2"></i>PORTFÓLIO</span>
+    <h1>Projetos que transformam ideias em código.</h1>
+    <p>Uma seleção de experiências, estudos e soluções desenvolvidas com tecnologia.</p>
+  </header>
+  <section class="filter-panel" aria-labelledby="filterTitle">
+    <h2 id="filterTitle" class="filter-title"><i class="bi bi-sliders mr-2"></i>Explore por tecnologia</h2>
+    <app-accordion-card [accordionCard]="accordionProjetoFilters" [ehAccordionProjetoCard]="true" (resultadoFiltro)="onFilter($event)"></app-accordion-card>
+  </section>
+  <h2 class="projects-title text-center">Projetos</h2>
+  <section class="project-group ml-3" *ngIf="filtroPossuiResultado()">
+    <h3>Projetos filtrados</h3><span class="pl-2">{{this.customCardData.descricao}}</span>
+    <div class="d-flex flex-row justify-content-around flex-wrap">
       <div class="col-sm-12 col-md-6 col-lg-6 col-c-xxl-4 mt-3" *ngFor="let projeto of resultadoProjetoFilter.projetosCardsFiltered;let indexOfelement=index;">
         <app-custom-card-projeto [projeto]="projeto" [heightImageSliderInPx]="300" (onVisualizarBtnClick)="redirect($event)"></app-custom-card-projeto>
       </div>
     </div>
   </section>
-  <section class="ml-3" *ngIf="!filtroPossuiResultado()">
-    <h3>Pessoais</h3>
-    <small>Projetos pessoais criados por um propósito ou razões pessoais.</small>
-    <div class="d-flex flex-row justify-content-around flex-wrap" >
+  <section class="project-group ml-3" *ngIf="!filtroPossuiResultado()">
+    <div class="group-heading"><div><h3>Pessoais</h3><small>Ideias e produtos criados com um propósito.</small></div><span class="group-dot"></span></div>
+    <div class="d-flex flex-row justify-content-around flex-wrap">
       <div class="col-sm-12 col-md-6 col-lg-6 col-c-xxl-4 mt-3" *ngFor="let projeto of projetosCardsExistente;let indexOfelement=index;">
         <app-custom-card-projeto [projeto]="projeto" [heightImageSliderInPx]="300" (onVisualizarBtnClick)="redirect($event)"></app-custom-card-projeto>
       </div>
     </div>
   </section>
-  <section class="ml-3 mt-4" *ngIf="!filtroPossuiResultado()">
-    <h3>Testes/Públicos</h3>
-    <small>Projetos que são usados para brincar com o código, experimentar novas abordagens ou projetos pequenos.</small>
-    <div class="d-flex flex-row justify-content-around flex-wrap" >
+  <section class="project-group ml-3 mt-4" *ngIf="!filtroPossuiResultado()">
+    <div class="group-heading"><div><h3>Experimentos</h3><small>Pequenos projetos para explorar código e novas abordagens.</small></div><span class="group-dot"></span></div>
+    <div class="d-flex flex-row justify-content-around flex-wrap">
       <div class="col-sm-12 col-md-6 col-lg-6 col-c-xxl-4 mt-3" *ngFor="let projeto of projetosTestesPublicosCards;let indexOfelement=index;">
-        <app-custom-card-projeto [projeto]="projeto" [heightImageSliderInPx]="300" (onVisualizarBtnClick)="redirect($event)" ></app-custom-card-projeto>
+        <app-custom-card-projeto [projeto]="projeto" [heightImageSliderInPx]="300" (onVisualizarBtnClick)="redirect($event)"></app-custom-card-projeto>
       </div>
     </div>
   </section>
