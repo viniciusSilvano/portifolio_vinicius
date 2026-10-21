@@ -24,7 +24,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             {source:GlobalStrings.getAssetUrl("images/projeto-aluguel/cadastroAluguel.png"),alt:"Tela de cadastro/modificação de aluguel",title:"Tela de cadastro/modificação de aluguel"},
             {source:GlobalStrings.getAssetUrl("images/projeto-aluguel/ListagemAluguel.png"),alt:"Tela de listagem de alugueis",title:"Tela de listagem de alugueis"},
             {source:GlobalStrings.getAssetUrl("images/projeto-aluguel/ListagemAluguel2.png"),alt:"Tela de listagem de alugueis",title:"Tela de listagem de alugueis"},
-            
+
         ],
         accordionCards: [
             {
@@ -108,7 +108,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                     <p>
                         É, aparentemente, o padrão mais utilizado para persistência de dados e é utilizado pela biblioteca <strong>ROOM</strong>.
                     </p>
-                </article>    
+                </article>
                 `,
                 collapse: Collapse.COLLAPSED
             }
@@ -125,7 +125,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         tecnologia:   _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 2}) as Tecnologia, // Spring boot
         tipo: TipoProjeto.PESSOAIS,
         descricao: `meu projeto de conclusão de curso da faculdade feito com o framework SPRING BOOT.
-        Ele serve para o coordenador de um curso de ensino criar provas 
+        Ele serve para o coordenador de um curso de ensino criar provas
         de forma aleatória com um banco de questões, as questões são organizadas
         por meio da Taxonomia de Bloom.`,
         imagens:[
@@ -165,10 +165,10 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                     <article>
                         <h2>O que é?</h2>
                         <p>Esse foi o meu projeto de conclusão de curso da faculdade.
-                        Ele serve para o coordenador de um curso de ensino criar provas 
+                        Ele serve para o coordenador de um curso de ensino criar provas
                         de forma aleatória com um banco de questões, as questões são organizadas
                         por meio da Taxonomia de Bloom.</p>
-                        <p>Os professores eram responsáveis pelo cadastro das questões 
+                        <p>Os professores eram responsáveis pelo cadastro das questões
                         e o coordenador homologava(dava o aceite) dessas questões para a criação das provas.</p>
                         <h2>Ferramentas utilizadas:</h2>
                         <ul>
@@ -211,15 +211,15 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         ],
         accordionCards: [
             {
-                id: 1, 
+                id: 1,
                 tituloDescricao: "Sobre o projeto",
-                descricao: "<article><p>Projeto utilizado para testes e brincadeiras em java. Apesar do seu objetivo tentei caprichar no código.<p/></article>", 
+                descricao: "<article><p>Projeto utilizado para testes e brincadeiras em java. Apesar do seu objetivo tentei caprichar no código.<p/></article>",
                 collapse: Collapse.COLLAPSED
             },
             {
-                id: 2, 
+                id: 2,
                 tituloDescricao: "Onde está o código?",
-                descricao: "<a target=\"_blank\" href=\"https://github.com/viniciusSilvano/testesJava\">link para o github</a>", 
+                descricao: "<a target=\"_blank\" href=\"https://github.com/viniciusSilvano/testesJava\">link para o github</a>",
                 collapse: Collapse.COLLAPSED
             }
         ],
@@ -239,15 +239,15 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         ],
         accordionCards: [
             {
-                id: 1, 
+                id: 1,
                 tituloDescricao: "Sobre o projeto",
-                descricao: "<article><p>Projeto utilizado para testes e brincadeiras em angular. Apesar do seu objetivo tentei caprichar no código.<p/></article>", 
+                descricao: "<article><p>Projeto utilizado para testes e brincadeiras em angular. Apesar do seu objetivo tentei caprichar no código.<p/></article>",
                 collapse: Collapse.COLLAPSED
             },
             {
-                id: 2, 
+                id: 2,
                 tituloDescricao: "Onde está o código?",
-                descricao: "<a target=\"_blank\" href=\"https://github.com/viniciusSilvano/angularDoisMaisTestes\">link para o github</a>", 
+                descricao: "<a target=\"_blank\" href=\"https://github.com/viniciusSilvano/angularDoisMaisTestes\">link para o github</a>",
                 collapse: Collapse.COLLAPSED
             }
         ],
@@ -269,9 +269,9 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         ],
         accordionCards: [
             {
-                id: 1, 
+                id: 1,
                 tituloDescricao: "Sobre o projeto",
-                descricao: 
+                descricao:
                     `
                     <article>
                         <p>Projeto final realizado em grupo na Unity pelo qual fiquei responsável pela codificação do menu<p/>
@@ -287,7 +287,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
 
                         <p>Segue os integrantes conforme o crédito do projeto (como era um projeto final no tempo da adolecência foi um crédito feito na "brincadeira")</p>
 
-                        <h3>Game Designer</h3> 
+                        <h3>Game Designer</h3>
                         <ul><li>Camila</li></ul>
 
                         <h3>3D art</h3>
@@ -314,13 +314,13 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                             </li>
                         </ul>
                     </article>
-                    `, 
+                    `,
                 collapse: Collapse.COLLAPSED
             }
         ],
         tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 10}) as Tecnologia,
         tituloProjeto: "Projeto final Redzero",
-        tecnologiasAuxiliares: [ 
+        tecnologiasAuxiliares: [
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 10}) as Tecnologia,
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 11}) as Tecnologia
         ],
@@ -329,7 +329,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
     {
         id: 6,
         descricao: 'Meu primeiro portifólio da área de T.I. Feito no ANGULAR ',
-        tipo: TipoProjeto.TESTE_PUBLICOS,
+        tipo: TipoProjeto.PESSOAIS,
         imagens:[
             {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/home-v1.0.1-min.png"),alt:"print tela inicial da versão 1.0.1 do portifólio",title: 'Antiga Home do portifólio, versão 1.0.1'},
             {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/projetos-v1.0.1-min.png"),alt:"print tela de projetos da versão 1.0.1 do portifólio",title: 'Tela de projetos do portifólio, versão 1.0.1'},
@@ -345,9 +345,9 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         ],
         accordionCards: [
             {
-                id: 1, 
+                id: 1,
                 tituloDescricao: "Sobre o projeto",
-                descricao: 
+                descricao:
                     `
                     <article>
                         <h2>Sobre o projeto</h2>
@@ -358,19 +358,19 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                         <p>O portifólio utiliza angular 2+ e está com um backend planejado para o futuro utilizando java.</p>
                     </article>
 
-                    `, 
+                    `,
                 collapse: Collapse.COLLAPSED
             },
             {
-                id: 2, 
+                id: 2,
                 tituloDescricao: "Repositório de código",
-                descricao: 
+                descricao:
                     `
                     <article>
                         <h1>Repositório de código deste projeto</h1>
                         <a target=\"_blank\" href=\"https://github.com/viniciusSilvano/portifolio_vinicius\">link para o github</a>
                     </article>
-                    `, 
+                    `,
                 collapse: Collapse.COLLAPSED
             }
         ],
@@ -390,9 +390,9 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         ],
         accordionCards: [
             {
-                id: 1, 
+                id: 1,
                 tituloDescricao: "Sobre o projeto",
-                descricao: 
+                descricao:
                     `
                     <article>
                         <h2>Sobre o projeto</h2>
@@ -412,13 +412,13 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                         </ul>
                     </article>
 
-                    `, 
+                    `,
                 collapse: Collapse.COLLAPSED
             }
         ],
         tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
         tituloProjeto: "Controlador de Despesas Silvano",
-        tecnologiasAuxiliares: [ 
+        tecnologiasAuxiliares: [
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 2}) as Tecnologia,
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 3}) as Tecnologia,
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 5}) as Tecnologia,
@@ -441,9 +441,9 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         ],
         accordionCards: [
             {
-                id: 1, 
+                id: 1,
                 tituloDescricao: "Sobre o projeto",
-                descricao: 
+                descricao:
                     `
                     <article>
                         <h2>Sobre o projeto</h2>
@@ -466,13 +466,13 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                         </ul>
                     </article>
 
-                    `, 
+                    `,
                 collapse: Collapse.COLLAPSED
             }
         ],
         tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
         tituloProjeto: "Backend Portifólio Vinícius",
-        tecnologiasAuxiliares: [ 
+        tecnologiasAuxiliares: [
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 2}) as Tecnologia,
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 5}) as Tecnologia,
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
