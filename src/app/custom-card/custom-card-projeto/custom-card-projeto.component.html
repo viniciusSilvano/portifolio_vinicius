@@ -9,6 +9,10 @@
       <div *ngFor="let statusProjeto of projeto.status; let statusIndex = index" class="tag_projeto background-preto-escuro oval_tag ml-3">
         {{getNomeTagPorStatus(statusProjeto)}}
       </div>
+
+       <div *ngFor="let visibilidade of projeto.visibilidade; let visibilidadeIndex = index" class="tag_projeto background-preto-escuro oval_tag ml-3">
+        {{getNomeTagPorVisibilidade(visibilidade)}}
+      </div>
     </div>
   </div>
   <div #imagesSliderContainer *ngIf="projeto.imagens">

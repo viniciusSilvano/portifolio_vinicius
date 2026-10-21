@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
-import { ProjetoEspecificacao, StatusProjeto, TipoProjeto } from 'src/app/projetos/projetos-especificacao/class/projeto_especificacao';
+import { ProjetoEspecificacao, StatusProjeto, TipoProjeto, Visibilidade } from 'src/app/projetos/projetos-especificacao/class/projeto_especificacao';
 import { TagUtil } from 'src/app/projetos/projetos-especificacao/util/tag_utl';
 @Component({
   selector: 'app-custom-card-projeto',
@@ -34,5 +34,9 @@ export class CustomCardProjetoComponent implements OnInit, AfterViewInit {
 
   getNomeTagPorTipo(tipo: TipoProjeto) : String{
     return TagUtil.retornaNomeTagPorTipoProjeto(tipo);
+  }
+
+  getNomeTagPorVisibilidade(visibilidade: Visibilidade) : String{
+    return TagUtil.retornaNomeTagPorVisibilidade(visibilidade);
   }
 }

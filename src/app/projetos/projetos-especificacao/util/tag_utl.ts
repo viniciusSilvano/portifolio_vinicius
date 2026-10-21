@@ -1,4 +1,4 @@
-import { StatusProjeto, TipoProjeto } from "../class/projeto_especificacao";
+import { StatusProjeto, TipoProjeto, Visibilidade } from "../class/projeto_especificacao";
 import { Tag, TipoTag } from "../class/tag";
 
 
@@ -13,6 +13,11 @@ export class TagUtil{
   private static tagsPorTipo = new Map<Number, String>([
     [0, 'Projeto Pessoal'],
     [1, 'Projeto Público/Teste']
+  ]);
+
+   private static tagsPorVisibilidade = new Map<Number, String>([
+    [0, 'Código Público'],
+    [1, 'Código Privado']
   ]);
 
   private static todasTags : Tag[] = TagUtil.initTodasTags();
@@ -39,6 +44,10 @@ export class TagUtil{
 
   static retornaNomeTagPorTipoProjeto(tipo: TipoProjeto) : String{
     return TagUtil.tagsPorTipo.get(tipo);
+  }
+
+  static retornaNomeTagPorVisibilidade(visibilidade: Visibilidade) : String{
+    return TagUtil.tagsPorVisibilidade.get(visibilidade);
   }
 
   static retornarTodasAsTags() : Tag[]{

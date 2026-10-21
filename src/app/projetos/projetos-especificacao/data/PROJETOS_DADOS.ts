@@ -1,4 +1,4 @@
-import { ProjetoEspecificacao, TipoProjeto, StatusProjeto } from "../class/projeto_especificacao";
+import { ProjetoEspecificacao, TipoProjeto, StatusProjeto, Visibilidade } from "../class/projeto_especificacao";
 import { GlobalStrings } from '../../../globalStrings/globalString';
 import { TECNOLOGIAS } from "../../../tecnologias/data/TECNOLOGIAS_DADOS";
 import { SearchUtil } from "../../../util/search_util";
@@ -117,7 +117,8 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 1}) as Tecnologia,
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia
         ],
-        status: [StatusProjeto.FINALIZADO]
+        status: [StatusProjeto.FINALIZADO],
+        visibilidade: [Visibilidade.PRIVADO]
     },
     {
         id:2,
@@ -198,7 +199,8 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                 collapse: Collapse.COLLAPSED
             }
         ],
-        status: [StatusProjeto.FINALIZADO]
+        status: [StatusProjeto.FINALIZADO],
+        visibilidade: [Visibilidade.PRIVADO]
     },
     {
         id: 3,
@@ -226,7 +228,8 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
         tituloProjeto: "Java Test Project",
         tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia],
-        status: [StatusProjeto.FINALIZADO]
+        status: [StatusProjeto.FINALIZADO],
+        visibilidade: [Visibilidade.PUBLICO]
     },
     {
         id: 4,
@@ -254,7 +257,8 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 9}) as Tecnologia,
         tituloProjeto: "Angular 2+ Tests Project",
         tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 9}) as Tecnologia],
-        status: [StatusProjeto.FINALIZADO]
+        status: [StatusProjeto.FINALIZADO],
+        visibilidade: [Visibilidade.PUBLICO]
     },
     {
         id: 5,
@@ -324,7 +328,8 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 10}) as Tecnologia,
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 11}) as Tecnologia
         ],
-        status: [StatusProjeto.FINALIZADO]
+        status: [StatusProjeto.FINALIZADO],
+        visibilidade: [Visibilidade.PRIVADO]
     },
     {
         id: 6,
@@ -377,7 +382,8 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 9}) as Tecnologia,
         tituloProjeto: "Primeiro Portifólio Vinícius",
         tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 9}) as Tecnologia],
-        status: [StatusProjeto.EM_DESENVOLVIMENTO]
+        status: [StatusProjeto.EM_DESENVOLVIMENTO],
+        visibilidade: [Visibilidade.PUBLICO]
     },
     {
         id: 7,
@@ -429,7 +435,8 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 14}) as Tecnologia,
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 15}) as Tecnologia
         ],
-        status: [StatusProjeto.EM_DESENVOLVIMENTO]
+        status: [StatusProjeto.EM_DESENVOLVIMENTO],
+        visibilidade: [Visibilidade.PRIVADO]
     },
     {
         id: 8,
@@ -482,6 +489,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 15}) as Tecnologia,
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 16}) as Tecnologia
         ],
-        status: [StatusProjeto.EM_DESENVOLVIMENTO]
+        status: [StatusProjeto.EM_DESENVOLVIMENTO],
+        visibilidade: [Visibilidade.PRIVADO]
     }
 ];
