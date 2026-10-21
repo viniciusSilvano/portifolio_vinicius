@@ -26,7 +26,7 @@
     </div>
   </section>
   <section class="project-group ml-3 mt-4" *ngIf="!filtroPossuiResultado()">
-    <div class="group-heading"><div><h3>Experimentos</h3><small>Pequenos projetos para explorar código e novas abordagens.</small></div><span class="group-dot"></span></div>
+    <div class="group-heading"><div><h3>Testes/Experimentos</h3><small>Pequenos projetos para explorar código e novas abordagens.</small></div><span class="group-dot"></span></div>
     <div class="d-flex flex-row justify-content-around flex-wrap">
       <div class="col-sm-12 col-md-6 col-lg-6 col-c-xxl-4 mt-3" *ngFor="let projeto of projetosTestesPublicosCards;let indexOfelement=index;">
         <app-custom-card-projeto [projeto]="projeto" [heightImageSliderInPx]="300" (onVisualizarBtnClick)="redirect($event)"></app-custom-card-projeto>
