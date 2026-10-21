@@ -24,9 +24,8 @@ nav{
 }
 
 #top_main_menu{
-    background-image: url(../../assets/images/fundo-azul-do-gradiente-de-luxo-abstrato-liso-azul-escuro-com-vinheta-preta-studio-banner-min.jpg);
-    background-color: var(--cor-preto-escuro);
-    border-bottom-color: var(--cor-cinza-escuro);
+    background-color: var(--cor-preto-default);
+    border-bottom-color: var(--cor-bordas-elementos);
     border-bottom-style: solid;
     border-bottom-width: small;
     position: fixed;
@@ -52,8 +51,8 @@ nav{
     color: var(--cor-azul-claro);
 }
 
-.btn-outline-primary:not(:disabled):not(.disabled):active:focus, 
-.btn-outline-primary:not(:disabled):not(.disabled).active:focus, 
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.btn-outline-primary:not(:disabled):not(.disabled).active:focus,
 .show > .btn-outline-primary.dropdown-toggle:focus{
     background-color: var(--cor-preto-escuro) !important;
 }

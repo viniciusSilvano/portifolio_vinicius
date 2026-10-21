@@ -3,11 +3,6 @@
     width: 100%;
 }
 
-#crachaDeApresentacao{
-    border-bottom-color: var(--cor-cinza-escuro);
-    border-bottom-style: solid;
-}
-
 #crachaDeApresentacao img{
     border-radius: 100%;
 }

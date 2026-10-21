@@ -1,7 +1,7 @@
 
 
 .custom-card{
-  border-color: var(--cor-verde-claro);
+  border-color: var(--cor-bordas-elementos);
   border-style: solid;
   border-width: medium;
 }

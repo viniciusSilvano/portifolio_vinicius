@@ -1,10 +1,9 @@
 <section class="mt-5">
-  
+
   <h2 class="mt-1">Filtros dos projetos</h2>
   <app-accordion-card [accordionCard]="accordionProjetoFilters" [ehAccordionProjetoCard]="true" (resultadoFiltro)="onFilter($event)"></app-accordion-card>
 
-  <div class="border-top-light-gray mt-5"> </div>
-  <h2 class="text-center">Projetos</h2>
+  <h2 class="text-center mt-5">Projetos</h2>
   <section class="ml-3 border-top-light-green" *ngIf="filtroPossuiResultado()">
     <h3>Projetos Filtrados</h3>
     <span class="pl-2">{{this.customCardData.descricao}}</span>
