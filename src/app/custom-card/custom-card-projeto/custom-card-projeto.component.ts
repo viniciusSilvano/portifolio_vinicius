@@ -12,7 +12,7 @@ export class CustomCardProjetoComponent implements OnInit, AfterViewInit {
 
   @Output() onVisualizarBtnClick: EventEmitter<Number> = new EventEmitter();
 
-  @ViewChild('imagesSliderContainer', {static: false}) imagesSliderContainerElement : ElementRef;
+  @ViewChild('imagesSliderContainer') imagesSliderContainerElement : ElementRef;
 
   constructor() { }
 
