@@ -9,6 +9,7 @@ import { GlobalStrings } from '../globalStrings/globalString';
 })
 export class FooterComponent implements OnInit {
   globalUrl: String = GlobalStrings.getGlobalUrlFragment();
+  imagemGitHubPages = GlobalStrings.getAssetUrl("images/Octocat.png")
   constructor() { }
 
   ngOnInit() {
