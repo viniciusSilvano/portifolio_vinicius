@@ -16,5 +16,5 @@ export class AccordionProjetoCard extends AccordionCard{
 
 export enum Collapse{
   COLLAPSED = "collapse",
-  NOT_COLLAPSED = "collpase show"
+  NOT_COLLAPSED = "collapse show"
 }

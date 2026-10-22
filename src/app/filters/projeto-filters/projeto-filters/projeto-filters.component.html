@@ -1,51 +1,31 @@
-<h2>Procurar Projeto</h2>
-<div class="row mt-3">		
-  <div class="form-group col-sm-12">
-    <fieldset>
-      <legend>Por dados Projeto:</legend>
-      <label for="searchInput">Buscar Por Nome do Projeto: </label>
-      <input 
-        #mySearch
-        class="form-control" 
-        placeholder="Nome do Projeto"
-        name="searchInput" 
-        type="text"
-        (input)="filterByItem(mySearch.value)"> 
-    </fieldset>
-  </div>
-</div>
+<section class="filter-search">
+  <h2>Procurar projeto</h2>
 
-<div class="border-top-light-green"></div>
+  <fieldset class="filter-search__section">
+    <legend>Por dados do projeto</legend>
+    <label for="searchInput">Buscar pelo nome do projeto</label>
+    <input #mySearch id="searchInput" class="form-control" placeholder="Ex.: portfólio" name="searchInput" type="search" (input)="filterByItem(mySearch.value)">
+  </fieldset>
 
-<div class="row mt-3">
-  <div class="form-group col-sm-12">
-    <fieldset>
-      <legend>Por Tag Projeto:</legend>
-      <small>Selecione uma tag para filtrar</small>
-      <div class="d-flex flex-row flex-wrap mt-3">
-        <div class="tag_projeto clickable  ml-3 mt-3 text-center col-sm-3" 
-          [ngClass]="{'background-preto-default color-black  oval_tag_clicked': tagSelecionadaParaFiltro(tag)
-            ,'background-preto-escuro-disabled oval_tag': !tagSelecionadaParaFiltro(tag)}"
-          *ngFor="let tag of todasTags" (click)="OnClickSearchByTag(tag)">
-          {{tag.nome}}
-        </div>
-      </div>
-    </fieldset>
-  </div>
-</div>
+  <fieldset class="filter-search__section">
+    <legend>Por tag do projeto</legend>
+    <small class="filter-search__hint">Selecione uma ou mais tags para filtrar.</small>
+    <div class="filter-search__tags">
+      <button type="button" class="filter-search__tag clickable"
+        [ngClass]="{'is-selected': tagSelecionadaParaFiltro(tag)}"
+        *ngFor="let tag of todasTags" (click)="OnClickSearchByTag(tag)" [attr.aria-pressed]="tagSelecionadaParaFiltro(tag)">
+        {{tag.nome}}
+      </button>
+    </div>
+  </fieldset>
 
-<div class="border-top-light-green"></div>
-
-<div class="row mt-3 mb-5" style="padding-left: 15px;" *ngIf="tecnologiasParaBusca.length > 0">
-  <fieldset>
-    <legend>Por Tecnologia:</legend>
-    <small>selecione uma tecnologia para filtrar </small>
-    <div class="col-12">
-      <div class="mt-3 d-flex flex-row justify-content-around align-content-center flex-wrap w-100" >
-        <div class="col-sm-2 col-md-2 ml-2 mb-5" *ngFor="let tecnologia of tecnologiasParaBusca">
-          <app-custom-card-tecnologia [tecnologia]="tecnologia" [projetoFilter]="projetoFilter" (onClick)="OnClickSearchByTecnologyImage($event)"></app-custom-card-tecnologia>
-        </div>
+  <fieldset class="filter-search__section" *ngIf="tecnologiasParaBusca.length > 0">
+    <legend>Por tecnologia</legend>
+    <small class="filter-search__hint">Selecione uma tecnologia para filtrar.</small>
+    <div class="filter-search__technologies">
+      <div class="filter-search__technology" *ngFor="let tecnologia of tecnologiasParaBusca">
+        <app-custom-card-tecnologia [tecnologia]="tecnologia" [projetoFilter]="projetoFilter" (onClick)="OnClickSearchByTecnologyImage($event)"></app-custom-card-tecnologia>
       </div>
     </div>
   </fieldset>
-</div>
+</section>
