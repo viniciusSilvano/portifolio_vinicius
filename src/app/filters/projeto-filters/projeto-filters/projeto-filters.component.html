@@ -11,21 +11,27 @@
     <legend>Por tag do projeto</legend>
     <small class="filter-search__hint">Selecione uma ou mais tags para filtrar.</small>
     <div class="filter-search__tags">
-      <button type="button" class="filter-search__tag clickable"
-        [ngClass]="{'is-selected': tagSelecionadaParaFiltro(tag)}"
-        *ngFor="let tag of todasTags" (click)="OnClickSearchByTag(tag)" [attr.aria-pressed]="tagSelecionadaParaFiltro(tag)">
-        {{tag.nome}}
-      </button>
+      @for (tag of todasTags; track tag) {
+        <button type="button" class="filter-search__tag clickable"
+          [ngClass]="{'is-selected': tagSelecionadaParaFiltro(tag)}"
+          (click)="OnClickSearchByTag(tag)" [attr.aria-pressed]="tagSelecionadaParaFiltro(tag)">
+          {{tag.nome}}
+        </button>
+      }
     </div>
   </fieldset>
 
-  <fieldset class="filter-search__section" *ngIf="tecnologiasParaBusca.length > 0">
-    <legend>Por tecnologia</legend>
-    <small class="filter-search__hint">Selecione uma tecnologia para filtrar.</small>
-    <div class="filter-search__technologies">
-      <div class="filter-search__technology" *ngFor="let tecnologia of tecnologiasParaBusca">
-        <app-custom-card-tecnologia [tecnologia]="tecnologia" [projetoFilter]="projetoFilter" (onClick)="OnClickSearchByTecnologyImage($event)"></app-custom-card-tecnologia>
+  @if (tecnologiasParaBusca.length > 0) {
+    <fieldset class="filter-search__section">
+      <legend>Por tecnologia</legend>
+      <small class="filter-search__hint">Selecione uma tecnologia para filtrar.</small>
+      <div class="filter-search__technologies">
+        @for (tecnologia of tecnologiasParaBusca; track tecnologia) {
+          <div class="filter-search__technology">
+            <app-custom-card-tecnologia [tecnologia]="tecnologia" [projetoFilter]="projetoFilter" (onClick)="OnClickSearchByTecnologyImage($event)"></app-custom-card-tecnologia>
+          </div>
+        }
       </div>
-    </div>
-  </fieldset>
+    </fieldset>
+  }
 </section>

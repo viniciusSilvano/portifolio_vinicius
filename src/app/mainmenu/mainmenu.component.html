@@ -7,15 +7,19 @@
     <div ngbDropdown class="d-inline-block">
       <button class="btn btn-outline-primary" id="dropdownProjetos" ngbDropdownToggle><i class="bi bi-grid-3x3-gap me-2"></i>Projetos</button>
       <div class="MenuDropdown" ngbDropdownMenu aria-labelledby="dropdownProjetos">
-        <button *ngFor="let projeto of projetosDropDownList" (click)="navigateToEspecificacao(projeto.id)" class="MenuDropdownItem" ngbDropdownItem>{{projeto.tituloProjeto}}</button>
+        @for (projeto of projetosDropDownList; track projeto) {
+          <button (click)="navigateToEspecificacao(projeto.id)" class="MenuDropdownItem" ngbDropdownItem>{{projeto.tituloProjeto}}</button>
+        }
       </div>
     </div>
   </div>
   <aside class="social-links" aria-label="Redes sociais">
     <div class="btn-group" role="group" aria-label="Redes sociais">
-      <a *ngFor="let button of socialMediaButtons" href="{{button.mediaUrl}}" target="_blank" rel="noopener noreferrer" [attr.aria-label]="button.alt" [title]="button.alt">
-        <span class="btn btn-secondary btnRedeSocial" [ngStyle]="{ 'background-image': 'url(' + button.source + ')'}"></span>
-      </a>
+      @for (button of socialMediaButtons; track button) {
+        <a href="{{button.mediaUrl}}" target="_blank" rel="noopener noreferrer" [attr.aria-label]="button.alt" [title]="button.alt">
+          <span class="btn btn-secondary btnRedeSocial" [ngStyle]="{ 'background-image': 'url(' + button.source + ')'}"></span>
+        </a>
+      }
     </div>
   </aside>
 </nav>

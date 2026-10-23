@@ -9,28 +9,40 @@
     <app-accordion-card [accordionCard]="accordionProjetoFilters" [ehAccordionProjetoCard]="true" (resultadoFiltro)="onFilter($event)"></app-accordion-card>
   </section>
   <h2 class="projects-title text-center">Projetos</h2>
-  <section class="project-group ms-3" *ngIf="filtroPossuiResultado()">
-    <h3>Projetos filtrados</h3><span class="ps-2">{{this.customCardData.descricao}}</span>
-    <div class="d-flex flex-row justify-content-around flex-wrap">
-      <div class="col-sm-12 col-md-6 col-lg-6 col-c-xxl-4 mt-3" *ngFor="let projeto of resultadoProjetoFilter.projetosCardsFiltered;let indexOfelement=index;">
-        <app-custom-card-projeto [projeto]="projeto" [heightImageSliderInPx]="300" (onVisualizarBtnClick)="redirect($event)"></app-custom-card-projeto>
+  @if (filtroPossuiResultado()) {
+    <section class="project-group ms-3">
+      <h3>Projetos filtrados</h3><span class="ps-2">{{this.customCardData.descricao}}</span>
+      <div class="d-flex flex-row justify-content-around flex-wrap">
+        @for (projeto of resultadoProjetoFilter.projetosCardsFiltered; track projeto; let indexOfelement = $index) {
+          <div class="col-sm-12 col-md-6 col-lg-6 col-c-xxl-4 mt-3">
+            <app-custom-card-projeto [projeto]="projeto" [heightImageSliderInPx]="300" (onVisualizarBtnClick)="redirect($event)"></app-custom-card-projeto>
+          </div>
+        }
       </div>
-    </div>
-  </section>
-  <section class="project-group ms-3" *ngIf="!filtroPossuiResultado()">
-    <div class="group-heading"><div><h3>Pessoais</h3><small>Ideias e produtos criados com um propósito.</small></div><span class="group-dot"></span></div>
-    <div class="d-flex flex-row justify-content-around flex-wrap">
-      <div class="col-sm-12 col-md-6 col-lg-6 col-c-xxl-4 mt-3" *ngFor="let projeto of projetosCardsExistente;let indexOfelement=index;">
-        <app-custom-card-projeto [projeto]="projeto" [heightImageSliderInPx]="300" (onVisualizarBtnClick)="redirect($event)"></app-custom-card-projeto>
+    </section>
+  }
+  @if (!filtroPossuiResultado()) {
+    <section class="project-group ms-3">
+      <div class="group-heading"><div><h3>Pessoais</h3><small>Ideias e produtos criados com um propósito.</small></div><span class="group-dot"></span></div>
+      <div class="d-flex flex-row justify-content-around flex-wrap">
+        @for (projeto of projetosCardsExistente; track projeto; let indexOfelement = $index) {
+          <div class="col-sm-12 col-md-6 col-lg-6 col-c-xxl-4 mt-3">
+            <app-custom-card-projeto [projeto]="projeto" [heightImageSliderInPx]="300" (onVisualizarBtnClick)="redirect($event)"></app-custom-card-projeto>
+          </div>
+        }
       </div>
-    </div>
-  </section>
-  <section class="project-group ms-3 mt-4" *ngIf="!filtroPossuiResultado()">
-    <div class="group-heading"><div><h3>Testes/Experimentos</h3><small>Pequenos projetos para explorar código e novas abordagens.</small></div><span class="group-dot"></span></div>
-    <div class="d-flex flex-row justify-content-around flex-wrap">
-      <div class="col-sm-12 col-md-6 col-lg-6 col-c-xxl-4 mt-3" *ngFor="let projeto of projetosTestesPublicosCards;let indexOfelement=index;">
-        <app-custom-card-projeto [projeto]="projeto" [heightImageSliderInPx]="300" (onVisualizarBtnClick)="redirect($event)"></app-custom-card-projeto>
+    </section>
+  }
+  @if (!filtroPossuiResultado()) {
+    <section class="project-group ms-3 mt-4">
+      <div class="group-heading"><div><h3>Testes/Experimentos</h3><small>Pequenos projetos para explorar código e novas abordagens.</small></div><span class="group-dot"></span></div>
+      <div class="d-flex flex-row justify-content-around flex-wrap">
+        @for (projeto of projetosTestesPublicosCards; track projeto; let indexOfelement = $index) {
+          <div class="col-sm-12 col-md-6 col-lg-6 col-c-xxl-4 mt-3">
+            <app-custom-card-projeto [projeto]="projeto" [heightImageSliderInPx]="300" (onVisualizarBtnClick)="redirect($event)"></app-custom-card-projeto>
+          </div>
+        }
       </div>
-    </div>
-  </section>
+    </section>
+  }
 </section>
