@@ -1,23 +1,19 @@
 <nav class="breadcrumbContainer">
-  <a routerLink="/projeto">Projeto</a> <span>/</span>
+  <a routerLink="/projeto">Projetos</a><span>/</span><span>Detalhes</span>
 </nav>
-<section *ngIf="projetoEspecificacao">
- 
-  <h1 class="d-flex justify-content-center my-3">
-    <div [innerHTML]="projetoEspecificacao.tituloProjeto"></div>
-  </h1>
-
-  <div class="w-100" style="height: 800px;">
-    <app-image-slider [slides]="projetoEspecificacao.imagens"></app-image-slider>
-  </div>
-
-
-  <div id="accordion" class="w-100" >
-    <div class="card bg-dark accordionCard" *ngFor="let accordionCard of projetoEspecificacao.accordionCards">
-      <app-accordion-card [accordionCard]="accordionCard"></app-accordion-card>
+@if (projetoEspecificacao) {
+  <section class="project-details">
+    <h1 class="project-details__title"><span [innerHTML]="projetoEspecificacao.tituloProjeto"></span></h1>
+    <div class="project-details__slider">
+      <app-image-slider [slides]="projetoEspecificacao.imagens"></app-image-slider>
     </div>
-  </div>
-  <nav class="card-footer text-muted">
-    <button (click)="getBack()"  class="btn btn-secondary text-left justify-content-left">Voltar</button>
-  </nav>
-</section>   
+    <div class="project-details__accordions">
+      @for (accordionCard of projetoEspecificacao.accordionCards; track accordionCard) {
+        <app-accordion-card [accordionCard]="accordionCard"></app-accordion-card>
+      }
+    </div>
+    <div class="project-details__footer">
+      <button (click)="getBack()" class="btn btn-outline-light" type="button"><i class="bi bi-arrow-left me-2"></i>Voltar aos projetos</button>
+    </div>
+  </section>
+}

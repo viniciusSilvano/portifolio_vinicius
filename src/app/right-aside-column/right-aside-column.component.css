@@ -1,4 +1,17 @@
-:host { display:block; margin-top:0; }
+:host { display:block; }
+.profile-sidebar-content { display:grid; gap:1rem; }
 #crachaDeApresentacao,#SobreOsProjetos { overflow:hidden; }
-#crachaDeApresentacao .card-title,#SobreOsProjetos .card-title { margin-bottom:1rem; }
+#crachaDeApresentacao .card-title,#SobreOsProjetos .card-title { margin:0 0 1rem; }
 #crachaDeApresentacao .card-title:after,#SobreOsProjetos .card-title:after { content:""; display:block; width:38px; height:3px; margin-top:.55rem; border-radius:5px; background:var(--accent); }
+.profile-summary { display:flex; align-items:flex-start; gap:1rem; }
+.profile-photo-holder { flex:0 0 92px; }
+.profile-photo-holder img { display:block; width:92px; height:92px; object-fit:cover; border-radius:50%; border:3px solid rgba(114,213,189,.55); box-shadow:0 0 0 5px rgba(114,213,189,.08); }
+.profile-copy { min-width:0; }
+.profile-copy p { margin:0 0 .75rem; color:#c2ccda; font-size:.9rem; line-height:1.55; }
+.profile-copy .profile-signoff { margin-bottom:0; color:var(--accent); }
+#SobreOsProjetos h2 { margin:0 0 .65rem; font-size:1rem; }
+#SobreOsProjetos ul { padding-left:1.1rem; color:#c2ccda; }
+#SobreOsProjetos li { margin-bottom:.55rem; font-size:.9rem; }
+#SobreOsProjetos strong { color:var(--accent); }
+#SobreOsProjetos p { margin:0; color:#c2ccda; font-size:.88rem; }
+@media (max-width:575.98px) { .profile-summary { gap:.8rem; } .profile-photo-holder { flex-basis:72px; } .profile-photo-holder img { width:72px; height:72px; } }

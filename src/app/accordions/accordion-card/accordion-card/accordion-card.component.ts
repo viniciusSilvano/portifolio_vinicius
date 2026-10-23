@@ -3,9 +3,10 @@ import { AccordionCard, AccordionProjetoCard, Collapse } from '../../../comuns/c
 import { ResultadoProjetoFilter } from 'src/app/filters/projeto-filters/projeto-filters/class/resultado-projeto-filter';
 
 @Component({
-  selector: 'app-accordion-card',
-  templateUrl: './accordion-card.component.html',
-  styleUrls: ['./accordion-card.component.css']
+    selector: 'app-accordion-card',
+    templateUrl: './accordion-card.component.html',
+    styleUrls: ['./accordion-card.component.css'],
+    standalone: false
 })
 export class AccordionCardComponent implements OnInit{
 

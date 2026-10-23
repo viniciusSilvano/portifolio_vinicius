@@ -4,9 +4,10 @@ import {SocialMediaService} from "../social-media.service";
 
 
 @Component({
-  selector: 'app-left-aside-column',
-  templateUrl: './left-aside-column.component.html',
-  styleUrls: ['./left-aside-column.component.css']
+    selector: 'app-left-aside-column',
+    templateUrl: './left-aside-column.component.html',
+    styleUrls: ['./left-aside-column.component.css'],
+    standalone: false
 })
 export class LeftAsideColumnComponent implements OnInit {
   buttons: SocialMediaButton[];

@@ -1,3 +1,23 @@
-#mainContainer { background:transparent; padding-bottom:2rem; }
-#mainContainer > .row > div:first-child,#mainContainer > .row > div:last-child { min-width:0; }
-#mainContainer > .col-sm-12 { padding-left:1rem; padding-right:1rem; }
+:host { display:block; }
+#mainContainer {
+  width:100%;
+  max-width:1540px;
+  margin:0 auto;
+  padding:6.6rem 1.5rem 2.5rem;
+  background:transparent;
+}
+.main-layout {
+  display:grid;
+  grid-template-columns:minmax(0, 2.1fr) minmax(280px, .9fr);
+  align-items:start;
+  gap:1.5rem;
+}
+.main-content,.profile-sidebar { min-width:0; }
+@media (max-width:991.98px) {
+  #mainContainer { padding-top:6rem; }
+  .main-layout { grid-template-columns:minmax(0, 1fr); gap:1rem; }
+}
+@media (max-width:575.98px) {
+  #mainContainer { padding:5.75rem .9rem 1.75rem; }
+  .main-layout { gap:.75rem; }
+}

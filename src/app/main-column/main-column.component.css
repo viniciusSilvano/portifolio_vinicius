@@ -1,3 +1,1 @@
-#mainColumnCard{
-  background-color: var(--cor-preto-default);
-}
+#mainColumnCard { min-width:0; background:transparent; }

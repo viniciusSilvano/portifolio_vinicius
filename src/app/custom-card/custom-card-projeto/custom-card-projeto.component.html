@@ -1,37 +1,45 @@
-<div class="custom-card col-sm-12 col-md-12 col-lg-12">
-  <div class="custom-card-header text-center m-2 p-0 short-project-card-header" >
+<div class="custom-card">
+  <div class="custom-card-header text-center short-project-card-header" >
     {{projeto.tituloProjeto | uppercase}}
     <div class="d-flex flex-row mt-3">
-      <div class="tag_projeto background-preto-escuro oval_tag ml-3">
+      <div class="tag_projeto background-preto-escuro oval_tag ms-3">
         {{getNomeTagPorTipo(projeto.tipo)}}
       </div>
 
-      <div *ngFor="let statusProjeto of projeto.status; let statusIndex = index" class="tag_projeto background-preto-escuro oval_tag ml-3">
-        {{getNomeTagPorStatus(statusProjeto)}}
-      </div>
+      @for (statusProjeto of projeto.status; track statusProjeto; let statusIndex = $index) {
+        <div class="tag_projeto background-preto-escuro oval_tag ms-3">
+          {{getNomeTagPorStatus(statusProjeto)}}
+        </div>
+      }
 
-       <div *ngFor="let visibilidade of projeto.visibilidade; let visibilidadeIndex = index" class="tag_projeto background-preto-escuro oval_tag ml-3">
-        {{getNomeTagPorVisibilidade(visibilidade)}}
-      </div>
+      @for (visibilidade of projeto.visibilidade; track visibilidade; let visibilidadeIndex = $index) {
+        <div class="tag_projeto background-preto-escuro oval_tag ms-3">
+          {{getNomeTagPorVisibilidade(visibilidade)}}
+        </div>
+      }
     </div>
   </div>
-  <div #imagesSliderContainer *ngIf="projeto.imagens">
-    <app-image-slider [slides]="projeto.imagens" [hideDots]="false"></app-image-slider>
-  </div>
-  <div class="text-justify m-2 p-0">
+  @if (projeto.imagens) {
+    <div #imagesSliderContainer>
+      <app-image-slider [slides]="projeto.imagens" [hideDots]="false"></app-image-slider>
+    </div>
+  }
+  <div class="project-description">
     <p>{{projeto.descricao}}</p>
   </div>
   <div class="custom-card-footer">
     <div class="">
       <span class="p-2"><u>TECNOLOGIAS DO PROJETO:</u></span>
-      <div class="mt-3 d-flex flex-row justify-content-around align-content-center flex-wrap" >
-        <div class="p-2" *ngFor="let tecnologia of projeto?.tecnologiasAuxiliares">
-          <app-custom-card-tecnologia [clickable]="false" [tecnologia]="tecnologia"></app-custom-card-tecnologia>
-        </div>
+      <div class="technology-list">
+        @for (tecnologia of projeto?.tecnologiasAuxiliares; track tecnologia) {
+          <div>
+            <app-custom-card-tecnologia [clickable]="false" [tecnologia]="tecnologia"></app-custom-card-tecnologia>
+          </div>
+        }
       </div>
     </div>
-    <div class="row mt-4 ml-2 pl-2 pb-2">
-      <button (click)="notifyParent(projeto.id)" class="btn-secondary" type="button"  styleClass="col-sm-2">Visualizar</button>
+    <div class="project-card-actions">
+      <button (click)="notifyParent(projeto.id)" class="btn btn-primary" type="button">Visualizar</button>
     </div>
   </div>
 </div>

@@ -10,9 +10,10 @@ import { CustomCardData } from 'src/app/custom-card/class/custom-card-data';
 import { PROJECT_FILTER_ACCORDION_TITLE } from 'src/app/util/app_constants';
 
 @Component({
-  selector: 'app-projetos',
-  templateUrl: './projetos.component.html',
-  styleUrls: ['./projetos.component.css']
+    selector: 'app-projetos',
+    templateUrl: './projetos.component.html',
+    styleUrls: ['./projetos.component.css'],
+    standalone: false
 })
 export class ProjetosComponent implements OnInit {
   projetosCardsExistente : ProjetoEspecificacao[];

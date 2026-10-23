@@ -3,9 +3,10 @@ import { Subscription, interval, timer } from 'rxjs';
 import { Imagem } from 'src/app/comuns/class/classesComuns';
 
 @Component({
-  selector: 'app-image-slider',
-  templateUrl: './image-slider.component.html',
-  styleUrls: ['./image-slider.component.css']
+    selector: 'app-image-slider',
+    templateUrl: './image-slider.component.html',
+    styleUrls: ['./image-slider.component.css'],
+    standalone: false
 })
 export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
 

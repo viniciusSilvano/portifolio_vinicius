@@ -3,9 +3,10 @@ import { ProjetoFilter } from 'src/app/filters/projeto-filters/projeto-filters/c
 import { Tecnologia } from 'src/app/tecnologias/class/tecnologia';
 
 @Component({
-  selector: 'app-custom-card-tecnologia',
-  templateUrl: './custom-card-tecnologia.component.html',
-  styleUrls: ['./custom-card-tecnologia.component.css','../css/custom-card.css']
+    selector: 'app-custom-card-tecnologia',
+    templateUrl: './custom-card-tecnologia.component.html',
+    styleUrls: ['./custom-card-tecnologia.component.css', '../css/custom-card.css'],
+    standalone: false
 })
 export class CustomCardTecnologiaComponent implements OnInit {
   @Input() tecnologia : Tecnologia;

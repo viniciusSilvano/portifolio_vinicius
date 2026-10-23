@@ -1,13 +1,13 @@
 # PortifolioVinicius
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.17
 
 ## npm version
 
-the recomended version installed via nvm is 10.16.3|10.24.1 
+the recomended version installed via nvm is 14.15.5 
 
 ## node version
-node recomended version is 10.16.3|10.24.1
+node recomended version is 14.15.5  
 
 ## Development server
 

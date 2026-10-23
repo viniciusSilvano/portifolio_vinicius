@@ -1,26 +1,36 @@
-.card{
-  background-color: var(--cor-preto-escuro);
+:host { display:block; width:100%; }
+.filter-accordion {
+  overflow:hidden;
+  color:var(--system-font-color);
+  background:linear-gradient(145deg,rgba(24,36,51,.96),rgba(15,23,34,.98));
+  border:1px solid var(--cor-bordas-elementos);
+  border-radius:14px;
+  box-shadow:0 12px 30px rgba(0,0,0,.16);
+  transition:border-color .2s ease, box-shadow .2s ease;
 }
-
-.accordion-body{
-  background-color: var(--cor-preto-default);
-  border-color: var(--cor-bordas-elementos);
-  border-style: solid;
-  border-radius: 75px / 45px;
+.filter-accordion:hover { border-color:rgba(114,213,189,.42); }
+.filter-accordion__header { margin:0; padding:0; border:0; background:transparent; }
+.filter-accordion__trigger {
+  display:flex;
+  width:100%;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:1rem 1.2rem;
+  color:#e8eef5;
+  text-align:left;
+  background:transparent;
+  border:0;
+  cursor:pointer;
 }
-
-.accordion-header{
-  border-color: var(--cor-bordas-elementos);
-  border-style: solid;
-  border-width: small;
-  border-radius: 75px / 45px;
-  background-color: var(--cor-preto-default);
-}
-
-.accordion-header:hover{
-  border-color: var(--cor-azul-claro);
-}
-
-.accordion-title-container{
-  color: rgba(var(--cor-pure-white),var(--cor-pure-white-opacity));
+.filter-accordion__trigger:hover,.filter-accordion__trigger[aria-expanded="true"] { color:var(--accent); }
+.filter-accordion__trigger:focus-visible { outline:2px solid var(--accent); outline-offset:-3px; }
+.filter-accordion__title { font-size:1rem; font-weight:650; letter-spacing:-.01em; }
+.filter-accordion__icon { flex:0 0 auto; color:var(--accent); font-size:1.15rem; }
+.filter-accordion__panel { border-top:1px solid rgba(158,172,189,.14); }
+.filter-accordion__body { padding:1rem 1.2rem 1.2rem; color:#c2ccda; }
+.filter-accordion--projects .filter-accordion__body { padding:1.2rem; }
+@media (max-width:575.98px) {
+  .filter-accordion__trigger { padding:.85rem 1rem; }
+  .filter-accordion__body,.filter-accordion--projects .filter-accordion__body { padding:.9rem; }
 }
