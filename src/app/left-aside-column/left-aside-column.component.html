@@ -1,11 +1,7 @@
-<aside >
-  <div  class="btn-group" role="group" aria-label="Medias sociais">
-    @for (button of buttons; track button) {
-      <a  href="{{button.mediaUrl}}" target="_blank">
-        <button  title="{{button.alt}}" class="btn btn-secondary mx-1 my-3 h-25 w-25 p-4 btnRedeSocial" type="button"
-          [ngStyle]="{ 'background-image': 'url(' + button.source + ')'}">
-        </button>
-      </a>
-    }
-  </div>
+<aside class="social-links-bottom" aria-label="Redes sociais">
+  @for (button of buttons; track button) {
+    <a href="{{button.mediaUrl}}" target="_blank" rel="noopener noreferrer" [attr.aria-label]="button.alt" [title]="button.alt">
+      <span class="social-links-bottom__button" [ngStyle]="{ 'background-image': 'url(' + button.source + ')'}" aria-hidden="true"></span>
+    </a>
+  }
 </aside>

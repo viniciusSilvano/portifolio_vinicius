@@ -1,36 +1,30 @@
-<aside class="row mt-5">
-  <div id="crachaDeApresentacao">
-    <div class="card-body m-2">
-      <article>
-        <h1 class="card-title">Apresentação</h1>
-        <div class="row">
-          <div class="profile-photo-holder col-4 p-0">
-            <img src="{{localFotoPerfil}}" alt="Foto de Vinícius Silvano"/>
-          </div>
-          <div class="col-8">
-            <p class="card-text apresentacaoCardText">Olá meu nome é Vinícius Silvano e bem vindo ao meu portifólio, neste site você poderá encontrar informações e, possivelmente, artefatos de alguns projetos que eu desenvolvi.</p>
-            <p>Atualmente sou um Desenvolvedor Java FullStack</p>
-            <p>O portifólio foi feito só não pensando em vaga de emprego, mas, como uma forma de expressar tudo que pude vê e experimentar na área de tecnologia.</p>
-            <p class="card-text apresentacaoCardText">Atenciosamente Vinícius</p>
-          </div>
-        </div>
-      </article>
-    </div>
-  </div>
-</aside>
-
-<aside class="row">
-  <div id="SobreOsProjetos">
+<aside class="profile-sidebar-content">
+  <section id="crachaDeApresentacao">
     <article>
-      <div class="card-body m-2">
-        <h1 class="card-title">Sobre os Projetos</h1>
-        <h2>Tipos de projeto: </h2>
-        <ul>
-          <li><strong>TESTE:</strong> projetos feitos para experimentar novas abordagens ou projetos simples. </li>
-          <li><strong>PESSOAL:</strong> projetos feitos para um propósito específico.</li>
-        </ul>
-        <p>Se tiver interesse em um tipo específico utilize o filtro de tags presente no accordion entitulado "{{project_filter_accordion_title}}" </p>
+      <h1 class="card-title">Apresentação</h1>
+      <div class="profile-summary">
+        <div class="profile-photo-holder">
+          <img src="{{localFotoPerfil}}" alt="Foto de Vinícius Silvano" />
+        </div>
+        <div class="profile-copy">
+          <p class="apresentacaoCardText">Olá, meu nome é Vinícius Silvano. Bem-vindo ao meu portfólio, onde compartilho informações e artefatos de projetos que desenvolvi.</p>
+          <p>Atualmente sou desenvolvedor Java Full Stack.</p>
+          <p>Este portfólio é uma forma de compartilhar o que aprendi e experimentei na área de tecnologia.</p>
+          <p class="profile-signoff">Atenciosamente, Vinícius</p>
+        </div>
       </div>
     </article>
-  </div>
+  </section>
+
+  <section id="SobreOsProjetos">
+    <article>
+      <h1 class="card-title">Sobre os projetos</h1>
+      <h2>Tipos de projeto</h2>
+      <ul>
+        <li><strong>TESTE:</strong> projetos para experimentar abordagens ou explorar ideias menores.</li>
+        <li><strong>PESSOAL:</strong> projetos criados para um propósito específico.</li>
+      </ul>
+      <p>Use o filtro “{{project_filter_accordion_title}}” para encontrar projetos por tipo.</p>
+    </article>
+  </section>
 </aside>

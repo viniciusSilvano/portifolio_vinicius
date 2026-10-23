@@ -1,5 +1,5 @@
-<div class="custom-card col-sm-12 col-md-12 col-lg-12">
-  <div class="custom-card-header text-center m-2 p-0 short-project-card-header" >
+<div class="custom-card">
+  <div class="custom-card-header text-center short-project-card-header" >
     {{projeto.tituloProjeto | uppercase}}
     <div class="d-flex flex-row mt-3">
       <div class="tag_projeto background-preto-escuro oval_tag ms-3">
@@ -24,22 +24,22 @@
       <app-image-slider [slides]="projeto.imagens" [hideDots]="false"></app-image-slider>
     </div>
   }
-  <div class="text-justify m-2 p-0">
+  <div class="project-description">
     <p>{{projeto.descricao}}</p>
   </div>
   <div class="custom-card-footer">
     <div class="">
       <span class="p-2"><u>TECNOLOGIAS DO PROJETO:</u></span>
-      <div class="mt-3 d-flex flex-row justify-content-around align-content-center flex-wrap" >
+      <div class="technology-list">
         @for (tecnologia of projeto?.tecnologiasAuxiliares; track tecnologia) {
-          <div class="p-2">
+          <div>
             <app-custom-card-tecnologia [clickable]="false" [tecnologia]="tecnologia"></app-custom-card-tecnologia>
           </div>
         }
       </div>
     </div>
-    <div class="row mt-4 ms-2 ps-2 pb-2">
-      <button (click)="notifyParent(projeto.id)" class="btn-secondary" type="button"  styleClass="col-sm-2">Visualizar</button>
+    <div class="project-card-actions">
+      <button (click)="notifyParent(projeto.id)" class="btn btn-primary" type="button">Visualizar</button>
     </div>
   </div>
 </div>
