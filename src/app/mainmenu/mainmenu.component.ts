@@ -7,9 +7,10 @@ import { SocialMediaService } from '../social-media.service';
 import { SocialMediaButton } from '../left-aside-column-classes/socialMediaButton';
 
 @Component({
-  selector: 'app-mainmenu',
-  templateUrl: './mainmenu.component.html',
-  styleUrls: ['./mainmenu.component.css']
+    selector: 'app-mainmenu',
+    templateUrl: './mainmenu.component.html',
+    styleUrls: ['./mainmenu.component.css'],
+    standalone: false
 })
 export class MainmenuComponent implements OnInit {
   projetosDropDownList : ProjetoEspecificacao[];

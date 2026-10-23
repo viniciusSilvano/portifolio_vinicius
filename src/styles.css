@@ -1,5 +1,5 @@
-@import "~bootstrap/dist/css/bootstrap.css";
-@import "~bootstrap-icons/font/bootstrap-icons.css";
+@import "bootstrap/dist/css/bootstrap.css";
+@import "bootstrap-icons/font/bootstrap-icons.css";
 
 :root { --cor-azul-marinho:#182b3a; --cor-azul-marinho-n2:0,123,255; --cor-azul-marinho-n2-opacity:.5; --cor-cinza-escuro:#171f2b; --cor-preto-escuro:#101722; --cor-preto-escuro-disabled:#404b58; --cor-preto-escuro-n2:#202b39; --cor-preto-default:#0b111b; --cor-verde-claro:#173b3b; --cor-bordas-elementos:#29394b; --cor-azul-claro:#67c8f3; --cor-cinza-claro:#e1e8f0; --cor-cinza-claro-n2:#aab8c8; --cor-verde-claro-n2:74,222,185; --cor-verde-claro-n2-opacity:75; --cor-pure-white:255,255,255; --cor-pure-white-opacity:100; --cor-purple:#9b8afb; --system-font-color:var(--cor-cinza-claro); --system-font-color-opacity:var(--cor-pure-white-opacity); --system-hover-focus-color:var(--cor-azul-claro); --system-disabled-color:var(--cor-preto-escuro-disabled); --system-disabled-font-color:var(--cor-cinza-claro); --system-backgroud-color:var(--cor-preto-escuro); --surface:#111a26; --surface-raised:#172231; --accent:#72d5bd; --accent-soft:rgba(114,213,189,.12); --text-muted:#9eacbd; }
 @font-face { font-family:'Arciform'; src:url('./assets/fonts/Arciform.otf'); }

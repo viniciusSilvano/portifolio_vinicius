@@ -11,9 +11,10 @@ import { Tag, TipoTag } from 'src/app/projetos/projetos-especificacao/class/tag'
 import { TagUtil } from 'src/app/projetos/projetos-especificacao/util/tag_utl';
 
 @Component({
-  selector: 'app-projeto-filters',
-  templateUrl: './projeto-filters.component.html',
-  styleUrls: ['./projeto-filters.component.css']
+    selector: 'app-projeto-filters',
+    templateUrl: './projeto-filters.component.html',
+    styleUrls: ['./projeto-filters.component.css'],
+    standalone: false
 })
 export class ProjetoFiltersComponent implements OnInit {
 

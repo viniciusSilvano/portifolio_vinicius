@@ -2,9 +2,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CustomCardData } from '../class/custom-card-data';
 
 @Component({
-  selector: 'app-custom-card',
-  templateUrl: './custom-card.component.html',
-  styleUrls: ['./custom-card.component.css','../css/custom-card.css']
+    selector: 'app-custom-card',
+    templateUrl: './custom-card.component.html',
+    styleUrls: ['./custom-card.component.css', '../css/custom-card.css'],
+    standalone: false
 })
 export class CustomCardComponent implements OnInit {
 

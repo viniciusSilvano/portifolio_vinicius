@@ -7,9 +7,10 @@ import { AccordionCard, Collapse } from 'src/app/comuns/class/accordion-card';
 
 
 @Component({
-  selector: 'app-projetos-especificacao',
-  templateUrl: './projetos-especificacao.component.html',
-  styleUrls: ['./projetos-especificacao.component.css']
+    selector: 'app-projetos-especificacao',
+    templateUrl: './projetos-especificacao.component.html',
+    styleUrls: ['./projetos-especificacao.component.css'],
+    standalone: false
 })
 
 export class ProjetosEspecificacaoComponent implements OnInit, OnChanges {

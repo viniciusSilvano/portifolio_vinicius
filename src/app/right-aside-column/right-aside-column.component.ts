@@ -3,9 +3,10 @@ import { GlobalStrings } from '../globalStrings/globalString';
 import { PROJECT_FILTER_ACCORDION_TITLE } from '../util/app_constants';
 
 @Component({
-  selector: 'app-right-aside-column',
-  templateUrl: './right-aside-column.component.html',
-  styleUrls: ['./right-aside-column.component.css']
+    selector: 'app-right-aside-column',
+    templateUrl: './right-aside-column.component.html',
+    styleUrls: ['./right-aside-column.component.css'],
+    standalone: false
 })
 export class RightAsideColumnComponent implements OnInit {
   globalUrl: String = GlobalStrings.getGlobalUrlFragment();
