@@ -5,7 +5,7 @@
   </a>
   <div class="navbar-projects" id="navbarNavDropdown">
     <div ngbDropdown class="d-inline-block">
-      <button class="btn btn-outline-primary" id="dropdownProjetos" ngbDropdownToggle><i class="bi bi-grid-3x3-gap mr-2"></i>Projetos</button>
+      <button class="btn btn-outline-primary" id="dropdownProjetos" ngbDropdownToggle><i class="bi bi-grid-3x3-gap me-2"></i>Projetos</button>
       <div class="MenuDropdown" ngbDropdownMenu aria-labelledby="dropdownProjetos">
         <button *ngFor="let projeto of projetosDropDownList" (click)="navigateToEspecificacao(projeto.id)" class="MenuDropdownItem" ngbDropdownItem>{{projeto.tituloProjeto}}</button>
       </div>

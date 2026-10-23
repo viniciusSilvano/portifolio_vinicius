@@ -2,15 +2,15 @@
   <div class="custom-card-header text-center m-2 p-0 short-project-card-header" >
     {{projeto.tituloProjeto | uppercase}}
     <div class="d-flex flex-row mt-3">
-      <div class="tag_projeto background-preto-escuro oval_tag ml-3">
+      <div class="tag_projeto background-preto-escuro oval_tag ms-3">
         {{getNomeTagPorTipo(projeto.tipo)}}
       </div>
 
-      <div *ngFor="let statusProjeto of projeto.status; let statusIndex = index" class="tag_projeto background-preto-escuro oval_tag ml-3">
+      <div *ngFor="let statusProjeto of projeto.status; let statusIndex = index" class="tag_projeto background-preto-escuro oval_tag ms-3">
         {{getNomeTagPorStatus(statusProjeto)}}
       </div>
 
-       <div *ngFor="let visibilidade of projeto.visibilidade; let visibilidadeIndex = index" class="tag_projeto background-preto-escuro oval_tag ml-3">
+       <div *ngFor="let visibilidade of projeto.visibilidade; let visibilidadeIndex = index" class="tag_projeto background-preto-escuro oval_tag ms-3">
         {{getNomeTagPorVisibilidade(visibilidade)}}
       </div>
     </div>
@@ -30,7 +30,7 @@
         </div>
       </div>
     </div>
-    <div class="row mt-4 ml-2 pl-2 pb-2">
+    <div class="row mt-4 ms-2 ps-2 pb-2">
       <button (click)="notifyParent(projeto.id)" class="btn-secondary" type="button"  styleClass="col-sm-2">Visualizar</button>
     </div>
   </div>
