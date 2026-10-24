@@ -6,18 +6,18 @@ import { Tag, TipoTag } from "../class/tag";
 export class TagUtil{
 
   private static tagsPorStatus = new Map<Number, String>([
-    [0, "Em desenvolvimento"],
-    [1, "Finalizado"]
+    [StatusProjeto.EM_DESENVOLVIMENTO, "Em desenvolvimento"],
+    [StatusProjeto.FINALIZADO, "Finalizado"]
   ]);
 
   private static tagsPorTipo = new Map<Number, String>([
-    [0, 'Projeto Pessoal'],
-    [1, 'Projeto Público/Teste']
+    [TipoProjeto.PESSOAIS, 'Projeto Pessoal'],
+    [TipoProjeto.TESTE_PUBLICOS, 'Projeto Público/Teste']
   ]);
 
    private static tagsPorVisibilidade = new Map<Number, String>([
-    [0, 'Código Público'],
-    [1, 'Código Privado']
+    [Visibilidade.PUBLICO, 'Código Público'],
+    [Visibilidade.PRIVADO, 'Código Privado']
   ]);
 
   private static todasTags : Tag[] = TagUtil.initTodasTags();
@@ -25,15 +25,16 @@ export class TagUtil{
   private static initTodasTags() : Tag[]{
     let tags: Tag[] = []
 
-    TagUtil.addTagFromMapToArray(TagUtil.tagsPorStatus,tags,TipoTag.STATUS_PROJETO);
-    TagUtil.addTagFromMapToArray(TagUtil.tagsPorTipo,tags,TipoTag.TIPO_PROJETO);
+    TagUtil.addTagFromMapToArray(TagUtil.tagsPorStatus,tags,TipoTag.STATUS_PROJETO,'status');
+    TagUtil.addTagFromMapToArray(TagUtil.tagsPorTipo,tags,TipoTag.TIPO_PROJETO,'tipo');
+    TagUtil.addTagFromMapToArray(TagUtil.tagsPorVisibilidade,tags,TipoTag.VISIBILIDADE_PROJETO,'visibilidade');
 
     return tags;
   }
 
-  private static addTagFromMapToArray(map : Map<Number,String>, tags : Tag[],tipoTag : TipoTag){
+  private static addTagFromMapToArray(map : Map<Number,String>, tags : Tag[],tipoTag : TipoTag,campoProjeto: String){
     map.forEach((value: String, key: Number) => {
-      let tag = new Tag(key,value,tipoTag)
+      let tag = new Tag(key,value,tipoTag,campoProjeto)
       tags.push(tag);
     });
   }

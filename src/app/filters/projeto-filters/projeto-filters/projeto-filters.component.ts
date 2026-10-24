@@ -25,8 +25,8 @@ export class ProjetoFiltersComponent implements OnInit {
   projetoFilter = new ProjetoFilter(new SearchUtil(),new ArraysUtil(),new StringUtil());
   todasTags : Tag[] = TagUtil.retornarTodasAsTags();
 
-  @Output() resultadoFiltro: EventEmitter<ResultadoProjetoFilter> = new EventEmitter(); 
-  
+  @Output() resultadoFiltro: EventEmitter<ResultadoProjetoFilter> = new EventEmitter();
+
   constructor() {}
 
   ngOnInit() {
@@ -47,7 +47,7 @@ export class ProjetoFiltersComponent implements OnInit {
     )
     this.resetFilteredProjectsList();
     let resultado: ResultadoProjetoFilter =  {
-      projetosCardsFiltered: this.projetosCardsFiltered, 
+      projetosCardsFiltered: this.projetosCardsFiltered,
       qualquerfiltroAcionado: this.projetoFilter.temQualquerFiltroAcionado()
     };
     this.resultadoFiltro.emit(
@@ -83,8 +83,12 @@ export class ProjetoFiltersComponent implements OnInit {
   }
 
   tagSelecionadaParaFiltro(tag: Tag): Boolean{
-    return this.projetoFilter.tagsParaFiltrarPorTipoTag.get(TipoTag.STATUS_PROJETO).includes(tag)
-      || this.projetoFilter.tagsParaFiltrarPorTipoTag.get(TipoTag.TIPO_PROJETO).includes(tag);
+    for(const chaveTag of this.projetoFilter.tagsParaFiltrarPorTipoTag.keys()){
+      if(this.projetoFilter.tagsParaFiltrarPorTipoTag.get(chaveTag) && this.projetoFilter.tagsParaFiltrarPorTipoTag.get(chaveTag)?.includes(tag)){
+        return true;
+      }
+    }
+    return false;
   }
 
 }

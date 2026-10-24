@@ -118,7 +118,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia
         ],
         status: [StatusProjeto.FINALIZADO],
-        visibilidade: [Visibilidade.PRIVADO]
+        visibilidade: Visibilidade.PRIVADO
     },
     {
         id:2,
@@ -200,7 +200,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             }
         ],
         status: [StatusProjeto.FINALIZADO],
-        visibilidade: [Visibilidade.PRIVADO]
+        visibilidade: Visibilidade.PRIVADO
     },
     {
         id: 3,
@@ -229,7 +229,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         tituloProjeto: "Java Test Project",
         tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia],
         status: [StatusProjeto.FINALIZADO],
-        visibilidade: [Visibilidade.PUBLICO]
+        visibilidade: Visibilidade.PUBLICO
     },
     {
         id: 4,
@@ -258,7 +258,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         tituloProjeto: "Angular 2+ Tests Project",
         tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 9}) as Tecnologia],
         status: [StatusProjeto.FINALIZADO],
-        visibilidade: [Visibilidade.PUBLICO]
+        visibilidade: Visibilidade.PUBLICO
     },
     {
         id: 5,
@@ -329,7 +329,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 11}) as Tecnologia
         ],
         status: [StatusProjeto.FINALIZADO],
-        visibilidade: [Visibilidade.PRIVADO]
+        visibilidade: Visibilidade.PRIVADO
     },
     {
         id: 6,
@@ -383,7 +383,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         tituloProjeto: "Primeiro Portifólio Vinícius",
         tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 9}) as Tecnologia],
         status: [StatusProjeto.EM_DESENVOLVIMENTO],
-        visibilidade: [Visibilidade.PUBLICO]
+        visibilidade: Visibilidade.PUBLICO
     },
     {
         id: 7,
@@ -436,7 +436,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 15}) as Tecnologia
         ],
         status: [StatusProjeto.EM_DESENVOLVIMENTO],
-        visibilidade: [Visibilidade.PRIVADO]
+        visibilidade: Visibilidade.PRIVADO
     },
     {
         id: 8,
@@ -490,6 +490,6 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 16}) as Tecnologia
         ],
         status: [StatusProjeto.EM_DESENVOLVIMENTO],
-        visibilidade: [Visibilidade.PRIVADO]
+        visibilidade: Visibilidade.PRIVADO
     }
 ];

@@ -12,7 +12,7 @@ export interface ProjetoEspecificacao extends Entidade{
     tipo: TipoProjeto
     accordionCards: AccordionCard[],
     status: StatusProjeto[];
-    visibilidade: Visibilidade[];
+    visibilidade: Visibilidade;
 }
 
 export enum TipoProjeto{

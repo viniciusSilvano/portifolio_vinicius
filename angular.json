@@ -59,19 +59,29 @@
                   "maximumWarning": "6kb"
                 }
               ]
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
           }
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "buildTarget": "portifolio_vinicius:build"
+            "buildTarget": "portifolio_vinicius:build:development"
           },
           "configurations": {
             "production": {
               "buildTarget": "portifolio_vinicius:build:production"
+            },
+            "development": {
+              "buildTarget": "portifolio_vinicius:build:development"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
@@ -171,5 +181,3 @@
     }
   }
 }
-
-

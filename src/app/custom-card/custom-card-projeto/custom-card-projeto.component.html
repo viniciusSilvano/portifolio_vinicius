@@ -12,11 +12,9 @@
         </div>
       }
 
-      @for (visibilidade of projeto.visibilidade; track visibilidade; let visibilidadeIndex = $index) {
-        <div class="tag_projeto background-preto-escuro oval_tag ms-3">
-          {{getNomeTagPorVisibilidade(visibilidade)}}
-        </div>
-      }
+      <div class="tag_projeto background-preto-escuro oval_tag ms-3">
+        {{getNomeTagPorVisibilidade(projeto.visibilidade)}}
+      </div>
     </div>
   </div>
   @if (projeto.imagens) {
