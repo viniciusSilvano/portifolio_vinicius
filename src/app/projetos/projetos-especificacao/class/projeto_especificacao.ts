@@ -20,7 +20,7 @@ export enum TipoProjeto{
 }
 
 export enum StatusProjeto{
-    EM_DESENVOLVIMENTO, FINALIZADO
+    EM_DESENVOLVIMENTO, FINALIZADO, EM_PRODUCAO
 }
 
 export enum Visibilidade{

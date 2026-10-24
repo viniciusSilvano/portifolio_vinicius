@@ -7,7 +7,8 @@ export class TagUtil{
 
   private static tagsPorStatus = new Map<Number, String>([
     [StatusProjeto.EM_DESENVOLVIMENTO, "Em desenvolvimento"],
-    [StatusProjeto.FINALIZADO, "Finalizado"]
+    [StatusProjeto.FINALIZADO, "Finalizado"],
+    [StatusProjeto.EM_PRODUCAO, "Em produção"]
   ]);
 
   private static tagsPorTipo = new Map<Number, String>([

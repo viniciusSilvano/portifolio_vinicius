@@ -382,7 +382,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 9}) as Tecnologia,
         tituloProjeto: "Primeiro Portifólio Vinícius",
         tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 9}) as Tecnologia],
-        status: [StatusProjeto.EM_DESENVOLVIMENTO],
+        status: [StatusProjeto.EM_PRODUCAO],
         visibilidade: Visibilidade.PUBLICO
     },
     {
