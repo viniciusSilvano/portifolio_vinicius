@@ -11,6 +11,48 @@ export enum PROJETOS{
   NONE, ALUGUEIS, SGQ_SISTEMA_GERENCIAMENTO_QUESTAO,TESTE_JAVA_PROJECT,TESTE_ANGULAR_TWO_PLUS_PROJECT,RED_ZERO_TCC,MEU_PRIMEIRO_PORTIFOLIO,CONTROLE_DESPESAS,PORTIFOLIO_BACKEND
 }
 
+enum ACCORDION_CARDS_ENUM{
+  NONE,DESCRICAO,SOBRE,ONDE_ESTA_O_CODIGO
+}
+
+interface AccordionTopic{
+  descricao? : ACCORDION_CARDS_ENUM.DESCRICAO,
+  sobreProjeto? : ACCORDION_CARDS_ENUM.SOBRE,
+  ondeEstaOCodigo?: ACCORDION_CARDS_ENUM.ONDE_ESTA_O_CODIGO
+}
+
+const accordionCardsByProject : Record<PROJETOS,AccordionTopic | undefined> = {
+  [PROJETOS.ALUGUEIS]: {
+    descricao: ACCORDION_CARDS_ENUM.DESCRICAO,
+    sobreProjeto: ACCORDION_CARDS_ENUM.SOBRE
+  },
+  [PROJETOS.SGQ_SISTEMA_GERENCIAMENTO_QUESTAO]: {
+    descricao: ACCORDION_CARDS_ENUM.DESCRICAO
+  },
+  [PROJETOS.TESTE_JAVA_PROJECT]: {
+    descricao: ACCORDION_CARDS_ENUM.DESCRICAO,
+    ondeEstaOCodigo: ACCORDION_CARDS_ENUM.ONDE_ESTA_O_CODIGO
+  },
+  [PROJETOS.TESTE_ANGULAR_TWO_PLUS_PROJECT]: {
+    descricao: ACCORDION_CARDS_ENUM.DESCRICAO,
+    ondeEstaOCodigo: ACCORDION_CARDS_ENUM.ONDE_ESTA_O_CODIGO
+  },
+  [PROJETOS.RED_ZERO_TCC]: {
+    descricao: ACCORDION_CARDS_ENUM.DESCRICAO
+  },
+  [PROJETOS.MEU_PRIMEIRO_PORTIFOLIO]: {
+    descricao: ACCORDION_CARDS_ENUM.DESCRICAO,
+    ondeEstaOCodigo: ACCORDION_CARDS_ENUM.ONDE_ESTA_O_CODIGO
+  },
+  [PROJETOS.CONTROLE_DESPESAS]: {
+    descricao: ACCORDION_CARDS_ENUM.DESCRICAO
+  },
+  [PROJETOS.PORTIFOLIO_BACKEND]: {
+    descricao: ACCORDION_CARDS_ENUM.DESCRICAO
+  },
+  [PROJETOS.NONE]: undefined
+}
+
 export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
     {
         id: PROJETOS.ALUGUEIS,
@@ -32,7 +74,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         ],
         accordionCards: [
             {
-                id: 1,
+                id: accordionCardsByProject[PROJETOS.ALUGUEIS]?.descricao,
                 tituloDescricao: "Descrição",
                 descricao:`
                 <article>
@@ -79,7 +121,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                 collapse: Collapse.COLLAPSED
             },
             {
-                id: 2,
+                id: accordionCardsByProject[PROJETOS.ALUGUEIS]?.sobreProjeto,
                 tituloDescricao: "Sobre o Projeto",
                 descricao:`
                 <article>
@@ -163,7 +205,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         ],
         accordionCards: [
             {
-                id: 1,
+                id: accordionCardsByProject[PROJETOS.SGQ_SISTEMA_GERENCIAMENTO_QUESTAO]?.descricao,
                 tituloDescricao: "Descrição",
                 descricao:
                 `
@@ -217,13 +259,13 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         ],
         accordionCards: [
             {
-                id: 1,
+                id: accordionCardsByProject[PROJETOS.TESTE_JAVA_PROJECT]?.descricao,
                 tituloDescricao: "Sobre o projeto",
                 descricao: "<article><p>Projeto utilizado para testes e brincadeiras em java. Apesar do seu objetivo tentei caprichar no código.<p/></article>",
                 collapse: Collapse.COLLAPSED
             },
             {
-                id: 2,
+                id: accordionCardsByProject[PROJETOS.TESTE_JAVA_PROJECT]?.ondeEstaOCodigo,
                 tituloDescricao: "Onde está o código?",
                 descricao: "<a target=\"_blank\" href=\"https://github.com/viniciusSilvano/testesJava\">link para o github</a>",
                 collapse: Collapse.COLLAPSED
@@ -246,13 +288,13 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         ],
         accordionCards: [
             {
-                id: 1,
+                id: accordionCardsByProject[PROJETOS.TESTE_ANGULAR_TWO_PLUS_PROJECT]?.descricao,
                 tituloDescricao: "Sobre o projeto",
                 descricao: "<article><p>Projeto utilizado para testes e brincadeiras em angular. Apesar do seu objetivo tentei caprichar no código.<p/></article>",
                 collapse: Collapse.COLLAPSED
             },
             {
-                id: 2,
+                id: accordionCardsByProject[PROJETOS.TESTE_ANGULAR_TWO_PLUS_PROJECT]?.ondeEstaOCodigo,
                 tituloDescricao: "Onde está o código?",
                 descricao: "<a target=\"_blank\" href=\"https://github.com/viniciusSilvano/angularDoisMaisTestes\">link para o github</a>",
                 collapse: Collapse.COLLAPSED
@@ -277,7 +319,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         ],
         accordionCards: [
             {
-                id: 1,
+                id: accordionCardsByProject[PROJETOS.RED_ZERO_TCC]?.descricao,
                 tituloDescricao: "Sobre o projeto",
                 descricao:
                     `
@@ -354,7 +396,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         ],
         accordionCards: [
             {
-                id: 1,
+                id: accordionCardsByProject[PROJETOS.MEU_PRIMEIRO_PORTIFOLIO]?.descricao,
                 tituloDescricao: "Sobre o projeto",
                 descricao:
                     `
@@ -371,7 +413,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                 collapse: Collapse.COLLAPSED
             },
             {
-                id: 2,
+                id: accordionCardsByProject[PROJETOS.MEU_PRIMEIRO_PORTIFOLIO]?.ondeEstaOCodigo,
                 tituloDescricao: "Repositório de código",
                 descricao:
                     `
@@ -400,7 +442,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         ],
         accordionCards: [
             {
-                id: 1,
+                id: accordionCardsByProject[PROJETOS.CONTROLE_DESPESAS]?.descricao,
                 tituloDescricao: "Sobre o projeto",
                 descricao:
                     `
@@ -452,7 +494,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         ],
         accordionCards: [
             {
-                id: 1,
+                id: accordionCardsByProject[PROJETOS.PORTIFOLIO_BACKEND]?.descricao,
                 tituloDescricao: "Sobre o projeto",
                 descricao:
                     `
