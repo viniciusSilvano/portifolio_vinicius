@@ -50,3 +50,14 @@ git fetch --all --tags
 ## Change to tag
 git checkout tags/v1.0 -b v1.0-branch
 
+
+
+## Adicionar um projeto
+
+1. Crie um arquivo em `src/app/projetos/projetos-especificacao/data/`, usando os arquivos existentes como exemplo.
+2. Defina o projeto como `ProjetoEspecificacao`. Informe o próximo identificador em `projeto-dados-comuns.ts` e use-o no campo `id`.
+3. Coloque as imagens em uma pasta própria dentro de `src/assets/images/`. Referencie cada imagem com `GlobalStrings.getAssetUrl("images/nome-da-pasta/arquivo.png")` e preencha o texto `alt`.
+4. Importe o novo registro em `PROJETOS_DADOS.ts` e inclua-o na lista `PROJETOS_ESPECIFICACOES`.
+5. Use `TipoProjeto`, `StatusProjeto` e `Visibilidade` para preencher classificação, situação e visibilidade. Associe as tecnologias existentes em `src/app/tecnologias/data/TECNOLOGIAS_DADOS.ts`.
+
+As descrições detalhadas ficam nos campos `accordionCards` do próprio projeto. IDs de seção: `AccordionSectionId.DESCRIPTION` para descrição, `AccordionSectionId.ABOUT` para seção complementar e `AccordionSectionId.SOURCE` para link/código.

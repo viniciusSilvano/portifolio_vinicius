@@ -4,7 +4,7 @@ import { TECNOLOGIA_ENUM, TECNOLOGIAS } from '../../../tecnologias/data/TECNOLOG
 import { SearchUtil } from '../../../util/search_util';
 import { Tecnologia } from '../../../tecnologias/class/tecnologia';
 import { Collapse } from '../../../comuns/class/accordion-card';
-import { PROJETOS, accordionCardsByProject } from './projeto-dados-comuns';
+import { AccordionSectionId, PROJETOS } from './projeto-dados-comuns';
 const _SEARCH_UTIL = new SearchUtil();
 
 export const projeto: ProjetoEspecificacao = {
@@ -27,7 +27,7 @@ export const projeto: ProjetoEspecificacao = {
         ],
         accordionCards: [
             {
-                id: accordionCardsByProject[PROJETOS.ALUGUEIS]?.descricao,
+                id: AccordionSectionId.DESCRIPTION,
                 tituloDescricao: "Descrição",
                 descricao:`
                 <article>
@@ -74,7 +74,7 @@ export const projeto: ProjetoEspecificacao = {
                 collapse: Collapse.COLLAPSED
             },
             {
-                id: accordionCardsByProject[PROJETOS.ALUGUEIS]?.sobreProjeto,
+                id: AccordionSectionId.ABOUT,
                 tituloDescricao: "Sobre o Projeto",
                 descricao:`
                 <article>
