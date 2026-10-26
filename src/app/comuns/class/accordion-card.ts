@@ -3,7 +3,7 @@ import { ProjetoEspecificacao } from "src/app/projetos/projetos-especificacao/cl
 import { Tecnologia } from "src/app/tecnologias/class/tecnologia";
 
 export abstract class AccordionCard implements Entidade{
-  id: Number;
+  id?: Number;
   tituloDescricao: string;
   descricao: string;
   collapse: Collapse;
