@@ -1,15 +1,19 @@
 import { ProjetoEspecificacao, TipoProjeto, StatusProjeto, Visibilidade } from "../class/projeto_especificacao";
 import { GlobalStrings } from '../../../globalStrings/globalString';
-import { TECNOLOGIAS } from "../../../tecnologias/data/TECNOLOGIAS_DADOS";
+import { TECNOLOGIA_ENUM, TECNOLOGIAS } from "../../../tecnologias/data/TECNOLOGIAS_DADOS";
 import { SearchUtil } from "../../../util/search_util";
 import { Tecnologia } from "../../../tecnologias/class/tecnologia";
 import { Collapse } from "src/app/comuns/class/accordion-card";
 
 const _SEARCH_UTIL = new SearchUtil();
 
+export enum PROJETOS{
+  NONE, ALUGUEIS, SGQ_SISTEMA_GERENCIAMENTO_QUESTAO,TESTE_JAVA_PROJECT,TESTE_ANGULAR_TWO_PLUS_PROJECT,RED_ZERO_TCC,MEU_PRIMEIRO_PORTIFOLIO,CONTROLE_DESPESAS,PORTIFOLIO_BACKEND
+}
+
 export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
     {
-        id:1,
+        id: PROJETOS.ALUGUEIS,
         tituloProjeto:"Alugueis",
         tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 1}) as Tecnologia,//logo android
         descricao:"sistema mobile de alugueis e controle de estoque feito em JAVA",
@@ -114,16 +118,16 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             }
         ],
         tecnologiasAuxiliares:[
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 1}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.ANDROID}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.JAVA}) as Tecnologia
         ],
         status: [StatusProjeto.FINALIZADO],
         visibilidade: Visibilidade.PRIVADO
     },
     {
-        id:2,
+        id: PROJETOS.SGQ_SISTEMA_GERENCIAMENTO_QUESTAO,
         tituloProjeto:"SGQ(Sistema de Gerenciamento de Questão) - TCC",
-        tecnologia:   _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 2}) as Tecnologia, // Spring boot
+        tecnologia:   _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.SPRING_BOOT}) as Tecnologia, // Spring boot
         tipo: TipoProjeto.PESSOAIS,
         descricao: `meu projeto de conclusão de curso da faculdade feito com o framework SPRING BOOT.
         Ele serve para o coordenador de um curso de ensino criar provas
@@ -149,13 +153,13 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
             {source:GlobalStrings.getAssetUrl("images/projeto-sgq/consultarProva.PNG"),alt:"Tela de consultar provas"}
         ],
         tecnologiasAuxiliares:[
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 2}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 3}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 4}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 5}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 6}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 7}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.SPRING_BOOT}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.BOOTSTRAP}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.JQUERY}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.POSTGRES_SQL}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.TINYMCE}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.THYMELEAF}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.JAVA}) as Tecnologia
         ],
         accordionCards: [
             {
@@ -203,7 +207,7 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
         visibilidade: Visibilidade.PRIVADO
     },
     {
-        id: 3,
+        id: PROJETOS.TESTE_JAVA_PROJECT,
         descricao: "Projeto de testes em JAVA, parceiro do angular tests. Obs: tentei caprichar no código.",
         tipo: TipoProjeto.TESTE_PUBLICOS,
         imagens: [
@@ -225,14 +229,14 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                 collapse: Collapse.COLLAPSED
             }
         ],
-        tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
+        tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.JAVA}) as Tecnologia,
         tituloProjeto: "Java Test Project",
-        tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia],
+        tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.JAVA}) as Tecnologia],
         status: [StatusProjeto.FINALIZADO],
         visibilidade: Visibilidade.PUBLICO
     },
     {
-        id: 4,
+        id: PROJETOS.TESTE_ANGULAR_TWO_PLUS_PROJECT,
         descricao: "Projeto de testes em ANGULAR, parceiro do java tests. Obs: tentei caprichar no código.",
         tipo: TipoProjeto.TESTE_PUBLICOS,
         imagens: [
@@ -254,14 +258,14 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                 collapse: Collapse.COLLAPSED
             }
         ],
-        tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 9}) as Tecnologia,
+        tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.ANGULAR}) as Tecnologia,
         tituloProjeto: "Angular 2+ Tests Project",
-        tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 9}) as Tecnologia],
+        tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.ANGULAR}) as Tecnologia],
         status: [StatusProjeto.FINALIZADO],
         visibilidade: Visibilidade.PUBLICO
     },
     {
-        id: 5,
+        id: PROJETOS.RED_ZERO_TCC,
         descricao: "Projeto final do curso de game designer da Seven/Redzero feito no framework UNITY",
         tipo: TipoProjeto.PESSOAIS,
         imagens: [
@@ -322,17 +326,17 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                 collapse: Collapse.COLLAPSED
             }
         ],
-        tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 10}) as Tecnologia,
+        tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.UNITY}) as Tecnologia,
         tituloProjeto: "Projeto final Redzero",
         tecnologiasAuxiliares: [
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 10}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 11}) as Tecnologia
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.UNITY}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.C_SHARP}) as Tecnologia
         ],
         status: [StatusProjeto.FINALIZADO],
         visibilidade: Visibilidade.PRIVADO
     },
     {
-        id: 6,
+        id: PROJETOS.MEU_PRIMEIRO_PORTIFOLIO,
         descricao: 'Meu primeiro portifólio da área de T.I. Feito no ANGULAR ',
         tipo: TipoProjeto.PESSOAIS,
         imagens:[
@@ -379,14 +383,14 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                 collapse: Collapse.COLLAPSED
             }
         ],
-        tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 9}) as Tecnologia,
+        tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.ANGULAR}) as Tecnologia,
         tituloProjeto: "Primeiro Portifólio Vinícius",
-        tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 9}) as Tecnologia],
+        tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.ANGULAR}) as Tecnologia],
         status: [StatusProjeto.EM_PRODUCAO],
         visibilidade: Visibilidade.PUBLICO
     },
     {
-        id: 7,
+        id: PROJETOS.CONTROLE_DESPESAS,
         descricao: 'Meu projeto para controle de despesas pessoais, feito no SPRING BOOT',
         tipo: TipoProjeto.PESSOAIS,
         imagens:[
@@ -422,24 +426,24 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                 collapse: Collapse.COLLAPSED
             }
         ],
-        tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
+        tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.JAVA}) as Tecnologia,
         tituloProjeto: "Controlador de Despesas Silvano",
         tecnologiasAuxiliares: [
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 2}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 3}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 5}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 7}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 12}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 13}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 14}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 15}) as Tecnologia
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.SPRING_BOOT}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.BOOTSTRAP}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.POSTGRES_SQL}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.THYMELEAF}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.JAVA}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.LOMBOK}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.JUNIT}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.MOCKITO}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.APACHE_MAVEN}) as Tecnologia
         ],
         status: [StatusProjeto.EM_DESENVOLVIMENTO],
         visibilidade: Visibilidade.PRIVADO
     },
     {
-        id: 8,
+        id: PROJETOS.PORTIFOLIO_BACKEND,
         descricao: 'Projeto de backend para o portifólio, feito no SPRING BOOT',
         tipo: TipoProjeto.PESSOAIS,
         imagens:[
@@ -477,17 +481,17 @@ export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [
                 collapse: Collapse.COLLAPSED
             }
         ],
-        tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
+        tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.JAVA}) as Tecnologia,
         tituloProjeto: "Backend Portifólio Vinícius",
         tecnologiasAuxiliares: [
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 2}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 5}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 8}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 12}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 13}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 14}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 15}) as Tecnologia,
-            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: 16}) as Tecnologia
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.SPRING_BOOT}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.POSTGRES_SQL}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.JAVA}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.LOMBOK}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.JUNIT}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.MOCKITO}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.APACHE_MAVEN}) as Tecnologia,
+            _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.FLYWAYDB}) as Tecnologia
         ],
         status: [StatusProjeto.EM_DESENVOLVIMENTO],
         visibilidade: Visibilidade.PRIVADO

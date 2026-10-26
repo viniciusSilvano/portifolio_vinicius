@@ -1,71 +1,77 @@
 import {Tecnologia} from "../class/tecnologia";
 
+
+export enum TECNOLOGIA_ENUM{
+  NONE,ANDROID,SPRING_BOOT,BOOTSTRAP,JQUERY,POSTGRES_SQL,TINYMCE,THYMELEAF,JAVA,ANGULAR,UNITY,C_SHARP,LOMBOK,JUNIT,MOCKITO,APACHE_MAVEN,FLYWAYDB
+}
+
 export const TECNOLOGIAS: Tecnologia[] = [
     {
-        id:1,
+        id: TECNOLOGIA_ENUM.ANDROID,
         nome:"ANDROID"
     },
     {
-        id:2,
+        id: TECNOLOGIA_ENUM.SPRING_BOOT,
         nome:"SPRING BOOT"
     },
     {
-        id:3,
+        id: TECNOLOGIA_ENUM.BOOTSTRAP,
         nome:"Bootstrap"
     },
     {
-        id:4,
+        id: TECNOLOGIA_ENUM.JQUERY,
         nome:"Jquery"
     },
     {
-        id: 5,
+        id: TECNOLOGIA_ENUM.POSTGRES_SQL,
         nome: "PostgreSQL"
     },
     {
-        id:6,
+        id: TECNOLOGIA_ENUM.TINYMCE,
         nome:"Tinymce"
     },
     {
-        id: 7,
+        id: TECNOLOGIA_ENUM.THYMELEAF,
         nome:"Thymeleaf"
     },
     {
-        id: 8,
+        id: TECNOLOGIA_ENUM.JAVA,
         nome: "Java"
     },
     {
-        id: 9,
+        id: TECNOLOGIA_ENUM.ANGULAR,
         nome: "Angular"
     },
     {
-        id: 10,
+        id: TECNOLOGIA_ENUM.UNITY,
         nome: "Unity"
     },
     {
-        id: 11,
+        id: TECNOLOGIA_ENUM.C_SHARP,
         nome: "C#"
     },
     {
-        id: 12,
+        id: TECNOLOGIA_ENUM.LOMBOK,
         nome: "Lombok"
     },
     {
-        id: 13,
+        id: TECNOLOGIA_ENUM.JUNIT,
         nome: "Junit"
     },
     {
-        id: 14,
+        id: TECNOLOGIA_ENUM.MOCKITO,
         nome: "Mockito"
     },
     {
-        id: 15,
+        id: TECNOLOGIA_ENUM.APACHE_MAVEN,
         nome: "Apache Maven"
     },
     {
-        id: 16,
+        id: TECNOLOGIA_ENUM.FLYWAYDB,
         nome: "FlyWayDb"
     }
 
 ]
+
 
 
