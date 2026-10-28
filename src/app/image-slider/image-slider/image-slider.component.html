@@ -1,11 +1,24 @@
 <div class="image-slider-sm">
   <button class="slider-arrow" type="button" (click)="onClickLeftArrow()" [class.is-boundary]="isFirstSlide()" aria-label="Imagem anterior">❰</button>
-  <div class="slide-sm" [ngStyle]="{'background-image': getCurrentSliderUrl()}"></div>
+  <div class="slide-sm" [ngStyle]="{'background-image': getCurrentSliderUrl()}">
+
+    @if (getCurrentImageTitle()) {
+      <div  class="slide-description">
+        {{ getCurrentImageTitle() }}
+      </div>
+    }
+  </div>
   <button class="slider-arrow" type="button" (click)="onClickRightArrow()" [class.is-boundary]="isLastSlide()" aria-label="Próxima imagem">❱</button>
 </div>
 
 <div class="image-slider-md">
-  <div class="slide-md" [ngStyle]="{'background-image': getCurrentSliderUrl()}"></div>
+  <div class="slide-md" [ngStyle]="{'background-image': getCurrentSliderUrl()}">
+    @if (getCurrentImageTitle()) {
+      <div  class="slide-description">
+        {{ getCurrentImageTitle() }}
+      </div>
+    }
+  </div>
   <div class="footer-slider">
     <button class="slider-arrow" type="button" (click)="onClickLeftArrow()" [class.is-boundary]="isFirstSlide()" aria-label="Imagem anterior">❰</button>
     <div class="slider-dots">

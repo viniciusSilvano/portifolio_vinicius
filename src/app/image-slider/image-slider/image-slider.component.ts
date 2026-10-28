@@ -54,7 +54,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
 
   goToNext(): void{
     const isLastSlide = this.currentIndex === this.slides.length - 1;
-    const newIndex = isLastSlide ? 0 : this.currentIndex + 1; 
+    const newIndex = isLastSlide ? 0 : this.currentIndex + 1;
     this.currentIndex = newIndex;
   }
 
@@ -74,7 +74,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
   goToPrevious(): void{
     const isFirstSlide = this.isFirstSlide();
     const newIndex = isFirstSlide ? this.slides.length - 1 : this.currentIndex - 1;
-    this.currentIndex = newIndex 
+    this.currentIndex = newIndex
   }
 
 
@@ -85,6 +85,10 @@ export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
 
   getCurrentSliderUrl() : String{
     return `url(${this.slides[this.currentIndex].source})`;
+  }
+
+  getCurrentImageTitle() : String | undefined{
+    return this.slides[this.currentIndex].title;
   }
 
   checkCurrentDot(indexDot): Boolean{

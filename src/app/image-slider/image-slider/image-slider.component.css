@@ -13,3 +13,4 @@
 .slider-dot:hover,.slider-dot.dot_atual { color:var(--accent); }
 @media (max-width:899px) { .image-slider-sm { display:flex; } .image-slider-md { display:none; } .image-slider-sm .slider-arrow { width:34px; height:34px; } }
 @media (min-width:900px) { .image-slider-sm { display:none; } .image-slider-md { display:flex; } }
+.slide-description{position: relative; width: 100%; top: 75%;bottom: 0; right: 0; left: 0; text-align: center; background:rgba(17,26,38,.82);}
