@@ -22,7 +22,10 @@ export const projeto: ProjetoEspecificacao = {
             {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/especificacao-projeto-v2.1.6-min.png"),alt:"print tela de especificação do projeto da versão 2.1.6 do portifólio",title: 'Tela de especificação do projeto do portifólio, versão 2.1.6'},
             {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/projetos-2.6.0-min.png"),alt:"print tela de projetos da versão 2.6.0 do portifólio",title: 'Tela de projetos do portifólio, versão 2.6.0'},
             {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/projetos-2.6.0_2-min.png"),alt:"print tela de projetos da versão 2.6.0 do portifólio segunda parte",title: 'Segunda parte da tela de projetos do portifólio, versão 2.6.0'},
-            {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/especificacao-projeto-2.6.0-min.png"),alt:"print tela de especificação do projeto da versão 2.6.0 do portifólio",title: 'Tela de especificação do projeto do portifólio, versão 2.6.0'}
+            {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/especificacao-projeto-2.6.0-min.png"),alt:"print tela de especificação do projeto da versão 2.6.0 do portifólio",title: 'Tela de especificação do projeto do portifólio, versão 2.6.0'},
+            {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/home-v2.12.16-min.png"),alt:"print tela inicial da versão 2.12.16",title: 'Home do portifólio, versão 2.12.16'},
+            {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/home-v2.12.16-2-min.png"),alt:"print rodapé tela inicial da versão 2.12.16",title: 'Rodapé da Home do portifólio, versão 2.12.16'},
+            {source: GlobalStrings.getAssetUrl("images/portifolio-vinicius/especificacao-v2.12.16-min.png"),alt:"print tela especificação da versão 2.12.16",title: 'print tela de especificação de projeto, versão 2.12.16'}
         ],
         accordionCards: [
             {
