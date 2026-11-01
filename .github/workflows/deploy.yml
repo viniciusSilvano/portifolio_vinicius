@@ -32,6 +32,10 @@ jobs:
           cache: npm
 
       - name: Install dependencies
+        run: npm build
+        run: npm install
+
+      - name: check dependencies
         run: npm ci
 
       - name: Build Angular application
