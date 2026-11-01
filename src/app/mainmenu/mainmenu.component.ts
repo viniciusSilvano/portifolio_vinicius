@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ProjetoEspecificacao } from '../projetos/projetos-especificacao/class/projeto_especificacao';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -10,11 +10,12 @@ import { SocialMediaButton } from '../left-aside-column-classes/socialMediaButto
     selector: 'app-mainmenu',
     templateUrl: './mainmenu.component.html',
     styleUrls: ['./mainmenu.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class MainmenuComponent implements OnInit {
-  projetosDropDownList : ProjetoEspecificacao[];
-  socialMediaButtons : SocialMediaButton[];
+  projetosDropDownList? : ProjetoEspecificacao[];
+  socialMediaButtons? : SocialMediaButton[];
 
   constructor(
     private  projetoService : ProjetosService,
@@ -26,7 +27,7 @@ export class MainmenuComponent implements OnInit {
   ngOnInit() {
     this.getAllProjetosEspecificacao();
     this.getAllSocialButtons();
-    
+
   }
 
   navigateToEspecificacao(id:number) : void{
@@ -40,7 +41,7 @@ export class MainmenuComponent implements OnInit {
         this.projetosDropDownList = projetos;
       }
     )
-  } 
+  }
 
   private getAllSocialButtons(){
     this.socialMediaService.getSocialMediaButtons().subscribe(

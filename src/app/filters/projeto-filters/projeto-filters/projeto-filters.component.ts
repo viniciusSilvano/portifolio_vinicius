@@ -1,19 +1,20 @@
-import { Component, Input, OnInit, Output} from '@angular/core';
-import { Tecnologia } from 'src/app/tecnologias/class/tecnologia';
+import { Component, Input, OnInit, Output, ChangeDetectionStrategy } from '@angular/core';
+import { Tecnologia } from '../../../../../src/app/tecnologias/class/tecnologia';
 import { ProjetoEspecificacao } from '../../../projetos/projetos-especificacao/class/projeto_especificacao';
 import { ProjetoFilter } from './class/projetoFilter';
 import { EventEmitter } from '@angular/core';
 import { ResultadoProjetoFilter} from './class/resultado-projeto-filter';
-import { SearchUtil } from 'src/app/util/search_util';
-import { ArraysUtil } from 'src/app/util/arrays_util';
-import { StringUtil } from 'src/app/util/string-util';
-import { Tag, TipoTag } from 'src/app/projetos/projetos-especificacao/class/tag';
-import { TagUtil } from 'src/app/projetos/projetos-especificacao/util/tag_utl';
+import { SearchUtil } from '../../../../../src/app/util/search_util';
+import { ArraysUtil } from '../../../../../src/app/util/arrays_util';
+import { StringUtil } from '../../../../../src/app/util/string-util';
+import { Tag, TipoTag } from '../../../../../src/app/projetos/projetos-especificacao/class/tag';
+import { TagUtil } from '../../../../../src/app/projetos/projetos-especificacao/util/tag_utl';
 
 @Component({
     selector: 'app-projeto-filters',
     templateUrl: './projeto-filters.component.html',
     styleUrls: ['./projeto-filters.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ProjetoFiltersComponent implements OnInit {
@@ -33,7 +34,7 @@ export class ProjetoFiltersComponent implements OnInit {
     this.projetoFilter.tecnologiasSelecionadasParaBusca = new Array<number>(this.tecnologiasParaBusca.length);
   }
 
-  filterByItem(value){
+  filterByItem(value : any){
     this.projetoFilter.tituloProjeto = value;
     this.filter();
   }
@@ -62,24 +63,30 @@ export class ProjetoFiltersComponent implements OnInit {
   }
 
   OnClickSearchByTecnologyImage(id: number){
-    if(this.projetoFilter.tecnologiasSelecionadasParaBusca.includes(id)){
-      this.projetoFilter.tecnologiasSelecionadasParaBusca.splice(this.projetoFilter.tecnologiasSelecionadasParaBusca.indexOf(id),1);
-    }else{
-      this.projetoFilter.tecnologiasSelecionadasParaBusca.push(id);
-    }
+    if(this.projetoFilter && this.projetoFilter.tecnologiasSelecionadasParaBusca){
+      if(this.projetoFilter.tecnologiasSelecionadasParaBusca.includes(id)){
+        this.projetoFilter.tecnologiasSelecionadasParaBusca.splice(this.projetoFilter.tecnologiasSelecionadasParaBusca.indexOf(id),1);
+      }else{
+        this.projetoFilter.tecnologiasSelecionadasParaBusca.push(id);
+      }
 
-    this.filter();
+      this.filter();
+    }
   }
 
   OnClickSearchByTag(tag: Tag){
     let key : TipoTag = tag.tipoTag;
-    if(this.projetoFilter.tagsParaFiltrarPorTipoTag.get(key).includes(tag)){
-      this.projetoFilter.tagsParaFiltrarPorTipoTag.get(key).splice(this.projetoFilter.tagsParaFiltrarPorTipoTag.get(key).indexOf(tag),1);
-    }else{
-      this.projetoFilter.tagsParaFiltrarPorTipoTag.get(key).push(tag);
+    if(this.projetoFilter && this.projetoFilter.tagsParaFiltrarPorTipoTag){
+      const tags = this.projetoFilter.tagsParaFiltrarPorTipoTag.get(key);
+      if(tags){
+        if(tags.includes(tag)){
+          tags.splice(tags.indexOf(tag),1);
+        }else{
+          tags.push(tag);
+        }
+      }
+      this.filter();
     }
-
-    this.filter();
   }
 
   tagSelecionadaParaFiltro(tag: Tag): Boolean{

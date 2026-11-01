@@ -1,12 +1,12 @@
-import { ProjetoEspecificacao } from "src/app/projetos/projetos-especificacao/class/projeto_especificacao";
-import { getAllTipoTags, Tag, TipoTag } from "src/app/projetos/projetos-especificacao/class/tag";
-import { ArraysUtil } from "src/app/util/arrays_util";
-import { SearchUtil } from "src/app/util/search_util";
-import { StringUtil } from "src/app/util/string-util";
+import { ProjetoEspecificacao } from "../../../../../../src/app/projetos/projetos-especificacao/class/projeto_especificacao";
+import { getAllTipoTags, Tag, TipoTag } from "../../../../../../src/app/projetos/projetos-especificacao/class/tag";
+import { ArraysUtil } from "../../../../../../src/app/util/arrays_util";
+import { SearchUtil } from "../../../../../../src/app/util/search_util";
+import { StringUtil } from "../../../../../../src/app/util/string-util";
 
 export class ProjetoFilter{
-  tituloProjeto: String;
-  tecnologiasSelecionadasParaBusca: number[];
+  tituloProjeto?: string | undefined;
+  tecnologiasSelecionadasParaBusca?: number[];
   tagsParaFiltrarPorTipoTag : Map<TipoTag,Tag[]> = new Map<TipoTag,Tag[]>();
 
   private _SEARCH_UTIL: SearchUtil;
@@ -18,7 +18,7 @@ export class ProjetoFilter{
     this._ARRAYS_UTIL = arraysUtil;
     this._STRING_UTIL = stringUtil;
 
-    getAllTipoTags().forEach( tipoTag => this.tagsParaFiltrarPorTipoTag.set(tipoTag,[]));
+    getAllTipoTags().forEach( (tipoTag : TipoTag) => this.tagsParaFiltrarPorTipoTag?.set(tipoTag,[]));
   }
 
   public isResetNeeded(): Boolean{
@@ -31,88 +31,56 @@ export class ProjetoFilter{
   }
 
   public filter(projeto: ProjetoEspecificacao): Boolean{
-    let encontrado : Boolean = false;
-
-    if(this.tituloProjeto){
-      console.log('filtrando por tipo projeto!!')
-      encontrado = this.filterByTituloProjeto(projeto);
-
-      if(!encontrado){
-        return false;
-      }
+    if(this.tituloProjeto && !this.filterByTituloProjeto(projeto)){
+      return false;
     }
 
-    if(!this.tecnologiaEstaVazia()){
-      console.log('filtrando por tecnologia!!')
-      encontrado = this.filterByTecnologiasProjeto(this.tecnologiasSelecionadasParaBusca,projeto);
-
-      if(!encontrado){
-        return false;
-      }
+    if(!this.tecnologiaEstaVazia() && !this.filterByTecnologiasProjeto(this.tecnologiasSelecionadasParaBusca, projeto)){
+      return false;
     }
-    for(const chaveTag of this.tagsParaFiltrarPorTipoTag.keys()){
-      if(this.tagsParaFiltrarPorTipoTag.get(chaveTag).length > 0){
-        console.log('filtrando por tag!!')
-        encontrado = this.filterByTags(projeto);
-
-        if(!encontrado){
-          return false;
-        }
-      }
-    }
-
-    return encontrado;
-  }
-
-  private filterByTags(projeto: ProjetoEspecificacao): Boolean{
     return this.filterByAllTags(projeto);
   }
 
   private filterByAllTags(projeto: ProjetoEspecificacao): Boolean{
-    let mapaResultadoFilters:  Map<TipoTag,Boolean> = new Map<TipoTag,Boolean>();
-    for(const chaveTag of this.tagsParaFiltrarPorTipoTag.keys()){
-      console.log('tagsParaFiltrar: ', JSON.stringify(this.tagsParaFiltrarPorTipoTag.get(chaveTag)), ' chave: ', chaveTag );
-      if(this.tagsParaFiltrarPorTipoTag.get(chaveTag)?.length > 0){
-          mapaResultadoFilters.set(chaveTag,false);
-          let predicateAllTags = (tag: Tag,projeto : ProjetoEspecificacao) =>
-            {
-              const valorCampo = projeto[tag.campoProjeto as keyof ProjetoEspecificacao]
-              if(Array.isArray(valorCampo)){
-                for(let campoEnum of valorCampo){
-                  if(tag.id == campoEnum){
-                    return true;
-                  }
-                }
-                return false;
-              }else{
-                return tag.tipoTag == chaveTag && tag.id == valorCampo;
-              }
-            };
-          for(let tag of this.tagsParaFiltrarPorTipoTag.get(chaveTag)){
-            mapaResultadoFilters.set(chaveTag,predicateAllTags(tag,projeto));
-          }
+    for(const [tipoTag, tagsSelecionadas] of this.tagsParaFiltrarPorTipoTag){
+      if(tagsSelecionadas.length === 0){
+        continue;
+      }
 
-      }else{
-        mapaResultadoFilters.set(chaveTag,true);
+      const corresponde = tagsSelecionadas.some(tag => {
+        const valorCampo = projeto[tag.campoProjeto as keyof ProjetoEspecificacao];
+        return Array.isArray(valorCampo)
+          ? (valorCampo as unknown[]).includes(tag.id)
+          : tag.tipoTag === tipoTag && valorCampo === tag.id;
+      });
+
+      if(!corresponde){
+        return false;
       }
     }
-    return [...mapaResultadoFilters.values()].every(value => value == true);
+
+    return true;
   }
 
   private filterByTituloProjeto(projeto: ProjetoEspecificacao) : Boolean {
-    let tituloProjetoAsLower: String = projeto.tituloProjeto.toLowerCase();
-    return tituloProjetoAsLower.includes(this.tituloProjeto.toLowerCase());
+    let tituloProjetoAsLower: string = projeto.tituloProjeto.toLowerCase();
+    if(this.tituloProjeto){
+      return tituloProjetoAsLower.includes(this.tituloProjeto.toLowerCase());
+    }
+    return false;
   }
 
-  private filterByTecnologiasProjeto(tecnologiasSelecionadasParaBusca: number[],projeto: ProjetoEspecificacao): Boolean{
+  private filterByTecnologiasProjeto(tecnologiasSelecionadasParaBusca: number[] | undefined,projeto: ProjetoEspecificacao): Boolean{
 
-    for(var tecnologiaSelecionadasParaBusca of tecnologiasSelecionadasParaBusca){
-      if(tecnologiaSelecionadasParaBusca == projeto.tecnologia.id){
-        return true;
-      }
+    if(projeto && tecnologiasSelecionadasParaBusca){
+      for(var tecnologiaSelecionadasParaBusca of tecnologiasSelecionadasParaBusca){
+        if(tecnologiaSelecionadasParaBusca == projeto.tecnologia.id){
+          return true;
+        }
 
-      if(this._SEARCH_UTIL.binarySearch(projeto.tecnologiasAuxiliares, {id:tecnologiaSelecionadasParaBusca})){
-        return true;
+        if(this._SEARCH_UTIL.binarySearch(projeto.tecnologiasAuxiliares, {id:tecnologiaSelecionadasParaBusca})){
+          return true;
+        }
       }
     }
 
@@ -126,12 +94,16 @@ export class ProjetoFilter{
   }
 
   tecnologiaEstaVazia() : Boolean{
-    return this._ARRAYS_UTIL.isEmptyValueArray(this.tecnologiasSelecionadasParaBusca);
+    if(this.tecnologiasSelecionadasParaBusca){
+      return this._ARRAYS_UTIL.isEmptyValueArray(this.tecnologiasSelecionadasParaBusca);
+    }
+    return true;
   }
 
   tagsEstaVazia() : Boolean{
     for(const chaveTag of this.tagsParaFiltrarPorTipoTag.keys()){
-      if(!this._ARRAYS_UTIL.isEmptyValueArray(this.tagsParaFiltrarPorTipoTag.get(chaveTag))){
+      const tags = this.tagsParaFiltrarPorTipoTag.get(chaveTag);
+      if(tags && !this._ARRAYS_UTIL.isEmptyValueArray(tags)){
         return false;
       }
     }

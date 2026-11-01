@@ -1,29 +1,29 @@
 <div class="custom-card">
   <div class="custom-card-header text-center short-project-card-header" >
-    {{projeto.tituloProjeto | uppercase}}
+    {{projeto?.tituloProjeto | uppercase}}
     <div class="d-flex flex-row mt-3">
       <div class="tag_projeto background-preto-escuro oval_tag ms-3">
-        {{getNomeTagPorTipo(projeto.tipo)}}
+        {{getNomeTagPorTipo(projeto?.tipo)}}
       </div>
 
-      @for (statusProjeto of projeto.status; track statusProjeto; let statusIndex = $index) {
+      @for (statusProjeto of projeto?.status; track statusProjeto; let statusIndex = $index) {
         <div class="tag_projeto background-preto-escuro oval_tag ms-3">
           {{getNomeTagPorStatus(statusProjeto)}}
         </div>
       }
 
       <div class="tag_projeto background-preto-escuro oval_tag ms-3">
-        {{getNomeTagPorVisibilidade(projeto.visibilidade)}}
+        {{getNomeTagPorVisibilidade(projeto?.visibilidade)}}
       </div>
     </div>
   </div>
-  @if (projeto.imagens) {
+  @if (projeto?.imagens) {
     <div #imagesSliderContainer>
       <app-image-slider [slides]="projeto.imagens" [hideDots]="false"></app-image-slider>
     </div>
   }
   <div class="project-description">
-    <p>{{projeto.descricao}}</p>
+    <p>{{projeto?.descricao}}</p>
   </div>
   <div class="custom-card-footer">
     <div class="">
@@ -37,7 +37,7 @@
       </div>
     </div>
     <div class="project-card-actions">
-      <button (click)="notifyParent(projeto.id)" class="btn btn-primary" type="button">Visualizar</button>
+      <button (click)="notifyParent(projeto?.id)" class="btn btn-primary" type="button">Visualizar</button>
     </div>
   </div>
 </div>

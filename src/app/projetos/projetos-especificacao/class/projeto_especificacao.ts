@@ -1,4 +1,4 @@
-import { AccordionCard } from "src/app/comuns/class/accordion-card";
+import { AccordionCard } from "../../../../../src/app/comuns/class/accordion-card";
 import { Imagem, Entidade } from "../../../comuns/class/classesComuns";
 import { Tecnologia } from "../../../tecnologias/class/tecnologia";
 

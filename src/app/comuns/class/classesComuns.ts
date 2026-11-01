@@ -1,8 +1,8 @@
 export interface Imagem{
-  source: String;
-  alt: String;
-  title?: String;
-  descricao?:String;
+  source: string;
+  alt: string;
+  title?: string;
+  descricao?:string;
 }
 
 export interface imageButton extends Imagem{
@@ -10,9 +10,9 @@ export interface imageButton extends Imagem{
 }
 
 export interface Entidade{
-  id: Number;
+  id: number;
 }
 
 export abstract class Obj<T>{
-  abstract equals(obj: T): Boolean; 
+  abstract equals(obj: T): Boolean;
 }

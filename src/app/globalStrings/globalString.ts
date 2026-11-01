@@ -1,4 +1,4 @@
-import { environment } from "src/environments/environment";
+import { environment } from "../../../src/environments/environment";
 
 export abstract class GlobalStrings {
   public static getGlobalUrlFragment(): string {

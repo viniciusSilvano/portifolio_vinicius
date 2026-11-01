@@ -1,4 +1,4 @@
-import { Obj } from "src/app/comuns/class/classesComuns";
+import { Obj } from "../../../../../src/app/comuns/class/classesComuns";
 
 export enum TipoTag{
   TIPO_PROJETO,STATUS_PROJETO,VISIBILIDADE_PROJETO
@@ -9,12 +9,12 @@ export function getAllTipoTags() : TipoTag[]{
 }
 
 export class Tag extends Obj<Tag>{
-  id: Number;
-  nome: String;
+  id: number;
+  nome: string;
   tipoTag: TipoTag;
-  campoProjeto: String;
+  campoProjeto: string;
 
-  constructor(id: Number, nome: String, tipoTag: TipoTag,campoProjeto: String){
+  constructor(id: number, nome: string, tipoTag: TipoTag,campoProjeto: string){
     super();
     this.id = id;
     this.nome = nome;

@@ -1,21 +1,22 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
 import { Subscription, interval, timer } from 'rxjs';
-import { Imagem } from 'src/app/comuns/class/classesComuns';
+import { Imagem } from '../../../../src/app/comuns/class/classesComuns';
 
 @Component({
     selector: 'app-image-slider',
     templateUrl: './image-slider.component.html',
     styleUrls: ['./image-slider.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
 
-  @Input() slides: Imagem[];
-  @Input() hideDots: Boolean;
+  @Input() slides?: Imagem[];
+  @Input() hideDots?: Boolean;
 
   currentIndex: number = 0;
-  timeoutSubscription: Subscription;
-  waitForSubscritionTimer: Subscription;
+  timeoutSubscription?: Subscription;
+  waitForSubscritionTimer?: Subscription;
 
   ngOnInit(): void {
     this.initImageCycle();
@@ -34,7 +35,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnDestroy() {
-    this.timeoutSubscription.unsubscribe();
+    this.timeoutSubscription?.unsubscribe();
   }
 
   constructor() { }
@@ -44,7 +45,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
       this.waitForSubscritionTimer.unsubscribe();
     }
     this.waitForSubscritionTimer = timer(4000).subscribe(() => this.initImageCycle());
-    this.timeoutSubscription.unsubscribe();
+    this.timeoutSubscription?.unsubscribe();
   }
 
   onClickRightArrow(): void{
@@ -53,13 +54,17 @@ export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   goToNext(): void{
-    const isLastSlide = this.currentIndex === this.slides.length - 1;
-    const newIndex = isLastSlide ? 0 : this.currentIndex + 1;
-    this.currentIndex = newIndex;
+    if(this.slides){
+      const isLastSlide = this.currentIndex === this.slides.length - 1;
+      const newIndex = isLastSlide ? 0 : this.currentIndex + 1;
+      this.currentIndex = newIndex;
+    }
   }
 
   isLastSlide(){
-    return this.currentIndex === this.slides.length - 1;
+    if(this.slides){
+      return this.currentIndex === this.slides.length - 1;
+    }
   }
 
   isFirstSlide(){
@@ -72,9 +77,11 @@ export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   goToPrevious(): void{
-    const isFirstSlide = this.isFirstSlide();
-    const newIndex = isFirstSlide ? this.slides.length - 1 : this.currentIndex - 1;
-    this.currentIndex = newIndex
+    if(this.slides){
+      const isFirstSlide = this.isFirstSlide();
+      const newIndex = isFirstSlide ? this.slides.length - 1 : this.currentIndex - 1;
+      this.currentIndex = newIndex;
+    }
   }
 
 
@@ -83,15 +90,20 @@ export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
     this.currentIndex = slideIndex;
   }
 
-  getCurrentSliderUrl() : String{
-    return `url(${this.slides[this.currentIndex].source})`;
+  getCurrentSliderUrl() : string | undefined{
+    if(this.slides){
+      return `url(${this.slides[this.currentIndex].source})`;
+    }
   }
 
-  getCurrentImageTitle() : String | undefined{
-    return this.slides[this.currentIndex].title;
+  getCurrentImageTitle() : string | undefined{
+    if(this.slides){
+      return this.slides[this.currentIndex].title;
+    }
+    return undefined;
   }
 
-  checkCurrentDot(indexDot): Boolean{
+  checkCurrentDot(indexDot : any): Boolean{
     return this.currentIndex == indexDot
   }
 

@@ -1,4 +1,9 @@
 export class CustomCardData{
-  titulo: String;
-  descricao: String;
+  titulo: string;
+  descricao: string;
+
+  constructor(titulo: string, descricao:string){
+    this.titulo = titulo;
+    this.descricao = descricao;
+  }
 }

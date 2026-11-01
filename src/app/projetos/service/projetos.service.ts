@@ -27,9 +27,9 @@ export class ProjetosService{
     return of(result);
   }
 
-  getProjetoEspecificaoById(projetoEspecificacao: ProjetoEspecificacao | number) : Observable<ProjetoEspecificacao>{
+  getProjetoEspecificaoById(projetoEspecificacao: ProjetoEspecificacao | number) : Observable<ProjetoEspecificacao | undefined>{
     const id = typeof projetoEspecificacao === 'number' ? projetoEspecificacao : projetoEspecificacao.id;
-    const result : ProjetoEspecificacao = PROJETOS_ESPECIFICACOES.find(x => x.id == id);
+    const result : ProjetoEspecificacao | undefined  = PROJETOS_ESPECIFICACOES.find(x => x.id == id);
     return of(result);
   }
 
