@@ -7,7 +7,11 @@ const routes: Routes = [
   {
     path: '',
     component: ProjetosComponent,
-    pathMatch: 'full'
+    pathMatch: 'full',
+  },
+  {
+    path: 'projeto',
+    component: ProjetosComponent
   },
   {
     path: 'projeto/:idEspecificacao',
