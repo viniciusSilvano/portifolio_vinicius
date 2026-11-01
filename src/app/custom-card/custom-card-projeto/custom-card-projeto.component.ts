@@ -39,13 +39,13 @@ export class CustomCardProjetoComponent implements OnInit, AfterViewInit {
   }
 
   getNomeTagPorTipo(tipo: TipoProjeto | undefined) : string | undefined{
-    if(tipo){
+    if(tipo !== undefined){
       return TagUtil.retornaNomeTagPorTipoProjeto(tipo);
     }
   }
 
   getNomeTagPorVisibilidade(visibilidade: Visibilidade | undefined) : string | undefined{
-    if(visibilidade){
+    if(visibilidade !== undefined){
       return TagUtil.retornaNomeTagPorVisibilidade(visibilidade);
     }
   }

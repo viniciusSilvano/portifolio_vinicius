@@ -31,79 +31,35 @@ export class ProjetoFilter{
   }
 
   public filter(projeto: ProjetoEspecificacao): Boolean{
-    let encontrado : Boolean = false;
-
-    if(this.tituloProjeto){
-      console.log('filtrando por tipo projeto!!')
-      encontrado = this.filterByTituloProjeto(projeto);
-
-      if(!encontrado){
-        return false;
-      }
+    if(this.tituloProjeto && !this.filterByTituloProjeto(projeto)){
+      return false;
     }
 
-    if(!this.tecnologiaEstaVazia()){
-      console.log('filtrando por tecnologia!!')
-      encontrado = this.filterByTecnologiasProjeto(this.tecnologiasSelecionadasParaBusca,projeto);
-
-      if(!encontrado){
-        return false;
-      }
+    if(!this.tecnologiaEstaVazia() && !this.filterByTecnologiasProjeto(this.tecnologiasSelecionadasParaBusca, projeto)){
+      return false;
     }
-    if(this.tagsParaFiltrarPorTipoTag !== undefined && this.tagsParaFiltrarPorTipoTag.keys.length > 0){
-      for(const chaveTag of this.tagsParaFiltrarPorTipoTag.keys()){
-        if(this.tagsParaFiltrarPorTipoTag.get(chaveTag)){
-          console.log('filtrando por tag!!')
-          encontrado = this.filterByTags(projeto);
-
-          if(!encontrado){
-            return false;
-          }
-        }
-      }
-    }
-
-    return encontrado;
-  }
-
-  private filterByTags(projeto: ProjetoEspecificacao): Boolean{
     return this.filterByAllTags(projeto);
   }
 
   private filterByAllTags(projeto: ProjetoEspecificacao): Boolean{
-    let mapaResultadoFilters:  Map<TipoTag,Boolean> = new Map<TipoTag,Boolean>();
-    if(this.tagsParaFiltrarPorTipoTag){
-      for(const chaveTag of this.tagsParaFiltrarPorTipoTag.keys()){
-        console.log('tagsParaFiltrar: ', JSON.stringify(this.tagsParaFiltrarPorTipoTag.get(chaveTag)), ' chave: ', chaveTag );
-        if(this.tagsParaFiltrarPorTipoTag && this.tagsParaFiltrarPorTipoTag.get(chaveTag)){
-            mapaResultadoFilters.set(chaveTag,false);
-            let predicateAllTags = (tag: Tag,projeto : ProjetoEspecificacao) =>
-              {
-                const valorCampo = projeto[tag.campoProjeto as keyof ProjetoEspecificacao]
-                if(Array.isArray(valorCampo)){
-                  for(let campoEnum of valorCampo){
-                    if(tag.id == campoEnum){
-                      return true;
-                    }
-                  }
-                  return false;
-                }else{
-                  return tag.tipoTag == chaveTag && tag.id == valorCampo;
-                }
-              };
-              const tags = this.tagsParaFiltrarPorTipoTag.get(chaveTag);
-              if(tags){
-                for(let tag of tags){
-                  mapaResultadoFilters.set(chaveTag,predicateAllTags(tag,projeto));
-                }
-              }
+    for(const [tipoTag, tagsSelecionadas] of this.tagsParaFiltrarPorTipoTag){
+      if(tagsSelecionadas.length === 0){
+        continue;
+      }
 
-        }else{
-          mapaResultadoFilters.set(chaveTag,true);
-        }
+      const corresponde = tagsSelecionadas.some(tag => {
+        const valorCampo = projeto[tag.campoProjeto as keyof ProjetoEspecificacao];
+        return Array.isArray(valorCampo)
+          ? (valorCampo as unknown[]).includes(tag.id)
+          : tag.tipoTag === tipoTag && valorCampo === tag.id;
+      });
+
+      if(!corresponde){
+        return false;
       }
     }
-    return [...mapaResultadoFilters.values()].every(value => value == true);
+
+    return true;
   }
 
   private filterByTituloProjeto(projeto: ProjetoEspecificacao) : Boolean {
