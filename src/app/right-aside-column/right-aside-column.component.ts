@@ -10,7 +10,7 @@ import { PROJECT_FILTER_ACCORDION_TITLE } from '../util/app_constants';
     standalone: false
 })
 export class RightAsideColumnComponent implements OnInit {
-  globalUrl: String = GlobalStrings.getGlobalUrlFragment();
+  globalUrl: string = GlobalStrings.getGlobalUrlFragment();
   project_filter_accordion_title = PROJECT_FILTER_ACCORDION_TITLE;
   localFotoPerfil = GlobalStrings.getAssetUrl("images/minhaFoto.jpeg");
 

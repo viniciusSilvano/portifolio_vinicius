@@ -10,9 +10,9 @@ import { TagUtil } from '../../../../src/app/projetos/projetos-especificacao/uti
 })
 export class CustomCardProjetoComponent implements OnInit, AfterViewInit {
   @Input() projeto? : ProjetoEspecificacao;
-  @Input() heightImageSliderInPx? : Number;
+  @Input() heightImageSliderInPx? : number;
 
-  @Output() onVisualizarBtnClick: EventEmitter<Number> = new EventEmitter();
+  @Output() onVisualizarBtnClick: EventEmitter<number> = new EventEmitter();
 
   @ViewChild('imagesSliderContainer') imagesSliderContainerElement? : ElementRef;
 
@@ -28,23 +28,23 @@ export class CustomCardProjetoComponent implements OnInit, AfterViewInit {
     }
   }
 
-  notifyParent(idProjeto: Number | undefined){
+  notifyParent(idProjeto: number | undefined){
     if(idProjeto){
       this.onVisualizarBtnClick.emit(idProjeto);
     }
   }
 
-  getNomeTagPorStatus(status: StatusProjeto) : String | undefined{
+  getNomeTagPorStatus(status: StatusProjeto) : string | undefined{
     return TagUtil.retornarNomeTagPorStatus(status);
   }
 
-  getNomeTagPorTipo(tipo: TipoProjeto | undefined) : String | undefined{
+  getNomeTagPorTipo(tipo: TipoProjeto | undefined) : string | undefined{
     if(tipo){
       return TagUtil.retornaNomeTagPorTipoProjeto(tipo);
     }
   }
 
-  getNomeTagPorVisibilidade(visibilidade: Visibilidade | undefined) : String | undefined{
+  getNomeTagPorVisibilidade(visibilidade: Visibilidade | undefined) : string | undefined{
     if(visibilidade){
       return TagUtil.retornaNomeTagPorVisibilidade(visibilidade);
     }

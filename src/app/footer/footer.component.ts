@@ -10,7 +10,7 @@ import { GlobalStrings } from '../globalStrings/globalString';
     standalone: false
 })
 export class FooterComponent implements OnInit {
-  globalUrl: String = GlobalStrings.getGlobalUrlFragment();
+  globalUrl: string = GlobalStrings.getGlobalUrlFragment();
   imagemGitHubPages = GlobalStrings.getAssetUrl("images/Octocat.png")
   constructor() { }
 

@@ -88,7 +88,7 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges {
 
   }
 
-  changeCollapse(idCard : Number){
+  changeCollapse(idCard : number){
     if(this.projetoEspecificacao && this.projetoEspecificacao.accordionCards.find(x => x.id == idCard)){
       let accordionCard : AccordionCard | undefined;
       accordionCard = this.projetoEspecificacao?.accordionCards.find(x => x.id == idCard);
@@ -98,7 +98,7 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges {
      }
   }
 
-  testClick(numImagem : Number) : void{
+  testClick(numImagem : number) : void{
     alert(numImagem);
   }
 

@@ -4,7 +4,7 @@
       class="filter-accordion__trigger"
       type="button"
       [attr.aria-expanded]="getAccordion().collapse === 'collapse show'"
-      [attr.aria-controls]="'accordion-panel-' + accordionCard.id"
+      [attr.aria-controls]="'accordion-panel-' + accordionCard?.id"
       (click)="changeCollapseProjetoFilters()">
       <span class="filter-accordion__title" [innerHTML]="getAccordion().tituloDescricao"></span>
       <i class="bi filter-accordion__icon"
@@ -13,7 +13,7 @@
     </button>
   </div>
 
-  <div [id]="'accordion-panel-' + accordionCard.id"
+  <div [id]="'accordion-panel-' + accordionCard?.id"
     class="filter-accordion__panel collapse"
     [class.show]="getAccordion().collapse === 'collapse show'">
     @if (!ehAccordionProjetoCard) {

@@ -5,7 +5,7 @@ import { SearchUtil } from "../../../../../../src/app/util/search_util";
 import { StringUtil } from "../../../../../../src/app/util/string-util";
 
 export class ProjetoFilter{
-  tituloProjeto?: String | undefined;
+  tituloProjeto?: string | undefined;
   tecnologiasSelecionadasParaBusca?: number[];
   tagsParaFiltrarPorTipoTag : Map<TipoTag,Tag[]> = new Map<TipoTag,Tag[]>();
 
@@ -107,7 +107,7 @@ export class ProjetoFilter{
   }
 
   private filterByTituloProjeto(projeto: ProjetoEspecificacao) : Boolean {
-    let tituloProjetoAsLower: String = projeto.tituloProjeto.toLowerCase();
+    let tituloProjetoAsLower: string = projeto.tituloProjeto.toLowerCase();
     if(this.tituloProjeto){
       return tituloProjetoAsLower.includes(this.tituloProjeto.toLowerCase());
     }

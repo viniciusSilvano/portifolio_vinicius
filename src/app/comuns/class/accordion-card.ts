@@ -3,12 +3,12 @@ import { ProjetoEspecificacao } from "../../../../src/app/projetos/projetos-espe
 import { Tecnologia } from "../../../../src/app/tecnologias/class/tecnologia";
 
 export abstract class AccordionCard implements Entidade{
-  id: Number;
+  id: number;
   tituloDescricao: string;
   descricao: string;
   collapse: Collapse;
 
-  constructor(id:Number, tituloDescricao: string, descricao: string, collapse: Collapse){
+  constructor(id:number, tituloDescricao: string, descricao: string, collapse: Collapse){
     this.id = id;
     this.tituloDescricao = tituloDescricao;
     this.descricao = descricao;
@@ -20,7 +20,7 @@ export class AccordionProjetoCard extends AccordionCard{
   tecnologiasParaBusca: Tecnologia[];
   projetoList: ProjetoEspecificacao[];
 
-  constructor(id:Number, tituloDescricao: string, descricao: string, collapse: Collapse,tecnologiasParaBusca : Tecnologia[], projetoList: ProjetoEspecificacao[]){
+  constructor(id:number, tituloDescricao: string, descricao: string, collapse: Collapse,tecnologiasParaBusca : Tecnologia[], projetoList: ProjetoEspecificacao[]){
     super(id,tituloDescricao,descricao,collapse);
     this.tecnologiasParaBusca = tecnologiasParaBusca;
     this.projetoList = projetoList;
