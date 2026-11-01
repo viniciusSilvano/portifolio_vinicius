@@ -7,4 +7,10 @@ export class SocialMediaButton implements imageButton{
     descricao?: String;
 
     mediaUrl: string;
+
+    constructor(source: String, alt: String, mediaUrl: string){
+      this.source = source;
+      this.alt = alt;
+      this.mediaUrl = mediaUrl;
+    }
 }

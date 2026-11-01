@@ -1,23 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {ProjetosService} from "../service/projetos.service";
 import { Router } from '@angular/router';
 import { ProjetoEspecificacao } from '../projetos-especificacao/class/projeto_especificacao';
 import { TecnologiaService } from '../../tecnologias/service/tecnologia.service';
-import { AccordionProjetoCard, Collapse } from 'src/app/comuns/class/accordion-card';
+import { AccordionProjetoCard, Collapse } from '../../../../src/app/comuns/class/accordion-card';
 import { forkJoin } from 'rxjs';
-import { ResultadoProjetoFilter } from 'src/app/filters/projeto-filters/projeto-filters/class/resultado-projeto-filter';
-import { CustomCardData } from 'src/app/custom-card/class/custom-card-data';
-import { PROJECT_FILTER_ACCORDION_TITLE } from 'src/app/util/app_constants';
+import { ResultadoProjetoFilter } from '../../../../src/app/filters/projeto-filters/projeto-filters/class/resultado-projeto-filter';
+import { CustomCardData } from '../../../../src/app/custom-card/class/custom-card-data';
+import { PROJECT_FILTER_ACCORDION_TITLE } from '../../../../src/app/util/app_constants';
 
 @Component({
     selector: 'app-projetos',
     templateUrl: './projetos.component.html',
     styleUrls: ['./projetos.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ProjetosComponent implements OnInit {
-  projetosCardsExistente : ProjetoEspecificacao[];
-  projetosTestesPublicosCards: ProjetoEspecificacao[];
+  projetosCardsExistente? : ProjetoEspecificacao[];
+  projetosTestesPublicosCards?: ProjetoEspecificacao[];
   resultadoProjetoFilter: ResultadoProjetoFilter = new ResultadoProjetoFilter();
   realizarLimpezaFiltros: Boolean = false;
 
@@ -37,7 +38,7 @@ export class ProjetosComponent implements OnInit {
 
   constructor(
     private projetoService: ProjetosService,
-    private tecnologiaService: TecnologiaService, 
+    private tecnologiaService: TecnologiaService,
     private router: Router) { }
 
   ngOnInit() {
@@ -53,11 +54,11 @@ export class ProjetosComponent implements OnInit {
         if (tec1.nome > tec2.nome) {
             return 1;
         }
-    
+
         if (tec1.nome < tec2.nome) {
             return -1;
         }
-    
+
         return 0;
       });
   }
@@ -70,9 +71,9 @@ export class ProjetosComponent implements OnInit {
     this.resultadoProjetoFilter = resultadoProjetoFilter;
     this.customCardData.descricao = `Quantidade de registros: ${resultadoProjetoFilter.projetosCardsFiltered.length}`
   }
-  
+
   filtroPossuiResultado(): Boolean{
-    return this.resultadoProjetoFilter.projetosCardsFiltered.length && this.resultadoProjetoFilter.qualquerfiltroAcionado;
+    return this.resultadoProjetoFilter.projetosCardsFiltered.length > 0 && this.resultadoProjetoFilter.qualquerfiltroAcionado;
   }
 
   solicitarLimpezaFiltros(){

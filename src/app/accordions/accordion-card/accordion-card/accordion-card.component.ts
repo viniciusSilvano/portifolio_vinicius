@@ -1,16 +1,17 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ChangeDetectionStrategy } from '@angular/core';
 import { AccordionCard, AccordionProjetoCard, Collapse } from '../../../comuns/class/accordion-card';
-import { ResultadoProjetoFilter } from 'src/app/filters/projeto-filters/projeto-filters/class/resultado-projeto-filter';
+import { ResultadoProjetoFilter } from '../../../../../src/app/filters/projeto-filters/projeto-filters/class/resultado-projeto-filter';
 
 @Component({
     selector: 'app-accordion-card',
     templateUrl: './accordion-card.component.html',
     styleUrls: ['./accordion-card.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class AccordionCardComponent implements OnInit{
 
-  @Input() accordionCard: AccordionCard;
+  @Input() accordionCard?: AccordionCard;
   @Input() ehAccordionProjetoCard: Boolean = false;
 
   @Output() resultadoFiltro: EventEmitter<ResultadoProjetoFilter> = new EventEmitter()
@@ -31,10 +32,12 @@ export class AccordionCardComponent implements OnInit{
   }
 
   changeCollapseProjetoFilters(){
-    if(this.accordionCard.collapse == Collapse.COLLAPSED){
-      this.accordionCard.collapse = Collapse.NOT_COLLAPSED;
-    }else{
-      this.accordionCard.collapse = Collapse.COLLAPSED;
+    if(this.accordionCard){
+      if(this.accordionCard.collapse == Collapse.COLLAPSED){
+        this.accordionCard.collapse = Collapse.NOT_COLLAPSED;
+      }else{
+        this.accordionCard.collapse = Collapse.COLLAPSED;
+      }
     }
   }
 

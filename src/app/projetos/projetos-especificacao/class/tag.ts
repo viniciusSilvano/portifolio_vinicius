@@ -1,4 +1,4 @@
-import { Obj } from "src/app/comuns/class/classesComuns";
+import { Obj } from "../../../../../src/app/comuns/class/classesComuns";
 
 export enum TipoTag{
   TIPO_PROJETO,STATUS_PROJETO,VISIBILIDADE_PROJETO

@@ -34,15 +34,15 @@ export class TagUtil{
     });
   }
 
-  static retornarNomeTagPorStatus(status: StatusProjeto ) : String{
+  static retornarNomeTagPorStatus(status: StatusProjeto ) : String | undefined{
     return TagUtil.allTagsMap.get(this.CHAVE_POR_STATUS)?.tags.get(status);
   }
 
-  static retornaNomeTagPorTipoProjeto(tipo: TipoProjeto) : String{
+  static retornaNomeTagPorTipoProjeto(tipo: TipoProjeto) : String | undefined{
     return TagUtil.allTagsMap.get(this.CHAVE_POR_TIPO)?.tags.get(tipo);
   }
 
-  static retornaNomeTagPorVisibilidade(visibilidade: Visibilidade) : String{
+  static retornaNomeTagPorVisibilidade(visibilidade: Visibilidade) : String | undefined{
     return TagUtil.allTagsMap.get(this.CHAVE_POR_VISIBILIDADE)?.tags.get(visibilidade);
   }
 

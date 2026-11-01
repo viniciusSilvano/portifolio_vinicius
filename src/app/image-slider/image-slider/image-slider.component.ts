@@ -1,21 +1,22 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
 import { Subscription, interval, timer } from 'rxjs';
-import { Imagem } from 'src/app/comuns/class/classesComuns';
+import { Imagem } from '../../../../src/app/comuns/class/classesComuns';
 
 @Component({
     selector: 'app-image-slider',
     templateUrl: './image-slider.component.html',
     styleUrls: ['./image-slider.component.css'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
 
-  @Input() slides: Imagem[];
-  @Input() hideDots: Boolean;
+  @Input() slides!: Imagem[];
+  @Input() hideDots!: Boolean;
 
   currentIndex: number = 0;
-  timeoutSubscription: Subscription;
-  waitForSubscritionTimer: Subscription;
+  timeoutSubscription?: Subscription;
+  waitForSubscritionTimer?: Subscription;
 
   ngOnInit(): void {
     this.initImageCycle();
@@ -34,7 +35,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
   }
 
   ngOnDestroy() {
-    this.timeoutSubscription.unsubscribe();
+    this.timeoutSubscription?.unsubscribe();
   }
 
   constructor() { }
@@ -44,7 +45,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
       this.waitForSubscritionTimer.unsubscribe();
     }
     this.waitForSubscritionTimer = timer(4000).subscribe(() => this.initImageCycle());
-    this.timeoutSubscription.unsubscribe();
+    this.timeoutSubscription?.unsubscribe();
   }
 
   onClickRightArrow(): void{
@@ -91,7 +92,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
     return this.slides[this.currentIndex].title;
   }
 
-  checkCurrentDot(indexDot): Boolean{
+  checkCurrentDot(indexDot : any): Boolean{
     return this.currentIndex == indexDot
   }
 

@@ -14,5 +14,5 @@ export interface Entidade{
 }
 
 export abstract class Obj<T>{
-  abstract equals(obj: T): Boolean; 
+  abstract equals(obj: T): Boolean;
 }
