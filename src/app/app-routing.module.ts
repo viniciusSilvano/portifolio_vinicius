@@ -5,13 +5,9 @@ import { ProjetosEspecificacaoComponent } from "./projetos/projetos-especificaca
 
 const routes: Routes = [
   {
-    path: '', 
-    redirectTo: '/projeto', 
-    pathMatch: 'full',
-  },
-  {
-    path: 'projeto', 
-    component: ProjetosComponent
+    path: '',
+    component: ProjetosComponent,
+    pathMatch: 'full'
   },
   {
     path: 'projeto/:idEspecificacao',
