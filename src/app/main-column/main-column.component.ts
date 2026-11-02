@@ -4,13 +4,9 @@ import { RouterOutlet } from '@angular/router';
     selector: 'app-main-column',
     templateUrl: './main-column.component.html',
     styleUrls: ['./main-column.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [RouterOutlet]
 })
-export class MainColumnComponent implements OnInit {
+export class MainColumnComponent {
   public isHome: boolean = false;
-  constructor() { }
-
-  ngOnInit() {}
-
 }

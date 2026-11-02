@@ -9,7 +9,7 @@ import { FooterComponent } from './footer/footer.component';
     selector: 'app-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [MainmenuComponent, MainColumnComponent, RightAsideColumnComponent, LeftAsideColumnComponent, FooterComponent]
 })
 

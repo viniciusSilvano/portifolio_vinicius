@@ -8,7 +8,7 @@ import { NgStyle } from '@angular/common';
     selector: 'app-left-aside-column',
     templateUrl: './left-aside-column.component.html',
     styleUrls: ['./left-aside-column.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [NgStyle]
 })
 export class LeftAsideColumnComponent implements OnInit {

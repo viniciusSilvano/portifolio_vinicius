@@ -11,7 +11,7 @@ import { NgbDropdown, NgbDropdownToggle, NgbDropdownMenu, NgbDropdownButtonItem,
     selector: 'app-mainmenu',
     templateUrl: './mainmenu.component.html',
     styleUrls: ['./mainmenu.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [RouterLink, NgbDropdown, NgbDropdownToggle, NgbDropdownMenu, NgbDropdownButtonItem, NgbDropdownItem, NgStyle]
 })
 export class MainmenuComponent implements OnInit {

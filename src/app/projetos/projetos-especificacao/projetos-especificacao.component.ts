@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit, ChangeDetectionStrategy, inject } from '@angular/core';
+import { Component, OnChanges, OnInit, OnDestroy, ChangeDetectionStrategy, inject } from '@angular/core';
 import {ProjetoEspecificacao} from "./class/projeto_especificacao";
 import { ActivatedRoute, Router, NavigationEnd, Event, RouterLink } from "@angular/router";
 import {Subscription } from 'rxjs';
@@ -12,11 +12,11 @@ import { AccordionCardComponent } from '../../accordions/accordion-card/accordio
     selector: 'app-projetos-especificacao',
     templateUrl: './projetos-especificacao.component.html',
     styleUrls: ['./projetos-especificacao.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [RouterLink, ImageSliderComponent, AccordionCardComponent]
 })
 
-export class ProjetosEspecificacaoComponent implements OnInit, OnChanges {
+export class ProjetosEspecificacaoComponent implements OnInit, OnChanges, OnDestroy {
   private projetoService = inject(ProjetosService);
   private route = inject(ActivatedRoute);
   private router = inject(Router);

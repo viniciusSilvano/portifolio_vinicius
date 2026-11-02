@@ -15,7 +15,7 @@ import { CustomCardProjetoComponent } from '../../custom-card/custom-card-projet
     selector: 'app-projetos',
     templateUrl: './projetos.component.html',
     styleUrls: ['./projetos.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [AccordionCardComponent, CustomCardProjetoComponent]
 })
 export class ProjetosComponent implements OnInit {

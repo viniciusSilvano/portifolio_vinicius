@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ChangeDetectionStrategy, inject } from '@angular/core';
 import { Subscription, interval, timer } from 'rxjs';
 import { Imagem } from '../../../../src/app/comuns/class/classesComuns';
 import { NgStyle } from '@angular/common';
@@ -7,10 +7,11 @@ import { NgStyle } from '@angular/common';
     selector: 'app-image-slider',
     templateUrl: './image-slider.component.html',
     styleUrls: ['./image-slider.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [NgStyle]
 })
 export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
+  private readonly changeDetector = inject(ChangeDetectorRef);
 
   @Input() slides?: Imagem[];
   @Input() hideDots?: Boolean;
@@ -59,6 +60,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
       const isLastSlide = this.currentIndex === this.slides.length - 1;
       const newIndex = isLastSlide ? 0 : this.currentIndex + 1;
       this.currentIndex = newIndex;
+      this.changeDetector.markForCheck();
     }
   }
 
@@ -82,6 +84,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
       const isFirstSlide = this.isFirstSlide();
       const newIndex = isFirstSlide ? this.slides.length - 1 : this.currentIndex - 1;
       this.currentIndex = newIndex;
+      this.changeDetector.markForCheck();
     }
   }
 
@@ -89,6 +92,7 @@ export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
   goToSlide(slideIndex : number) : void{
     this.onAnyArrowOrDotClick();
     this.currentIndex = slideIndex;
+    this.changeDetector.markForCheck();
   }
 
   getCurrentSliderUrl() : string | undefined{

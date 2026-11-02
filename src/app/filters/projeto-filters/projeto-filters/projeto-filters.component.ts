@@ -16,7 +16,7 @@ import { CustomCardTecnologiaComponent } from '../../../custom-card/custom-card-
     selector: 'app-projeto-filters',
     templateUrl: './projeto-filters.component.html',
     styleUrls: ['./projeto-filters.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [NgClass, CustomCardTecnologiaComponent]
 })
 export class ProjetoFiltersComponent implements OnInit {

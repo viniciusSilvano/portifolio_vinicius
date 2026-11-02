@@ -8,22 +8,16 @@ import { UpperCasePipe } from '@angular/common';
     selector: 'app-custom-card-projeto',
     templateUrl: './custom-card-projeto.component.html',
     styleUrls: ['./custom-card-projeto.component.css', '../css/custom-card.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [ImageSliderComponent, CustomCardTecnologiaComponent, UpperCasePipe]
 })
-export class CustomCardProjetoComponent implements OnInit, AfterViewInit {
+export class CustomCardProjetoComponent implements AfterViewInit {
   @Input() projeto? : ProjetoEspecificacao;
   @Input() heightImageSliderInPx? : number;
 
-  @Output() onVisualizarBtnClick: EventEmitter<number> = new EventEmitter();
+  @Output() visualizarBtnClick = new EventEmitter<number>();
 
   @ViewChild('imagesSliderContainer') imagesSliderContainerElement? : ElementRef;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
   ngAfterViewInit() {
     if(this.imagesSliderContainerElement){
       this.imagesSliderContainerElement.nativeElement.style.height = `${this.heightImageSliderInPx}px`;
@@ -33,7 +27,7 @@ export class CustomCardProjetoComponent implements OnInit, AfterViewInit {
 
   notifyParent(idProjeto: number | undefined){
     if(idProjeto){
-      this.onVisualizarBtnClick.emit(idProjeto);
+      this.visualizarBtnClick.emit(idProjeto);
     }
   }
 

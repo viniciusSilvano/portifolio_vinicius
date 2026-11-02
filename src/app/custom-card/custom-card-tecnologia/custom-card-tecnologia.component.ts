@@ -7,23 +7,17 @@ import { NgClass } from '@angular/common';
     selector: 'app-custom-card-tecnologia',
     templateUrl: './custom-card-tecnologia.component.html',
     styleUrls: ['./custom-card-tecnologia.component.css', '../css/custom-card.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [NgClass]
 })
-export class CustomCardTecnologiaComponent implements OnInit {
+export class CustomCardTecnologiaComponent {
   @Input() tecnologia? : Tecnologia;
   @Input() projetoFilter? : ProjetoFilter;
-  @Output() onClick : EventEmitter<number> = new EventEmitter<number>();
+  @Output() tecnologiaClick = new EventEmitter<number>();
   @Input() clickable : Boolean = true;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
   OnClickSearchByTecnologyImage(){
     if(this.tecnologia){
-      this.onClick.emit(this.tecnologia.id);
+      this.tecnologiaClick.emit(this.tecnologia.id);
     }
   }
 

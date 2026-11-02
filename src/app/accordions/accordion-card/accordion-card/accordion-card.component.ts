@@ -8,10 +8,10 @@ import { ProjetoFiltersComponent } from '../../../filters/projeto-filters/projet
     selector: 'app-accordion-card',
     templateUrl: './accordion-card.component.html',
     styleUrls: ['./accordion-card.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
+    changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [NgClass, ProjetoFiltersComponent]
 })
-export class AccordionCardComponent implements OnInit{
+export class AccordionCardComponent {
 
   @Input() accordionCard?: AccordionCard;
   @Input() ehAccordionProjetoCard: Boolean = false;
@@ -28,11 +28,6 @@ export class AccordionCardComponent implements OnInit{
   onFilter(projetosFiltrados: ResultadoProjetoFilter){
     this.resultadoFiltro.emit(projetosFiltrados);
   }
-  constructor() { }
-
-  ngOnInit() {
-  }
-
   changeCollapseProjetoFilters(){
     if(this.accordionCard){
       if(this.accordionCard.collapse == Collapse.COLLAPSED){

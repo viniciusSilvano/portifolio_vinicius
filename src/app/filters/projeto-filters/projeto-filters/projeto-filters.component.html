@@ -28,7 +28,7 @@
       <div class="filter-search__technologies">
         @for (tecnologia of tecnologiasParaBusca; track tecnologia) {
           <div class="filter-search__technology">
-            <app-custom-card-tecnologia [tecnologia]="tecnologia" [projetoFilter]="projetoFilter" (onClick)="OnClickSearchByTecnologyImage($event)"></app-custom-card-tecnologia>
+            <app-custom-card-tecnologia [tecnologia]="tecnologia" [projetoFilter]="projetoFilter" (tecnologiaClick)="OnClickSearchByTecnologyImage($event)"></app-custom-card-tecnologia>
           </div>
         }
       </div>
