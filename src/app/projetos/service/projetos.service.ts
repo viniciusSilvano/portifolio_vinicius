@@ -1,12 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Service } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { PROJETOS_ESPECIFICACOES } from '../projetos-especificacao/data/PROJETOS_DADOS';
 import { ProjetoEspecificacao, TipoProjeto } from '../projetos-especificacao/class/projeto_especificacao';
 ;
 
-@Injectable({
-  providedIn: 'root'
-})
+@Service()
 export class ProjetosService{
 
   constructor() { }

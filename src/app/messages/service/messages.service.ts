@@ -1,9 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Service } from '@angular/core';
 import {Alert,ALERTS} from '../alert';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Service()
 export class MessagesService {
 
   constructor() { }
