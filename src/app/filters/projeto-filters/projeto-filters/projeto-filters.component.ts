@@ -9,13 +9,15 @@ import { ArraysUtil } from '../../../../../src/app/util/arrays_util';
 import { StringUtil } from '../../../../../src/app/util/string-util';
 import { Tag, TipoTag } from '../../../../../src/app/projetos/projetos-especificacao/class/tag';
 import { TagUtil } from '../../../../../src/app/projetos/projetos-especificacao/util/tag_utl';
+import { NgClass } from '@angular/common';
+import { CustomCardTecnologiaComponent } from '../../../custom-card/custom-card-tecnologia/custom-card-tecnologia.component';
 
 @Component({
     selector: 'app-projeto-filters',
     templateUrl: './projeto-filters.component.html',
     styleUrls: ['./projeto-filters.component.css'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false
+    imports: [NgClass, CustomCardTecnologiaComponent]
 })
 export class ProjetoFiltersComponent implements OnInit {
 

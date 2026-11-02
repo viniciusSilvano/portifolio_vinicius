@@ -1,13 +1,14 @@
 import { Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ChangeDetectionStrategy } from '@angular/core';
 import { Subscription, interval, timer } from 'rxjs';
 import { Imagem } from '../../../../src/app/comuns/class/classesComuns';
+import { NgStyle } from '@angular/common';
 
 @Component({
     selector: 'app-image-slider',
     templateUrl: './image-slider.component.html',
     styleUrls: ['./image-slider.component.css'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false
+    imports: [NgStyle]
 })
 export class ImageSliderComponent implements OnInit, OnDestroy, OnChanges {
 

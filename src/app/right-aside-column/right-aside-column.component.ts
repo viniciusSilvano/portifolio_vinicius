@@ -6,8 +6,7 @@ import { PROJECT_FILTER_ACCORDION_TITLE } from '../util/app_constants';
     selector: 'app-right-aside-column',
     templateUrl: './right-aside-column.component.html',
     styleUrls: ['./right-aside-column.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false
+    changeDetection: ChangeDetectionStrategy.Eager
 })
 export class RightAsideColumnComponent implements OnInit {
   globalUrl: string = GlobalStrings.getGlobalUrlFragment();

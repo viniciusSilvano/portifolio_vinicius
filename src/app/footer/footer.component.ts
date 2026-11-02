@@ -6,8 +6,7 @@ import { GlobalStrings } from '../globalStrings/globalString';
     selector: 'app-footer',
     templateUrl: './footer.component.html',
     styleUrls: ['./footer.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false
+    changeDetection: ChangeDetectionStrategy.Eager
 })
 export class FooterComponent implements OnInit {
   globalUrl: string = GlobalStrings.getGlobalUrlFragment();

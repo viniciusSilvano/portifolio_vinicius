@@ -1,6 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, inject } from '@angular/core';
 import {SocialMediaButton} from "../left-aside-column-classes/socialMediaButton";
 import {SocialMediaService} from "../social-media.service";
+import { NgStyle } from '@angular/common';
 
 
 @Component({
@@ -8,11 +9,12 @@ import {SocialMediaService} from "../social-media.service";
     templateUrl: './left-aside-column.component.html',
     styleUrls: ['./left-aside-column.component.css'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false
+    imports: [NgStyle]
 })
 export class LeftAsideColumnComponent implements OnInit {
+  private socialMediaService = inject(SocialMediaService);
+
   buttons?: SocialMediaButton[];
-  constructor(private socialMediaService : SocialMediaService) { }
 
   getSocialMediaButtons() : void{
     this.socialMediaService.getSocialMediaButtons()

@@ -1,13 +1,15 @@
 import { Component, EventEmitter, Input, OnInit, Output, ChangeDetectionStrategy } from '@angular/core';
 import { AccordionCard, AccordionProjetoCard, Collapse } from '../../../comuns/class/accordion-card';
 import { ResultadoProjetoFilter } from '../../../../../src/app/filters/projeto-filters/projeto-filters/class/resultado-projeto-filter';
+import { NgClass } from '@angular/common';
+import { ProjetoFiltersComponent } from '../../../filters/projeto-filters/projeto-filters/projeto-filters.component';
 
 @Component({
     selector: 'app-accordion-card',
     templateUrl: './accordion-card.component.html',
     styleUrls: ['./accordion-card.component.css'],
     changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false
+    imports: [NgClass, ProjetoFiltersComponent]
 })
 export class AccordionCardComponent implements OnInit{
 
