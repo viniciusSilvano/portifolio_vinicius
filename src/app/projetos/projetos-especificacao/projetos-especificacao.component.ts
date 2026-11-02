@@ -1,31 +1,29 @@
-import { Component, OnChanges, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnChanges, OnInit, OnDestroy, ChangeDetectionStrategy, inject } from '@angular/core';
 import {ProjetoEspecificacao} from "./class/projeto_especificacao";
-import {ActivatedRoute, Router, NavigationEnd,Event} from "@angular/router";
+import { ActivatedRoute, Router, NavigationEnd, Event, RouterLink } from "@angular/router";
 import {Subscription } from 'rxjs';
 import { ProjetosService } from '../service/projetos.service';
 import { AccordionCard, Collapse } from '../../../../src/app/comuns/class/accordion-card';
+import { ImageSliderComponent } from '../../image-slider/image-slider/image-slider.component';
+import { AccordionCardComponent } from '../../accordions/accordion-card/accordion-card/accordion-card.component';
 
 
 @Component({
     selector: 'app-projetos-especificacao',
     templateUrl: './projetos-especificacao.component.html',
     styleUrls: ['./projetos-especificacao.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [RouterLink, ImageSliderComponent, AccordionCardComponent]
 })
 
-export class ProjetosEspecificacaoComponent implements OnInit, OnChanges {
+export class ProjetosEspecificacaoComponent implements OnInit, OnChanges, OnDestroy {
+  private projetoService = inject(ProjetosService);
+  private route = inject(ActivatedRoute);
+  private router = inject(Router);
+
   public projetoEspecificacao?: ProjetoEspecificacao;
   private routerSubscription? : Subscription;
   private idProjeto = this.route.snapshot.paramMap.get('idEspecificacao');
-  constructor(
-    private projetoService: ProjetosService,
-    private route: ActivatedRoute,
-    private router: Router
-    ) {
-
-
-    }
 
   ngOnInit() {
     this._initComponent();

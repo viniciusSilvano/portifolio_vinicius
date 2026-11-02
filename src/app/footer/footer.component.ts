@@ -6,15 +6,9 @@ import { GlobalStrings } from '../globalStrings/globalString';
     selector: 'app-footer',
     templateUrl: './footer.component.html',
     styleUrls: ['./footer.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FooterComponent implements OnInit {
+export class FooterComponent {
   globalUrl: string = GlobalStrings.getGlobalUrlFragment();
   imagemGitHubPages = GlobalStrings.getAssetUrl("images/Octocat.png")
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

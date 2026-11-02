@@ -6,17 +6,10 @@ import { PROJECT_FILTER_ACCORDION_TITLE } from '../util/app_constants';
     selector: 'app-right-aside-column',
     templateUrl: './right-aside-column.component.html',
     styleUrls: ['./right-aside-column.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RightAsideColumnComponent implements OnInit {
+export class RightAsideColumnComponent {
   globalUrl: string = GlobalStrings.getGlobalUrlFragment();
   project_filter_accordion_title = PROJECT_FILTER_ACCORDION_TITLE;
   localFotoPerfil = GlobalStrings.getAssetUrl("images/minhaFoto.jpeg");
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

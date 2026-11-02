@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, inject } from '@angular/core';
 import {ProjetosService} from "../service/projetos.service";
 import { Router } from '@angular/router';
 import { ProjetoEspecificacao } from '../projetos-especificacao/class/projeto_especificacao';
@@ -8,15 +8,21 @@ import { forkJoin } from 'rxjs';
 import { ResultadoProjetoFilter } from '../../../../src/app/filters/projeto-filters/projeto-filters/class/resultado-projeto-filter';
 import { CustomCardData } from '../../../../src/app/custom-card/class/custom-card-data';
 import { PROJECT_FILTER_ACCORDION_TITLE } from '../../../../src/app/util/app_constants';
+import { AccordionCardComponent } from '../../accordions/accordion-card/accordion-card/accordion-card.component';
+import { CustomCardProjetoComponent } from '../../custom-card/custom-card-projeto/custom-card-projeto.component';
 
 @Component({
     selector: 'app-projetos',
     templateUrl: './projetos.component.html',
     styleUrls: ['./projetos.component.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [AccordionCardComponent, CustomCardProjetoComponent]
 })
 export class ProjetosComponent implements OnInit {
+  private projetoService = inject(ProjetosService);
+  private tecnologiaService = inject(TecnologiaService);
+  private router = inject(Router);
+
   projetosCardsExistente? : ProjetoEspecificacao[];
   projetosTestesPublicosCards?: ProjetoEspecificacao[];
   resultadoProjetoFilter: ResultadoProjetoFilter = new ResultadoProjetoFilter();
@@ -35,11 +41,6 @@ export class ProjetosComponent implements OnInit {
     titulo: 'Resultado Filtro por projeto',
     descricao: ''
   };
-
-  constructor(
-    private projetoService: ProjetosService,
-    private tecnologiaService: TecnologiaService,
-    private router: Router) { }
 
   ngOnInit() {
     forkJoin([this.projetoService.getProjetoPessoaisCards(),this.projetoService.getProjetoTestesPublicosCards()])

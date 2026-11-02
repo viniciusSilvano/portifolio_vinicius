@@ -1,26 +1,23 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { ProjetoEspecificacao, StatusProjeto, TipoProjeto, Visibilidade } from '../../../../src/app/projetos/projetos-especificacao/class/projeto_especificacao';
 import { TagUtil } from '../../../../src/app/projetos/projetos-especificacao/util/tag_utl';
+import { ImageSliderComponent } from '../../image-slider/image-slider/image-slider.component';
+import { CustomCardTecnologiaComponent } from '../custom-card-tecnologia/custom-card-tecnologia.component';
+import { UpperCasePipe } from '@angular/common';
 @Component({
     selector: 'app-custom-card-projeto',
     templateUrl: './custom-card-projeto.component.html',
     styleUrls: ['./custom-card-projeto.component.css', '../css/custom-card.css'],
-    changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    imports: [ImageSliderComponent, CustomCardTecnologiaComponent, UpperCasePipe]
 })
-export class CustomCardProjetoComponent implements OnInit, AfterViewInit {
+export class CustomCardProjetoComponent implements AfterViewInit {
   @Input() projeto? : ProjetoEspecificacao;
   @Input() heightImageSliderInPx? : number;
 
-  @Output() onVisualizarBtnClick: EventEmitter<number> = new EventEmitter();
+  @Output() visualizarBtnClick = new EventEmitter<number>();
 
   @ViewChild('imagesSliderContainer') imagesSliderContainerElement? : ElementRef;
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
   ngAfterViewInit() {
     if(this.imagesSliderContainerElement){
       this.imagesSliderContainerElement.nativeElement.style.height = `${this.heightImageSliderInPx}px`;
@@ -30,7 +27,7 @@ export class CustomCardProjetoComponent implements OnInit, AfterViewInit {
 
   notifyParent(idProjeto: number | undefined){
     if(idProjeto){
-      this.onVisualizarBtnClick.emit(idProjeto);
+      this.visualizarBtnClick.emit(idProjeto);
     }
   }
 
