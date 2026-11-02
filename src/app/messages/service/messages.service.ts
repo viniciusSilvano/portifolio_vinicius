@@ -8,7 +8,7 @@ export class MessagesService {
 
   constructor() { }
 
-  getMessageById(id : number): Alert{
+  getMessageById(id: number): Alert | undefined {
     return ALERTS.find(x => x.id == id);
   }
 }
