@@ -16,12 +16,12 @@
   <div [id]="'accordion-panel-' + accordionCard?.id"
     class="filter-accordion__panel collapse"
     [class.show]="getAccordion().collapse === 'collapse show'">
-    @if (!ehAccordionProjetoCard) {
+    @if (ehAccordionProjetoCard) {
       <div class="filter-accordion__body">
         <div [innerHTML]="getAccordion().descricao"></div>
       </div>
     }
-    @if (ehAccordionProjetoCard) {
+    @if (!ehAccordionProjetoCard) {
       <div class="filter-accordion__body">
         <app-projeto-filters
           [projetoList]="getAccordion().projetoList"
