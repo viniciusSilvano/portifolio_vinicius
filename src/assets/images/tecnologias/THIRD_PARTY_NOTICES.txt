@@ -1,0 +1,46 @@
+Third-party image notices
+
+Android logo
+Logo by Google, obtained from the Simple Icons package. The icon entry identifies CC BY 3.0.
+Source: https://partnermarketinghub.withgoogle.com/brands/android/visual-identity/visual-identity/logo-lock-ups
+License: https://creativecommons.org/licenses/by/3.0/
+
+Bootstrap logo
+Obtained from Simple Icons; the icon entry identifies the MIT License.
+Source: https://getbootstrap.com/docs/5.3/about/brand
+License: https://github.com/twbs/bootstrap/blob/main/LICENSE
+
+Thymeleaf artwork
+Artwork by the Thymeleaf Project, obtained from its official artwork repository. The official site identifies CC BY-SA 3.0 for the artwork.
+Source: https://github.com/thymeleaf/thymeleaf-org/blob/0427d4d4c6f08d3a1fbed3bc90ceeebcf094b532/artwork/thymeleaf%202016/thymeleaf.svg
+License: https://creativecommons.org/licenses/by-sa/3.0/
+
+Devicon
+Copyright (c) 2015 konpa
+Devicon icon files are distributed under the MIT License. The MIT notice is reproduced below.
+Source and license: https://github.com/devicons/devicon/blob/master/LICENSE
+
+Mockito logo image
+Downloaded from the official project website repository:
+https://github.com/mockito/mockito.github.io/blob/master/img/logo%402x.png
+No separate license for this image was identified. The MIT license for the Mockito software is not assumed to license the project's logo or trademarks.
+
+MIT License
+
+Copyright (c) 2015 konpa
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+Bootstrap MIT notice
+
+Copyright (c) 2011-2025 The Bootstrap Authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
