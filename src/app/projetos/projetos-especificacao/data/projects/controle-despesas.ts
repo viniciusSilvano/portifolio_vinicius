@@ -12,9 +12,9 @@ export const projeto: ProjetoEspecificacao = {
         descricao: 'Meu projeto para controle de despesas pessoais, feito no SPRING BOOT',
         tipo: TipoProjeto.PESSOAIS,
         imagens:[
-            {source: GlobalStrings.getAssetUrl("images/controlador-despesa/tela_cadastro_categoria_despesa-min.png"),alt:"print da tela de cadastro de categoria da despesa.",title: 'tela de cadastro da categoria da despesa'},
-            {source: GlobalStrings.getAssetUrl("images/controlador-despesa/tela_cadastro_despesa-min.png"),alt:"print da tela para selecionar o tipo de despesa para cadastro",title: 'tela de seleção de tipo de despesa a cadastrar'},
-            {source: GlobalStrings.getAssetUrl("images/controlador-despesa/tela_cadastro_despesa_unica-min.png"),alt:"print da tela de cadastro de despesa do tipo \"Única\"",title: 'tela de cadastro de despesa Única'}
+            {source: GlobalStrings.getAssetUrl("images/projetos/controlador-despesa/tela_cadastro_categoria_despesa-min.png"),alt:"print da tela de cadastro de categoria da despesa.",title: 'tela de cadastro da categoria da despesa'},
+            {source: GlobalStrings.getAssetUrl("images/projetos/controlador-despesa/tela_cadastro_despesa-min.png"),alt:"print da tela para selecionar o tipo de despesa para cadastro",title: 'tela de seleção de tipo de despesa a cadastrar'},
+            {source: GlobalStrings.getAssetUrl("images/projetos/controlador-despesa/tela_cadastro_despesa_unica-min.png"),alt:"print da tela de cadastro de despesa do tipo \"Única\"",title: 'tela de cadastro de despesa Única'}
         ],
         accordionCards: [
             {

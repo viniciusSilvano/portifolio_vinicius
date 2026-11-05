@@ -12,11 +12,11 @@ export const projeto: ProjetoEspecificacao = {
         descricao: "Projeto final do curso de game designer da Seven/Redzero feito no framework UNITY",
         tipo: TipoProjeto.PESSOAIS,
         imagens: [
-            {source: GlobalStrings.getAssetUrl("images/projeto-final-redzero/Redzero_tcc_MainMenu.png"),alt:"print projeto redzero 1",title: 'Menu principal do jogo'},
-            {source: GlobalStrings.getAssetUrl("images/projeto-final-redzero/Redzero_tcc_MainMenu_audio.png"),alt:"print projeto redzero 2",title: 'Menu de áudio no menu principal'},
-            {source: GlobalStrings.getAssetUrl("images/projeto-final-redzero/Redzero_tcc_menu_in_game.png"),alt:"print projeto redzero 3",title: 'Menu durante o jogo'},
-            {source: GlobalStrings.getAssetUrl("images/projeto-final-redzero/Redzero_tcc_menu_in_game_pause.png"),alt:"print projeto redzero 4",title: 'Menu de áudio durante o jogo'},
-            {source: GlobalStrings.getAssetUrl("images/projeto-final-redzero/Redzero_tcc_creditos.png"),alt:"print projeto redzero 5",title: 'Créditos do projeto'}
+            {source: GlobalStrings.getAssetUrl("images/projetos/projeto-final-redzero/Redzero_tcc_MainMenu.png"),alt:"print projeto redzero 1",title: 'Menu principal do jogo'},
+            {source: GlobalStrings.getAssetUrl("images/projetos/projeto-final-redzero/Redzero_tcc_MainMenu_audio.png"),alt:"print projeto redzero 2",title: 'Menu de áudio no menu principal'},
+            {source: GlobalStrings.getAssetUrl("images/projetos/projeto-final-redzero/Redzero_tcc_menu_in_game.png"),alt:"print projeto redzero 3",title: 'Menu durante o jogo'},
+            {source: GlobalStrings.getAssetUrl("images/projetos/projeto-final-redzero/Redzero_tcc_menu_in_game_pause.png"),alt:"print projeto redzero 4",title: 'Menu de áudio durante o jogo'},
+            {source: GlobalStrings.getAssetUrl("images/projetos/projeto-final-redzero/Redzero_tcc_creditos.png"),alt:"print projeto redzero 5",title: 'Créditos do projeto'}
         ],
         accordionCards: [
             {
