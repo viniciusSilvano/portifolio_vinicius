@@ -12,8 +12,8 @@ export const projeto: ProjetoEspecificacao = {
         descricao: 'Projeto de backend para o portifólio, feito no SPRING BOOT',
         tipo: TipoProjeto.PESSOAIS,
         imagens:[
-            {source: GlobalStrings.getAssetUrl("images/backend-portifolio-vinicius/MER_portifolio_backend_vinicius-min.png"),alt:"Imagem do Modelo de Entidade E Relacionamento do projeto",title: 'Modelo de Entidade E Relacionamento do projeto'},
-            {source: GlobalStrings.getAssetUrl("images/backend-portifolio-vinicius/migrations_portifolio_backend-min.png"),alt:"Imagem apresentando as migrations e estrutura do projeto",title: 'Migrations e estrutura do projeto'}
+            {source: GlobalStrings.getAssetUrl("images/projetos/backend-portifolio-vinicius/MER_portifolio_backend_vinicius-min.png"),alt:"Imagem do Modelo de Entidade E Relacionamento do projeto",title: 'Modelo de Entidade E Relacionamento do projeto'},
+            {source: GlobalStrings.getAssetUrl("images/projetos/backend-portifolio-vinicius/migrations_portifolio_backend-min.png"),alt:"Imagem apresentando as migrations e estrutura do projeto",title: 'Migrations e estrutura do projeto'}
         ],
         accordionCards: [
             {

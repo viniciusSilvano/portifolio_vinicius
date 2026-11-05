@@ -12,9 +12,9 @@ export const projeto: ProjetoEspecificacao = {
         descricao: "Projeto de testes em JAVA, parceiro do angular tests. Obs: tentei caprichar no código.",
         tipo: TipoProjeto.TESTE_PUBLICOS,
         imagens: [
-            {source: GlobalStrings.getAssetUrl("images/projeto-java-teste-project/java_test_project_1.png"),alt:"print código java 1"},
-            {source: GlobalStrings.getAssetUrl("images/projeto-java-teste-project/java_test_project_2.png"),alt:"print código java 2"},
-            {source: GlobalStrings.getAssetUrl("images/projeto-java-teste-project/java_test_project_3.png"),alt:"print código java 3"}
+            {source: GlobalStrings.getAssetUrl("images/projetos/projeto-java-teste-project/java_test_project_1.png"),alt:"print código java 1"},
+            {source: GlobalStrings.getAssetUrl("images/projetos/projeto-java-teste-project/java_test_project_2.png"),alt:"print código java 2"},
+            {source: GlobalStrings.getAssetUrl("images/projetos/projeto-java-teste-project/java_test_project_3.png"),alt:"print código java 3"}
         ],
         accordionCards: [
             {
