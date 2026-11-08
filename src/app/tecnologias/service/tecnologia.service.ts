@@ -1,10 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Service } from '@angular/core';
 import { Tecnologia } from '../class/tecnologia';
 import { TECNOLOGIAS } from '../data/TECNOLOGIAS_DADOS';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Service()
 export class TecnologiaService {
 
   constructor() { }

@@ -1,10 +1,8 @@
-import { enableProdMode, provideZoneChangeDetection, LOCALE_ID, importProvidersFrom } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { enableProdMode, LOCALE_ID, importProvidersFrom } from '@angular/core';
 
 
 import { environment } from './environments/environment';
-import { BrowserModule, bootstrapApplication } from '@angular/platform-browser';
-import { NgbCarouselModule, NgbAlertModule, NgbDropdownModule } from '@ng-bootstrap/ng-bootstrap';
+import { bootstrapApplication } from '@angular/platform-browser';
 import { AppRoutingModule } from './app/app-routing.module';
 import { AppComponent } from './app/app.component';
 
@@ -14,7 +12,7 @@ if (environment.production) {
 
 bootstrapApplication(AppComponent, {
     providers: [
-        importProvidersFrom(BrowserModule, NgbCarouselModule, NgbAlertModule, NgbDropdownModule, AppRoutingModule),
+        importProvidersFrom(AppRoutingModule),
         { provide: LOCALE_ID, useValue: 'pt_BR' }
     ]
 })

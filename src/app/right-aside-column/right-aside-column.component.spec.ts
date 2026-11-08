@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RightAsideColumnComponent } from './right-aside-column.component';
 
@@ -6,12 +6,12 @@ describe('RightAsideColumnComponent', () => {
   let component: RightAsideColumnComponent;
   let fixture: ComponentFixture<RightAsideColumnComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
     imports: [RightAsideColumnComponent]
 })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(RightAsideColumnComponent);

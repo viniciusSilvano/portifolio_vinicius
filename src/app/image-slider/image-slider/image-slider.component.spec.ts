@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ImageSliderComponent } from './image-slider.component';
 
@@ -6,12 +6,12 @@ describe('ImageSliderComponent', () => {
   let component: ImageSliderComponent;
   let fixture: ComponentFixture<ImageSliderComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
     imports: [ImageSliderComponent]
 })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ImageSliderComponent);
