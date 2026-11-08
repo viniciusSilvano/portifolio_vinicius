@@ -55,7 +55,7 @@ git checkout tags/v1.0 -b v1.0-branch
 docker pull dhi.io/node:26-alpine-sfw-dev
 
 #### build dockerfile
-docker build --tag portifolio-vinicius-prod .
+docker build --tag portifolio-vinicius .
 
 #### Check image
 docker images
@@ -69,8 +69,22 @@ docker ps
 
 ### docker dev
 
+#### downloading node js hardned image
+docker pull dhi.io/node:26-alpine-sfw-dev
+
+#### build dockerfile
+docker build --tag portifolio-vinicius .
+
+#### Check image
+docker images
+
 #### start docker dev in watch mode
+docker compose build angular-dev
 docker compose watch angular-dev
+
+#### run tests
+docker compose build angular-test
+docker compose run --rm angular-test
 
 
 
