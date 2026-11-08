@@ -2,8 +2,9 @@
 # Stage 1: Build the Angular Application
 # =========================================
 
-# Use a lightweight DHI Node.js image for building
-FROM dhi.io/node:26-alpine-sfw-ent-dev AS builder
+# Use the standard Node.js image for building. The DHI SFW image enables
+# Socket's package security integration, which requires SOCKET_API_TOKEN.
+FROM dhi.io/node:26-alpine-sfw-dev AS builder
 
 # Set the working directory inside the container
 WORKDIR /app

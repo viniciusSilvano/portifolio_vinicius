@@ -2,7 +2,7 @@ services:
   angular-prod:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: dockerfile
     image: portifolio-vinicius-prod
     ports:
       - "8080:8080"

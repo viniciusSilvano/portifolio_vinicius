@@ -51,6 +51,9 @@ git checkout tags/v1.0 -b v1.0-branch
 
 ### docker prod
 
+#### downloading node js hardned image
+docker pull dhi.io/node:26-alpine-sfw-dev
+
 #### build dockerfile
 docker build --tag portifolio-vinicius-prod .
 
@@ -58,8 +61,8 @@ docker build --tag portifolio-vinicius-prod .
 docker images
 
 #### Run image with docker compose
-docker compose up --build
-docker compose up --build -d (run detached, without output console)
+docker compose up angular-prod --build
+docker compose up angular-prod --build -d (run detached, without output console)
 
 #### Confirm if the docker compose is running
 docker ps
