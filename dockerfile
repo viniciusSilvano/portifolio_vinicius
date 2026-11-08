@@ -3,7 +3,7 @@
 # =========================================
 
 # Use a lightweight DHI Node.js image for building
-FROM dhi.io/node:24-alpine3.22-dev AS builder
+FROM dhi.io/node:26-alpine-sfw-ent-dev AS builder
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -35,9 +35,9 @@ COPY --chown=nginx:nginx --from=builder /app/dist/*/browser /usr/share/nginx/htm
 # Use a non-root user for security best practices
 USER nginx
 
-# Expose port 4200 to allow HTTP traffic
-# Note: The default Nginx container now listens on port 4200 instead of 80
-EXPOSE 4200
+# Expose port 8080 to allow HTTP traffic
+# Note: The default Nginx container now listens on port 8080 instead of 80
+EXPOSE 8080
 
 # Start Nginx directly with custom config
 ENTRYPOINT ["nginx", "-c", "/etc/nginx/nginx.conf"]

@@ -49,18 +49,25 @@ git checkout tags/v1.0 -b v1.0-branch
 
 ## docker
 
-# build dockerfile
-docker build --tag docker-angular-sample .
+### docker prod
 
-# Check image
+#### build dockerfile
+docker build --tag portifolio-vinicius-prod .
+
+#### Check image
 docker images
 
-# Run image with docker compose
+#### Run image with docker compose
 docker compose up --build
 docker compose up --build -d (run detached, without output console)
 
-# Confirm if the docker compose is running
+#### Confirm if the docker compose is running
 docker ps
+
+### docker dev
+
+#### start docker dev in watch mode
+docker compose watch angular-dev
 
 
 
