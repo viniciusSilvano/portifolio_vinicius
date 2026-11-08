@@ -47,6 +47,21 @@ git fetch --all --tags
 ## Change to tag
 git checkout tags/v1.0 -b v1.0-branch
 
+## docker
+
+# build dockerfile
+docker build --tag docker-angular-sample .
+
+# Check image
+docker images
+
+# Run image with docker compose
+docker compose up --build
+docker compose up --build -d (run detached, without output console)
+
+# Confirm if the docker compose is running
+docker ps
+
 
 
 ## Adicionar um projeto
