@@ -1,0 +1,26 @@
+services:
+  angular-prod:
+    build:
+      context: .
+      dockerfile: dockerfile
+    image: portifolio-vinicius
+    ports:
+      - "8080:8080"
+
+  angular-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "4200:4200"
+    develop:
+      watch:
+        - action: sync
+          path: .
+          target: /app
+
+  angular-test:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    command: ["npm", "run", "test"]
