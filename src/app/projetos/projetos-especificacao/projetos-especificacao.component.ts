@@ -1,4 +1,4 @@
-import { Component, OnChanges, OnInit, OnDestroy, ChangeDetectionStrategy, inject } from '@angular/core';
+import { Component, OnChanges, OnInit, OnDestroy, ChangeDetectionStrategy, inject, SecurityContext } from '@angular/core';
 import {ProjetoEspecificacao} from "./class/projeto_especificacao";
 import { ActivatedRoute, Router, NavigationEnd, Event, RouterLink } from "@angular/router";
 import {Subscription } from 'rxjs';
@@ -6,6 +6,7 @@ import { ProjetosService } from '../service/projetos.service';
 import { AccordionCard, Collapse } from '../../../../src/app/comuns/class/accordion-card';
 import { ImageSliderComponent } from '../../image-slider/image-slider/image-slider.component';
 import { AccordionCardComponent } from '../../accordions/accordion-card/accordion-card/accordion-card.component';
+import { DomSanitizer } from '@angular/platform-browser';
 
 
 @Component({
@@ -24,6 +25,7 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges, OnDest
   public projetoEspecificacao?: ProjetoEspecificacao;
   private routerSubscription? : Subscription;
   private idProjeto = this.route.snapshot.paramMap.get('idEspecificacao');
+  private sanitizer = inject(DomSanitizer);
 
   ngOnInit() {
     this._initComponent();
@@ -31,6 +33,14 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges, OnDest
 
   ngOnChanges(){
     this._initComponent();
+  }
+
+  getTituloProjeto() : string{
+    if(this.projetoEspecificacao){
+      return this.sanitizer.sanitize(SecurityContext.HTML, this.projetoEspecificacao.tituloProjeto) || '' ;
+    }else{
+      return '';
+    }
   }
 
   ngOnDestroy(): void {
