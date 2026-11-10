@@ -3,13 +3,13 @@
 </nav>
 @if (projetoEspecificacao) {
   <section class="project-details">
-    <h1 class="project-details__title"><span [innerHTML]="projetoEspecificacao.tituloProjeto"></span></h1>
+    <h1 class="project-details__title"><span [innerHTML]="getTituloProjeto()"></span></h1>
     <div class="project-details__slider">
       <app-image-slider [slides]="projetoEspecificacao.imagens"></app-image-slider>
     </div>
     <div class="project-details__accordions">
       @for (accordionCard of projetoEspecificacao.accordionCards; track accordionCard) {
-        <app-accordion-card [accordionCard]="accordionCard"></app-accordion-card>
+        <app-accordion-card [accordionCard]="accordionCard" [ehAccordionProjetoCard]="true"></app-accordion-card>
       }
     </div>
     <div class="project-details__footer">

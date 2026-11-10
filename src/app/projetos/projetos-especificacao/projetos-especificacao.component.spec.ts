@@ -1,4 +1,5 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 
 import { ProjetosEspecificacaoComponent } from './projetos-especificacao.component';
 
@@ -6,12 +7,13 @@ describe('ProjetosEspecificacaoComponent', () => {
   let component: ProjetosEspecificacaoComponent;
   let fixture: ComponentFixture<ProjetosEspecificacaoComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
-    imports: [ProjetosEspecificacaoComponent]
+    imports: [ProjetosEspecificacaoComponent],
+    providers: [provideRouter([])]
 })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ProjetosEspecificacaoComponent);
