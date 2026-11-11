@@ -5,7 +5,7 @@ import { SearchUtil } from '../../../../../util/search_util';
 import { Tecnologia } from '../../../../../tecnologias/class/tecnologia';
 import { Collapse } from '../../../../../comuns/class/accordion-card';
 import { AccordionSectionId, PROJETOS } from '../projeto-dados-comuns';
-import { VersoesEnum } from './versoes';
+import { VersoesControleDespesaEnum } from './versoes-controle-despesa';
 const _SEARCH_UTIL = new SearchUtil();
 
 export const projeto: ProjetoEspecificacao = {
@@ -14,7 +14,7 @@ export const projeto: ProjetoEspecificacao = {
         tituloProjeto: "Controlador de Despesas Silvano",
         versoes:[
           {
-            nomeVersao: VersoesEnum?.VERSAO_1,
+            nomeVersao: VersoesControleDespesaEnum?.VERSAO_1,
             versaoAtual: true,
             descricao: 'Meu projeto para controle de despesas pessoais, feito no SPRING BOOT',
             imagens:[
@@ -51,7 +51,7 @@ export const projeto: ProjetoEspecificacao = {
             visibilidade: Visibilidade.PRIVADO
           },
           {
-            nomeVersao: VersoesEnum?.VERSAO_0_1,
+            nomeVersao: VersoesControleDespesaEnum?.VERSAO_0_1,
             versaoAtual: false,
             descricao: 'Meu projeto para controle de despesas pessoais, feito no SPRING BOOT',
             tecnologiasAuxiliares: [

@@ -8,6 +8,7 @@ export interface ProjetoEspecificacao extends Entidade{
     tipo: TipoProjeto
 
     //serao movidos para versao
+    //FIXME remover depois que todos estiverem versão, ou permanecer assim...
     nomeVersao?: string;
     tecnologia?: Tecnologia;
     descricao?: string;
