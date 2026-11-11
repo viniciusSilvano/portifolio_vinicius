@@ -1,27 +1,94 @@
 <div class="custom-card">
   <div class="custom-card-header text-center short-project-card-header" >
     {{projeto?.tituloProjeto | uppercase}}
-    <div class="d-flex flex-row mt-3">
+    @if(projeto?.versoes){
+      <span class="text-center justify-content-center row fs-6 mt-3">Versões</span>
+      <div class="d-flex flex-row">
+        @for (versao of projeto?.versoes; track versao; let versaoIndex = $index) {
+          <div class="tag_projeto background-preto-escuro oval_tag ms-3">
+            {{versao.nomeVersao}}
+          </div>
+        }
+      </div>
+    }
+    <span class="text-center justify-content-center row fs-6 mt-3">Detalhes</span>
+    <div class="d-flex flex-row">
       <div class="tag_projeto background-preto-escuro oval_tag ms-3">
         {{getNomeTagPorTipo(projeto?.tipo)}}
       </div>
 
-      @for (statusProjeto of projeto?.status; track statusProjeto; let statusIndex = $index) {
+      @if(getVersaoAtual()){
+         @for (statusProjeto of getVersaoAtual()?.status; track statusProjeto; let statusIndex = $index) {
+          <div class="tag_projeto background-preto-escuro oval_tag ms-3">
+            {{getNomeTagPorStatus(statusProjeto)}}
+          </div>
+        }
+
         <div class="tag_projeto background-preto-escuro oval_tag ms-3">
-          {{getNomeTagPorStatus(statusProjeto)}}
+          {{getNomeTagPorVisibilidade(getVersaoAtual()?.visibilidade)}}
+        </div>
+      } @else{
+
+        @for (statusProjeto of projeto?.status; track statusProjeto; let statusIndex = $index) {
+          <div class="tag_projeto background-preto-escuro oval_tag ms-3">
+            {{getNomeTagPorStatus(statusProjeto)}}
+          </div>
+        }
+
+        <div class="tag_projeto background-preto-escuro oval_tag ms-3">
+          {{getNomeTagPorVisibilidade(projeto?.visibilidade)}}
         </div>
       }
-
-      <div class="tag_projeto background-preto-escuro oval_tag ms-3">
-        {{getNomeTagPorVisibilidade(projeto?.visibilidade)}}
-      </div>
     </div>
   </div>
-  @if (projeto?.imagens) {
+   @if(getVersaoAtual()){
     <div #imagesSliderContainer>
-      <app-image-slider [slides]="projeto.imagens" [hideDots]="false"></app-image-slider>
+      <app-image-slider [slides]="getVersaoAtual()?.imagens" [hideDots]="false"></app-image-slider>
     </div>
-  }
+    <div class="project-description">
+      <p>{{getVersaoAtual()?.descricao}}</p>
+    </div>
+    <div class="custom-card-footer">
+      <div class="">
+        <span class="p-2"><u>TECNOLOGIAS DO PROJETO:</u></span>
+        <div class="technology-list">
+          @for (tecnologia of getVersaoAtual()?.tecnologiasAuxiliares; track tecnologia) {
+            <div>
+              <app-custom-card-tecnologia [clickable]="false" [tecnologia]="tecnologia"></app-custom-card-tecnologia>
+            </div>
+          }
+        </div>
+      </div>
+      <div class="project-card-actions">
+        <button (click)="notifyParent(projeto?.id)" class="btn btn-primary" type="button">Visualizar</button>
+      </div>
+    </div>
+   } @else{
+     @if (projeto?.imagens) {
+      <div #imagesSliderContainer>
+        <app-image-slider [slides]="projeto.imagens" [hideDots]="false"></app-image-slider>
+      </div>
+      <div class="project-description">
+        <p>{{projeto?.descricao}}</p>
+      </div>
+      <div class="custom-card-footer">
+        <div class="">
+          <span class="p-2"><u>TECNOLOGIAS DO PROJETO:</u></span>
+          <div class="technology-list">
+            @for (tecnologia of projeto?.tecnologiasAuxiliares; track tecnologia) {
+              <div>
+                <app-custom-card-tecnologia [clickable]="false" [tecnologia]="tecnologia"></app-custom-card-tecnologia>
+              </div>
+            }
+          </div>
+        </div>
+        <div class="project-card-actions">
+          <button (click)="notifyParent(projeto?.id)" class="btn btn-primary" type="button">Visualizar</button>
+        </div>
+      </div>
+     }
+   }
+
   <div class="project-description">
     <p>{{projeto?.descricao}}</p>
   </div>
