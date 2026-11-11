@@ -4,15 +4,22 @@ import { Tecnologia } from "../../../tecnologias/class/tecnologia";
 
 export interface ProjetoEspecificacao extends Entidade{
     id: number;
-    tecnologia: Tecnologia;
     tituloProjeto: string;
-    descricao: string;
-    imagens?: Imagem[];
-    tecnologiasAuxiliares?: Tecnologia[];
     tipo: TipoProjeto
-    accordionCards: AccordionCard[],
-    status: StatusProjeto[];
-    visibilidade: Visibilidade;
+
+    versoes: VersaoProjeto[];
+}
+
+export interface VersaoProjeto{
+   nomeVersao: string;
+   versaoAtual: boolean;
+   tecnologia: Tecnologia;
+   descricao: string;
+   imagens?: Imagem[];
+   tecnologiasAuxiliares?: Tecnologia[];
+   accordionCards: AccordionCard[],
+   status: StatusProjeto[];
+   visibilidade: Visibilidade;
 }
 
 export enum TipoProjeto{

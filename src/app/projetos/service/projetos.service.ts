@@ -2,12 +2,11 @@ import { Service } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { PROJETOS_ESPECIFICACOES } from '../projetos-especificacao/data/PROJETOS_DADOS';
 import { ProjetoEspecificacao, TipoProjeto } from '../projetos-especificacao/class/projeto_especificacao';
-;
 
 @Service()
 export class ProjetosService{
 
-  constructor() { }
+  constructor() {}
 
   getAllProjetoCards(): Observable<ProjetoEspecificacao[]>{
     const result : ProjetoEspecificacao[] = Object.assign([], PROJETOS_ESPECIFICACOES);

@@ -42,16 +42,32 @@ export class ProjetoFilter{
   }
 
   private filterByAllTags(projeto: ProjetoEspecificacao): Boolean{
+    const versaoAtual = projeto.versoes.find(versao => versao.versaoAtual);
+
     for(const [tipoTag, tagsSelecionadas] of this.tagsParaFiltrarPorTipoTag){
       if(tagsSelecionadas.length === 0){
         continue;
       }
 
       const corresponde = tagsSelecionadas.some(tag => {
-        const valorCampo = projeto[tag.campoProjeto as keyof ProjetoEspecificacao];
+        let valorCampo;
+        switch(tag.tipoTag){
+          case TipoTag.TIPO_PROJETO:
+            valorCampo = projeto.tipo
+            break;
+          case TipoTag.STATUS_PROJETO:
+            valorCampo = versaoAtual?.status
+            break;
+          case TipoTag.VISIBILIDADE_PROJETO:
+            valorCampo = versaoAtual?.visibilidade;
+            break;
+          default:
+            return false;
+        }
+
         return Array.isArray(valorCampo)
           ? (valorCampo as unknown[]).includes(tag.id)
-          : tag.tipoTag === tipoTag && valorCampo === tag.id;
+          : valorCampo === tag.id;
       });
 
       if(!corresponde){
@@ -71,14 +87,13 @@ export class ProjetoFilter{
   }
 
   private filterByTecnologiasProjeto(tecnologiasSelecionadasParaBusca: number[] | undefined,projeto: ProjetoEspecificacao): Boolean{
+    if(tecnologiasSelecionadasParaBusca){
+      const versaoAtual = projeto.versoes.find(versao => versao.versaoAtual);
+      const tecnologias = versaoAtual?.tecnologiasAuxiliares ?? [];
 
-    if(projeto && tecnologiasSelecionadasParaBusca){
-      for(var tecnologiaSelecionadasParaBusca of tecnologiasSelecionadasParaBusca){
-        if(tecnologiaSelecionadasParaBusca == projeto.tecnologia.id){
-          return true;
-        }
-
-        if(this._SEARCH_UTIL.binarySearch(projeto.tecnologiasAuxiliares, {id:tecnologiaSelecionadasParaBusca})){
+      for(const tecnologiaSelecionadasParaBusca of tecnologiasSelecionadasParaBusca){
+        if(versaoAtual?.tecnologia.id === tecnologiaSelecionadasParaBusca ||
+          this._SEARCH_UTIL.binarySearch(tecnologias, {id: tecnologiaSelecionadasParaBusca})) {
           return true;
         }
       }

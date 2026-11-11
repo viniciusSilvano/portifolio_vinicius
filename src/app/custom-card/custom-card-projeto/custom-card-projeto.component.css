@@ -14,3 +14,5 @@
 @media (prefers-reduced-motion:reduce) { .custom-card { transition:none; } .custom-card:hover { transform:none; } }
 
 .custom-card app-image-slider { display:block; width:100%; height:100%; }
+.project-card__group-label { display:block; margin:.8rem 0 .35rem; color:#91a1b3; font-size:.68rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; }
+.project-card__tags { display:flex; flex-wrap:wrap; justify-content:center; gap:.45rem; }

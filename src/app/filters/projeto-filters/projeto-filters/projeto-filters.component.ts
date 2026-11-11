@@ -15,7 +15,7 @@ import { CustomCardTecnologiaComponent } from '../../../custom-card/custom-card-
 @Component({
     selector: 'app-projeto-filters',
     templateUrl: './projeto-filters.component.html',
-    styleUrls: ['./projeto-filters.component.css'],
+    styleUrls: ['./projeto-filters.component.css','../../../shared/css/searcheable_tag_shared.css'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [NgClass, CustomCardTecnologiaComponent]
 })

@@ -16,7 +16,7 @@ export abstract class AccordionCard implements Entidade{
   }
 }
 
-export class AccordionProjetoCard extends AccordionCard{
+export class AccordionFiltro extends AccordionCard{
   tecnologiasParaBusca: Tecnologia[];
   projetoList: ProjetoEspecificacao[];
 
@@ -24,6 +24,12 @@ export class AccordionProjetoCard extends AccordionCard{
     super(id,tituloDescricao,descricao,collapse);
     this.tecnologiasParaBusca = tecnologiasParaBusca;
     this.projetoList = projetoList;
+  }
+}
+
+export class AccordionProjetoCard extends AccordionCard{
+  constructor(id:number, tituloDescricao: string, descricao: string, collapse: Collapse){
+    super(id,tituloDescricao,descricao,collapse);
   }
 }
 
