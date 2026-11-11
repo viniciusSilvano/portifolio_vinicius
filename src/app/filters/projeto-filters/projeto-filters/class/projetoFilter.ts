@@ -71,14 +71,13 @@ export class ProjetoFilter{
   }
 
   private filterByTecnologiasProjeto(tecnologiasSelecionadasParaBusca: number[] | undefined,projeto: ProjetoEspecificacao): Boolean{
+    if(tecnologiasSelecionadasParaBusca){
+      const versaoAtual = projeto.versoes.find(versao => versao.versaoAtual);
+      const tecnologias = versaoAtual?.tecnologiasAuxiliares ?? [];
 
-    if(projeto && tecnologiasSelecionadasParaBusca){
-      for(var tecnologiaSelecionadasParaBusca of tecnologiasSelecionadasParaBusca){
-        if(projeto.tecnologia && tecnologiaSelecionadasParaBusca == projeto.tecnologia.id){
-          return true;
-        }
-
-        if(this._SEARCH_UTIL.binarySearch(projeto.tecnologiasAuxiliares, {id:tecnologiaSelecionadasParaBusca})){
+      for(const tecnologiaSelecionadasParaBusca of tecnologiasSelecionadasParaBusca){
+        if(versaoAtual?.tecnologia.id === tecnologiaSelecionadasParaBusca ||
+          this._SEARCH_UTIL.binarySearch(tecnologias, {id: tecnologiaSelecionadasParaBusca})) {
           return true;
         }
       }

@@ -9,30 +9,34 @@ const _SEARCH_UTIL = new SearchUtil();
 
 export const projeto: ProjetoEspecificacao = {
         id: PROJETOS.TESTE_ANGULAR_TWO_PLUS_PROJECT,
-        descricao: "Projeto de testes em ANGULAR, parceiro do java tests. Obs: tentei caprichar no código.",
         tipo: TipoProjeto.TESTE_PUBLICOS,
-        imagens: [
-            {source: GlobalStrings.getAssetUrl("images/projetos/projeto-angular-2-tests/angular_test_project_1.png"),alt:"print código angular 1"},
-            {source: GlobalStrings.getAssetUrl("images/projetos/projeto-angular-2-tests/angular_test_project_2.png"),alt:"print código angular 2"},
-            {source: GlobalStrings.getAssetUrl("images/projetos/projeto-angular-2-tests/angular_test_project_3.png"),alt:"print código angular 3"}
-        ],
-        accordionCards: [
-            {
-                id: AccordionSectionId.DESCRIPTION,
-                tituloDescricao: "Sobre o projeto",
-                descricao: "<article><p>Projeto utilizado para testes e brincadeiras em angular. Apesar do seu objetivo tentei caprichar no código.<p/></article>",
-                collapse: Collapse.COLLAPSED
-            },
-            {
-                id: AccordionSectionId.SOURCE,
-                tituloDescricao: "Onde está o código?",
-                descricao: "<a target=\"_blank\" href=\"https://github.com/viniciusSilvano/angularDoisMaisTestes\">link para o github</a>",
-                collapse: Collapse.COLLAPSED
-            }
-        ],
-        tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.ANGULAR}) as Tecnologia,
         tituloProjeto: "Angular 2+ Tests Project",
-        tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.ANGULAR}) as Tecnologia],
-        status: [StatusProjeto.FINALIZADO],
-        visibilidade: Visibilidade.PUBLICO
+        versoes: [{
+            nomeVersao: 'Versão 0',
+            versaoAtual: true,
+            descricao: "Projeto de testes em ANGULAR, parceiro do java tests. Obs: tentei caprichar no código.",
+            imagens: [
+                        {source: GlobalStrings.getAssetUrl("images/projetos/projeto-angular-2-tests/angular_test_project_1.png"),alt:"print código angular 1"},
+                        {source: GlobalStrings.getAssetUrl("images/projetos/projeto-angular-2-tests/angular_test_project_2.png"),alt:"print código angular 2"},
+                        {source: GlobalStrings.getAssetUrl("images/projetos/projeto-angular-2-tests/angular_test_project_3.png"),alt:"print código angular 3"}
+                    ],
+            accordionCards: [
+                        {
+                            id: AccordionSectionId.DESCRIPTION,
+                            tituloDescricao: "Sobre o projeto",
+                            descricao: "<article><p>Projeto utilizado para testes e brincadeiras em angular. Apesar do seu objetivo tentei caprichar no código.<p/></article>",
+                            collapse: Collapse.COLLAPSED
+                        },
+                        {
+                            id: AccordionSectionId.SOURCE,
+                            tituloDescricao: "Onde está o código?",
+                            descricao: "<a target=\"_blank\" href=\"https://github.com/viniciusSilvano/angularDoisMaisTestes\">link para o github</a>",
+                            collapse: Collapse.COLLAPSED
+                        }
+                    ],
+            tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.ANGULAR}) as Tecnologia,
+            tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.ANGULAR}) as Tecnologia],
+            status: [StatusProjeto.FINALIZADO],
+            visibilidade: Visibilidade.PUBLICO
+        }]
     };

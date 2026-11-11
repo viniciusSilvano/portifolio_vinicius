@@ -99,9 +99,9 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges, OnDest
   }
 
   changeCollapse(idCard : number){
-    if(this.projetoEspecificacao && this.projetoEspecificacao.accordionCards && this.projetoEspecificacao.accordionCards.find(x => x.id == idCard)){
+    if(this.versaoProjeto?.accordionCards.find(card => card.id === idCard)){
       let accordionCard : AccordionCard | undefined;
-      accordionCard = this.projetoEspecificacao?.accordionCards.find(x => x.id == idCard);
+      accordionCard = this.versaoProjeto.accordionCards.find(card => card.id === idCard);
       if(accordionCard){
         accordionCard.collapse = accordionCard.collapse == Collapse.NOT_COLLAPSED ? Collapse.COLLAPSED : Collapse.NOT_COLLAPSED;
       }

@@ -7,17 +7,7 @@ export interface ProjetoEspecificacao extends Entidade{
     tituloProjeto: string;
     tipo: TipoProjeto
 
-    //serao movidos para versao
-    //FIXME remover depois que todos estiverem versão, ou permanecer assim...
-    nomeVersao?: string;
-    tecnologia?: Tecnologia;
-    descricao?: string;
-    imagens?: Imagem[];
-    tecnologiasAuxiliares?: Tecnologia[];
-    accordionCards?: AccordionCard[],
-    status?: StatusProjeto[];
-    visibilidade?: Visibilidade;
-    versoes?: VersaoProjeto[];
+    versoes: VersaoProjeto[];
 }
 
 export interface VersaoProjeto{
