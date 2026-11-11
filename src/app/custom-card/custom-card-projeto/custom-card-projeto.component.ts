@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild, ChangeDetectionStrategy } from '@angular/core';
-import { ProjetoEspecificacao, StatusProjeto, TipoProjeto, Visibilidade } from '../../../../src/app/projetos/projetos-especificacao/class/projeto_especificacao';
+import { ProjetoEspecificacao, StatusProjeto, TipoProjeto, VersaoProjeto, Visibilidade } from '../../../../src/app/projetos/projetos-especificacao/class/projeto_especificacao';
 import { TagUtil } from '../../../../src/app/projetos/projetos-especificacao/util/tag_utl';
 import { ImageSliderComponent } from '../../image-slider/image-slider/image-slider.component';
 import { CustomCardTecnologiaComponent } from '../custom-card-tecnologia/custom-card-tecnologia.component';
@@ -45,5 +45,13 @@ export class CustomCardProjetoComponent implements AfterViewInit {
     if(visibilidade !== undefined){
       return TagUtil.retornaNomeTagPorVisibilidade(visibilidade);
     }
+  }
+
+  getVersaoAtual() : VersaoProjeto | undefined{
+    let versaoAtualProjeto: VersaoProjeto | undefined;
+    if(this.projeto && this.projeto.versoes){
+      versaoAtualProjeto = this.projeto.versoes.find(versaoProjeto => versaoProjeto.versaoAtual);
+    }
+    return versaoAtualProjeto;
   }
 }

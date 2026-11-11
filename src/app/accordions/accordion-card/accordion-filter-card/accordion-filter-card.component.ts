@@ -1,30 +1,26 @@
-import { Component, EventEmitter, Input, OnInit, Output, ChangeDetectionStrategy, inject, SecurityContext } from '@angular/core';
-import { AccordionCard, AccordionProjetoCard, Collapse } from '../../../comuns/class/accordion-card';
-import { ResultadoProjetoFilter } from '../../../../../src/app/filters/projeto-filters/projeto-filters/class/resultado-projeto-filter';
 import { NgClass } from '@angular/common';
+import { ChangeDetectionStrategy, Component, EventEmitter, inject, Input, Output, SecurityContext } from '@angular/core';
 import { ProjetoFiltersComponent } from '../../../filters/projeto-filters/projeto-filters/projeto-filters.component';
+import { AccordionCard, AccordionFiltro, Collapse } from '../../../comuns/class/accordion-card';
+import { ResultadoProjetoFilter } from '../../../filters/projeto-filters/projeto-filters/class/resultado-projeto-filter';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
-    selector: 'app-accordion-card',
-    templateUrl: './accordion-card.component.html',
-    styleUrls: ['./accordion-card.component.css'],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [NgClass, ProjetoFiltersComponent]
+  imports: [NgClass, ProjetoFiltersComponent],
+  selector: 'app-accordion-filter-card',
+  styleUrl: './accordion-filter-card.component.css',
+  templateUrl: './accordion-filter-card.component.html',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true
 })
-export class AccordionCardComponent {
-
+export class AccordionFilterCardComponent {
   @Input() accordionCard?: AccordionCard;
-  @Input() ehAccordionProjetoCard: Boolean = false;
 
   @Output() resultadoFiltro: EventEmitter<ResultadoProjetoFilter> = new EventEmitter()
   private sanitizer = inject(DomSanitizer);
 
   getAccordion(): any{
-    if(this.ehAccordionProjetoCard){
-      return this.accordionCard as AccordionProjetoCard;
-    }
-    return this.accordionCard;
+    return this.accordionCard as AccordionFiltro;
   }
 
   getDescricaoAccordion(): string | undefined{
