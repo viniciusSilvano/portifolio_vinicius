@@ -1,10 +1,10 @@
-import { ProjetoEspecificacao, StatusProjeto, TipoProjeto, Visibilidade } from '../../class/projeto_especificacao';
-import { GlobalStrings } from '../../../../globalStrings/globalString';
-import { TECNOLOGIA_ENUM, TECNOLOGIAS } from '../../../../tecnologias/data/TECNOLOGIAS_DADOS';
-import { SearchUtil } from '../../../../util/search_util';
-import { Tecnologia } from '../../../../tecnologias/class/tecnologia';
-import { Collapse } from '../../../../comuns/class/accordion-card';
-import { AccordionSectionId, PROJETOS } from './projeto-dados-comuns';
+import { ProjetoEspecificacao, StatusProjeto, TipoProjeto, Visibilidade } from '../../../class/projeto_especificacao';
+import { GlobalStrings } from '../../../../../globalStrings/globalString';
+import { TECNOLOGIA_ENUM, TECNOLOGIAS } from '../../../../../tecnologias/data/TECNOLOGIAS_DADOS';
+import { SearchUtil } from '../../../../../util/search_util';
+import { Tecnologia } from '../../../../../tecnologias/class/tecnologia';
+import { Collapse } from '../../../../../comuns/class/accordion-card';
+import { AccordionSectionId, PROJETOS } from '../projeto-dados-comuns';
 const _SEARCH_UTIL = new SearchUtil();
 
 export const projeto: ProjetoEspecificacao = {
