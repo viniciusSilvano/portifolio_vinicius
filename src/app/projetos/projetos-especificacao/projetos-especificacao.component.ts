@@ -5,8 +5,8 @@ import {Subscription } from 'rxjs';
 import { ProjetosService } from '../service/projetos.service';
 import { AccordionCard, Collapse } from '../../../../src/app/comuns/class/accordion-card';
 import { ImageSliderComponent } from '../../image-slider/image-slider/image-slider.component';
-import { AccordionCardComponent } from '../../accordions/accordion-card/accordion-card/accordion-card.component';
 import { DomSanitizer } from '@angular/platform-browser';
+import { AccordionProjetoCardComponent } from '../../accordions/accordion-card/accordion-projeto-card/accordion-projeto-card.component';
 
 
 @Component({
@@ -14,7 +14,7 @@ import { DomSanitizer } from '@angular/platform-browser';
     templateUrl: './projetos-especificacao.component.html',
     styleUrls: ['./projetos-especificacao.component.css'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [RouterLink, ImageSliderComponent, AccordionCardComponent]
+    imports: [RouterLink, ImageSliderComponent, AccordionProjetoCardComponent]
 })
 
 export class ProjetosEspecificacaoComponent implements OnInit, OnChanges, OnDestroy {

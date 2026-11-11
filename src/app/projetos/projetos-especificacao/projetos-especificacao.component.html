@@ -9,7 +9,7 @@
     </div>
     <div class="project-details__accordions">
       @for (accordionCard of projetoEspecificacao.accordionCards; track accordionCard) {
-        <app-accordion-card [accordionCard]="accordionCard" [ehAccordionProjetoCard]="true"></app-accordion-card>
+        <app-accordion-projeto-card [accordionCard]="accordionCard"></app-accordion-projeto-card>
       }
     </div>
     <div class="project-details__footer">
