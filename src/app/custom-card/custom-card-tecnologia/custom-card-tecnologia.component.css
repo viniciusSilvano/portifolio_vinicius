@@ -4,3 +4,32 @@
   border-style: solid;
   border-width: medium;
 }
+
+.technology-logo-container {
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto 0.5rem;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--surface-raised, #172231);
+  border: 1px solid var(--cor-bordas-elementos, #29394b);
+  border-radius: 10px;
+}
+
+.technology-logo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.technology-logo-container img[src$="android.svg"],
+.technology-logo-container img[src$="bootstrap.svg"],
+.technology-logo-container img[src$="flyway.svg"],
+.technology-logo-container img[src$="jquery.svg"],
+.technology-logo-container img[src$="postgresql.svg"],
+.technology-logo-container img[src$="spring-boot.svg"] {
+  filter: brightness(0) invert(1);
+}
