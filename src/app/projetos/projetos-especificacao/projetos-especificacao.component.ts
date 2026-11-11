@@ -1,3 +1,4 @@
+import { versaoWrapper } from './data/projects/controle-despesas/versoes_projeto';
 import { Component, OnChanges, OnInit, OnDestroy, ChangeDetectionStrategy, inject, SecurityContext } from '@angular/core';
 import {ProjetoEspecificacao} from "./class/projeto_especificacao";
 import { ActivatedRoute, Router, NavigationEnd, Event, RouterLink } from "@angular/router";
@@ -7,6 +8,7 @@ import { AccordionCard, Collapse } from '../../../../src/app/comuns/class/accord
 import { ImageSliderComponent } from '../../image-slider/image-slider/image-slider.component';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AccordionProjetoCardComponent } from '../../accordions/accordion-card/accordion-projeto-card/accordion-projeto-card.component';
+import { VersaoWrapper } from './class/versao';
 
 
 @Component({
@@ -24,6 +26,7 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges, OnDest
 
   public projetoEspecificacao?: ProjetoEspecificacao;
   private routerSubscription? : Subscription;
+  public versaoWrapper?: VersaoWrapper;
   private idProjeto = this.route.snapshot.paramMap.get('idEspecificacao');
   private sanitizer = inject(DomSanitizer);
 
@@ -89,11 +92,17 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges, OnDest
       const id = +this.idProjeto;
       this.projetoService.getProjetoEspecificaoById(id)
         .subscribe(x => {
-          this.projetoEspecificacao = x
-          ,(err: unknown) => console.log("Error",err)
-        });
+          this.projetoEspecificacao = x;
+          this.initializeVersaoWrapper(this.projetoEspecificacao);
+        },(err: unknown) => console.log("Error",err));
     }
 
+  }
+
+  initializeVersaoWrapper(projetoEspecificao: ProjetoEspecificacao | undefined){
+    if(projetoEspecificao){
+      this.versaoWrapper = this.projetoService.getVersoesByProjetoEspeficacaoId(projetoEspecificao);
+    }
   }
 
   changeCollapse(idCard : number){

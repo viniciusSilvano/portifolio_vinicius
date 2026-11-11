@@ -3,6 +3,11 @@
 </nav>
 @if (projetoEspecificacao) {
   <section class="project-details">
+    <div class="d-flex flex-row">
+      @for(versao of versaoWrapper?.versoes; track versao){
+        <div style="display:block">{{versao.versao.nome}}</div>
+      }
+    </div>
     <h1 class="project-details__title"><span [innerHTML]="getTituloProjeto()"></span></h1>
     <div class="project-details__slider">
       <app-image-slider [slides]="projetoEspecificacao.imagens"></app-image-slider>
