@@ -3,12 +3,14 @@
 </nav>
 @if (projetoEspecificacao) {
   <section class="project-details">
-    <div class="d-flex flex-row">
-      @for(versao of versaoWrapper?.versoes; track versao){
-        <div style="display:block">{{versao.versao.nome}}</div>
-      }
-    </div>
     <h1 class="project-details__title"><span [innerHTML]="getTituloProjeto()"></span></h1>
+    @if(versaoWrapper){
+      <aside class="filter-search__tags mb-2">
+        @for(versao of versaoWrapper?.versoes; track versao){
+          <div [class.is-selected]="versao.versao.nome === projetoEspecificacao.nomeVersao"  class="filter-search__tag">{{versao.versao.nome}}</div>
+        }
+      </aside>
+    }
     <div class="project-details__slider">
       <app-image-slider [slides]="projetoEspecificacao.imagens"></app-image-slider>
     </div>

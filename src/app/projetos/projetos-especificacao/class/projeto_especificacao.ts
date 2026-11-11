@@ -1,11 +1,10 @@
 import { AccordionCard } from "../../../../../src/app/comuns/class/accordion-card";
 import { Imagem, Entidade } from "../../../comuns/class/classesComuns";
 import { Tecnologia } from "../../../tecnologias/class/tecnologia";
-import { Versao } from "./versao";
 
 export interface ProjetoEspecificacao extends Entidade{
     id: number;
-    versao?: Versao;
+    nomeVersao?: string;
     tecnologia: Tecnologia;
     tituloProjeto: string;
     descricao: string;

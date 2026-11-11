@@ -14,7 +14,7 @@ import { VersaoWrapper } from './class/versao';
 @Component({
     selector: 'app-projetos-especificacao',
     templateUrl: './projetos-especificacao.component.html',
-    styleUrls: ['./projetos-especificacao.component.css'],
+    styleUrls: ['./projetos-especificacao.component.css','../../shared/css/searcheable_tag_shared.css'],
     changeDetection: ChangeDetectionStrategy.OnPush,
     imports: [RouterLink, ImageSliderComponent, AccordionProjetoCardComponent]
 })

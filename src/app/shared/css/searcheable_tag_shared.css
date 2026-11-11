@@ -1,0 +1,4 @@
+.filter-search__tags { display:flex; flex-wrap:wrap; gap:.55rem; margin-top:.85rem; }
+.filter-search__tag { display:inline-flex; min-height:34px; align-items:center; justify-content:center; padding:.4rem .8rem; color:#b9c6d4; background:#111a26; border:1px solid #35465a; border-radius:999px; font-size:.8rem; line-height:1.2; transition:all .18s ease; }
+.filter-search__tag:hover { color:var(--accent); border-color:var(--accent); }
+.filter-search__tag.is-selected { color:#092018; background:var(--accent); border-color:var(--accent); }

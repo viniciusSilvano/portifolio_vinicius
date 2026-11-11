@@ -5,10 +5,12 @@ import { SearchUtil } from '../../../../../../util/search_util';
 import { Tecnologia } from '../../../../../../tecnologias/class/tecnologia';
 import { Collapse } from '../../../../../../comuns/class/accordion-card';
 import { AccordionSectionId, PROJETOS } from '../../projeto-dados-comuns';
+import { versoes } from '../versoes_projeto';
 const _SEARCH_UTIL = new SearchUtil();
 
 export const projeto: ProjetoEspecificacao = {
         id: PROJETOS.CONTROLE_DESPESAS,
+        nomeVersao: versoes?.VERSAO_1,
         descricao: 'Meu projeto para controle de despesas pessoais, feito no SPRING BOOT',
         tipo: TipoProjeto.PESSOAIS,
         imagens:[
