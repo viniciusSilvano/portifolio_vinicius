@@ -5,7 +5,7 @@ import { projeto as javaTest } from './projects/java-test-project/java-test-proj
 import { projeto as angularTest } from './projects/angular-test-project/angular-test-project';
 import { projeto as redzero } from './projects/redzero-tcc/redzero-tcc';
 import { projeto as primeiroPortfolio } from './projects/primeiro-portfolio/primeiro-portfolio';
-import { projeto as controleDespesas } from './projects/controle-despesas/versao_0_1/controle-despesas';
+import { projeto as controleDespesas } from './projects/controle-despesas/controle-despesas';
 import { projeto as portfolioBackend } from './projects/portfolio-backend/portfolio-backend';
 /** Registro central; cada projeto tem seu próprio arquivo. */
 export const PROJETOS_ESPECIFICACOES: ProjetoEspecificacao[] = [alugueis, sgq, javaTest, angularTest, redzero, primeiroPortfolio, controleDespesas, portfolioBackend];

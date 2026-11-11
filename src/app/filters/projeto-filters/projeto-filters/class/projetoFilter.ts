@@ -74,7 +74,7 @@ export class ProjetoFilter{
 
     if(projeto && tecnologiasSelecionadasParaBusca){
       for(var tecnologiaSelecionadasParaBusca of tecnologiasSelecionadasParaBusca){
-        if(tecnologiaSelecionadasParaBusca == projeto.tecnologia.id){
+        if(projeto.tecnologia && tecnologiaSelecionadasParaBusca == projeto.tecnologia.id){
           return true;
         }
 

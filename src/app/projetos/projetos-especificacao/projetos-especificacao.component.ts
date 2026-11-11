@@ -1,6 +1,5 @@
-import { versaoWrapper } from './data/projects/controle-despesas/versoes_projeto';
 import { Component, OnChanges, OnInit, OnDestroy, ChangeDetectionStrategy, inject, SecurityContext } from '@angular/core';
-import {ProjetoEspecificacao} from "./class/projeto_especificacao";
+import {ProjetoEspecificacao, VersaoProjeto} from "./class/projeto_especificacao";
 import { ActivatedRoute, Router, NavigationEnd, Event, RouterLink } from "@angular/router";
 import {Subscription } from 'rxjs';
 import { ProjetosService } from '../service/projetos.service';
@@ -8,8 +7,6 @@ import { AccordionCard, Collapse } from '../../../../src/app/comuns/class/accord
 import { ImageSliderComponent } from '../../image-slider/image-slider/image-slider.component';
 import { DomSanitizer } from '@angular/platform-browser';
 import { AccordionProjetoCardComponent } from '../../accordions/accordion-card/accordion-projeto-card/accordion-projeto-card.component';
-import { VersaoWrapper } from './class/versao';
-
 
 @Component({
     selector: 'app-projetos-especificacao',
@@ -26,9 +23,9 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges, OnDest
 
   public projetoEspecificacao?: ProjetoEspecificacao;
   private routerSubscription? : Subscription;
-  public versaoWrapper?: VersaoWrapper;
   private idProjeto = this.route.snapshot.paramMap.get('idEspecificacao');
   private sanitizer = inject(DomSanitizer);
+  public versaoProjeto?: VersaoProjeto | undefined;
 
   ngOnInit() {
     this._initComponent();
@@ -93,20 +90,16 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges, OnDest
       this.projetoService.getProjetoEspecificaoById(id)
         .subscribe(x => {
           this.projetoEspecificacao = x;
-          this.initializeVersaoWrapper(this.projetoEspecificacao);
+          if(this.projetoEspecificacao && this.projetoEspecificacao.versoes){
+            this.versaoProjeto = this.projetoEspecificacao.versoes.find(versao => versao.versaoAtual)
+          }
         },(err: unknown) => console.log("Error",err));
     }
 
   }
 
-  initializeVersaoWrapper(projetoEspecificao: ProjetoEspecificacao | undefined){
-    if(projetoEspecificao){
-      this.versaoWrapper = this.projetoService.getVersoesByProjetoEspeficacaoId(projetoEspecificao);
-    }
-  }
-
   changeCollapse(idCard : number){
-    if(this.projetoEspecificacao && this.projetoEspecificacao.accordionCards.find(x => x.id == idCard)){
+    if(this.projetoEspecificacao && this.projetoEspecificacao.accordionCards && this.projetoEspecificacao.accordionCards.find(x => x.id == idCard)){
       let accordionCard : AccordionCard | undefined;
       accordionCard = this.projetoEspecificacao?.accordionCards.find(x => x.id == idCard);
       if(accordionCard){
@@ -123,4 +116,9 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges, OnDest
     this.router.navigateByUrl('/projeto')
   }
 
+  changeVersao(nomeVersao: string){
+    if(nomeVersao){
+      this.versaoProjeto = this.projetoEspecificacao?.versoes?.find(versao => versao.nomeVersao === nomeVersao);
+    }
+  }
 }
