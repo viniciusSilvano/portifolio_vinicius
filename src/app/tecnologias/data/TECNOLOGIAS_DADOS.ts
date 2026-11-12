@@ -12,7 +12,7 @@ export const TECNOLOGIAS: Tecnologia[] = [
     },
     {
         id: TECNOLOGIA_ENUM.SPRING_BOOT,
-        nome:"Spring Boot"
+        nome:"SPRING BOOT"
     },
     {
         id: TECNOLOGIA_ENUM.BOOTSTRAP,

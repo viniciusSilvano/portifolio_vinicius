@@ -44,7 +44,8 @@ export class CustomCardTecnologiaComponent {
     };*/
     if(imagem_tecmap.has(this.tecnologia?.id)){
       const fileName = this.tecnologia?.id ? imagem_tecmap.get(this.tecnologia.id) : undefined;
-      const extension = [TECNOLOGIA_ENUM.TINYMCE, TECNOLOGIA_ENUM.MOCKITO, TECNOLOGIA_ENUM.JAVA].includes(this.tecnologia?.id ?? -1) ? 'png' : 'svg';
+      const extension = [TECNOLOGIA_ENUM.TINYMCE, TECNOLOGIA_ENUM.MOCKITO, TECNOLOGIA_ENUM.JAVA,TECNOLOGIA_ENUM.POSTGRES_SQL]
+        .includes(this.tecnologia?.id ?? -1) ? 'png' : 'svg';
       return fileName ? `assets/images/tecnologias/${fileName}.${extension}` : '';
     }
     return '';
