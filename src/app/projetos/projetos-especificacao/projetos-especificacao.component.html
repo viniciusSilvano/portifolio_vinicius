@@ -2,18 +2,23 @@
   <a routerLink="/projeto">Projetos</a><span>/</span><span>Detalhes</span>
 </nav>
 @if (projetoEspecificacao) {
-  <section class="project-details">
-    <h1 class="project-details__title"><span [innerHTML]="projetoEspecificacao.tituloProjeto"></span></h1>
-    <div class="project-details__slider">
-      <app-image-slider [slides]="projetoEspecificacao.imagens"></app-image-slider>
-    </div>
-    <div class="project-details__accordions">
-      @for (accordionCard of projetoEspecificacao.accordionCards; track accordionCard) {
-        <app-accordion-card [accordionCard]="accordionCard"></app-accordion-card>
-      }
-    </div>
-    <div class="project-details__footer">
-      <button (click)="getBack()" class="btn btn-outline-light" type="button"><i class="bi bi-arrow-left me-2"></i>Voltar aos projetos</button>
-    </div>
-  </section>
+    <section class="project-details">
+      <aside class="project-details__versions" aria-label="Versões do projeto">
+        @for (versao of projetoEspecificacao.versoes; track versao.nomeVersao) {
+          <button type="button" (click)="changeVersao(versao.nomeVersao)" [class.is-selected]="versao.nomeVersao === versaoProjeto?.nomeVersao" class="filter-search__tag">{{versao.nomeVersao}}</button>
+        }
+      </aside>
+      <h1 class="project-details__title"><span [innerHTML]="getTituloProjeto()"></span> <span> - {{ versaoProjeto?.nomeVersao }}</span></h1>
+      <div class="project-details__slider">
+        <app-image-slider [slides]="versaoProjeto?.imagens"></app-image-slider>
+      </div>
+      <div class="project-details__accordions">
+        @for (accordionCard of versaoProjeto?.accordionCards; track accordionCard) {
+          <app-accordion-projeto-card [accordionCard]="accordionCard"></app-accordion-projeto-card>
+        }
+      </div>
+      <div class="project-details__footer">
+        <button (click)="getBack()" class="btn btn-outline-light" type="button"><i class="bi bi-arrow-left me-2"></i>Voltar aos projetos</button>
+      </div>
+    </section>
 }

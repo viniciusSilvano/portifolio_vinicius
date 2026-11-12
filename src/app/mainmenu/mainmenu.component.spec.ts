@@ -1,4 +1,5 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
 
 import { MainmenuComponent } from './mainmenu.component';
 
@@ -6,12 +7,13 @@ describe('MainmenuComponent', () => {
   let component: MainmenuComponent;
   let fixture: ComponentFixture<MainmenuComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
-    imports: [MainmenuComponent]
+    imports: [MainmenuComponent],
+    providers: [provideRouter([])]
 })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(MainmenuComponent);

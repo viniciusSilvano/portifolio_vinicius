@@ -1,43 +1,47 @@
 <div class="custom-card">
-  <div class="custom-card-header text-center short-project-card-header" >
-    {{projeto?.tituloProjeto | uppercase}}
-    <div class="d-flex flex-row mt-3">
-      <div class="tag_projeto background-preto-escuro oval_tag ms-3">
-        {{getNomeTagPorTipo(projeto?.tipo)}}
+  @if (projeto; as projetoAtual) {
+    <div class="custom-card-header text-center short-project-card-header">
+      {{projetoAtual.tituloProjeto | uppercase}}
+      <span class="project-card__group-label">Versões</span>
+      <div class="project-card__tags">
+        @for (versao of projetoAtual.versoes; track versao.nomeVersao) {
+          <span class="tag_projeto background-preto-escuro oval_tag">{{versao.nomeVersao}}</span>
+        }
       </div>
-
-      @for (statusProjeto of projeto?.status; track statusProjeto; let statusIndex = $index) {
-        <div class="tag_projeto background-preto-escuro oval_tag ms-3">
-          {{getNomeTagPorStatus(statusProjeto)}}
-        </div>
-      }
-
-      <div class="tag_projeto background-preto-escuro oval_tag ms-3">
-        {{getNomeTagPorVisibilidade(projeto?.visibilidade)}}
-      </div>
-    </div>
-  </div>
-  @if (projeto?.imagens) {
-    <div #imagesSliderContainer>
-      <app-image-slider [slides]="projeto.imagens" [hideDots]="false"></app-image-slider>
-    </div>
-  }
-  <div class="project-description">
-    <p>{{projeto?.descricao}}</p>
-  </div>
-  <div class="custom-card-footer">
-    <div class="">
-      <span class="p-2"><u>TECNOLOGIAS DO PROJETO:</u></span>
-      <div class="technology-list">
-        @for (tecnologia of projeto?.tecnologiasAuxiliares; track tecnologia) {
-          <div>
-            <app-custom-card-tecnologia [clickable]="false" [tecnologia]="tecnologia"></app-custom-card-tecnologia>
-          </div>
+      <span class="project-card__group-label">Detalhes</span>
+      <div class="project-card__tags">
+        <span class="tag_projeto background-preto-escuro oval_tag">{{getNomeTagPorTipo(projetoAtual.tipo)}}</span>
+        @if (getVersaoAtual(); as versaoAtual) {
+          @for (statusProjeto of versaoAtual.status; track statusProjeto) {
+            <span class="tag_projeto background-preto-escuro oval_tag">{{getNomeTagPorStatus(statusProjeto)}}</span>
+          }
+          <span class="tag_projeto background-preto-escuro oval_tag">{{getNomeTagPorVisibilidade(versaoAtual.visibilidade)}}</span>
         }
       </div>
     </div>
-    <div class="project-card-actions">
-      <button (click)="notifyParent(projeto?.id)" class="btn btn-primary" type="button">Visualizar</button>
-    </div>
-  </div>
+
+    @if (getVersaoAtual(); as versaoAtual) {
+      <div #imagesSliderContainer>
+        <app-image-slider [slides]="versaoAtual.imagens" [hideDots]="false"></app-image-slider>
+      </div>
+      <div class="project-description"><p>{{versaoAtual.descricao}}</p></div>
+      <div class="custom-card-footer">
+        <span class="p-2"><u>TECNOLOGIAS DO PROJETO:</u></span>
+        <div class="technology-list">
+          @for (tecnologia of versaoAtual.tecnologiasAuxiliares; track tecnologia.id) {
+            <div><app-custom-card-tecnologia [clickable]="false" [tecnologia]="tecnologia"></app-custom-card-tecnologia></div>
+          }
+        </div>
+        <div class="project-card-actions">
+          <button (click)="notifyParent(projetoAtual.id)" class="btn btn-primary" type="button">Visualizar</button>
+          @if(projeto.linkExternoPublicacao && projeto.id !== idProjetoPortifolio){
+            <a class="btn btn-primary" [href]="projeto.linkExternoPublicacao" target="_blank" rel="noopener noreferrer">
+              Visualizar na web
+            </a>
+          }
+
+        </div>
+      </div>
+    }
+  }
 </div>

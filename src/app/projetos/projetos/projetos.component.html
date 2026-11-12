@@ -7,7 +7,7 @@
 
   <section class="filter-panel" aria-labelledby="filterTitle">
     <h2 id="filterTitle" class="filter-title"><i class="bi bi-sliders me-2"></i>Explore por tecnologia</h2>
-    <app-accordion-card [accordionCard]="accordionProjetoFilters" [ehAccordionProjetoCard]="true" (resultadoFiltro)="onFilter($event)"></app-accordion-card>
+    <app-accordion-filter-card [accordionCard]="accordionProjetoFilters" (resultadoFiltro)="onFilter($event)"></app-accordion-filter-card>
   </section>
 
   <h2 class="projects-title text-center">Projetos</h2>

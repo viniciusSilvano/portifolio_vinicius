@@ -8,9 +8,11 @@
 .custom-card-footer span { color:#91a1b3; font-size:.72rem; font-weight:700; letter-spacing:.08em; }
 .technology-list { display:flex; flex-wrap:wrap; align-items:center; gap:.55rem; margin-top:.8rem; }
 .technology-list > div { padding:0; }
-.project-card-actions { display:flex; justify-content:flex-start; margin-top:1rem; }
-.project-card-actions .btn { padding:.52rem 1rem; color:#091510; background:var(--accent); border:1px solid var(--accent); border-radius:8px; font-weight:650; transition:filter .2s ease,transform .2s ease; }
-.project-card-actions .btn:hover { filter:brightness(1.08); transform:translateY(-1px); }
+.project-card-actions { display:flex; justify-content:space-between; margin-top:1rem; }
+.project-card-actions .btn, .project-card-actions .a { padding:.52rem 1rem; color:#091510; background:var(--accent); border:1px solid var(--accent); border-radius:8px; font-weight:650; transition:filter .2s ease,transform .2s ease; }
+.project-card-actions .btn:hover, .project-card-actions .a:hover { filter:brightness(1.08); transform:translateY(-1px); }
 @media (prefers-reduced-motion:reduce) { .custom-card { transition:none; } .custom-card:hover { transform:none; } }
 
 .custom-card app-image-slider { display:block; width:100%; height:100%; }
+.project-card__group-label { display:block; margin:.8rem 0 .35rem; color:#91a1b3; font-size:.68rem; font-weight:700; letter-spacing:.09em; text-transform:uppercase; }
+.project-card__tags { display:flex; flex-wrap:wrap; justify-content:center; gap:.45rem; }

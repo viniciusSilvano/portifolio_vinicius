@@ -1,12 +1,15 @@
 <div class="custom-card  p-2"
-  [ngClass]="{'box-shadow' : tecnologia?.id !== undefined && projetoFilter?.tecnologiasSelecionadasParaBusca?.includes(tecnologia.id), 
+  [ngClass]="{'box-shadow' : tecnologia?.id !== undefined && projetoFilter?.tecnologiasSelecionadasParaBusca?.includes(tecnologia.id),
     '' : !projetoFilter?.tecnologiasSelecionadasParaBusca?.length,
     'clickable-image' : clickable}"
   (click)="OnClickSearchByTecnologyImage()"
 >
   <div class="custom-card-footer">
     <div class="text-center">
-      <span>{{tecnologia?.nome}}</span>
+      <div class="technology-logo-container">
+        <img [src]="imagePath" [alt]="'Logo ' + tecnologia?.nome" class="technology-logo" />
+      </div>
+      <span style="font-size: 0.7rem;">{{tecnologia?.nome}}</span>
     </div>
   </div>
 </div>

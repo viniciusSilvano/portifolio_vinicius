@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProjetoFiltersComponent } from './projeto-filters.component';
 
@@ -6,12 +6,12 @@ describe('ProjetoFiltersComponent', () => {
   let component: ProjetoFiltersComponent;
   let fixture: ComponentFixture<ProjetoFiltersComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
     imports: [ProjetoFiltersComponent]
 })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ProjetoFiltersComponent);

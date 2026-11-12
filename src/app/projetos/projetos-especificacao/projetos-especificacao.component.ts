@@ -1,19 +1,19 @@
-import { Component, OnChanges, OnInit, OnDestroy, ChangeDetectionStrategy, inject } from '@angular/core';
-import {ProjetoEspecificacao} from "./class/projeto_especificacao";
+import { Component, OnChanges, OnInit, OnDestroy, ChangeDetectionStrategy, inject, SecurityContext } from '@angular/core';
+import {ProjetoEspecificacao, VersaoProjeto} from "./class/projeto_especificacao";
 import { ActivatedRoute, Router, NavigationEnd, Event, RouterLink } from "@angular/router";
 import {Subscription } from 'rxjs';
 import { ProjetosService } from '../service/projetos.service';
 import { AccordionCard, Collapse } from '../../../../src/app/comuns/class/accordion-card';
 import { ImageSliderComponent } from '../../image-slider/image-slider/image-slider.component';
-import { AccordionCardComponent } from '../../accordions/accordion-card/accordion-card/accordion-card.component';
-
+import { DomSanitizer } from '@angular/platform-browser';
+import { AccordionProjetoCardComponent } from '../../accordions/accordion-card/accordion-projeto-card/accordion-projeto-card.component';
 
 @Component({
     selector: 'app-projetos-especificacao',
     templateUrl: './projetos-especificacao.component.html',
-    styleUrls: ['./projetos-especificacao.component.css'],
+    styleUrls: ['./projetos-especificacao.component.css','../../shared/css/searcheable_tag_shared.css'],
     changeDetection: ChangeDetectionStrategy.OnPush,
-    imports: [RouterLink, ImageSliderComponent, AccordionCardComponent]
+    imports: [RouterLink, ImageSliderComponent, AccordionProjetoCardComponent]
 })
 
 export class ProjetosEspecificacaoComponent implements OnInit, OnChanges, OnDestroy {
@@ -24,6 +24,8 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges, OnDest
   public projetoEspecificacao?: ProjetoEspecificacao;
   private routerSubscription? : Subscription;
   private idProjeto = this.route.snapshot.paramMap.get('idEspecificacao');
+  private sanitizer = inject(DomSanitizer);
+  public versaoProjeto?: VersaoProjeto | undefined;
 
   ngOnInit() {
     this._initComponent();
@@ -31,6 +33,14 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges, OnDest
 
   ngOnChanges(){
     this._initComponent();
+  }
+
+  getTituloProjeto() : string{
+    if(this.projetoEspecificacao){
+      return this.sanitizer.sanitize(SecurityContext.HTML, this.projetoEspecificacao.tituloProjeto) || '' ;
+    }else{
+      return '';
+    }
   }
 
   ngOnDestroy(): void {
@@ -79,17 +89,19 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges, OnDest
       const id = +this.idProjeto;
       this.projetoService.getProjetoEspecificaoById(id)
         .subscribe(x => {
-          this.projetoEspecificacao = x
-          ,(err: unknown) => console.log("Error",err)
-        });
+          this.projetoEspecificacao = x;
+          if(this.projetoEspecificacao && this.projetoEspecificacao.versoes){
+            this.versaoProjeto = this.projetoEspecificacao.versoes.find(versao => versao.versaoAtual)
+          }
+        },(err: unknown) => console.log("Error",err));
     }
 
   }
 
   changeCollapse(idCard : number){
-    if(this.projetoEspecificacao && this.projetoEspecificacao.accordionCards.find(x => x.id == idCard)){
+    if(this.versaoProjeto?.accordionCards.find(card => card.id === idCard)){
       let accordionCard : AccordionCard | undefined;
-      accordionCard = this.projetoEspecificacao?.accordionCards.find(x => x.id == idCard);
+      accordionCard = this.versaoProjeto.accordionCards.find(card => card.id === idCard);
       if(accordionCard){
         accordionCard.collapse = accordionCard.collapse == Collapse.NOT_COLLAPSED ? Collapse.COLLAPSED : Collapse.NOT_COLLAPSED;
       }
@@ -104,4 +116,9 @@ export class ProjetosEspecificacaoComponent implements OnInit, OnChanges, OnDest
     this.router.navigateByUrl('/projeto')
   }
 
+  changeVersao(nomeVersao: string){
+    if(nomeVersao){
+      this.versaoProjeto = this.projetoEspecificacao?.versoes?.find(versao => versao.nomeVersao === nomeVersao);
+    }
+  }
 }

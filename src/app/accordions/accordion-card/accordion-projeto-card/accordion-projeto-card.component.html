@@ -1,4 +1,4 @@
-<section class="filter-accordion" [class.filter-accordion--projects]="ehAccordionProjetoCard">
+<section class="filter-accordion filter-accordion--projects">
   <div class="filter-accordion__header">
     <button
       class="filter-accordion__trigger"
@@ -6,7 +6,7 @@
       [attr.aria-expanded]="getAccordion().collapse === 'collapse show'"
       [attr.aria-controls]="'accordion-panel-' + accordionCard?.id"
       (click)="changeCollapseProjetoFilters()">
-      <span class="filter-accordion__title" [innerHTML]="getAccordion().tituloDescricao"></span>
+      <span class="filter-accordion__title" [innerHTML]="getTituloDescricaoAccordion()"></span>
       <i class="bi filter-accordion__icon"
         [ngClass]="getAccordion().collapse === 'collapse show' ? 'bi-dash-circle' : 'bi-plus-circle'"
       aria-hidden="true"></i>
@@ -16,19 +16,8 @@
   <div [id]="'accordion-panel-' + accordionCard?.id"
     class="filter-accordion__panel collapse"
     [class.show]="getAccordion().collapse === 'collapse show'">
-    @if (!ehAccordionProjetoCard) {
-      <div class="filter-accordion__body">
-        <div [innerHTML]="getAccordion().descricao"></div>
-      </div>
-    }
-    @if (ehAccordionProjetoCard) {
-      <div class="filter-accordion__body">
-        <app-projeto-filters
-          [projetoList]="getAccordion().projetoList"
-          [tecnologiasParaBusca]="getAccordion().tecnologiasParaBusca"
-          (resultadoFiltro)="onFilter($event)">
-        </app-projeto-filters>
-      </div>
-    }
+    <div class="filter-accordion__body">
+      <div [innerHTML]="getDescricaoAccordion()"></div>
+    </div>
   </div>
 </section>

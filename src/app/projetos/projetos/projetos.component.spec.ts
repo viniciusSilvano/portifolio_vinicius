@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProjetosComponent } from './projetos.component';
 
@@ -6,12 +6,12 @@ describe('ProjetosComponent', () => {
   let component: ProjetosComponent;
   let fixture: ComponentFixture<ProjetosComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(async () => {
     TestBed.configureTestingModule({
     imports: [ProjetosComponent]
 })
     .compileComponents();
-  }));
+  });
 
   beforeEach(() => {
     fixture = TestBed.createComponent(ProjetosComponent);
