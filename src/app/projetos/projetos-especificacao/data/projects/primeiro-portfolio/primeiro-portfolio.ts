@@ -44,7 +44,7 @@ export const projeto: ProjetoEspecificacao = {
                                     <p>O portifólio está em constante evolução do detalhe mais simples ao mais complexo</p>
 
                                     <h3>Tecnologia inicial do projeto</h3>
-                                    <p>O portifólio utiliza angular 2+ e está com um backend planejado para o futuro utilizando java.</p>
+                                    <p>O portifólio utiliza angular 22+ com docker.</p>
                                 </article>
 
                                 `,
@@ -64,7 +64,10 @@ export const projeto: ProjetoEspecificacao = {
                         }
                     ],
             tecnologia: _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.ANGULAR}) as Tecnologia,
-            tecnologiasAuxiliares: [ _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.ANGULAR}) as Tecnologia],
+            tecnologiasAuxiliares: [
+              _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.ANGULAR}) as Tecnologia,
+              _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.DOCKER}) as Tecnologia
+            ],
             status: [StatusProjeto.EM_PRODUCAO],
             visibilidade: Visibilidade.PUBLICO
         }]
