@@ -4,6 +4,7 @@ import { TagUtil } from '../../../../src/app/projetos/projetos-especificacao/uti
 import { ImageSliderComponent } from '../../image-slider/image-slider/image-slider.component';
 import { CustomCardTecnologiaComponent } from '../custom-card-tecnologia/custom-card-tecnologia.component';
 import { UpperCasePipe } from '@angular/common';
+import { PROJETOS } from '../../projetos/projetos-especificacao/data/projects/projeto-dados-comuns';
 @Component({
     selector: 'app-custom-card-projeto',
     templateUrl: './custom-card-projeto.component.html',
@@ -16,6 +17,8 @@ export class CustomCardProjetoComponent implements AfterViewInit {
   @Input() heightImageSliderInPx? : number;
 
   @Output() visualizarBtnClick = new EventEmitter<number>();
+
+  public idProjetoPortifolio = PROJETOS.MEU_PRIMEIRO_PORTIFOLIO;
 
   @ViewChild('imagesSliderContainer') imagesSliderContainerElement? : ElementRef;
   ngAfterViewInit() {
