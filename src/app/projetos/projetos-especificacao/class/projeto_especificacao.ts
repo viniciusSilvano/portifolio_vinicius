@@ -5,8 +5,8 @@ import { Tecnologia } from "../../../tecnologias/class/tecnologia";
 export interface ProjetoEspecificacao extends Entidade{
     id: number;
     tituloProjeto: string;
-    tipo: TipoProjeto
-
+    tipo: TipoProjeto;
+    linkExternoPublicacao?: string;
     versoes: VersaoProjeto[];
 }
 

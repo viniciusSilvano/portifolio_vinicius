@@ -11,6 +11,7 @@ export const projeto: ProjetoEspecificacao = {
         id: PROJETOS.MEU_PRIMEIRO_PORTIFOLIO,
         tipo: TipoProjeto.PESSOAIS,
         tituloProjeto: "Primeiro Portifólio Vinícius",
+        linkExternoPublicacao: "https://viniciussilvano.github.io/portifolio_vinicius/",
         versoes: [{
             nomeVersao: 'Versão 0 - 4',
             versaoAtual: true,
