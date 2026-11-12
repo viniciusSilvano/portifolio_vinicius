@@ -25,6 +25,11 @@ Downloaded from the official project website repository:
 https://github.com/mockito/mockito.github.io/blob/master/img/logo%402x.png
 No separate license for this image was identified. The MIT license for the Mockito software is not assumed to license the project's logo or trademarks.
 
+Project Lombok icon
+Original vector icon created for this portfolio, based on the chili pepper motif associated with Project Lombok's identity. This is an unofficial adaptation, not an official Lombok logo.
+Project: https://projectlombok.org/
+The Project Lombok name and associated marks belong to their respective owners. No separate license for the trademark artwork is asserted.
+
 MIT License
 
 Copyright (c) 2015 konpa

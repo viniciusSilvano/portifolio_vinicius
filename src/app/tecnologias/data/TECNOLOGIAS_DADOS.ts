@@ -8,7 +8,7 @@ export enum TECNOLOGIA_ENUM{
 export const TECNOLOGIAS: Tecnologia[] = [
     {
         id: TECNOLOGIA_ENUM.ANDROID,
-        nome:"ANDROID"
+        nome:"Android"
     },
     {
         id: TECNOLOGIA_ENUM.SPRING_BOOT,
