@@ -14,13 +14,13 @@ export const projeto: ProjetoEspecificacao = {
         tituloProjeto: "Controlador de Despesas Silvano",
         versoes:[
           {
-            nomeVersao: VersoesControleDespesaEnum?.VERSAO_1,
+            nomeVersao: VersoesControleDespesaEnum?.VERSAO_0_2,
             versaoAtual: true,
             descricao: 'Meu projeto para controle de despesas pessoais, feito no SPRING BOOT',
             imagens:[
-              {source: GlobalStrings.getAssetUrl("images/projetos/controlador-despesa/tela_cadastro_categoria_despesa-min.png"),alt:"print da tela de cadastro de categoria da despesa.",title: 'tela de cadastro da categoria da despesa'},
-              {source: GlobalStrings.getAssetUrl("images/projetos/controlador-despesa/tela_cadastro_despesa-min.png"),alt:"print da tela para selecionar o tipo de despesa para cadastro",title: 'tela de seleção de tipo de despesa a cadastrar'},
-              {source: GlobalStrings.getAssetUrl("images/projetos/controlador-despesa/tela_cadastro_despesa_unica-min.png"),alt:"print da tela de cadastro de despesa do tipo \"Única\"",title: 'tela de cadastro de despesa Única'}
+              {source: GlobalStrings.getAssetUrl("images/projetos/controlador-despesa/projeto_2/tela_inicial_controlador_despesa_v2_min.png"),alt:"print da tela inicial do sistema.",title: 'tela inicial do sistema'},
+              {source: GlobalStrings.getAssetUrl("images/projetos/controlador-despesa/projeto_2/tela_cadastro_controlador_despesa_v2_min.png"),alt:"print da tela de cadastro de despesas",title: 'tela de cadastro da despesa'},
+              {source: GlobalStrings.getAssetUrl("images/projetos/controlador-despesa/projeto_2/tela_listagem_controlador_despesa_v2_min.png"),alt:"print da tela de listagem de despesas",title: 'tela de listagem das despesas'}
             ],
             accordionCards: [
                 {
@@ -29,7 +29,25 @@ export const projeto: ProjetoEspecificacao = {
                     descricao:
                         `
                         <article>
-                            <h2>Em Construção!!!</h2>
+                            <small>O sistema ainda está em construção!!</small>
+                            <h2>Sobre o projeto</h2>
+                            <p>Projeto feito para controlar despesa.</p>
+                            <p>Diferente do projeto anterior, esse começou com base em uma planilha excel, para entendimento do "negócio" e com base nele criar o sistema. Deixando assim um modelo mais condizente a minha realidade</p>
+
+                            <h3>Tecnologias</h3>
+                            <ul>
+                              <li>Java 25</li>
+                              <li>Spring boot</li>
+                              <li>Spring devtools</li>
+                              <li>Spring security</li>
+                              <li>Spring AOP</li>
+                              <li>Bootstrap</li>
+                              <li>JUnit</li>
+                              <li>Mockito</li>
+                              <li>PostgresSql</li>
+                              <li>Apache Maven</li>
+                              <li>Docker</li>
+                            </ul>
                         </article>
 
                         `,
@@ -45,7 +63,8 @@ export const projeto: ProjetoEspecificacao = {
               _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.JAVA}) as Tecnologia,
               _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.JUNIT}) as Tecnologia,
               _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.MOCKITO}) as Tecnologia,
-              _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.APACHE_MAVEN}) as Tecnologia
+              _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.APACHE_MAVEN}) as Tecnologia,
+              _SEARCH_UTIL.binarySearch(TECNOLOGIAS,{id: TECNOLOGIA_ENUM.DOCKER}) as Tecnologia
             ],
             status: [StatusProjeto.EM_DESENVOLVIMENTO],
             visibilidade: Visibilidade.PRIVADO

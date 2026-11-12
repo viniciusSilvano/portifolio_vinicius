@@ -34,7 +34,8 @@ export class CustomCardTecnologiaComponent {
       .set(TECNOLOGIA_ENUM.JUNIT, 'junit')
       .set(TECNOLOGIA_ENUM.MOCKITO, 'mockito')
       .set(TECNOLOGIA_ENUM.APACHE_MAVEN, 'apache-maven')
-      .set(TECNOLOGIA_ENUM.FLYWAYDB, 'flyway');
+      .set(TECNOLOGIA_ENUM.FLYWAYDB, 'flyway')
+      .set(TECNOLOGIA_ENUM.DOCKER, 'docker-mark-white');
     /*const fileNames: Record<number, string> = {
       1: 'android', 2: 'spring-boot', 3: 'bootstrap', 4: 'jquery',
       5: 'postgresql', 6: 'tinymce', 7: 'thymeleaf', 8: 'java',
